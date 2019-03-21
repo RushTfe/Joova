@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_joova" default="compile.module.joova">
+  <dirname property="module.joova.basedir" file="${ant.file.module_joova}"/>
+  
+  <property name="module.jdk.home.joova" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.joova" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.joova" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.joova" value="-encoding UTF-8 -source 5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="joova.output.dir" value="${module.joova.basedir}/target/classes"/>
+  <property name="joova.testoutput.dir" value="${module.joova.basedir}/target/test-classes"/>
+  
+  <path id="joova.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="joova.module.production.classpath">
+    <path refid="${module.jdk.classpath.joova}"/>
+  </path>
+  
+  <path id="joova.runtime.production.module.classpath">
+    <pathelement location="${joova.output.dir}"/>
+  </path>
+  
+  <path id="joova.module.classpath">
+    <path refid="${module.jdk.classpath.joova}"/>
+    <pathelement location="${joova.output.dir}"/>
+  </path>
+  
+  <path id="joova.runtime.module.classpath">
+    <pathelement location="${joova.testoutput.dir}"/>
+    <pathelement location="${joova.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.joova">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.joova">
+    <patternset refid="excluded.from.module.joova"/>
+  </patternset>
+  
+  <path id="joova.module.sourcepath">
+    <dirset dir="${module.joova.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="joova.module.test.sourcepath">
+    <dirset dir="${module.joova.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.joova" depends="compile.module.joova.production,compile.module.joova.tests" description="Compile module Joova"/>
+  
+  <target name="compile.module.joova.production" depends="register.custom.compilers" description="Compile module Joova; production classes">
+    <mkdir dir="${joova.output.dir}"/>
+    <javac2 destdir="${joova.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.joova}/javac">
+      <compilerarg line="${compiler.args.joova}"/>
+      <bootclasspath refid="joova.module.bootclasspath"/>
+      <classpath refid="joova.module.production.classpath"/>
+      <src refid="joova.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.joova"/>
+    </javac2>
+    
+    <copy todir="${joova.output.dir}">
+      <fileset dir="${module.joova.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.joova.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.joova.tests" depends="register.custom.compilers,compile.module.joova.production" description="compile module Joova; test classes" unless="skip.tests">
+    <mkdir dir="${joova.testoutput.dir}"/>
+    <javac2 destdir="${joova.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.joova}/javac">
+      <compilerarg line="${compiler.args.joova}"/>
+      <bootclasspath refid="joova.module.bootclasspath"/>
+      <classpath refid="joova.module.classpath"/>
+      <src refid="joova.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.joova"/>
+    </javac2>
+    
+    <copy todir="${joova.testoutput.dir}">
+      <fileset dir="${module.joova.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.joova" description="cleanup module">
+    <delete dir="${joova.output.dir}"/>
+    <delete dir="${joova.testoutput.dir}"/>
+  </target>
+</project>

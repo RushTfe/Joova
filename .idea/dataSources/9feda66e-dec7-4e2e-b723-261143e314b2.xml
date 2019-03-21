@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Pedro.db">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.14">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="Articulos"/>
+    <table id="7" parent="2" name="Cliente"/>
+    <table id="8" parent="2" name="Compra"/>
+    <table id="9" parent="2" name="Detalle_Compra"/>
+    <table id="10" parent="2" name="Historico_Precios"/>
+    <table id="11" parent="2" name="Intereses_Articulos"/>
+    <table id="12" parent="2" name="Tipo_Pago"/>
+    <table id="13" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <column id="14" parent="6" name="Cod_Articulo">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="15" parent="6" name="Nombre_Articulo">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="6" name="Descripcion">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="17" parent="6" name="Tipo_Producto">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="6" name="Ruta_Imagen">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="19" parent="6">
+      <ColNames>Cod_Articulo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="7" name="DNI">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="21" parent="7" name="Nombre">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="7" name="Apellidos">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="7" name="Telefono">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="24" parent="7" name="Email">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="25" parent="7" name="Fecha_de_nacimiento">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="26" parent="7" name="Direccion">
+      <Position>7</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="7" name="Observaciones">
+      <Position>8</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="28" parent="7" name="Genero">
+      <Position>9</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="7" name="Huerfano">
+      <Position>10</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="30" parent="7" name="sqlite_autoindex_Cliente_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>DNI</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="7">
+      <ColNames>DNI</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Cliente_1</UnderlyingIndexName>
+    </key>
+    <column id="32" parent="8" name="Cod_Compra">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="8" name="Cod_Cliente">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="8" name="Fecha">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="8" name="Observaciones">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="36" parent="8" name="Tipo_Pago">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="37" parent="8" name="sqlite_autoindex_Compra_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Cod_Compra
+Cod_Cliente</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="8">
+      <ColNames>Cod_Compra
+Cod_Cliente</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Compra_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="39" parent="8">
+      <ColNames>Cod_Cliente</ColNames>
+      <RefTableName>Cliente</RefTableName>
+      <RefColNames>DNI</RefColNames>
+    </foreign-key>
+    <foreign-key id="40" parent="8">
+      <ColNames>Tipo_Pago</ColNames>
+      <RefTableName>Tipo_Pago</RefTableName>
+      <RefColNames>Cod_Tipo_Pago</RefColNames>
+    </foreign-key>
+    <column id="41" parent="9" name="Cod_Compra">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="42" parent="9" name="Cod_Articulo">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="9" name="Cantidad">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="9" name="sqlite_autoindex_Detalle_Compra_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Cod_Compra</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="9">
+      <ColNames>Cod_Compra</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Detalle_Compra_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="46" parent="9">
+      <ColNames>Cod_Articulo</ColNames>
+      <RefTableName>Articulos</RefTableName>
+      <RefColNames>Cod_Articulo</RefColNames>
+    </foreign-key>
+    <column id="47" parent="10" name="Cod_Articulo">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="10" name="Precio">
+      <Position>2</Position>
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="10" name="Fecha">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="50" parent="10">
+      <ColNames>Cod_Articulo</ColNames>
+      <RefTableName>Articulos</RefTableName>
+      <RefColNames>Cod_Articulo</RefColNames>
+    </foreign-key>
+    <column id="51" parent="11" name="Cod_Cliente">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="52" parent="11" name="Cod_Articulo">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="53" parent="11" name="Observaciones">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <index id="54" parent="11" name="sqlite_autoindex_Intereses_Articulos_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Cod_Cliente
+Cod_Articulo</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="11">
+      <ColNames>Cod_Cliente
+Cod_Articulo</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Intereses_Articulos_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="56" parent="11">
+      <ColNames>Cod_Cliente</ColNames>
+      <RefTableName>Cliente</RefTableName>
+      <RefColNames>DNI</RefColNames>
+    </foreign-key>
+    <foreign-key id="57" parent="11">
+      <ColNames>Cod_Articulo</ColNames>
+      <RefTableName>Articulos</RefTableName>
+      <RefColNames>Cod_Articulo</RefColNames>
+    </foreign-key>
+    <column id="58" parent="12" name="Cod_Tipo_Pago">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="59" parent="12" name="Nombre_Tipo_Pago">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="12" name="Descripcion_Tipo_Pago">
+      <Position>3</Position>
+    </column>
+    <key id="61" parent="12">
+      <ColNames>Cod_Tipo_Pago</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="62" parent="13" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="63" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="64" parent="13" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="65" parent="13" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="66" parent="13" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>
