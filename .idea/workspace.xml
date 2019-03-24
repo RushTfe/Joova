@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e9a80dee-512b-4db9-88c9-faf546a6688e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e9a80dee-512b-4db9-88c9-faf546a6688e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1a3dfcc5-a5e0-4d47-9e94-772748027b4f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4325edbb-f176-4ee5-a910-5d4d3307e44b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4325edbb-f176-4ee5-a910-5d4d3307e44b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48d0f84a-8d0e-4c49-92ce-c729e69d12ee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48d0f84a-8d0e-4c49-92ce-c729e69d12ee/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/890b78ec-670e-45f5-90f0-d7189f1d630f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/890b78ec-670e-45f5-90f0-d7189f1d630f/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ba9ab603-1c96-4e50-aa7d-e23134f3ebd8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7592de3-6918-457d-98fb-308151894046.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7592de3-6918-457d-98fb-308151894046/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e9a80dee-512b-4db9-88c9-faf546a6688e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e9a80dee-512b-4db9-88c9-faf546a6688e/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mainTest.java" afterDir="false" />
@@ -34,23 +51,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Pedro" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Pedro" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Pedro" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DebuggerManager">
@@ -99,65 +100,167 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="357" column="4" selection-start-line="357" selection-start-column="4" selection-end-line="357" selection-end-column="4" />
+            <state relative-caret-position="-213">
+              <caret line="380" selection-start-line="380" selection-end-line="388" selection-end-column="35" />
               <folding>
-                <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
                 <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
                 <element signature="method#insertClient#0;class#HooverDataBase#0" />
                 <element signature="e#0#56#1" />
                 <element signature="e#20#56#0" />
                 <element signature="e#26#56#0" />
-                <element signature="e#1079#1622#0" />
-                <element signature="e#1646#1690#0" />
+                <element signature="e#1113#1656#0" />
+                <element signature="e#1680#1724#0" />
                 <element signature="docComment;method#insertProduct#0;class#HooverDataBase#0" />
                 <element signature="method#insertProduct#0;class#HooverDataBase#0" />
                 <element signature="e#0#99#1" />
                 <element signature="e#80#99#0" />
-                <element signature="e#2159#2451#0" />
-                <element signature="e#2475#2519#0" />
+                <element signature="e#2200#2492#0" />
+                <element signature="e#2516#2560#0" />
                 <element signature="docComment;method#insertPrecio#0;class#HooverDataBase#0" />
                 <element signature="method#insertPrecio#0;class#HooverDataBase#0" />
                 <element signature="e#0#46#1" />
                 <element signature="e#30#46#0" />
-                <element signature="e#3019#3099#0" />
-                <element signature="e#3123#3167#0" />
+                <element signature="e#3063#3312#0" />
+                <element signature="e#3336#3380#0" />
                 <element signature="docComment;method#insertCompra#0;class#HooverDataBase#0" />
                 <element signature="method#insertCompra#0;class#HooverDataBase#0" />
                 <element signature="e#0#40#1" />
                 <element signature="e#19#40#0" />
                 <element signature="e#25#40#0" />
-                <element signature="e#3326#3370#0" />
+                <element signature="e#3835#4170#0" />
+                <element signature="e#4194#4238#0" />
                 <element signature="docComment;method#insertDetalleCompra#0;class#HooverDataBase#0" />
                 <element signature="method#insertDetalleCompra#0;class#HooverDataBase#0" />
                 <element signature="e#0#42#1" />
                 <element signature="e#27#42#0" />
-                <element signature="e#3726#3966#0" />
-                <element signature="e#3990#4034#0" />
+                <element signature="e#4601#4841#0" />
+                <element signature="e#4865#4909#0" />
                 <element signature="docComment;method#insertTipoPago#0;class#HooverDataBase#0" />
                 <element signature="method#insertTipoPago#0;class#HooverDataBase#0" />
                 <element signature="e#0#77#1" />
-                <element signature="e#59#72#1" />
-                <element signature="e#5242#5322#0" />
-                <element signature="e#5346#5390#0" />
+                <element signature="e#64#77#0" />
+                <element signature="e#5299#5502#0" />
+                <element signature="e#5526#5570#0" />
                 <element signature="docComment;method#insertInteresCliente#0;class#HooverDataBase#0" />
                 <element signature="method#insertInteresCliente#0;class#HooverDataBase#0" />
-                <element signature="e#0#48#1" />
-                <element signature="e#32#48#0" />
-                <element signature="e#5745#5825#0" />
-                <element signature="e#5849#5893#0" />
+                <element signature="e#0#51#1" />
+                <element signature="e#32#51#0" />
+                <element signature="e#6135#6426#0" />
+                <element signature="e#6450#6494#0" />
                 <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
                 <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
+                <element signature="e#0#101#1" />
+                <element signature="e#79#101#0" />
+                <element signature="e#86#101#0" />
+                <element signature="e#7063#7409#0" />
+                <element signature="e#7433#7477#0" />
                 <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
                 <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+                <element signature="e#0#77#1" />
+                <element signature="e#61#77#0" />
+                <element signature="e#7937#8197#0" />
+                <element signature="e#8221#8265#0" />
                 <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
                 <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
+                <element signature="e#0#55#1" />
+                <element signature="e#8557#8725#0" />
+                <element signature="e#8749#8793#0" />
                 <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
                 <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="e#9140#9220#0" />
+                <element signature="e#0#125#1" />
+                <element signature="e#103#125#0" />
+                <element signature="e#110#125#0" />
+                <element signature="e#9373#9722#0" />
+                <element signature="e#9746#9790#0" />
                 <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
                 <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+                <element signature="e#0#63#1" />
+                <element signature="e#41#63#0" />
+                <element signature="e#48#63#0" />
+                <element signature="e#10309#10654#0" />
+                <element signature="e#10678#10722#0" />
                 <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
+                <element signature="method#insertExperiencias#0;class#HooverDataBase#0" />
+                <element signature="e#0#74#1" />
+                <element signature="e#58#74#0" />
+                <element signature="e#11116#11375#0" />
+                <element signature="e#11399#11443#0" />
+                <element signature="docComment;method#insertExperienciasClientes#0;class#HooverDataBase#0" />
+                <element signature="method#insertExperienciasClientes#0;class#HooverDataBase#0" />
+                <element signature="e#0#48#1" />
+                <element signature="e#33#48#0" />
+                <element signature="e#11775#12025#0" />
+                <element signature="e#12049#12093#0" />
+                <element signature="docComment;method#deleteCliente#0;class#HooverDataBase#0" />
+                <element signature="method#deleteCliente#0;class#HooverDataBase#0" />
+                <element signature="e#0#33#1" />
+                <element signature="e#12320#12413#0" />
+                <element signature="e#12437#12481#0" />
+                <element signature="docComment;method#deleteCompra#0;class#HooverDataBase#0" />
+                <element signature="method#deleteCompra#0;class#HooverDataBase#0" />
+                <element signature="e#0#39#1" />
+                <element signature="e#12987#13067#0" />
+                <element signature="e#13091#13135#0" />
+                <element signature="docComment;method#deleteDetalleCompra#0;class#HooverDataBase#0" />
+                <element signature="method#deleteDetalleCompra#0;class#HooverDataBase#0" />
+                <element signature="e#0#68#1" />
+                <element signature="e#13625#13705#0" />
+                <element signature="e#13729#13773#0" />
+                <element signature="docComment;method#deleteArticulo#0;class#HooverDataBase#0" />
+                <element signature="method#deleteArticulo#0;class#HooverDataBase#0" />
+                <element signature="e#0#44#1" />
+                <element signature="e#14155#14235#0" />
+                <element signature="e#14259#14303#0" />
+                <element signature="docComment;method#deleteTipoPago#0;class#HooverDataBase#0" />
+                <element signature="method#deleteTipoPago#0;class#HooverDataBase#0" />
+                <element signature="e#0#45#1" />
+                <element signature="e#14576#14735#0" />
+                <element signature="e#14759#14803#0" />
+                <element signature="docComment;method#deletePrecio#0;class#HooverDataBase#0" />
+                <element signature="method#deletePrecio#0;class#HooverDataBase#0" />
+                <element signature="e#0#45#1" />
+                <element signature="e#15251#15331#0" />
+                <element signature="e#15355#15399#0" />
+                <element signature="docComment;method#deleteInteres#0;class#HooverDataBase#0" />
+                <element signature="method#deleteInteres#0;class#HooverDataBase#0" />
+                <element signature="e#0#74#1" />
+                <element signature="e#15667#15747#0" />
+                <element signature="e#15771#15815#0" />
+                <element signature="docComment;method#deletePresentacion#0;class#HooverDataBase#0" />
+                <element signature="method#deletePresentacion#0;class#HooverDataBase#0" />
+                <element signature="e#0#51#1" />
+                <element signature="e#16341#16421#0" />
+                <element signature="e#16445#16489#0" />
+                <element signature="docComment;method#deletePuestaMarcha#0;class#HooverDataBase#0" />
+                <element signature="method#deletePuestaMarcha#0;class#HooverDataBase#0" />
+                <element signature="e#0#52#1" />
+                <element signature="e#16845#16925#0" />
+                <element signature="e#16949#16993#0" />
+                <element signature="docComment;method#deleteTipoEvento#0;class#HooverDataBase#0" />
+                <element signature="method#deleteTipoEvento#0;class#HooverDataBase#0" />
+                <element signature="e#0#49#1" />
+                <element signature="e#17228#17308#0" />
+                <element signature="e#17332#17376#0" />
+                <element signature="docComment;method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+                <element signature="method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+                <element signature="e#0#90#1" />
+                <element signature="e#17788#17868#0" />
+                <element signature="e#17892#17936#0" />
+                <element signature="docComment;method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
+                <element signature="method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
+                <element signature="e#0#61#1" />
+                <element signature="e#18596#18676#0" />
+                <element signature="e#18700#18744#0" />
+                <element signature="docComment;method#deleteClienteExperiencias#0;class#HooverDataBase#0" />
+                <element signature="method#deleteClienteExperiencias#0;class#HooverDataBase#0" />
+                <element signature="e#0#78#1" />
+                <element signature="e#19302#19382#0" />
+                <element signature="e#19406#19450#0" />
+                <element signature="docComment;method#deleteExperiencia#0;class#HooverDataBase#0" />
+                <element signature="method#deleteExperiencia#0;class#HooverDataBase#0" />
+                <element signature="e#0#49#1" />
+                <element signature="e#19733#19826#0" />
+                <element signature="e#19850#19894#0" />
                 <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
                 <element signature="method#createTables#0;class#HooverDataBase#0" />
                 <element signature="n#Cliente#0" />
@@ -167,7 +270,6 @@
                 <element signature="n#Historico_Precios#0" />
                 <element signature="n#Tipo_Pago#0" />
                 <element signature="n#Intereses_Articulos#0" />
-                <element signature="n#Intereses_Articulos#0" />
                 <element signature="n#Presentacion#0" />
                 <element signature="n#PuestaMarcha#0" />
                 <element signature="n#Acciones_Especiales_Clientes#0" />
@@ -175,17 +277,17 @@
                 <element signature="n#Tipo_Evento#0" />
                 <element signature="n#Cliente_Experiencias#0" />
                 <element signature="n#Experiencia#0" />
-                <element signature="e#10703#11542#0" />
-                <element signature="e#11566#11610#0" />
+                <element signature="e#18837#19676#0" />
+                <element signature="e#19700#19744#0" />
                 <element signature="docComment;method#createDatabase#0;class#HooverDataBase#0" />
                 <element signature="method#createDatabase#0;class#HooverDataBase#0" />
-                <element signature="e#12832#12872#1" />
-                <element signature="e#12060#12411#0" />
-                <element signature="e#12145#12401#1" />
-                <element signature="e#12435#12479#0" />
-                <element signature="e#13480#13554#0" />
+                <element signature="e#20142#20182#1" />
+                <element signature="e#20366#20717#0" />
+                <element signature="e#20451#20707#1" />
+                <element signature="e#20741#20785#0" />
+                <element signature="e#20799#20931#0" />
                 <element signature="e#0#24#1" />
-                <element signature="e#13578#13622#0" />
+                <element signature="e#20955#20999#0" />
               </folding>
             </state>
           </provider>
@@ -194,8 +296,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -227,6 +329,7 @@
         <option value="$PROJECT_DIR$/src/main/java/model/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/.idea/ant.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/48d0f84a-8d0e-4c49-92ce-c729e69d12ee/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/21d551b3-a3f0-459c-8421-7325743b4a16/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
       </list>
@@ -251,8 +354,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
-    <option name="width" value="846" />
-    <option name="height" value="567" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -265,8 +368,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,7 +415,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553443908798" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553453436199" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/.Joova/Pedro.db" />
@@ -321,7 +424,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -447,15 +550,15 @@
       <workItem from="1553108095518" duration="6975000" />
       <workItem from="1553115493264" duration="11396000" />
       <workItem from="1553432258844" duration="11499000" />
+      <workItem from="1553446687604" duration="5744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31172000" />
+    <option name="totallyTimeSpent" value="36916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.25053304" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -466,7 +569,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32286024" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32286024" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -487,7 +590,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.32942432" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.31449893" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.3304904" />
@@ -508,377 +611,31 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_joova.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/ant.xml" />
-    <entry file="uml://MAVEN/Joova:Joova:0.0.1">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>Joova:Joova:0.0.1</OriginalElement>
-          <nodes>
-            <node x="" y="">Joova:Joova:0.0.1</node>
-            <node x="" y="">org.xerial:sqlite-jdbc:jar:3.27.2</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="44.0" y="55.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9feda66e-dec7-4e2e-b723-261143e314b2/console.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c/console.sql" />
-    <entry file="das://e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c/schema/main/table/Cliente" />
-    <entry file="das://e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c/schema/main/table/Articulos" />
-    <entry file="das://e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c/schema/main/table/Compra" />
-    <entry file="das://e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c/schema/main/table/Detalle_Compra" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/console.sql" />
-    <entry file="das://6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.sql/java/sql/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="138" column="22" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/schema/main/table/Cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/schema/main/table/Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1a3dfcc5-a5e0-4d47-9e94-772748027b4f/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://48d0f84a-8d0e-4c49-92ce-c729e69d12ee/collation/BINARY">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/48d0f84a-8d0e-4c49-92ce-c729e69d12ee/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://4325edbb-f176-4ee5-a910-5d4d3307e44b/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4325edbb-f176-4ee5-a910-5d4d3307e44b/schema/main/table/Historico_Precios">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4325edbb-f176-4ee5-a910-5d4d3307e44b/schema/main/table/Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4325edbb-f176-4ee5-a910-5d4d3307e44b/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c7592de3-6918-457d-98fb-308151894046/schema/main/table/Acciones_Especiales">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c7592de3-6918-457d-98fb-308151894046/schema/main/table/Cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c7592de3-6918-457d-98fb-308151894046/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Historico_Precios">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Intereses_Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Intereses_Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Historico_Precios">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Presentacion">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/PuestaMarcha">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Acciones_Especiales_Clientes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://4325edbb-f176-4ee5-a910-5d4d3307e44b/schema/main/table/Compra" />
+    <entry file="das://c7592de3-6918-457d-98fb-308151894046/schema/main/table/Acciones_Especiales" />
+    <entry file="das://c7592de3-6918-457d-98fb-308151894046/schema/main/table/Cliente" />
+    <entry file="das://c7592de3-6918-457d-98fb-308151894046/schema/main/table/Compra" />
+    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Cliente" />
+    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Compra" />
+    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Detalle_Compra" />
+    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Articulos" />
+    <entry file="das://890b78ec-670e-45f5-90f0-d7189f1d630f/schema/main/table/Historico_Precios" />
+    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Cliente" />
+    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Tipo_Pago" />
+    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Compra" />
+    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Detalle_Compra" />
+    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Intereses_Articulos" />
+    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Articulos" />
+    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Cliente" />
+    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Detalle_Compra" />
+    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Compra" />
+    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Intereses_Articulos" />
+    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Historico_Precios" />
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Presentacion" />
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Articulos" />
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/PuestaMarcha" />
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Acciones_Especiales_Clientes" />
     <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Acciones_Especiales_Clientes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="357" column="4" selection-start-line="357" selection-start-column="4" selection-end-line="357" selection-end-column="4" />
-          <folding>
-            <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
-            <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
-            <element signature="method#insertClient#0;class#HooverDataBase#0" />
-            <element signature="e#0#56#1" />
-            <element signature="e#20#56#0" />
-            <element signature="e#26#56#0" />
-            <element signature="e#1079#1622#0" />
-            <element signature="e#1646#1690#0" />
-            <element signature="docComment;method#insertProduct#0;class#HooverDataBase#0" />
-            <element signature="method#insertProduct#0;class#HooverDataBase#0" />
-            <element signature="e#0#99#1" />
-            <element signature="e#80#99#0" />
-            <element signature="e#2159#2451#0" />
-            <element signature="e#2475#2519#0" />
-            <element signature="docComment;method#insertPrecio#0;class#HooverDataBase#0" />
-            <element signature="method#insertPrecio#0;class#HooverDataBase#0" />
-            <element signature="e#0#46#1" />
-            <element signature="e#30#46#0" />
-            <element signature="e#3019#3099#0" />
-            <element signature="e#3123#3167#0" />
-            <element signature="docComment;method#insertCompra#0;class#HooverDataBase#0" />
-            <element signature="method#insertCompra#0;class#HooverDataBase#0" />
-            <element signature="e#0#40#1" />
-            <element signature="e#19#40#0" />
-            <element signature="e#25#40#0" />
-            <element signature="e#3326#3370#0" />
-            <element signature="docComment;method#insertDetalleCompra#0;class#HooverDataBase#0" />
-            <element signature="method#insertDetalleCompra#0;class#HooverDataBase#0" />
-            <element signature="e#0#42#1" />
-            <element signature="e#27#42#0" />
-            <element signature="e#3726#3966#0" />
-            <element signature="e#3990#4034#0" />
-            <element signature="docComment;method#insertTipoPago#0;class#HooverDataBase#0" />
-            <element signature="method#insertTipoPago#0;class#HooverDataBase#0" />
-            <element signature="e#0#77#1" />
-            <element signature="e#59#72#1" />
-            <element signature="e#5242#5322#0" />
-            <element signature="e#5346#5390#0" />
-            <element signature="docComment;method#insertInteresCliente#0;class#HooverDataBase#0" />
-            <element signature="method#insertInteresCliente#0;class#HooverDataBase#0" />
-            <element signature="e#0#48#1" />
-            <element signature="e#32#48#0" />
-            <element signature="e#5745#5825#0" />
-            <element signature="e#5849#5893#0" />
-            <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
-            <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
-            <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
-            <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
-            <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
-            <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
-            <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-            <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-            <element signature="e#9140#9220#0" />
-            <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-            <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-            <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
-            <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
-            <element signature="method#createTables#0;class#HooverDataBase#0" />
-            <element signature="n#Cliente#0" />
-            <element signature="n#Compra#0" />
-            <element signature="n#Detalle_Compra#0" />
-            <element signature="n#Articulos#0" />
-            <element signature="n#Historico_Precios#0" />
-            <element signature="n#Tipo_Pago#0" />
-            <element signature="n#Intereses_Articulos#0" />
-            <element signature="n#Intereses_Articulos#0" />
-            <element signature="n#Presentacion#0" />
-            <element signature="n#PuestaMarcha#0" />
-            <element signature="n#Acciones_Especiales_Clientes#0" />
-            <element signature="n#Acciones_Especiales#0" />
-            <element signature="n#Tipo_Evento#0" />
-            <element signature="n#Cliente_Experiencias#0" />
-            <element signature="n#Experiencia#0" />
-            <element signature="e#10703#11542#0" />
-            <element signature="e#11566#11610#0" />
-            <element signature="docComment;method#createDatabase#0;class#HooverDataBase#0" />
-            <element signature="method#createDatabase#0;class#HooverDataBase#0" />
-            <element signature="e#12832#12872#1" />
-            <element signature="e#12060#12411#0" />
-            <element signature="e#12145#12401#1" />
-            <element signature="e#12435#12479#0" />
-            <element signature="e#13480#13554#0" />
-            <element signature="e#0#24#1" />
-            <element signature="e#13578#13622#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Cliente_Experiencias">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -892,10 +649,361 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://fd6015d9-dd19-47aa-b297-978ac3b2f99c/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://21d551b3-a3f0-459c-8421-7325743b4a16/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://21d551b3-a3f0-459c-8421-7325743b4a16/schema/main/table/Detalle_Compra">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://21d551b3-a3f0-459c-8421-7325743b4a16/schema/main/table/Compra">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/21d551b3-a3f0-459c-8421-7325743b4a16/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Detalle_Compra">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Tipo_Pago">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Compra">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Historico_Precios">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Articulos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Intereses_Articulos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Presentacion">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/PuestaMarcha">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Acciones_Especiales">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Acciones_Especiales_Clientes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Tipo_Evento">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="380" selection-start-line="380" selection-end-line="388" selection-end-column="35" />
+          <folding>
+            <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
+            <element signature="method#insertClient#0;class#HooverDataBase#0" />
+            <element signature="e#0#56#1" />
+            <element signature="e#20#56#0" />
+            <element signature="e#26#56#0" />
+            <element signature="e#1113#1656#0" />
+            <element signature="e#1680#1724#0" />
+            <element signature="docComment;method#insertProduct#0;class#HooverDataBase#0" />
+            <element signature="method#insertProduct#0;class#HooverDataBase#0" />
+            <element signature="e#0#99#1" />
+            <element signature="e#80#99#0" />
+            <element signature="e#2200#2492#0" />
+            <element signature="e#2516#2560#0" />
+            <element signature="docComment;method#insertPrecio#0;class#HooverDataBase#0" />
+            <element signature="method#insertPrecio#0;class#HooverDataBase#0" />
+            <element signature="e#0#46#1" />
+            <element signature="e#30#46#0" />
+            <element signature="e#3063#3312#0" />
+            <element signature="e#3336#3380#0" />
+            <element signature="docComment;method#insertCompra#0;class#HooverDataBase#0" />
+            <element signature="method#insertCompra#0;class#HooverDataBase#0" />
+            <element signature="e#0#40#1" />
+            <element signature="e#19#40#0" />
+            <element signature="e#25#40#0" />
+            <element signature="e#3835#4170#0" />
+            <element signature="e#4194#4238#0" />
+            <element signature="docComment;method#insertDetalleCompra#0;class#HooverDataBase#0" />
+            <element signature="method#insertDetalleCompra#0;class#HooverDataBase#0" />
+            <element signature="e#0#42#1" />
+            <element signature="e#27#42#0" />
+            <element signature="e#4601#4841#0" />
+            <element signature="e#4865#4909#0" />
+            <element signature="docComment;method#insertTipoPago#0;class#HooverDataBase#0" />
+            <element signature="method#insertTipoPago#0;class#HooverDataBase#0" />
+            <element signature="e#0#77#1" />
+            <element signature="e#64#77#0" />
+            <element signature="e#5299#5502#0" />
+            <element signature="e#5526#5570#0" />
+            <element signature="docComment;method#insertInteresCliente#0;class#HooverDataBase#0" />
+            <element signature="method#insertInteresCliente#0;class#HooverDataBase#0" />
+            <element signature="e#0#51#1" />
+            <element signature="e#32#51#0" />
+            <element signature="e#6135#6426#0" />
+            <element signature="e#6450#6494#0" />
+            <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
+            <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
+            <element signature="e#0#101#1" />
+            <element signature="e#79#101#0" />
+            <element signature="e#86#101#0" />
+            <element signature="e#7063#7409#0" />
+            <element signature="e#7433#7477#0" />
+            <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+            <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+            <element signature="e#0#77#1" />
+            <element signature="e#61#77#0" />
+            <element signature="e#7937#8197#0" />
+            <element signature="e#8221#8265#0" />
+            <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
+            <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
+            <element signature="e#0#55#1" />
+            <element signature="e#8557#8725#0" />
+            <element signature="e#8749#8793#0" />
+            <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
+            <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
+            <element signature="e#0#125#1" />
+            <element signature="e#103#125#0" />
+            <element signature="e#110#125#0" />
+            <element signature="e#9373#9722#0" />
+            <element signature="e#9746#9790#0" />
+            <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+            <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+            <element signature="e#0#63#1" />
+            <element signature="e#41#63#0" />
+            <element signature="e#48#63#0" />
+            <element signature="e#10309#10654#0" />
+            <element signature="e#10678#10722#0" />
+            <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
+            <element signature="method#insertExperiencias#0;class#HooverDataBase#0" />
+            <element signature="e#0#74#1" />
+            <element signature="e#58#74#0" />
+            <element signature="e#11116#11375#0" />
+            <element signature="e#11399#11443#0" />
+            <element signature="docComment;method#insertExperienciasClientes#0;class#HooverDataBase#0" />
+            <element signature="method#insertExperienciasClientes#0;class#HooverDataBase#0" />
+            <element signature="e#0#48#1" />
+            <element signature="e#33#48#0" />
+            <element signature="e#11775#12025#0" />
+            <element signature="e#12049#12093#0" />
+            <element signature="docComment;method#deleteCliente#0;class#HooverDataBase#0" />
+            <element signature="method#deleteCliente#0;class#HooverDataBase#0" />
+            <element signature="e#0#33#1" />
+            <element signature="e#12320#12413#0" />
+            <element signature="e#12437#12481#0" />
+            <element signature="docComment;method#deleteCompra#0;class#HooverDataBase#0" />
+            <element signature="method#deleteCompra#0;class#HooverDataBase#0" />
+            <element signature="e#0#39#1" />
+            <element signature="e#12987#13067#0" />
+            <element signature="e#13091#13135#0" />
+            <element signature="docComment;method#deleteDetalleCompra#0;class#HooverDataBase#0" />
+            <element signature="method#deleteDetalleCompra#0;class#HooverDataBase#0" />
+            <element signature="e#0#68#1" />
+            <element signature="e#13625#13705#0" />
+            <element signature="e#13729#13773#0" />
+            <element signature="docComment;method#deleteArticulo#0;class#HooverDataBase#0" />
+            <element signature="method#deleteArticulo#0;class#HooverDataBase#0" />
+            <element signature="e#0#44#1" />
+            <element signature="e#14155#14235#0" />
+            <element signature="e#14259#14303#0" />
+            <element signature="docComment;method#deleteTipoPago#0;class#HooverDataBase#0" />
+            <element signature="method#deleteTipoPago#0;class#HooverDataBase#0" />
+            <element signature="e#0#45#1" />
+            <element signature="e#14576#14735#0" />
+            <element signature="e#14759#14803#0" />
+            <element signature="docComment;method#deletePrecio#0;class#HooverDataBase#0" />
+            <element signature="method#deletePrecio#0;class#HooverDataBase#0" />
+            <element signature="e#0#45#1" />
+            <element signature="e#15251#15331#0" />
+            <element signature="e#15355#15399#0" />
+            <element signature="docComment;method#deleteInteres#0;class#HooverDataBase#0" />
+            <element signature="method#deleteInteres#0;class#HooverDataBase#0" />
+            <element signature="e#0#74#1" />
+            <element signature="e#15667#15747#0" />
+            <element signature="e#15771#15815#0" />
+            <element signature="docComment;method#deletePresentacion#0;class#HooverDataBase#0" />
+            <element signature="method#deletePresentacion#0;class#HooverDataBase#0" />
+            <element signature="e#0#51#1" />
+            <element signature="e#16341#16421#0" />
+            <element signature="e#16445#16489#0" />
+            <element signature="docComment;method#deletePuestaMarcha#0;class#HooverDataBase#0" />
+            <element signature="method#deletePuestaMarcha#0;class#HooverDataBase#0" />
+            <element signature="e#0#52#1" />
+            <element signature="e#16845#16925#0" />
+            <element signature="e#16949#16993#0" />
+            <element signature="docComment;method#deleteTipoEvento#0;class#HooverDataBase#0" />
+            <element signature="method#deleteTipoEvento#0;class#HooverDataBase#0" />
+            <element signature="e#0#49#1" />
+            <element signature="e#17228#17308#0" />
+            <element signature="e#17332#17376#0" />
+            <element signature="docComment;method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+            <element signature="method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+            <element signature="e#0#90#1" />
+            <element signature="e#17788#17868#0" />
+            <element signature="e#17892#17936#0" />
+            <element signature="docComment;method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
+            <element signature="method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
+            <element signature="e#0#61#1" />
+            <element signature="e#18596#18676#0" />
+            <element signature="e#18700#18744#0" />
+            <element signature="docComment;method#deleteClienteExperiencias#0;class#HooverDataBase#0" />
+            <element signature="method#deleteClienteExperiencias#0;class#HooverDataBase#0" />
+            <element signature="e#0#78#1" />
+            <element signature="e#19302#19382#0" />
+            <element signature="e#19406#19450#0" />
+            <element signature="docComment;method#deleteExperiencia#0;class#HooverDataBase#0" />
+            <element signature="method#deleteExperiencia#0;class#HooverDataBase#0" />
+            <element signature="e#0#49#1" />
+            <element signature="e#19733#19826#0" />
+            <element signature="e#19850#19894#0" />
+            <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
+            <element signature="method#createTables#0;class#HooverDataBase#0" />
+            <element signature="n#Cliente#0" />
+            <element signature="n#Compra#0" />
+            <element signature="n#Detalle_Compra#0" />
+            <element signature="n#Articulos#0" />
+            <element signature="n#Historico_Precios#0" />
+            <element signature="n#Tipo_Pago#0" />
+            <element signature="n#Intereses_Articulos#0" />
+            <element signature="n#Presentacion#0" />
+            <element signature="n#PuestaMarcha#0" />
+            <element signature="n#Acciones_Especiales_Clientes#0" />
+            <element signature="n#Acciones_Especiales#0" />
+            <element signature="n#Tipo_Evento#0" />
+            <element signature="n#Cliente_Experiencias#0" />
+            <element signature="n#Experiencia#0" />
+            <element signature="e#18837#19676#0" />
+            <element signature="e#19700#19744#0" />
+            <element signature="docComment;method#createDatabase#0;class#HooverDataBase#0" />
+            <element signature="method#createDatabase#0;class#HooverDataBase#0" />
+            <element signature="e#20142#20182#1" />
+            <element signature="e#20366#20717#0" />
+            <element signature="e#20451#20707#1" />
+            <element signature="e#20741#20785#0" />
+            <element signature="e#20799#20931#0" />
+            <element signature="e#0#24#1" />
+            <element signature="e#20955#20999#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/sqlite_master">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

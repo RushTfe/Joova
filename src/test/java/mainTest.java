@@ -3,13 +3,13 @@ import database.HooverDataBase;
 import java.time.LocalDate;
 
 public class mainTest {
-    public static void main(String Args[]) {
+    public static void main(String[] Args) {
         HooverDataBase db = new HooverDataBase("Pedro");
-        /*
+
         //Comentados porque ya están insertados
 
         //Clientes
-        LocalDate date = LocalDate.of(1992, 02, 17);
+        LocalDate date = LocalDate.of(1992, 2, 17);
         db.insertClient("79070458T", "Pedro", "Galindo", "pedrogalindotrabajo@hotmail.com", "622941732", date, "Mi calle", "Buen cliente", "Hombre", false);
         db.insertClient("42240025L", "Angie", "Ruiz Ramos", "angie.ruiz@hotmail.com", "639895040", date, "Su calle", "Mala clienta", "Mujer", true);
 
@@ -59,6 +59,57 @@ public class mainTest {
         //Clientes-Experiencias
         db.insertExperienciasClientes(1, "79070458T", false);
         db.insertExperienciasClientes(1, "42240025L", false);
-        */
+
+
+/*
+        //PRUEBAS DE BORRADO
+
+        //Cliente
+        db.deleteCliente("79070458T");
+
+        //Compra
+        db.deleteCompra("PK25012584228");
+
+        //Detalle compra
+        db.deleteDetalleCompra("PK25012584228", 2);
+
+        //Articulo
+        db.deleteArticulo(2);
+
+        //Tipo de pago
+        db.deleteTipoPago(1);
+
+        //Historico de precios
+        db.deletePrecio(1);
+
+        //Intereses
+        db.deleteInteres("79070458T", 1);
+
+        //Presentacion
+        db.deletePresentacion(1);
+
+        //Puesta en Marcha
+        db.deletePuestaMarcha(1);
+
+        //Acciones Especiales - Clientes
+        //db.deleteAccionesEspecialesClientes(1, "79070458T");
+
+        //Acciones Especiales
+        db.deleteAccionesEspeciales(1);
+
+        //Tipo Evento
+        db.deleteTipoEvento(1);
+
+        //Cliente - Experiencias
+        db.deleteExperienciasCliente(1, "79070458T");
+
+        //Experiencias
+        db.deleteExperiencia(1);
+
+*/
+
+
+
+
     }
 }

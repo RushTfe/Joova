@@ -6,8 +6,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class HooverDataBase {
-    private String url;
-    private String databaseName;
     private Connection conn;
 
     public HooverDataBase(String name) {
@@ -381,7 +379,13 @@ public class HooverDataBase {
         }
     }
 
-
+    /**
+     * Tabla con los clientes que asisten a una determinada experiencia.
+     *
+     * @param codExperiencia
+     * @param codCliente
+     * @param hayVenta
+     */
     public void insertExperienciasClientes(int codExperiencia, String codCliente, boolean hayVenta) {
         //TODO Pasar el objeto
 
@@ -396,6 +400,292 @@ public class HooverDataBase {
 
             stmnt.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    //ELIMINACION DE DATOS
+
+    /**
+     * Borra al cliente del DNI proporcionado de la base de datos. El borrado es en cascada así que cualquier dato relacionado también será borrado de la BD.
+     *
+     * @param DNI
+     */
+    public void deleteCliente(String DNI) {
+        String delete = "DELETE FROM Cliente WHERE DNI = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setString(1, DNI);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina la compra de la base de datos (Junto con su detalle)
+     *
+     * @param codCompra
+     */
+    public void deleteCompra(String codCompra) {
+        String delete = "DELETE FROM Compra WHERE Cod_Compra = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setString(1, codCompra);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Borra de la tabla con el detalle de la compra el artículo que coincide tanto el codigo de articulo como del de compra (Las dos claves)
+     *
+     * @param codCompra
+     * @param codArticulo
+     */
+    public void deleteDetalleCompra(String codCompra, int codArticulo) {
+        String delete = "DELETE FROM Detalle_Compra WHERE Cod_Compra = ? AND Cod_Articulo = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setString(1, codCompra);
+            stmnt.setInt(2, codArticulo);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Borra el artículo correspondiente al código de artículo proporcionado
+     *
+     * @param codArticulo
+     */
+    public void deleteArticulo(int codArticulo) {
+        String delete = "DELETE FROM Articulos WHERE Cod_Articulo = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codArticulo);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina el tipo de pago relacionado al código proporcionado.
+     * <p>
+     * Cuidado con el borrado en cascada, borrar un tipo de pago puede conllevar que se eliminen las compras relacionadas.
+     *
+     * @param codTipoPago
+     */
+    public void deleteTipoPago(int codTipoPago) {
+        String delete = "DELETE FROM Tipo_Pago WHERE Cod_Tipo_Pago = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codTipoPago);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina el precio proporcionado del histórico de precios
+     *
+     * @param codPrecio
+     */
+    public void deletePrecio(int codPrecio) {
+        String delete = "DELETE FROM Historico_Precios WHERE rowid = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codPrecio);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina uno de los intereses que tenga un cliente.
+     *
+     * @param codCliente
+     * @param codArticulo
+     */
+    public void deleteInteres(String codCliente, int codArticulo) {
+        String delete = "DELETE FROM Intereses_Articulos WHERE Cod_Cliente = ? AND Cod_Articulo = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setString(1, codCliente);
+            stmnt.setInt(2, codArticulo);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina la presentacion concreta hecha a un cliente.
+     *
+     * @param codPresentacion
+     */
+    public void deletePresentacion(int codPresentacion) {
+        String delete = "DELETE FROM Presentacion WHERE Cod_Presentacion = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codPresentacion);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina una puesta en marcha en concreto de la tabla
+     *
+     * @param codPuestaMarcha
+     */
+    public void deletePuestaMarcha(int codPuestaMarcha) {
+        String delete = "DELETE FROM PuestaMarcha WHERE Cod_Puesta_Marcha = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codPuestaMarcha);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina el tipo de evento especificado.
+     * <p>
+     * Cuidado con la eliminacion en Cascada, eliminar un evento borrara todas las acciones especiales y asistencias de clientes a esa accion relacionadas con el tipo de evento.
+     *
+     * @param codTipoEvento
+     */
+    public void deleteTipoEvento(int codTipoEvento) {
+        String delete = "DELETE FROM Tipo_Evento WHERE Cod_Tipo_Evento = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codTipoEvento);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina la asistencia de un cliente a un evento en particular
+     *
+     * @param codAccionEspecial
+     * @param codCliente
+     */
+    public void deleteAccionesEspecialesClientes(int codAccionEspecial, String codCliente) {
+        String delete = "DELETE FROM Acciones_Especiales_Clientes WHERE Cod_Accion_Especial = ? AND Cod_Cliente = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codAccionEspecial);
+            stmnt.setString(2, codCliente);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina la Accion Especial llevada a cabo por el Vendedor
+     *
+     * @param codAccionEspecial
+     */
+    public void deleteAccionesEspeciales(int codAccionEspecial) {
+        String delete = "DELETE FROM Acciones_Especiales WHERE Cod_Accion_Especial = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codAccionEspecial);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina la asistencia de un cliente a una accion especial
+     *
+     * @param codExperiencia
+     * @param codCliente
+     */
+    public void deleteExperienciasCliente(int codExperiencia, String codCliente) {
+        String delete = "DELETE FROM Cliente_Experiencias WHERE Cod_Experiencia = ? AND Cod_Cliente = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codExperiencia);
+            stmnt.setString(2, codCliente);
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Elimina la experiencia en la que participó el vendedor
+     *
+     * @param codExperiencia
+     */
+    public void deleteExperiencia(int codExperiencia) {
+        String delete = "DELETE FROM Experiencia WHERE Cod_Experiencia = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(delete);
+
+            stmnt.setInt(1, codExperiencia);
+
+            stmnt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -428,8 +718,8 @@ public class HooverDataBase {
                         "Fecha text NOT NULL," +
                         "Observaciones text," +
                         "Tipo_Pago INTEGER," +
-                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)," +
-                        "FOREIGN KEY (Tipo_Pago) REFERENCES Tipo_Pago (Cod_Tipo_Pago)" +
+                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE," +
+                        "FOREIGN KEY (Tipo_Pago) REFERENCES Tipo_Pago (Cod_Tipo_Pago) ON DELETE CASCADE" +
                         ")";
 
         String queryDetalleCompra =
@@ -438,8 +728,8 @@ public class HooverDataBase {
                         "Cod_Articulo INTEGER NOT NULL," +
                         "Cantidad INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Compra, Cod_Articulo)," +
-                        "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo)," +
-                        "FOREIGN KEY (Cod_Compra) REFERENCES Compra (Cod_Compra)" +
+                        "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE," +
+                        "FOREIGN KEY (Cod_Compra) REFERENCES Compra (Cod_Compra) ON DELETE CASCADE" +
                         ")";
 
         String queryArticulos =
@@ -456,7 +746,7 @@ public class HooverDataBase {
                         "Cod_Articulo INTEGER NOT NULL," +
                         "Precio REAL NOT NULL," +
                         "Fecha text NOT NULL," +
-                        "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo)" +
+                        "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE" +
                         ")";
 
         String queryTipoPago =
@@ -473,8 +763,8 @@ public class HooverDataBase {
                         "Observaciones text," +
                         "Comprado INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Cliente, Cod_Articulo)," +
-                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)," +
-                        "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo)" +
+                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE," +
+                        "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE" +
                         ")";
 
         String queryPresentacion =
@@ -485,7 +775,7 @@ public class HooverDataBase {
                         "Direccion text NOT NULL," +
                         "Observaciones text," +
                         "Venta INTEGER NOT NULL," +
-                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)" +
+                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE" +
                         ")";
 
         String queryPuestaEnMarcha =
@@ -494,7 +784,7 @@ public class HooverDataBase {
                         "Cod_Cliente text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Observaciones text," +
-                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente(DNI)" +
+                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente(DNI) ON DELETE CASCADE" +
                         ")";
 
         String queryAccionesEspecialesCliente =
@@ -505,8 +795,8 @@ public class HooverDataBase {
                         "Venta INTEGER NOT NULL," +
                         "Regalo INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Accion_Especial, Cod_Cliente)," +
-                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)," +
-                        "FOREIGN KEY (Cod_Accion_Especial) REFERENCES Acciones_Especiales (Cod_Accion_Especial)" +
+                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE," +
+                        "FOREIGN KEY (Cod_Accion_Especial) REFERENCES Acciones_Especiales (Cod_Accion_Especial) ON DELETE CASCADE" +
                         ")";
 
         String queryAccionesEspeciales =
@@ -517,7 +807,7 @@ public class HooverDataBase {
                         "Tipo_Evento INTEGER NOT NULL," +
                         "Direccion text NOT NULL," +
                         "Observaciones text," +
-                        "FOREIGN KEY (Tipo_Evento) REFERENCES Tipo_Evento (Cod_Tipo_Evento)" +
+                        "FOREIGN KEY (Tipo_Evento) REFERENCES Tipo_Evento (Cod_Tipo_Evento) ON DELETE CASCADE" +
                         ")";
 
         String queryTipoEvento =
@@ -532,8 +822,8 @@ public class HooverDataBase {
                         "Cod_Cliente text," +
                         "Venta INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Experiencia, Cod_Cliente)," +
-                        "FOREIGN KEY (Cod_Experiencia) REFERENCES Experiencia (Cod_Experiencia)," +
-                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)" +
+                        "FOREIGN KEY (Cod_Experiencia) REFERENCES Experiencia (Cod_Experiencia) ON DELETE CASCADE," +
+                        "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE" +
                         ")";
 
         String queryExperiencia =
@@ -577,7 +867,7 @@ public class HooverDataBase {
      * @param name nombre de la base de datos. Será el nombre que el usuario introduzca por parámetro.
      */
     public void createDatabase(String name) {
-        databaseName = name;
+        String databaseName = name;
 
         File carpeta = new File(System.getProperty("user.home") + "\\" + ".Joova");
 
@@ -587,7 +877,7 @@ public class HooverDataBase {
 
 
         //TODO Revisar por qué no me deja crear carpeta en user.home
-        url = "jdbc:sqlite:" + System.getProperty("user.home") + "\\" + ".Joova\\" + name + ".db";
+        String url = "jdbc:sqlite:" + System.getProperty("user.home") + "\\" + ".Joova\\" + name + ".db";
 
         try {
             conn = DriverManager.getConnection(url);
