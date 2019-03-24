@@ -15,8 +15,11 @@ public class HooverDataBase {
         createTables();
     }
 
+    //INSERCIONES A LA BD
+
     /**
      * Función específica para insertar clientes en la Base de Datos
+     *
      * @param DNI
      * @param nombre
      * @param apellidos
@@ -55,6 +58,7 @@ public class HooverDataBase {
 
     /**
      * Inserta un producto en la base de datos
+     *
      * @param nombreArt
      * @param descripcion
      * @param tipoProd
@@ -81,14 +85,43 @@ public class HooverDataBase {
     }
 
     /**
+     * Insertar el precio para un producto determinado en una fecha determinada. Almacena el histórico de precios en la Base de Datos.
+     * <p>
+     * La clave de esta tabla es el AutoID.
+     *
+     * @param codArticulo
+     * @param precio
+     * @param fecha
+     */
+    public void insertPrecio(int codArticulo, float precio, LocalDate fecha) {
+        //TODO Cambiar los parámetros al objeto
+
+        String insert = "INSERT INTO Historico_Precios values (?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setInt(1, codArticulo);
+            stmnt.setFloat(2, precio);
+            stmnt.setDate(3, Date.valueOf(fecha));
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
      * Función para añadir una compra nueva (No el detalle)
+     *
      * @param codigo
      * @param DNI
      * @param fechaCompra
      * @param comentarios
      * @param tipoPago
      */
-    public void insertCompra (String codigo, String DNI, LocalDate fechaCompra, String comentarios, int tipoPago) {
+    public void insertCompra(String codigo, String DNI, LocalDate fechaCompra, String comentarios, int tipoPago) {
         //TODO Cambiar por el objeto correspondiente
 
         String insert = "INSERT INTO Compra VALUES(?, ?, ?, ?, ?)";
@@ -109,6 +142,7 @@ public class HooverDataBase {
 
     /**
      * Funcion que crea el detalle de la compra realizada
+     *
      * @param codCompra
      * @param codArticulo
      * @param cantidad
@@ -130,6 +164,93 @@ public class HooverDataBase {
     }
 
     /**
+     * Crea los tipos de pago para las compras (Tarjeta, PayPal, efectivo....
+     *
+     * @param nombre
+     * @param descripcion
+     */
+    public void insertTipoPago(String nombre, String descripcion) {
+        //TODO Pasar el objeto correspondiente
+
+        String insert = "INSERT INTO Tipo_Pago (Nombre_Tipo_Pago, Descripcion_Tipo_Pago) values (?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, nombre);
+            stmnt.setString(2, descripcion);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Productos que interesan al cliente. Una vez el cliente compra un producto que está dentro de su lista de intereses, este pasa a poner su ultimo valor a TRUE
+     * mediante un TRIGGER
+     *
+     * @param codCliente
+     * @param codArticulo
+     * @param observaciones
+     * @param haComprado
+     */
+    public void insertInteresCliente(String codCliente, int codArticulo, String observaciones, boolean haComprado) {
+        //TODO Pasar objeto
+
+        String insert = "INSERT INTO Intereses_Articulos VALUES (?, ?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, codCliente);
+            stmnt.setInt(2, codArticulo);
+            stmnt.setString(3, observaciones);
+            stmnt.setBoolean(4, false);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Primera experiencia con el cliente, donde se le presentan los productos y se hace la demostracion de usos.
+     *
+     * @param codCliente
+     * @param fecha
+     * @param direccion
+     * @param observaciones
+     * @param hayVenta
+     */
+    public void insertPresentacion(String codCliente, LocalDate fecha, String direccion, String observaciones, boolean hayVenta) {
+        //TODO Usar el objeto
+
+        String insert = "INSERT INTO Presentacion (Cod_Cliente, Fecha, Direccion, Observaciones, Venta) VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, codCliente);
+            stmnt.setDate(2, Date.valueOf(fecha));
+            stmnt.setString(3, direccion);
+            stmnt.setString(4, observaciones);
+            stmnt.setBoolean(5, hayVenta);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //CREACION DE LA BD
+
+    /**
      * Función encargada de crear todas las tablas de la base de datos.
      */
     private void createTables() {
@@ -149,12 +270,11 @@ public class HooverDataBase {
 
         String queryCompra =
                 "CREATE TABLE IF NOT EXISTS Compra (" +
-                        "Cod_Compra text NOT NULL," +
+                        "Cod_Compra text NOT NULL PRIMARY KEY," +
                         "Cod_Cliente text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Observaciones text," +
                         "Tipo_Pago INTEGER," +
-                        "PRIMARY KEY(Cod_Compra,Cod_Cliente)," +
                         "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)," +
                         "FOREIGN KEY (Tipo_Pago) REFERENCES Tipo_Pago (Cod_Tipo_Pago)" +
                         ")";
@@ -198,6 +318,7 @@ public class HooverDataBase {
                         "Cod_Cliente text," +
                         "Cod_Articulo INTEGER," +
                         "Observaciones text," +
+                        "Comprado INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Cliente, Cod_Articulo)," +
                         "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo)" +
@@ -209,6 +330,7 @@ public class HooverDataBase {
                         "Cod_Cliente text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Direccion text NOT NULL," +
+                        "Observaciones text," +
                         "Venta INTEGER NOT NULL," +
                         "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)" +
                         ")";
@@ -268,7 +390,6 @@ public class HooverDataBase {
                         ")";
 
 
-
         try {
             //Ejecutando sentencias para crear las tablas
             Statement stmnt = conn.createStatement();
@@ -303,8 +424,15 @@ public class HooverDataBase {
     public void createDatabase(String name) {
         databaseName = name;
 
+        File carpeta = new File(System.getProperty("user.home") + "\\" + ".Joova");
+
+        if (!carpeta.exists()) {
+            carpeta.mkdir();
+        }
+
+
         //TODO Revisar por qué no me deja crear carpeta en user.home
-        url = "jdbc:sqlite:" + System.getProperty("user.home") + "\\" + name + ".db";
+        url = "jdbc:sqlite:" + System.getProperty("user.home") + "\\" + ".Joova\\" + name + ".db";
 
         try {
             conn = DriverManager.getConnection(url);
@@ -313,6 +441,13 @@ public class HooverDataBase {
                 System.out.println("El nombre del driver la base de datos es: " + meta.getDriverName());
                 System.out.println("Se ha creado una nueva base de datos");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            conn.prepareStatement("PRAGMA foreign_keys = ON");
+            System.out.println("Foreign Keys activadas");
         } catch (SQLException e) {
             e.printStackTrace();
         }
