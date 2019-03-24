@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6e1fd753-8afc-4462-b3a5-0e7d4c0913ed/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9feda66e-dec7-4e2e-b723-261143e314b2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9feda66e-dec7-4e2e-b723-261143e314b2/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5b7e4bf-ca02-4ddb-844f-a02a5e232f2c/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_27_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_27_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e9a80dee-512b-4db9-88c9-faf546a6688e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e9a80dee-512b-4db9-88c9-faf546a6688e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Joova.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Joova.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joova.properties" beforeDir="false" afterPath="$PROJECT_DIR$/joova.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joova.xml" beforeDir="false" afterPath="$PROJECT_DIR$/joova.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_joova.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module_joova.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" afterDir="false" />
@@ -119,11 +96,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
+            <state relative-caret-position="508">
+              <caret line="357" column="4" selection-start-line="357" selection-start-column="4" selection-end-line="357" selection-end-column="4" />
               <folding>
                 <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
                 <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
@@ -171,6 +148,16 @@
                 <element signature="e#5849#5893#0" />
                 <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
                 <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
+                <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+                <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+                <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
+                <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
+                <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
+                <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
+                <element signature="e#9140#9220#0" />
+                <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+                <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+                <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
                 <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
                 <element signature="method#createTables#0;class#HooverDataBase#0" />
                 <element signature="n#Cliente#0" />
@@ -204,11 +191,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="489">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -240,8 +227,8 @@
         <option value="$PROJECT_DIR$/src/main/java/model/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/.idea/ant.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/48d0f84a-8d0e-4c49-92ce-c729e69d12ee/console.sql" />
-        <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
       </list>
     </option>
   </component>
@@ -267,7 +254,9 @@
     <option name="width" value="846" />
     <option name="height" value="567" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -323,7 +312,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553441207703" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553443908798" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/.Joova/Pedro.db" />
@@ -457,12 +446,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1553108095518" duration="6975000" />
       <workItem from="1553115493264" duration="11396000" />
-      <workItem from="1553432258844" duration="8832000" />
+      <workItem from="1553432258844" duration="11499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28505000" />
+    <option name="totallyTimeSpent" value="31172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -477,7 +466,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32286024" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32286024" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -498,7 +487,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32942432" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.32942432" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.3304904" />
@@ -519,9 +508,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -771,20 +757,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Articulos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/PuestaMarcha">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Acciones_Especiales_Clientes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Acciones_Especiales_Clientes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
+        <state relative-caret-position="508">
+          <caret line="357" column="4" selection-start-line="357" selection-start-column="4" selection-end-line="357" selection-end-column="4" />
           <folding>
             <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
             <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
@@ -832,6 +836,16 @@
             <element signature="e#5849#5893#0" />
             <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
             <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
+            <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+            <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
+            <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
+            <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
+            <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
+            <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
+            <element signature="e#9140#9220#0" />
+            <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+            <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
+            <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
             <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
             <element signature="method#createTables#0;class#HooverDataBase#0" />
             <element signature="n#Cliente#0" />
@@ -860,6 +874,30 @@
             <element signature="e#13480#13554#0" />
             <element signature="e#0#24#1" />
             <element signature="e#13578#13622#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd3e79ea-0715-44a2-ae3c-90897b743832/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

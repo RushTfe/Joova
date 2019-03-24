@@ -248,6 +248,159 @@ public class HooverDataBase {
 
     }
 
+    /**
+     * Tabla que recoge las veces que se fue a casa del cliente a poner a funcionar los equipos adquiridos.
+     *
+     * @param codCliente
+     * @param fecha
+     * @param observaciones
+     */
+    public void insertPuestaEnMarcha(String codCliente, LocalDate fecha, String observaciones) {
+        //TODO Pasar el objeto
+
+        String insert = "INSERT INTO PuestaMarcha (Cod_Cliente, Fecha, Observaciones) VALUES (?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, codCliente);
+            stmnt.setDate(2, Date.valueOf(fecha));
+            stmnt.setString(3, observaciones);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Tabla con los tipos de evento a los que puede asistir el vendedor.
+     *
+     * @param nombreTipoEvento
+     */
+    public void insertTipoEvento(String nombreTipoEvento) {
+        String insert = "INSERT INTO Tipo_Evento (Nombre_Tipo_Evento) VALUES (?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, nombreTipoEvento);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Tabla que contiene las acciones especiales a las que ha acudido el vendedor
+     *
+     * @param nombreAccion
+     * @param fecha
+     * @param codTipoEvento
+     * @param direccion
+     * @param observaciones
+     */
+    public void insertAccionesEspeciales(String nombreAccion, LocalDate fecha, int codTipoEvento, String direccion, String observaciones) {
+        //TODO Pasar el objeto
+
+        String insert = "INSERT INTO Acciones_Especiales (Nombre_Accion_Especial, Fecha, Tipo_Evento, Direccion, Observaciones) VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, nombreAccion);
+            stmnt.setDate(2, Date.valueOf(fecha));
+            stmnt.setInt(3, codTipoEvento);
+            stmnt.setString(4, direccion);
+            stmnt.setString(5, observaciones);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Tabla de asistencia de los clientes a cada accion especial
+     *
+     * @param codAccionEspecial
+     * @param codCliente
+     * @param observaciones
+     * @param hayVenta
+     * @param tuvoRegalo
+     */
+    public void insertAccionesEspecialesClientes(int codAccionEspecial, String codCliente, String observaciones, boolean hayVenta, boolean tuvoRegalo) {
+        //TODO Pasar el objeto
+
+        String insert = "INSERT INTO Acciones_Especiales_Clientes VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setInt(1, codAccionEspecial);
+            stmnt.setString(2, codCliente);
+            stmnt.setString(3, observaciones);
+            stmnt.setBoolean(4, hayVenta);
+            stmnt.setBoolean(5, tuvoRegalo);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Tabla con las reuniones de varios clientes.
+     *
+     * @param direccion
+     * @param fecha
+     * @param observaciones
+     */
+    public void insertExperiencias(String direccion, LocalDate fecha, String observaciones) {
+        //TODO Usar el objeto
+
+        String insert = "INSERT INTO Experiencia (Direccion, Fecha, Observaciones) VALUES (?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setString(1, direccion);
+            stmnt.setDate(2, Date.valueOf(fecha));
+            stmnt.setString(3, observaciones);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void insertExperienciasClientes(int codExperiencia, String codCliente, boolean hayVenta) {
+        //TODO Pasar el objeto
+
+        String insert = "INSERT INTO Cliente_Experiencias VALUES(?, ?, ?)";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(insert);
+
+            stmnt.setInt(1, codExperiencia);
+            stmnt.setString(2, codCliente);
+            stmnt.setBoolean(3, hayVenta);
+
+            stmnt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //CREACION DE LA BD
 
     /**
@@ -348,7 +501,9 @@ public class HooverDataBase {
                 "CREATE TABLE IF NOT EXISTS Acciones_Especiales_Clientes (" +
                         "Cod_Accion_Especial INTEGER," +
                         "Cod_Cliente text," +
+                        "Observaciones text," +
                         "Venta INTEGER NOT NULL," +
+                        "Regalo INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Accion_Especial, Cod_Cliente)," +
                         "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI)," +
                         "FOREIGN KEY (Cod_Accion_Especial) REFERENCES Acciones_Especiales (Cod_Accion_Especial)" +
