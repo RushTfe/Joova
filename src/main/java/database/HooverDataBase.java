@@ -869,32 +869,41 @@ public class HooverDataBase {
     public void createDatabase(String name) {
         String databaseName = name;
 
+        // Lugar donde crearemos la carpeta de la base de datos
         File carpeta = new File(System.getProperty("user.home") + "\\" + ".Joova");
 
         if (!carpeta.exists()) {
             carpeta.mkdir();
         }
 
-
-        //TODO Revisar por qué no me deja crear carpeta en user.home
+        //Localizacion de la base de datos
         String url = "jdbc:sqlite:" + System.getProperty("user.home") + "\\" + ".Joova\\" + name + ".db";
 
+        //Conexion a la BD
         try {
             conn = DriverManager.getConnection(url);
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
                 System.out.println("El nombre del driver la base de datos es: " + meta.getDriverName());
-                System.out.println("Se ha creado una nueva base de datos");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         try {
+            //Activación de las Foreign Key, para que fuerce los borrados en cascada, o introducción/edicion correcta de datos.
             conn.prepareStatement("PRAGMA foreign_keys = ON");
             System.out.println("Foreign Keys activadas");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Conexion a la BD para consultas externas
+     * @return La conexion propia de la base de datos.
+     */
+    public Connection getConnection() {
+        return conn;
     }
 }
