@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21d551b3-a3f0-459c-8421-7325743b4a16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/21d551b3-a3f0-459c-8421-7325743b4a16/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82efcfaa-edcd-42d1-8137-e26384db178c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82efcfaa-edcd-42d1-8137-e26384db178c/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd3e79ea-0715-44a2-ae3c-90897b743832.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd3e79ea-0715-44a2-ae3c-90897b743832/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6015d9-dd19-47aa-b297-978ac3b2f99c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6015d9-dd19-47aa-b297-978ac3b2f99c/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Joova.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Joova.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Acciones-AccionesEspecialesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Acciones-AccionesEspecialesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Acciones-ExperienciasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Acciones-ExperienciasView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/AccionesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AccionesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ClientesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ClientesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ProductosView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ProductosView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/VentasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/VentasView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/mainTest.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,153 +102,13 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="874" column="31" selection-start-line="874" selection-start-column="31" selection-end-line="874" selection-end-column="31" />
-              <folding>
-                <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
-                <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
-                <element signature="method#insertClient#0;class#HooverDataBase#0" />
-                <element signature="e#1056#1599#0" />
-                <element signature="e#1623#1667#0" />
-                <element signature="docComment;method#insertProduct#0;class#HooverDataBase#0" />
-                <element signature="method#insertProduct#0;class#HooverDataBase#0" />
-                <element signature="e#2143#2435#0" />
-                <element signature="e#2459#2503#0" />
-                <element signature="docComment;method#insertPrecio#0;class#HooverDataBase#0" />
-                <element signature="method#insertPrecio#0;class#HooverDataBase#0" />
-                <element signature="e#3006#3255#0" />
-                <element signature="e#3279#3323#0" />
-                <element signature="docComment;method#insertCompra#0;class#HooverDataBase#0" />
-                <element signature="method#insertCompra#0;class#HooverDataBase#0" />
-                <element signature="e#3778#4113#0" />
-                <element signature="e#4137#4181#0" />
-                <element signature="docComment;method#insertDetalleCompra#0;class#HooverDataBase#0" />
-                <element signature="method#insertDetalleCompra#0;class#HooverDataBase#0" />
-                <element signature="e#4544#4784#0" />
-                <element signature="e#4808#4852#0" />
-                <element signature="docComment;method#insertTipoPago#0;class#HooverDataBase#0" />
-                <element signature="method#insertTipoPago#0;class#HooverDataBase#0" />
-                <element signature="e#5242#5445#0" />
-                <element signature="e#5469#5513#0" />
-                <element signature="docComment;method#insertInteresCliente#0;class#HooverDataBase#0" />
-                <element signature="method#insertInteresCliente#0;class#HooverDataBase#0" />
-                <element signature="e#6078#6369#0" />
-                <element signature="e#6393#6437#0" />
-                <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
-                <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
-                <element signature="e#7006#7352#0" />
-                <element signature="e#7376#7420#0" />
-                <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
-                <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
-                <element signature="e#7880#8140#0" />
-                <element signature="e#8164#8208#0" />
-                <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
-                <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
-                <element signature="e#8500#8668#0" />
-                <element signature="e#8692#8736#0" />
-                <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="e#9316#9665#0" />
-                <element signature="e#9689#9733#0" />
-                <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-                <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-                <element signature="e#10252#10597#0" />
-                <element signature="e#10621#10665#0" />
-                <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
-                <element signature="method#insertExperiencias#0;class#HooverDataBase#0" />
-                <element signature="e#11059#11318#0" />
-                <element signature="e#11342#11386#0" />
-                <element signature="docComment;method#insertExperienciasClientes#0;class#HooverDataBase#0" />
-                <element signature="method#insertExperienciasClientes#0;class#HooverDataBase#0" />
-                <element signature="e#11790#12040#0" />
-                <element signature="e#12064#12108#0" />
-                <element signature="docComment;method#deleteCliente#0;class#HooverDataBase#0" />
-                <element signature="method#deleteCliente#0;class#HooverDataBase#0" />
-                <element signature="e#12462#12617#0" />
-                <element signature="e#12641#12685#0" />
-                <element signature="docComment;method#deleteCompra#0;class#HooverDataBase#0" />
-                <element signature="method#deleteCompra#0;class#HooverDataBase#0" />
-                <element signature="e#12937#13098#0" />
-                <element signature="e#13122#13166#0" />
-                <element signature="docComment;method#deleteDetalleCompra#0;class#HooverDataBase#0" />
-                <element signature="method#deleteDetalleCompra#0;class#HooverDataBase#0" />
-                <element signature="e#13571#13774#0" />
-                <element signature="e#13798#13842#0" />
-                <element signature="docComment;method#deleteArticulo#0;class#HooverDataBase#0" />
-                <element signature="method#deleteArticulo#0;class#HooverDataBase#0" />
-                <element signature="e#14112#14272#0" />
-                <element signature="e#14296#14340#0" />
-                <element signature="docComment;method#deleteTipoPago#0;class#HooverDataBase#0" />
-                <element signature="method#deleteTipoPago#0;class#HooverDataBase#0" />
-                <element signature="e#14735#14894#0" />
-                <element signature="e#14918#14962#0" />
-                <element signature="docComment;method#deletePrecio#0;class#HooverDataBase#0" />
-                <element signature="method#deletePrecio#0;class#HooverDataBase#0" />
-                <element signature="e#15213#15370#0" />
-                <element signature="e#15394#15438#0" />
-                <element signature="docComment;method#deleteInteres#0;class#HooverDataBase#0" />
-                <element signature="method#deleteInteres#0;class#HooverDataBase#0" />
-                <element signature="e#15761#15964#0" />
-                <element signature="e#15988#16032#0" />
-                <element signature="docComment;method#deletePresentacion#0;class#HooverDataBase#0" />
-                <element signature="method#deletePresentacion#0;class#HooverDataBase#0" />
-                <element signature="e#16303#16466#0" />
-                <element signature="e#16490#16534#0" />
-                <element signature="docComment;method#deletePuestaMarcha#0;class#HooverDataBase#0" />
-                <element signature="method#deletePuestaMarcha#0;class#HooverDataBase#0" />
-                <element signature="e#16806#16969#0" />
-                <element signature="e#16993#17037#0" />
-                <element signature="docComment;method#deleteTipoEvento#0;class#HooverDataBase#0" />
-                <element signature="method#deleteTipoEvento#0;class#HooverDataBase#0" />
-                <element signature="e#17476#17637#0" />
-                <element signature="e#17661#17705#0" />
-                <element signature="docComment;method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-                <element signature="method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-                <element signature="e#18086#18295#0" />
-                <element signature="e#18319#18363#0" />
-                <element signature="docComment;method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="e#18659#18824#0" />
-                <element signature="e#18848#18892#0" />
-                <element signature="docComment;method#deleteExperienciasCliente#0;class#HooverDataBase#0" />
-                <element signature="method#deleteExperienciasCliente#0;class#HooverDataBase#0" />
-                <element signature="e#19244#19450#0" />
-                <element signature="e#19474#19518#0" />
-                <element signature="docComment;method#deleteExperiencia#0;class#HooverDataBase#0" />
-                <element signature="method#deleteExperiencia#0;class#HooverDataBase#0" />
-                <element signature="e#19786#19948#0" />
-                <element signature="e#19972#20016#0" />
-                <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
-                <element signature="method#createTables#0;class#HooverDataBase#0" />
-                <element signature="e#27112#27951#0" />
-                <element signature="e#27975#28019#0" />
-                <element signature="docComment;method#createDatabase#0;class#HooverDataBase#0" />
-                <element signature="docComment;method#getConnection#0;class#HooverDataBase#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -261,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/model/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/.idea/ant.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/48d0f84a-8d0e-4c49-92ce-c729e69d12ee/console.sql" />
@@ -269,7 +130,6 @@
         <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/JoovaApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/ClientesView.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/Productos.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/AccionesView.fxml" />
@@ -277,6 +137,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/FXML/Acciones-Experiencias.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/Acciones-AccionesEspecialesView.fxml" />
         <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/model/MainModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -286,6 +150,11 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Joova" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Joova" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
@@ -300,7 +169,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -313,8 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,6 +205,29 @@
               <item name="Joova" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Joova" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Joova" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Joova" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,25 +236,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FXML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,21 +260,25 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553698612637" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553866731710" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/.Joova/Pedro.db" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\controller" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\fxml" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src" />
     </key>
@@ -412,7 +295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.mainTest">
+  <component name="RunManager" selected="Application.JoovaApp">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -513,8 +396,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mainTest" />
         <item itemvalue="Application.JoovaApp" />
+        <item itemvalue="Application.mainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -536,16 +419,18 @@
       <workItem from="1553511988931" duration="985000" />
       <workItem from="1553688223971" duration="2497000" />
       <workItem from="1553691515504" duration="6082000" />
+      <workItem from="1553814569721" duration="4150000" />
+      <workItem from="1553851178065" duration="1634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46480000" />
+    <option name="totallyTimeSpent" value="52264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.27458397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.28366113" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -554,7 +439,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.215781" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.048309177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -565,7 +450,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.49919486" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.35909823" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="16" />
@@ -575,7 +460,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.19894099" />
+      <window_info anchor="right" id="Database" order="4" weight="0.19894099" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.22768533" />
@@ -596,9 +481,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Intereses_Articulos" />
-    <entry file="das://ba9ab603-1c96-4e50-aa7d-e23134f3ebd8/schema/main/table/Articulos" />
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Cliente" />
     <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Detalle_Compra" />
     <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Compra" />
     <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Intereses_Articulos" />
@@ -658,43 +540,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/MainView.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-612" />
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/VentasView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/VentasView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="146" selection-start-line="15" selection-start-column="130" selection-end-line="15" selection-end-column="146" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/ProductosView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/ProductosView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/ClientesView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/ClientesView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="153" selection-start-line="10" selection-start-column="153" selection-end-line="10" selection-end-column="153" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/AccionesView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/AccionesView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="150" selection-start-line="11" selection-start-column="150" selection-end-line="11" selection-end-column="150" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Experiencia">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -703,32 +579,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/Acciones-ExperienciasView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/Acciones-ExperienciasView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="185" selection-start-line="11" selection-start-column="185" selection-end-line="11" selection-end-column="185" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/Acciones-AccionesEspecialesView.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/Acciones-AccionesEspecialesView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Detalle_Compra">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="17">
           <caret line="874" column="31" selection-start-line="874" selection-start-column="31" selection-end-line="874" selection-end-column="31" />
           <folding>
             <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
@@ -854,10 +730,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <filtering enabled="true" />
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -872,10 +771,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        <state relative-caret-position="425">
+          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/MainModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

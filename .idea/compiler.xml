@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Joova" target="8" />
+      <module name="Joova" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>
