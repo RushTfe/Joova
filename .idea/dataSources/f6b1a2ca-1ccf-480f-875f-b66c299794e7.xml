@@ -92,7 +92,6 @@
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cod_Accion_Especial
 Cod_Cliente</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="35" parent="7">
@@ -187,7 +186,6 @@ Cod_Cliente</ColNames>
     <index id="54" parent="9" name="sqlite_autoindex_Cliente_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>DNI</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="55" parent="9">
@@ -212,7 +210,6 @@ Cod_Cliente</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cod_Experiencia
 Cod_Cliente</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="60" parent="10">
@@ -259,7 +256,6 @@ Cod_Cliente</ColNames>
     <index id="68" parent="11" name="sqlite_autoindex_Compra_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cod_Compra</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="69" parent="11">
@@ -297,7 +293,6 @@ Cod_Cliente</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cod_Compra
 Cod_Articulo</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="76" parent="12">
@@ -381,7 +376,6 @@ Cod_Articulo</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Cod_Cliente
 Cod_Articulo</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="93" parent="15">

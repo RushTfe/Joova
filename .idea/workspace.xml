@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6b1a2ca-1ccf-480f-875f-b66c299794e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f6b1a2ca-1ccf-480f-875f-b66c299794e7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Joova.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Joova.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Acciones-AccionesEspecialesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Acciones-AccionesEspecialesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Acciones-ExperienciasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Acciones-ExperienciasView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/AccionesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AccionesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ClientesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ClientesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ProductosView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ProductosView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/VentasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/VentasView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/mainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MainController.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,7 +95,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -140,6 +133,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/model/MainModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/ClienteModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
       </list>
     </option>
@@ -260,7 +255,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553866731710" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553970618081" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/.Joova/Pedro.db" />
@@ -272,15 +267,16 @@
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\controller" />
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\fxml" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources\fxml" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\controller" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\fxml" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -421,16 +417,18 @@
       <workItem from="1553691515504" duration="6082000" />
       <workItem from="1553814569721" duration="4150000" />
       <workItem from="1553851178065" duration="1634000" />
+      <workItem from="1553889484258" duration="2989000" />
+      <workItem from="1553968176287" duration="2438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52264000" />
+    <option name="totallyTimeSpent" value="57691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.28366113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21785174" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -439,7 +437,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.048309177" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22544283" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -453,7 +451,7 @@
       <window_info anchor="bottom" id="Messages" order="13" weight="0.35909823" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="16" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32850242" />
       <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.32850242" />
       <window_info anchor="bottom" id="Database Console" order="18" weight="0.32850242" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -481,9 +479,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Detalle_Compra" />
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Compra" />
-    <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Intereses_Articulos" />
     <entry file="das://c8a1bbc0-fa8d-4879-80e9-a5a2c4e80f8a/schema/main/table/Historico_Precios" />
     <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Presentacion" />
     <entry file="das://e9a80dee-512b-4db9-88c9-faf546a6688e/schema/main/table/Articulos" />
@@ -512,96 +507,59 @@
     <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Tipo_Evento" />
     <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Cliente_Experiencias" />
     <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Experiencia" />
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/sqlite_master">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente_Experiencias">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Articulos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/sqlite_master" />
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente_Experiencias" />
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Articulos" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/VentasView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="146" selection-start-line="15" selection-start-column="130" selection-end-line="15" selection-end-column="146" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/ProductosView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/ClientesView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="153" selection-start-line="10" selection-start-column="153" selection-end-line="10" selection-end-column="153" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/AccionesView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="150" selection-start-line="11" selection-start-column="150" selection-end-line="11" selection-end-column="150" />
         </state>
       </provider>
-    </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Experiencia">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/Acciones-ExperienciasView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Experiencia" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/Acciones-ExperienciasView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="185" selection-start-line="11" selection-start-column="185" selection-end-line="11" selection-end-column="185" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/Acciones-AccionesEspecialesView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Detalle_Compra" />
     <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -744,22 +702,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/app/JoovaApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -767,18 +710,6 @@
           <folding>
             <element signature="e#718#719#0" expanded="true" />
             <element signature="e#753#754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,6 +734,62 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/event/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClienteModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="65" column="68" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">

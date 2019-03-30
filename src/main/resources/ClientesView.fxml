@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="rootClientes" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientesController">
+   <center>
+      <TableView fx:id="ClientTable" fixedCellSize="0.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="observacionesColumn" prefWidth="75.0" text="Observaciones" />
+            <TableColumn fx:id="dniColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="-1.0" text="DNI" />
+          <TableColumn fx:id="nombreColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="-1.0" text="Nombre" />
+            <TableColumn fx:id="apellidoColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="-1.0" text="Apellido" />
+            <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="tlfColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="-1.0" text="Teléfono" />
+          <TableColumn fx:id="nacimientoColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="-1.0" text="FechaNacimiento" />
+            <TableColumn fx:id="direccionColumn" prefWidth="75.0" text="Direccion" />
+            <TableColumn fx:id="huerfanoColumn" prefWidth="75.0" text="Huerfano" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="anadirClienteButton" mnemonicParsing="false" text="+" />
+            <Button fx:id="eliminarClienteButton" mnemonicParsing="false" text="-" />
+            <Button fx:id="modificarClienteButton" mnemonicParsing="false" text="Modif" />
+            <Button fx:id="buscarClienteButton" mnemonicParsing="false" text="Buscar" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>

@@ -16,22 +16,22 @@
    <bottom>
       <TabPane fx:id="tabsRoot" minHeight="300.0" minWidth="650.0" prefHeight="300.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Clientes">
+          <Tab id="clientesTab" text="Clientes">
             <content>
               <AnchorPane />
             </content>
           </Tab>
-          <Tab text="Productos">
+          <Tab id="productosTab" text="Productos">
             <content>
               <AnchorPane />
             </content>
           </Tab>
-            <Tab text="Ventas">
+            <Tab id="ventasTab" text="Ventas">
               <content>
                 <AnchorPane />
               </content>
             </Tab>
-            <Tab text="Acciones">
+            <Tab id="accionesTab" text="Acciones">
               <content>
                 <AnchorPane>
                      <padding>
@@ -40,7 +40,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Estadísticas">
+            <Tab id="estadisticasTab" text="Estadísticas">
               <content>
                 <AnchorPane />
               </content>
