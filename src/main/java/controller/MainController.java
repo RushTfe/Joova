@@ -1,5 +1,7 @@
 package controller;
 
+import app.JoovaApp;
+import database.HooverDataBase;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,18 +9,22 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import model.MainModel;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
     // SOLO PARA TEST, SE IMPLEMENTARÁ DISTINTO CUANDO PASE LA PRIMERA FASE
-    private static final String[] USUARIOS = {"admin", "user", "1234"};
-    private static final String[] CONTRASENAS = {"admin", "user", "1234"};
+    private static final String[] USUARIOS = {"Pedro", "user", "1234"};
+    private static final String[] CONTRASENAS = {"1234", "user", "1234"};
 
+    // Base de datos
+    private HooverDataBase database;
 
     private MainModel model;
 
@@ -75,8 +81,7 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainModel();
 
-        //Controladores de las pestañas
-        clienteController = new ClienteController();
+
 
         Bindings.bindBidirectional(userTextBox.textProperty(), model.nombreProperty());
         Bindings.bindBidirectional(passwordTextBox.textProperty(), model.passProperty());
@@ -84,10 +89,8 @@ public class MainController implements Initializable {
         tabsRoot.setManaged(false);
         tabsRoot.setVisible(false);
 
-
         // Botones
         logInButton.setOnAction(e -> onLogInAction());
-
     }
 
     private void onLogInAction() {
@@ -120,22 +123,28 @@ public class MainController implements Initializable {
         root.setBottom(null);
         root.setCenter(tabsRoot);
 
+
+        //Inicializar la base de datos
+        database = new HooverDataBase(model.getNombre());
+
+        //Controladores de las pestañas
+        clienteController = new ClienteController(database);
+        //clienteController.setDb(database);
+
+        //Añadir las pestañas al controlador principal
+        setTabs();
+        JoovaApp.getPrimaryStage().setMaximized(true);
+
         // Mostrar principal
         tabsRoot.setManaged(true);
         tabsRoot.setVisible(true);
 
-        clientesTab.setContent(clienteController.getRootClientes());
 
-        setTabs();
 
     }
 
     private void setTabs() {
-        /*
-        Sacar el view del nuevo controlador
-        clientesTab.setContent();
-        */
-
+        clientesTab.setContent(clienteController.getRootClientes());
         }
 
     public BorderPane getRoot() {

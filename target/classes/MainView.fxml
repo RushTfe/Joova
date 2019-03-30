@@ -12,26 +12,22 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <TabPane fx:id="tabsRoot" minHeight="300.0" minWidth="650.0" prefHeight="300.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab id="clientesTab" text="Clientes">
+          <Tab id="clientesTab" fx:id="clientesTab" text="Clientes" />
+          <Tab id="productosTab" fx:id="productosTab" text="Productos">
             <content>
               <AnchorPane />
             </content>
           </Tab>
-          <Tab id="productosTab" text="Productos">
-            <content>
-              <AnchorPane />
-            </content>
-          </Tab>
-            <Tab id="ventasTab" text="Ventas">
+            <Tab id="ventasTab" fx:id="ventasTab" text="Ventas">
               <content>
                 <AnchorPane />
               </content>
             </Tab>
-            <Tab id="accionesTab" text="Acciones">
+            <Tab id="accionesTab" fx:id="accionesTab" text="Acciones">
               <content>
                 <AnchorPane>
                      <padding>
@@ -40,7 +36,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab id="estadisticasTab" text="Estadísticas">
+            <Tab id="estadisticasTab" fx:id="estadisticasTab" text="Estadísticas">
               <content>
                 <AnchorPane />
               </content>

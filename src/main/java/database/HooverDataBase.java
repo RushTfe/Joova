@@ -1,5 +1,8 @@
 package database;
 
+import javafx.beans.property.ListProperty;
+import model.ClienteModel;
+
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
@@ -40,7 +43,7 @@ public class HooverDataBase {
             stmnt.setString(3, apellidos);
             stmnt.setString(4, email);
             stmnt.setString(5, tlf);
-            stmnt.setDate(6, Date.valueOf(nacimiento));
+            stmnt.setString(6, nacimiento.toString());
             stmnt.setString(7, direccion);
             stmnt.setString(8, observaciones);
             stmnt.setString(9, genero);
@@ -691,6 +694,40 @@ public class HooverDataBase {
         }
     }
 
+    // CONSULTAS A LA BASE DE DATOS
+
+    public void consultaTodosClientes(ListProperty<ClienteModel> listaClientes) {
+        String query = "SELECT * FROM Cliente";
+        ResultSet rs = null;
+        try {
+            Statement stmnt = conn.createStatement();
+            rs = stmnt.executeQuery(query);
+            int i = 0;
+            try {
+                while (rs.next()) {
+                    String[] nac = rs.getString(6).split("-");
+                    listaClientes.add(new ClienteModel());
+                    listaClientes.get(i).setDni(rs.getString(1));
+                    listaClientes.get(i).setNombre(rs.getString(2));
+                    listaClientes.get(i).setApellidos(rs.getString(3));
+                    listaClientes.get(i).setTelefono(rs.getString(4));
+                    listaClientes.get(i).setEmail(rs.getString(5));
+                    listaClientes.get(i).setFechaNacimiento(LocalDate.of(Integer.valueOf(nac[0]), Integer.valueOf(nac[1]), Integer.valueOf(nac[2])));
+                    listaClientes.get(i).setDireccion(rs.getString(7));
+                    listaClientes.get(i).setObservaciones(rs.getString(8));
+                    listaClientes.get(i).setGenero(rs.getString(9));
+                    listaClientes.get(i).setHuerfano(rs.getBoolean(10));
+                    i++;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //CREACION DE LA BD
 
     /**
@@ -704,7 +741,7 @@ public class HooverDataBase {
                         "Apellidos text NOT NULL," +
                         "Telefono text," +
                         "Email text," +
-                        "Fecha_de_nacimiento text," +
+                        "Fecha_de_nacimiento TEXT," +
                         "Direccion text NOT NULL," +
                         "Observaciones text," +
                         "Genero text NOT NULL," +

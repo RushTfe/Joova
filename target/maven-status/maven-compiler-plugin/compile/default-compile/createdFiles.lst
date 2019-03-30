@@ -1,3 +1,6 @@
 app\JoovaApp.class
-database\HooverDataBase.class
 controller\MainController.class
+controller\ClienteController.class
+model\MainModel.class
+model\ClienteModel.class
+database\HooverDataBase.class
