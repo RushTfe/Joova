@@ -4,3 +4,4 @@ controller\ClienteController.class
 model\MainModel.class
 model\ClienteModel.class
 database\HooverDataBase.class
+controller\ProductoController.class

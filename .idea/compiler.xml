@@ -21,6 +21,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Joova" target="9" />
+      <module name="Producto" target="6" />
+      <module name="ProductoCard" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>
