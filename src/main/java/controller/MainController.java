@@ -31,6 +31,7 @@ public class MainController implements Initializable {
     //Controladores de las pestañas
     private ClienteController clienteController;
     private ProductoController productoController;
+    private VentasController ventasController;
 
     @FXML
     private BorderPane root;
@@ -131,7 +132,14 @@ public class MainController implements Initializable {
         //Controladores de las pestañas
         clienteController = new ClienteController(database);
         productoController = new ProductoController();
-        //clienteController.setDb(database);
+        ventasController = new VentasController();
+
+
+        //Bindeos necesarios DESPUES de crear los controladores
+        model.listaClientesProperty().bind(clienteController.listaClientesProperty());
+        model.listaProductosProperty().bind(productoController.getModel().listaProductosProperty());
+        ventasController.getClientesComboBox().itemsProperty().bind(model.listaClientesProperty());
+
 
         //Añadir las pestañas al controlador principal
         setTabs();
@@ -148,6 +156,7 @@ public class MainController implements Initializable {
     private void setTabs() {
         clientesTab.setContent(clienteController.getRootClientes());
         productosTab.setContent(productoController.getRootProductos());
+        ventasTab.setContent(ventasController.getRootVentas());
         }
 
     public BorderPane getRoot() {

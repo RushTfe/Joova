@@ -116,6 +116,10 @@ public class ClienteController implements Initializable {
         db.consultaTodosClientes(listaClientes);
     }
 
+    public ListProperty<ClienteModel> listaClientesProperty() {
+        return listaClientes;
+    }
+
     public BorderPane getRootClientes() {
         return rootClientes;
     }

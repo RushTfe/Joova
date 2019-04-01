@@ -148,4 +148,9 @@ public class ClienteModel {
     public void setHuerfano(boolean huerfano) {
         this.huerfano.set(huerfano);
     }
+
+    @Override
+    public String toString() {
+        return getNombre() + " " + getApellidos();
+    }
 }

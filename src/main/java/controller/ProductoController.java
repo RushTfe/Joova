@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import model.ProductoModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,8 +31,9 @@ public class ProductoController implements Initializable {
     @FXML
     private Button anadirFiltroButton;
 
+    private ProductoModel model;
+
     public ProductoController() {
-        System.out.println(getClass().getResource("/ProductosView.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ProductosView.fxml"));
         loader.setController(this);
         try {
@@ -43,6 +45,8 @@ public class ProductoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        model = new ProductoModel();
+
         ProductoCardController card = new ProductoCardController();
         card.getModel().setNombreProducto("Aspiradora");
         card.getModel().setPrecio(1952.2);
@@ -70,6 +74,10 @@ public class ProductoController implements Initializable {
 
         cajonProductosVbox.getChildren().addAll(card, card1, card2, card3, card4);
 
+    }
+
+    public ProductoModel getModel() {
+        return model;
     }
 
     public BorderPane getRootProductos() {
