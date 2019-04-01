@@ -46,27 +46,27 @@ public class ProductoController implements Initializable {
         ProductoCardController card = new ProductoCardController();
         card.getModel().setNombreProducto("Aspiradora");
         card.getModel().setPrecio(1952.2);
-        card.getModel().setTipoProducto("Tipo: My Ass");
+        card.getModel().setTipoProducto("Tipo: Aspiradora");
 
         ProductoCardController card1 = new ProductoCardController();
         card1.getModel().setNombreProducto("Aspiradora2");
         card1.getModel().setPrecio(1952.2);
-        card1.getModel().setTipoProducto("Tipo: My Ass");
+        card1.getModel().setTipoProducto("Tipo: Aspiradora");
 
         ProductoCardController card2 = new ProductoCardController();
         card2.getModel().setNombreProducto("Aspiradora3");
         card2.getModel().setPrecio(1952.2);
-        card2.getModel().setTipoProducto("Tipo: My Ass");
+        card2.getModel().setTipoProducto("Tipo: Modulo");
 
         ProductoCardController card3 = new ProductoCardController();
         card3.getModel().setNombreProducto("Aspiradora3");
         card3.getModel().setPrecio(1952.2);
-        card3.getModel().setTipoProducto("Tipo: My Ass");
+        card3.getModel().setTipoProducto("Tipo: Otro");
 
         ProductoCardController card4 = new ProductoCardController();
         card4.getModel().setNombreProducto("Aspiradora3");
         card4.getModel().setPrecio(1952.2);
-        card4.getModel().setTipoProducto("Tipo: My Ass");
+        card4.getModel().setTipoProducto("Tipo: Otro");
 
         cajonProductosVbox.getChildren().addAll(card, card1, card2, card3, card4);
 
