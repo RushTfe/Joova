@@ -10,11 +10,11 @@ import signup.SignUpModel;
 
 public class DialogoNuevoUsuario extends Dialog<SignUpModel> {
     private SignUpController signup;
-    private ButtonType crearButtonType;
+//    private ButtonType crearButtonType;
 
     public DialogoNuevoUsuario() {
         signup = new SignUpController();
-        crearButtonType = new ButtonType("Añadir", ButtonBar.ButtonData.OK_DONE);
+//        crearButtonType = new ButtonType("Añadir", ButtonBar.ButtonData.OK_DONE);
 
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().setContent(signup);

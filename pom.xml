@@ -40,6 +40,12 @@
             <version>0.0.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>JoovaNuevoCliente</groupId>
+            <artifactId>JoovaNuevoCliente</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
     </dependencies>
 
 

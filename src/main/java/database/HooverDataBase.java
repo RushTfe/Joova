@@ -1,5 +1,6 @@
 package database;
 
+import NuevoCliente.NuevoClienteModel;
 import javafx.beans.property.ListProperty;
 import model.ClienteModel;
 
@@ -21,33 +22,24 @@ public class HooverDataBase {
     /**
      * Función específica para insertar clientes en la Base de Datos
      *
-     * @param DNI
-     * @param nombre
-     * @param apellidos
-     * @param email
-     * @param tlf
-     * @param nacimiento
-     * @param direccion
-     * @param observaciones
-     * @param genero
-     * @param huerfano
+     * @param cliente Objeto con los datos del cliente sacado del controlador del cuadro de dialogo
      */
-    public void insertClient(String DNI, String nombre, String apellidos, String email, String tlf, LocalDate nacimiento, String direccion, String observaciones, String genero, Boolean huerfano) {
+    public void insertClient(NuevoClienteModel cliente) {
         //TODO Al crear el modelo, pasaremos como dato un objeto de tipo Cliente, y no todos los datos en bruto. Lo mismo con el resto de tablas.
         String insert = "INSERT INTO Cliente VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
-            stmnt.setString(1, DNI);
-            stmnt.setString(2, nombre);
-            stmnt.setString(3, apellidos);
-            stmnt.setString(4, email);
-            stmnt.setString(5, tlf);
-            stmnt.setString(6, nacimiento.toString());
-            stmnt.setString(7, direccion);
-            stmnt.setString(8, observaciones);
-            stmnt.setString(9, genero);
-            stmnt.setBoolean(10, huerfano);
+            stmnt.setString(1, cliente.getDniCliente());
+            stmnt.setString(2, cliente.getNombreCliente());
+            stmnt.setString(3, cliente.getApellidosCliente());
+            stmnt.setString(4, cliente.getTelefonoCliente());
+            stmnt.setString(5, cliente.getMailCliente());
+            stmnt.setString(6, cliente.getNacimientoCliente().toString());
+            stmnt.setString(7, cliente.getDireccion());
+            stmnt.setString(8, cliente.getObservacionesCliente());
+            stmnt.setString(9, cliente.getGenero());
+            stmnt.setBoolean(10, cliente.isClienteHuefano());
 
             stmnt.executeUpdate();
 

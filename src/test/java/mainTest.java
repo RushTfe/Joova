@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class mainTest {
     public static void main(String[] Args) {
         HooverDataBase db = new HooverDataBase("Pedro");
-
+/*
         //Comentados porque ya están insertados
 
         //Clientes
@@ -88,7 +88,7 @@ public class mainTest {
         db.insertExperienciasClientes(1, "79070458T", false);
         db.insertExperienciasClientes(1, "42240025L", false);
 
-
+*/
 /*
         //PRUEBAS DE BORRADO
 

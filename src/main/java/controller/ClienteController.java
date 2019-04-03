@@ -1,6 +1,9 @@
 package controller;
 
+import NuevoCliente.NuevoClienteController;
+import NuevoCliente.NuevoClienteModel;
 import database.HooverDataBase;
+import dialogs.DialogoNuevoCliente;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -8,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
@@ -20,6 +24,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ClienteController implements Initializable {
@@ -110,9 +115,43 @@ public class ClienteController implements Initializable {
 
         actualizarClientes();
 
+        // Botones
+        anadirClienteButton.setOnAction(e -> onAnadirClienteButton());
+        eliminarClienteButton.setOnAction(e -> onEliminarClienteAction());
+
+    }
+
+    private void onEliminarClienteAction() {
+
+        try {
+            ClienteModel aEliminar = clientTable.getSelectionModel().getSelectedItem();
+
+            Optional<ButtonType> result = MainController.alertaConfirmation("ATENCIÓN", "el siguiente cliente será eliminado", aEliminar.getNombre() + " " + aEliminar.getApellidos());
+
+            if(result.isPresent() && !result.get().getButtonData().isCancelButton()) {
+                db.deleteCliente(aEliminar.getDni());
+                actualizarClientes();
+            }
+
+        } catch (NullPointerException e) {
+            MainController.alertaError("No se ha podido borrar", "No ha seleccionado ninguna celda de la tabla", "Por favor, seleccione arriba al cliente que desea borrar");
+        }
+    }
+
+    private void onAnadirClienteButton() {
+        DialogoNuevoCliente nuevoCliente = new DialogoNuevoCliente();
+
+        Optional<NuevoClienteModel> resul = nuevoCliente.showAndWait();
+
+        if (resul.isPresent()) {
+            db.insertClient(resul.get());
+            actualizarClientes();
+        }
+
     }
 
     public void actualizarClientes() {
+        listaClientes.clear();
         db.consultaTodosClientes(listaClientes);
     }
 
