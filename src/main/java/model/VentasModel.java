@@ -1,6 +1,8 @@
 package model;
 
 import Joova.ProductoCardModel;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringBinding;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,13 +13,27 @@ public class VentasModel {
     private ListProperty<ClienteModel> listaClientes;
     private ListProperty<ProductoCardModel> listaProductos;
     private StringProperty codContrato;
+    private DoubleProperty precioTotal;
     private ObjectProperty<LocalDate> fechaVenta;
     private StringProperty observacionesVenta;
+
+    public double getPrecioTotal() {
+        return precioTotal.get();
+    }
+
+    public DoubleProperty precioTotalProperty() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(double precioTotal) {
+        this.precioTotal.set(precioTotal);
+    }
 
     public VentasModel() {
         listaClientes = new SimpleListProperty<>(this, "listaClientes", FXCollections.observableArrayList());
         listaProductos = new SimpleListProperty<>(this, "listaProductos", FXCollections.observableArrayList());
         codContrato = new SimpleStringProperty(this, "codContrato");
+        precioTotal = new SimpleDoubleProperty(this, "precioTotal", 0.0);
         fechaVenta = new SimpleObjectProperty<>(this, "fechaVenta", LocalDate.now());
         observacionesVenta = new SimpleStringProperty(this, "observacionesVenta");
     }
@@ -80,5 +96,11 @@ public class VentasModel {
 
     public void setListaProductos(ObservableList<ProductoCardModel> listaProductos) {
         this.listaProductos.set(listaProductos);
+    }
+
+    public StringProperty precioAsString() {
+        StringProperty string = new SimpleStringProperty(this, "string", precioTotal.getName());
+        string.bind(Bindings.concat(precioTotal, "€"));
+        return string;
     }
 }

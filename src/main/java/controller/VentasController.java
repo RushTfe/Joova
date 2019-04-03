@@ -65,7 +65,11 @@ public class VentasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         model = new VentasModel();
+
+        // Bindings
+        precioTotalLabel.textProperty().bind(model.precioAsString());
     }
 
     public BorderPane getRootVentas() {
@@ -74,5 +78,9 @@ public class VentasController implements Initializable {
 
     public ComboBox<ClienteModel> getClientesComboBox() {
         return clientesComboBox;
+    }
+
+    public VentasModel getModel() {
+        return model;
     }
 }
