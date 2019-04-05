@@ -3,6 +3,9 @@ package database;
 import NuevoCliente.NuevoClienteModel;
 import javafx.beans.property.ListProperty;
 import model.ClienteModel;
+import model.JoovaUtil;
+import model.PrecioModel;
+import nuevoproducto.NuevoProductoModel;
 
 import java.io.File;
 import java.sql.*;
@@ -17,6 +20,33 @@ public class HooverDataBase {
         createTables();
     }
 
+    // MODIFICACIONES DE LA BD
+
+    /**
+     * Actualiza el cliente seleccionado de la tabla con los datos de entrada recibidos de el dialogo de edicion.
+     */
+    public void updateClient(NuevoClienteModel cliente) {
+        String update = "UPDATE Cliente SET Nombre = ?, Apellidos = ?, Telefono = ?, Email = ?, Fecha_de_nacimiento = ?, Direccion = ?, Observaciones = ?, Genero = ?, Huerfano = ? WHERE DNI = ?";
+
+        try {
+            PreparedStatement stnmt = conn.prepareStatement(update);
+            stnmt.setString(1, cliente.getNombreCliente());
+            stnmt.setString(2, cliente.getApellidosCliente());
+            stnmt.setString(3, cliente.getTelefonoCliente());
+            stnmt.setString(4, cliente.getMailCliente());
+            stnmt.setString(5, cliente.getNacimientoCliente().toString());
+            stnmt.setString(6, cliente.getDireccion());
+            stnmt.setString(7, cliente.getObservacionesCliente());
+            stnmt.setString(8, cliente.getGenero());
+            stnmt.setBoolean(9, cliente.isClienteHuefano());
+            stnmt.setString(10, cliente.getDniCliente());
+
+            stnmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //INSERCIONES A LA BD
 
     /**
@@ -25,7 +55,6 @@ public class HooverDataBase {
      * @param cliente Objeto con los datos del cliente sacado del controlador del cuadro de dialogo
      */
     public void insertClient(NuevoClienteModel cliente) {
-        //TODO Al crear el modelo, pasaremos como dato un objeto de tipo Cliente, y no todos los datos en bruto. Lo mismo con el resto de tablas.
         String insert = "INSERT INTO Cliente VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
@@ -50,31 +79,37 @@ public class HooverDataBase {
     }
 
     /**
-     * Inserta un producto en la base de datos
+     * Inserta un producto en la base de datos. Devuelve el id del producto insertado o -1 si no se inserta
      *
-     * @param nombreArt
-     * @param descripcion
-     * @param tipoProd
-     * @param rutaImagen
+     * @param model Modelo del controlador del dialogo de entrada de nuevos productos. Contiene todos los datos que el usuario quiere insertar/modificar
+     * @return int El codigo del nuevo producto insertado
      */
-    public void insertProduct(String nombreArt, String descripcion, String tipoProd, String rutaImagen) {
-        //TODO Cambiar los parámetros por el objeto
-
+    public int insertProduct(NuevoProductoModel model) {
         String insert = "INSERT INTO Articulos(Nombre_Articulo, Descripcion, Tipo_Producto, Ruta_Imagen) VALUES (?, ?, ?, ?)";
-
+        int i = -1;
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setString(1, nombreArt);
-            stmnt.setString(2, descripcion);
-            stmnt.setString(3, tipoProd);
-            stmnt.setString(4, rutaImagen);
+            stmnt.setString(1, model.getNombreProducto());
+            stmnt.setString(2, model.getDescripcionProducto());
+            stmnt.setString(3, model.getTipoProducto());
+            stmnt.setString(4, model.getDireccionImagen());
 
             stmnt.executeUpdate();
+
+            String select = "SELECT Cod_Articulo from Articulos where Nombre_Articulo = ?";
+            PreparedStatement statement = conn.prepareStatement(select);
+            statement.setString(1, model.getNombreProducto());
+
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+            i = rs.getInt(1);
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return i;
     }
 
     /**
@@ -82,11 +117,9 @@ public class HooverDataBase {
      * <p>
      * La clave de esta tabla es el AutoID.
      *
-     * @param codArticulo
-     * @param precio
-     * @param fecha
+     * @param model Modelo con los valores del precio introducido
      */
-    public void insertPrecio(int codArticulo, float precio, LocalDate fecha) {
+    public void insertPrecio(PrecioModel model) {
         //TODO Cambiar los parámetros al objeto
 
         String insert = "INSERT INTO Historico_Precios values (?, ?, ?)";
@@ -94,9 +127,9 @@ public class HooverDataBase {
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setInt(1, codArticulo);
-            stmnt.setFloat(2, precio);
-            stmnt.setDate(3, Date.valueOf(fecha));
+            stmnt.setInt(1, model.getCodArticulo());
+            stmnt.setDouble(2, model.getPrecioArticulo());
+            stmnt.setDate(3, Date.valueOf(model.getFechaCambio()));
 
             stmnt.executeUpdate();
         } catch (SQLException e) {
@@ -688,35 +721,79 @@ public class HooverDataBase {
 
     // CONSULTAS A LA BASE DE DATOS
 
+    /**
+     * Consulta todos los clientes que hay en la base de datos y los guarda en una lista que esta bindeada a la tabla donde se visualizan los clientes.
+     *
+     * @param listaClientes la lista donde se guardaran los clientes
+     */
     public void consultaTodosClientes(ListProperty<ClienteModel> listaClientes) {
         String query = "SELECT * FROM Cliente";
         ResultSet rs = null;
         try {
             Statement stmnt = conn.createStatement();
             rs = stmnt.executeQuery(query);
-            int i = 0;
+
             try {
-                while (rs.next()) {
-                    String[] nac = rs.getString(6).split("-");
-                    listaClientes.add(new ClienteModel());
-                    listaClientes.get(i).setDni(rs.getString(1));
-                    listaClientes.get(i).setNombre(rs.getString(2));
-                    listaClientes.get(i).setApellidos(rs.getString(3));
-                    listaClientes.get(i).setTelefono(rs.getString(4));
-                    listaClientes.get(i).setEmail(rs.getString(5));
-                    listaClientes.get(i).setFechaNacimiento(LocalDate.of(Integer.valueOf(nac[0]), Integer.valueOf(nac[1]), Integer.valueOf(nac[2])));
-                    listaClientes.get(i).setDireccion(rs.getString(7));
-                    listaClientes.get(i).setObservaciones(rs.getString(8));
-                    listaClientes.get(i).setGenero(rs.getString(9));
-                    listaClientes.get(i).setHuerfano(rs.getBoolean(10));
-                    i++;
-                }
+                fillList(listaClientes, rs);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Consulta todos los clientes de la base de datos que coincidan con el parametro nombre.
+     *
+     * @param listaClientes
+     */
+    public void consultaClientesWhere(ListProperty<ClienteModel> listaClientes, String nombre) {
+        String query = "SELECT * FROM Cliente WHERE DNI LIKE ? OR Nombre LIKE ? or Apellidos LIKE ? or Telefono like ? or Email like ? or Genero like ? or Huerfano like ?";
+        ResultSet rs = null;
+
+        try {
+            String busqueda = "%" + nombre + "%";
+            PreparedStatement stnmt = conn.prepareStatement(query);
+            stnmt.setString(1, busqueda);
+            stnmt.setString(2, busqueda);
+            stnmt.setString(3, busqueda);
+            stnmt.setString(4, busqueda);
+            stnmt.setString(5, busqueda);
+            stnmt.setString(6, busqueda);
+            stnmt.setString(7, busqueda);
+
+            rs = stnmt.executeQuery();
+
+            fillList(listaClientes, rs);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * @param listaClientes
+     * @param rs
+     * @throws SQLException
+     */
+    private void fillList(ListProperty<ClienteModel> listaClientes, ResultSet rs) throws SQLException {
+        int i = 0;
+        while (rs.next()) {
+            listaClientes.add(new ClienteModel());
+            listaClientes.get(i).setDni(rs.getString(1));
+            listaClientes.get(i).setNombre(rs.getString(2));
+            listaClientes.get(i).setApellidos(rs.getString(3));
+            listaClientes.get(i).setTelefono(rs.getString(4));
+            listaClientes.get(i).setEmail(rs.getString(5));
+            listaClientes.get(i).setFechaNacimiento(JoovaUtil.stringToLocalDate(rs.getString(6)));
+            listaClientes.get(i).setDireccion(rs.getString(7));
+            listaClientes.get(i).setObservaciones(rs.getString(8));
+            listaClientes.get(i).setGenero(rs.getString(9));
+            listaClientes.get(i).setHuerfano(rs.getBoolean(10));
+            i++;
         }
     }
 
@@ -775,6 +852,7 @@ public class HooverDataBase {
                         "Cod_Articulo INTEGER NOT NULL," +
                         "Precio REAL NOT NULL," +
                         "Fecha text NOT NULL," +
+                        "PRIMARY KEY (Cod_Articulo, Precio, Fecha)," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE" +
                         ")";
 
@@ -930,6 +1008,7 @@ public class HooverDataBase {
 
     /**
      * Conexion a la BD para consultas externas
+     *
      * @return La conexion propia de la base de datos.
      */
     public Connection getConnection() {

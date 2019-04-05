@@ -152,7 +152,7 @@ public class MainController implements Initializable {
 
         //Controladores de las pestañas
         clienteController = new ClienteController(database);
-        productoController = new ProductoController();
+        productoController = new ProductoController(database);
         ventasController = new VentasController();
         accionesController = new AccionesController();
 
@@ -183,7 +183,7 @@ public class MainController implements Initializable {
 
     public static void alertaError(String titulo, String header, String content) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
-//        alerta.getDialogPane().getStylesheets().addAll("Ruta");
+// TODO        alerta.getDialogPane().getStylesheets().addAll("Ruta");
         alerta.setTitle(titulo);
         alerta.setHeaderText(header);
         alerta.setContentText(content);
@@ -193,7 +193,7 @@ public class MainController implements Initializable {
 
     public static Optional<ButtonType> alertaConfirmation(String titulo, String header, String content) {
         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
-//        alerta.getDialogPane().getStylesheets().addAll("Ruta");
+// TODO       alerta.getDialogPane().getStylesheets().addAll("Ruta");
         alerta.setTitle(titulo);
         alerta.setHeaderText(header);
         alerta.setContentText(content);

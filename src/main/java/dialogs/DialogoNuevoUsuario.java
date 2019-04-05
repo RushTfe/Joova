@@ -18,6 +18,7 @@ public class DialogoNuevoUsuario extends Dialog<SignUpModel> {
 
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().setContent(signup);
+// TODO        getDialogPane().getStylesheets().addAll("Hoja de estilos");
         getDialogPane().lookupButton(ButtonType.OK).disableProperty().bind(signup.getModel().nuevoUserPermitidoProperty());
 
         setResultConverter(dialogButton -> {

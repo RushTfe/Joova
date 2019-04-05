@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Joova.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Joova.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ClientesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ClientesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ClientesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ClientesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ClienteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProductoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProductoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoUsuario.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,6 +71,13 @@
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
         <item name="Articulos: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Pedro" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Historico_Precios: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -111,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="193" column="37" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
+            <state relative-caret-position="524">
+              <caret line="169" column="28" lean-forward="true" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
               <folding>
                 <element signature="method#MainController#0;class#MainController#0" />
                 <element signature="e#1975#2013#0" />
@@ -126,40 +142,27 @@
                 <element signature="e#3645#4024#1" />
                 <element signature="e#3810#3857#1" />
                 <element signature="e#3863#4014#1" />
-                <element signature="method#ocultarLogin#0;class#MainController#0" />
                 <element signature="method#setTabs#0;class#MainController#0" />
                 <element signature="docComment;method#guardarBinario#0;class#MainController#0" />
                 <element signature="method#guardarBinario#0;class#MainController#0" />
-                <element signature="e#6459#7471#1" />
-                <element signature="e#6477#7301#0" />
-                <element signature="e#7334#7386#0" />
-                <element signature="e#7409#7461#0" />
                 <element signature="method#cargarBinario#0;class#MainController#0" />
-                <element signature="e#7574#7969#0" />
-                <element signature="e#7721#7835#0" />
-                <element signature="e#7752#7821#1" />
-                <element signature="e#7859#7959#0" />
-                <element signature="e#8002#8046#0" />
-                <element signature="e#8069#8113#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
+            <state relative-caret-position="85">
+              <caret line="92" column="72" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
               <folding>
-                <element signature="method#ClienteController#0;class#ClienteController#0" />
-                <element signature="e#2077#2115#0" />
-                <element signature="e#2138#2182#0" />
-                <element signature="method#onAnadirClienteButton#0;class#ClienteController#0" />
-                <element signature="e#3835#3877#1" />
-                <element signature="method#actualizarClientes#0;class#ClienteController#0" />
-                <element signature="e#5056#5057#0" expanded="true" />
-                <element signature="e#5134#5135#0" expanded="true" />
+                <element signature="e#930#968#0" />
+                <element signature="e#991#1035#0" />
+                <element signature="e#3264#3265#0" expanded="true" />
+                <element signature="e#3292#3293#0" expanded="true" />
+                <element signature="e#3336#3337#0" expanded="true" />
+                <element signature="e#3372#3373#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,203 +171,90 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="319">
+              <caret line="101" column="62" lean-forward="true" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
               <folding>
+                <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
+                <element signature="docComment;method#updateClient#0;class#HooverDataBase#0" />
+                <element signature="method#updateClient#0;class#HooverDataBase#0" />
                 <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
                 <element signature="method#insertClient#0;class#HooverDataBase#0" />
-                <element signature="e#0#56#1" />
-                <element signature="e#20#56#0" />
-                <element signature="e#26#56#0" />
-                <element signature="e#759#1483#0" />
-                <element signature="e#1693#1737#0" />
-                <element signature="docComment;method#insertProduct#0;class#HooverDataBase#0" />
-                <element signature="method#insertProduct#0;class#HooverDataBase#0" />
-                <element signature="e#0#99#1" />
-                <element signature="e#80#99#0" />
-                <element signature="e#2213#2505#0" />
-                <element signature="e#2529#2573#0" />
                 <element signature="docComment;method#insertPrecio#0;class#HooverDataBase#0" />
-                <element signature="method#insertPrecio#0;class#HooverDataBase#0" />
-                <element signature="e#0#46#1" />
-                <element signature="e#30#46#0" />
-                <element signature="e#3076#3325#0" />
-                <element signature="e#3349#3393#0" />
                 <element signature="docComment;method#insertCompra#0;class#HooverDataBase#0" />
                 <element signature="method#insertCompra#0;class#HooverDataBase#0" />
-                <element signature="e#0#40#1" />
-                <element signature="e#19#40#0" />
-                <element signature="e#25#40#0" />
-                <element signature="e#3848#4183#0" />
-                <element signature="e#4207#4251#0" />
                 <element signature="docComment;method#insertDetalleCompra#0;class#HooverDataBase#0" />
                 <element signature="method#insertDetalleCompra#0;class#HooverDataBase#0" />
-                <element signature="e#0#42#1" />
-                <element signature="e#27#42#0" />
-                <element signature="e#4614#4854#0" />
-                <element signature="e#4878#4922#0" />
                 <element signature="docComment;method#insertTipoPago#0;class#HooverDataBase#0" />
                 <element signature="method#insertTipoPago#0;class#HooverDataBase#0" />
-                <element signature="e#0#77#1" />
-                <element signature="e#64#77#0" />
-                <element signature="e#5312#5515#0" />
-                <element signature="e#5539#5583#0" />
                 <element signature="docComment;method#insertInteresCliente#0;class#HooverDataBase#0" />
                 <element signature="method#insertInteresCliente#0;class#HooverDataBase#0" />
-                <element signature="e#0#51#1" />
-                <element signature="e#32#51#0" />
-                <element signature="e#6148#6439#0" />
-                <element signature="e#6463#6507#0" />
                 <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
                 <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
-                <element signature="e#0#101#1" />
-                <element signature="e#79#101#0" />
-                <element signature="e#86#101#0" />
-                <element signature="e#7076#7422#0" />
-                <element signature="e#7446#7490#0" />
                 <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
                 <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
-                <element signature="e#0#77#1" />
-                <element signature="e#61#77#0" />
-                <element signature="e#7950#8210#0" />
-                <element signature="e#8234#8278#0" />
                 <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
                 <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
-                <element signature="e#0#55#1" />
-                <element signature="e#8570#8738#0" />
-                <element signature="e#8762#8806#0" />
                 <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
                 <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="e#0#125#1" />
-                <element signature="e#103#125#0" />
-                <element signature="e#110#125#0" />
-                <element signature="e#9386#9735#0" />
-                <element signature="e#9759#9803#0" />
                 <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
                 <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-                <element signature="e#0#63#1" />
-                <element signature="e#41#63#0" />
-                <element signature="e#48#63#0" />
-                <element signature="e#10322#10667#0" />
-                <element signature="e#10691#10735#0" />
                 <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
                 <element signature="method#insertExperiencias#0;class#HooverDataBase#0" />
-                <element signature="e#0#74#1" />
-                <element signature="e#58#74#0" />
-                <element signature="e#11129#11388#0" />
-                <element signature="e#11412#11456#0" />
                 <element signature="docComment;method#insertExperienciasClientes#0;class#HooverDataBase#0" />
                 <element signature="method#insertExperienciasClientes#0;class#HooverDataBase#0" />
-                <element signature="e#0#48#1" />
-                <element signature="e#33#48#0" />
-                <element signature="e#11860#12110#0" />
-                <element signature="e#12134#12178#0" />
                 <element signature="docComment;method#deleteCliente#0;class#HooverDataBase#0" />
                 <element signature="method#deleteCliente#0;class#HooverDataBase#0" />
-                <element signature="e#0#33#1" />
-                <element signature="e#12532#12687#0" />
-                <element signature="e#12711#12755#0" />
                 <element signature="docComment;method#deleteCompra#0;class#HooverDataBase#0" />
                 <element signature="method#deleteCompra#0;class#HooverDataBase#0" />
-                <element signature="e#0#39#1" />
-                <element signature="e#13007#13168#0" />
-                <element signature="e#13192#13236#0" />
                 <element signature="docComment;method#deleteDetalleCompra#0;class#HooverDataBase#0" />
                 <element signature="method#deleteDetalleCompra#0;class#HooverDataBase#0" />
-                <element signature="e#0#68#1" />
-                <element signature="e#13641#13844#0" />
-                <element signature="e#13868#13912#0" />
                 <element signature="docComment;method#deleteArticulo#0;class#HooverDataBase#0" />
                 <element signature="method#deleteArticulo#0;class#HooverDataBase#0" />
-                <element signature="e#0#44#1" />
-                <element signature="e#14182#14342#0" />
-                <element signature="e#14366#14410#0" />
                 <element signature="docComment;method#deleteTipoPago#0;class#HooverDataBase#0" />
                 <element signature="method#deleteTipoPago#0;class#HooverDataBase#0" />
-                <element signature="e#0#45#1" />
-                <element signature="e#14805#14964#0" />
-                <element signature="e#14988#15032#0" />
                 <element signature="docComment;method#deletePrecio#0;class#HooverDataBase#0" />
                 <element signature="method#deletePrecio#0;class#HooverDataBase#0" />
-                <element signature="e#0#45#1" />
-                <element signature="e#15283#15440#0" />
-                <element signature="e#15464#15508#0" />
                 <element signature="docComment;method#deleteInteres#0;class#HooverDataBase#0" />
                 <element signature="method#deleteInteres#0;class#HooverDataBase#0" />
-                <element signature="e#0#74#1" />
-                <element signature="e#15831#16034#0" />
-                <element signature="e#16058#16102#0" />
                 <element signature="docComment;method#deletePresentacion#0;class#HooverDataBase#0" />
                 <element signature="method#deletePresentacion#0;class#HooverDataBase#0" />
-                <element signature="e#0#51#1" />
-                <element signature="e#16373#16536#0" />
-                <element signature="e#16560#16604#0" />
                 <element signature="docComment;method#deletePuestaMarcha#0;class#HooverDataBase#0" />
                 <element signature="method#deletePuestaMarcha#0;class#HooverDataBase#0" />
-                <element signature="e#0#52#1" />
-                <element signature="e#16876#17039#0" />
-                <element signature="e#17063#17107#0" />
                 <element signature="docComment;method#deleteTipoEvento#0;class#HooverDataBase#0" />
                 <element signature="method#deleteTipoEvento#0;class#HooverDataBase#0" />
-                <element signature="e#0#49#1" />
-                <element signature="e#17546#17707#0" />
-                <element signature="e#17731#17775#0" />
                 <element signature="docComment;method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
                 <element signature="method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-                <element signature="e#0#90#1" />
-                <element signature="e#18156#18365#0" />
-                <element signature="e#18389#18433#0" />
                 <element signature="docComment;method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
                 <element signature="method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
-                <element signature="e#0#61#1" />
-                <element signature="e#18729#18894#0" />
-                <element signature="e#18918#18962#0" />
                 <element signature="docComment;method#deleteExperienciasCliente#0;class#HooverDataBase#0" />
                 <element signature="method#deleteExperienciasCliente#0;class#HooverDataBase#0" />
-                <element signature="e#0#78#1" />
-                <element signature="e#19314#19520#0" />
-                <element signature="e#19544#19588#0" />
                 <element signature="docComment;method#deleteExperiencia#0;class#HooverDataBase#0" />
                 <element signature="method#deleteExperiencia#0;class#HooverDataBase#0" />
-                <element signature="e#0#49#1" />
-                <element signature="e#19856#20018#0" />
-                <element signature="e#20042#20086#0" />
+                <element signature="docComment;method#consultaTodosClientes#0;class#HooverDataBase#0" />
                 <element signature="method#consultaTodosClientes#0;class#HooverDataBase#0" />
-                <element signature="e#0#21#2" />
-                <element signature="e#20302#21530#0" />
-                <element signature="e#20441#21443#0" />
-                <element signature="e#20477#21429#1" />
-                <element signature="e#21467#21519#0" />
-                <element signature="e#21554#21598#0" />
+                <element signature="docComment;method#consultaClientesWhere#0;class#HooverDataBase#0" />
+                <element signature="method#consultaClientesWhere#0;class#HooverDataBase#0" />
+                <element signature="docComment;method#fillList#0;class#HooverDataBase#0" />
+                <element signature="method#fillList#0;class#HooverDataBase#0" />
                 <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
                 <element signature="method#createTables#0;class#HooverDataBase#0" />
-                <element signature="n#Cliente#0" />
-                <element signature="n#Compra#0" />
-                <element signature="n#Detalle_Compra#0" />
-                <element signature="n#Articulos#0" />
-                <element signature="n#Historico_Precios#0" />
-                <element signature="n#Tipo_Pago#0" />
-                <element signature="n#Intereses_Articulos#0" />
-                <element signature="n#Presentacion#0" />
-                <element signature="n#PuestaMarcha#0" />
-                <element signature="n#Acciones_Especiales_Clientes#0" />
-                <element signature="n#Acciones_Especiales#0" />
-                <element signature="n#Tipo_Evento#0" />
-                <element signature="n#Cliente_Experiencias#0" />
-                <element signature="n#Experiencia#0" />
-                <element signature="e#28694#29533#0" />
-                <element signature="e#29557#29601#0" />
                 <element signature="docComment;method#createDatabase#0;class#HooverDataBase#0" />
                 <element signature="method#createDatabase#0;class#HooverDataBase#0" />
-                <element signature="e#30070#30110#1" />
-                <element signature="e#30301#30576#0" />
-                <element signature="e#30386#30566#1" />
-                <element signature="e#30600#30644#0" />
-                <element signature="e#30658#30918#0" />
-                <element signature="e#0#24#1" />
-                <element signature="e#30942#30986#0" />
                 <element signature="docComment;method#getConnection#0;class#HooverDataBase#0" />
-                <element signature="e#31348#31376#1" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#981#982#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -412,10 +302,8 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ClientesView.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ProductosView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/model/ClienteModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/MainModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ProductoModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/VentasView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/model/VentasModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/VentasController.java" />
@@ -423,13 +311,20 @@
         <option value="$PROJECT_DIR$/src/main/java/model/AccionesModel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/AccionesView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/JoovaUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/ClienteModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" />
-        <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/25d617e2-87b1-476b-8045-f6a65f6c55af/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/model/PrecioModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" />
       </list>
     </option>
   </component>
@@ -465,8 +360,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -479,6 +374,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -510,7 +406,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
@@ -518,7 +414,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
@@ -533,15 +429,10 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -559,9 +450,10 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554328031708" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554386303272" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProductoCard" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -737,12 +629,13 @@
       <workItem from="1554137019516" duration="7000" />
       <workItem from="1554137041283" duration="18159000" />
       <workItem from="1554276824504" duration="2156000" />
-      <workItem from="1554310747840" duration="11791000" />
+      <workItem from="1554310747840" duration="12062000" />
+      <workItem from="1554361834058" duration="21487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120064000" />
+    <option name="totallyTimeSpent" value="141822000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -757,7 +650,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.2322239" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23600605" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -765,9 +658,9 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.61030596" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20611916" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4347826" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.60986066" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38863286" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5217391" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
@@ -777,17 +670,17 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32850242" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.35909823" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3590568" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.3268921" />
       <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.32850242" />
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.3279743" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.19894099" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.30862328" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
@@ -796,7 +689,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.2322239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.14072494" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -804,9 +697,9 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.61030596" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20611916" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4347826" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.60986066" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37942123" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4340836" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
@@ -821,12 +714,12 @@
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.3268921" />
       <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.32850242" />
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.3279743" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.19894099" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1988273" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
@@ -842,35 +735,23 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java</url>
+          <line>91</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Cliente_Experiencias" />
-    <entry file="das://82efcfaa-edcd-42d1-8137-e26384db178c/schema/main/table/Experiencia" />
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/sqlite_master" />
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente_Experiencias" />
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Articulos" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/ClientesView.fxml" />
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Experiencia" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Acciones-ExperienciasView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="185" selection-start-line="11" selection-start-column="185" selection-end-line="11" selection-end-column="185" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Acciones-AccionesEspecialesView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Detalle_Compra" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/app/JoovaApp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -892,23 +773,22 @@
     </entry>
     <entry file="das://f6b1a2ca-1ccf-480f-875f-b66c299794e7/schema/main/table/Cliente" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ClientesView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://83499ebb-ad00-4b36-9582-c50f6f1144b0/schema/main/table/Cliente" />
-    <entry file="das://25d617e2-87b1-476b-8045-f6a65f6c55af/schema/main/table/Cliente" />
     <entry file="jar://$MAVEN_REPOSITORY$/Joova/ProductoCard/ProductoCard/1.0.0/ProductoCard-1.0.0.jar!/ProductoCardController.class" />
     <entry file="uml://MAVEN/Joova:Joova:0.0.1">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -941,12 +821,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ProductosView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="146" selection-start-line="10" selection-start-column="146" selection-end-line="10" selection-end-column="146" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1703,27 +1583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ProductoCard/ProductoCard/1.0.0/ProductoCard-1.0.0.jar!/Joova/ProductoCardController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClienteModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1521">
-          <caret line="153" column="49" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#3661#3662#0" expanded="true" />
-            <element signature="e#3718#3719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/ProductoModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1738,12 +1597,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/VentasView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="122" selection-start-line="14" selection-start-column="122" selection-end-line="14" selection-end-column="122" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/VentasModel.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1824,12 +1683,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/AccionesView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="126" selection-start-line="11" selection-start-column="126" selection-end-line="11" selection-end-column="126" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/com/sun/glass/ui/win/WinApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1862,19 +1721,6 @@
             <element signature="e#875#876#0" expanded="true" />
             <element signature="e#933#934#0" expanded="true" />
             <element signature="e#986#987#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-          <folding>
-            <element signature="method#ProductoController#0;class#ProductoController#0" />
-            <element signature="e#930#968#0" />
-            <element signature="e#991#1035#0" />
-            <element signature="method#initialize#0;class#ProductoController#0" />
           </folding>
         </state>
       </provider>
@@ -1927,13 +1773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
@@ -1944,240 +1783,221 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/JoovaNuevoCliente/JoovaNuevoCliente/0.0.1/JoovaNuevoCliente-0.0.1.jar!/NuevoCliente/NuevoClienteController.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="102">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/JoovaUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClienteModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/beans/property/StringPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#2617#2618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://25d617e2-87b1-476b-8045-f6a65f6c55af/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="208" column="28" lean-forward="true" selection-start-line="208" selection-start-column="28" selection-end-line="208" selection-end-column="28" />
+          <folding>
+            <element signature="method#ClienteController#0;class#ClienteController#0" />
+            <element signature="e#2263#2301#0" />
+            <element signature="e#2324#2368#0" />
+            <element signature="method#initialize#0;class#ClienteController#0" />
+            <element signature="method#onBusquedaRealizada#0;class#ClienteController#0" />
+            <element signature="e#5712#5738#1" />
+            <element signature="e#4151#4258#1" />
+            <element signature="method#onAnadirClienteButton#0;class#ClienteController#0" />
+            <element signature="e#4712#4799#1" />
+            <element signature="method#actualizarClientes#0;class#ClienteController#0" />
+            <element signature="e#7774#7775#0" expanded="true" />
+            <element signature="e#7852#7853#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="306">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://25d617e2-87b1-476b-8045-f6a65f6c55af/schema/main/table/Historico_Precios">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/25d617e2-87b1-476b-8045-f6a65f6c55af/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/JoovaNuevoProducto/JoovaNuevoProducto/0.0.1/JoovaNuevoProducto-0.0.1.jar!/nuevoproducto/NuevoProductoModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+          <folding>
+            <element signature="e#2319#2320#0" expanded="true" />
+            <element signature="e#2367#2368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/PrecioModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding>
+            <element signature="method#PrecioModel#0;class#PrecioModel#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1892">
+        <state relative-caret-position="17">
           <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ProductoCard/ProductoCard/1.0.0/ProductoCard-1.0.0.jar!/Joova/ProductoCardController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="319">
+          <caret line="101" column="62" lean-forward="true" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
           <folding>
+            <element signature="method#HooverDataBase#0;class#HooverDataBase#0" />
+            <element signature="docComment;method#updateClient#0;class#HooverDataBase#0" />
+            <element signature="method#updateClient#0;class#HooverDataBase#0" />
             <element signature="docComment;method#insertClient#0;class#HooverDataBase#0" />
             <element signature="method#insertClient#0;class#HooverDataBase#0" />
-            <element signature="e#0#56#1" />
-            <element signature="e#20#56#0" />
-            <element signature="e#26#56#0" />
-            <element signature="e#759#1483#0" />
-            <element signature="e#1693#1737#0" />
-            <element signature="docComment;method#insertProduct#0;class#HooverDataBase#0" />
-            <element signature="method#insertProduct#0;class#HooverDataBase#0" />
-            <element signature="e#0#99#1" />
-            <element signature="e#80#99#0" />
-            <element signature="e#2213#2505#0" />
-            <element signature="e#2529#2573#0" />
             <element signature="docComment;method#insertPrecio#0;class#HooverDataBase#0" />
-            <element signature="method#insertPrecio#0;class#HooverDataBase#0" />
-            <element signature="e#0#46#1" />
-            <element signature="e#30#46#0" />
-            <element signature="e#3076#3325#0" />
-            <element signature="e#3349#3393#0" />
             <element signature="docComment;method#insertCompra#0;class#HooverDataBase#0" />
             <element signature="method#insertCompra#0;class#HooverDataBase#0" />
-            <element signature="e#0#40#1" />
-            <element signature="e#19#40#0" />
-            <element signature="e#25#40#0" />
-            <element signature="e#3848#4183#0" />
-            <element signature="e#4207#4251#0" />
             <element signature="docComment;method#insertDetalleCompra#0;class#HooverDataBase#0" />
             <element signature="method#insertDetalleCompra#0;class#HooverDataBase#0" />
-            <element signature="e#0#42#1" />
-            <element signature="e#27#42#0" />
-            <element signature="e#4614#4854#0" />
-            <element signature="e#4878#4922#0" />
             <element signature="docComment;method#insertTipoPago#0;class#HooverDataBase#0" />
             <element signature="method#insertTipoPago#0;class#HooverDataBase#0" />
-            <element signature="e#0#77#1" />
-            <element signature="e#64#77#0" />
-            <element signature="e#5312#5515#0" />
-            <element signature="e#5539#5583#0" />
             <element signature="docComment;method#insertInteresCliente#0;class#HooverDataBase#0" />
             <element signature="method#insertInteresCliente#0;class#HooverDataBase#0" />
-            <element signature="e#0#51#1" />
-            <element signature="e#32#51#0" />
-            <element signature="e#6148#6439#0" />
-            <element signature="e#6463#6507#0" />
             <element signature="docComment;method#insertPresentacion#0;class#HooverDataBase#0" />
             <element signature="method#insertPresentacion#0;class#HooverDataBase#0" />
-            <element signature="e#0#101#1" />
-            <element signature="e#79#101#0" />
-            <element signature="e#86#101#0" />
-            <element signature="e#7076#7422#0" />
-            <element signature="e#7446#7490#0" />
             <element signature="docComment;method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
             <element signature="method#insertPuestaEnMarcha#0;class#HooverDataBase#0" />
-            <element signature="e#0#77#1" />
-            <element signature="e#61#77#0" />
-            <element signature="e#7950#8210#0" />
-            <element signature="e#8234#8278#0" />
             <element signature="docComment;method#insertTipoEvento#0;class#HooverDataBase#0" />
             <element signature="method#insertTipoEvento#0;class#HooverDataBase#0" />
-            <element signature="e#0#55#1" />
-            <element signature="e#8570#8738#0" />
-            <element signature="e#8762#8806#0" />
             <element signature="docComment;method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
             <element signature="method#insertAccionesEspeciales#0;class#HooverDataBase#0" />
-            <element signature="e#0#125#1" />
-            <element signature="e#103#125#0" />
-            <element signature="e#110#125#0" />
-            <element signature="e#9386#9735#0" />
-            <element signature="e#9759#9803#0" />
             <element signature="docComment;method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
             <element signature="method#insertAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-            <element signature="e#0#63#1" />
-            <element signature="e#41#63#0" />
-            <element signature="e#48#63#0" />
-            <element signature="e#10322#10667#0" />
-            <element signature="e#10691#10735#0" />
             <element signature="docComment;method#insertExperiencias#0;class#HooverDataBase#0" />
             <element signature="method#insertExperiencias#0;class#HooverDataBase#0" />
-            <element signature="e#0#74#1" />
-            <element signature="e#58#74#0" />
-            <element signature="e#11129#11388#0" />
-            <element signature="e#11412#11456#0" />
             <element signature="docComment;method#insertExperienciasClientes#0;class#HooverDataBase#0" />
             <element signature="method#insertExperienciasClientes#0;class#HooverDataBase#0" />
-            <element signature="e#0#48#1" />
-            <element signature="e#33#48#0" />
-            <element signature="e#11860#12110#0" />
-            <element signature="e#12134#12178#0" />
             <element signature="docComment;method#deleteCliente#0;class#HooverDataBase#0" />
             <element signature="method#deleteCliente#0;class#HooverDataBase#0" />
-            <element signature="e#0#33#1" />
-            <element signature="e#12532#12687#0" />
-            <element signature="e#12711#12755#0" />
             <element signature="docComment;method#deleteCompra#0;class#HooverDataBase#0" />
             <element signature="method#deleteCompra#0;class#HooverDataBase#0" />
-            <element signature="e#0#39#1" />
-            <element signature="e#13007#13168#0" />
-            <element signature="e#13192#13236#0" />
             <element signature="docComment;method#deleteDetalleCompra#0;class#HooverDataBase#0" />
             <element signature="method#deleteDetalleCompra#0;class#HooverDataBase#0" />
-            <element signature="e#0#68#1" />
-            <element signature="e#13641#13844#0" />
-            <element signature="e#13868#13912#0" />
             <element signature="docComment;method#deleteArticulo#0;class#HooverDataBase#0" />
             <element signature="method#deleteArticulo#0;class#HooverDataBase#0" />
-            <element signature="e#0#44#1" />
-            <element signature="e#14182#14342#0" />
-            <element signature="e#14366#14410#0" />
             <element signature="docComment;method#deleteTipoPago#0;class#HooverDataBase#0" />
             <element signature="method#deleteTipoPago#0;class#HooverDataBase#0" />
-            <element signature="e#0#45#1" />
-            <element signature="e#14805#14964#0" />
-            <element signature="e#14988#15032#0" />
             <element signature="docComment;method#deletePrecio#0;class#HooverDataBase#0" />
             <element signature="method#deletePrecio#0;class#HooverDataBase#0" />
-            <element signature="e#0#45#1" />
-            <element signature="e#15283#15440#0" />
-            <element signature="e#15464#15508#0" />
             <element signature="docComment;method#deleteInteres#0;class#HooverDataBase#0" />
             <element signature="method#deleteInteres#0;class#HooverDataBase#0" />
-            <element signature="e#0#74#1" />
-            <element signature="e#15831#16034#0" />
-            <element signature="e#16058#16102#0" />
             <element signature="docComment;method#deletePresentacion#0;class#HooverDataBase#0" />
             <element signature="method#deletePresentacion#0;class#HooverDataBase#0" />
-            <element signature="e#0#51#1" />
-            <element signature="e#16373#16536#0" />
-            <element signature="e#16560#16604#0" />
             <element signature="docComment;method#deletePuestaMarcha#0;class#HooverDataBase#0" />
             <element signature="method#deletePuestaMarcha#0;class#HooverDataBase#0" />
-            <element signature="e#0#52#1" />
-            <element signature="e#16876#17039#0" />
-            <element signature="e#17063#17107#0" />
             <element signature="docComment;method#deleteTipoEvento#0;class#HooverDataBase#0" />
             <element signature="method#deleteTipoEvento#0;class#HooverDataBase#0" />
-            <element signature="e#0#49#1" />
-            <element signature="e#17546#17707#0" />
-            <element signature="e#17731#17775#0" />
             <element signature="docComment;method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
             <element signature="method#deleteAccionesEspecialesClientes#0;class#HooverDataBase#0" />
-            <element signature="e#0#90#1" />
-            <element signature="e#18156#18365#0" />
-            <element signature="e#18389#18433#0" />
             <element signature="docComment;method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
             <element signature="method#deleteAccionesEspeciales#0;class#HooverDataBase#0" />
-            <element signature="e#0#61#1" />
-            <element signature="e#18729#18894#0" />
-            <element signature="e#18918#18962#0" />
             <element signature="docComment;method#deleteExperienciasCliente#0;class#HooverDataBase#0" />
             <element signature="method#deleteExperienciasCliente#0;class#HooverDataBase#0" />
-            <element signature="e#0#78#1" />
-            <element signature="e#19314#19520#0" />
-            <element signature="e#19544#19588#0" />
             <element signature="docComment;method#deleteExperiencia#0;class#HooverDataBase#0" />
             <element signature="method#deleteExperiencia#0;class#HooverDataBase#0" />
-            <element signature="e#0#49#1" />
-            <element signature="e#19856#20018#0" />
-            <element signature="e#20042#20086#0" />
+            <element signature="docComment;method#consultaTodosClientes#0;class#HooverDataBase#0" />
             <element signature="method#consultaTodosClientes#0;class#HooverDataBase#0" />
-            <element signature="e#0#21#2" />
-            <element signature="e#20302#21530#0" />
-            <element signature="e#20441#21443#0" />
-            <element signature="e#20477#21429#1" />
-            <element signature="e#21467#21519#0" />
-            <element signature="e#21554#21598#0" />
+            <element signature="docComment;method#consultaClientesWhere#0;class#HooverDataBase#0" />
+            <element signature="method#consultaClientesWhere#0;class#HooverDataBase#0" />
+            <element signature="docComment;method#fillList#0;class#HooverDataBase#0" />
+            <element signature="method#fillList#0;class#HooverDataBase#0" />
             <element signature="docComment;method#createTables#0;class#HooverDataBase#0" />
             <element signature="method#createTables#0;class#HooverDataBase#0" />
-            <element signature="n#Cliente#0" />
-            <element signature="n#Compra#0" />
-            <element signature="n#Detalle_Compra#0" />
-            <element signature="n#Articulos#0" />
-            <element signature="n#Historico_Precios#0" />
-            <element signature="n#Tipo_Pago#0" />
-            <element signature="n#Intereses_Articulos#0" />
-            <element signature="n#Presentacion#0" />
-            <element signature="n#PuestaMarcha#0" />
-            <element signature="n#Acciones_Especiales_Clientes#0" />
-            <element signature="n#Acciones_Especiales#0" />
-            <element signature="n#Tipo_Evento#0" />
-            <element signature="n#Cliente_Experiencias#0" />
-            <element signature="n#Experiencia#0" />
-            <element signature="e#28694#29533#0" />
-            <element signature="e#29557#29601#0" />
             <element signature="docComment;method#createDatabase#0;class#HooverDataBase#0" />
             <element signature="method#createDatabase#0;class#HooverDataBase#0" />
-            <element signature="e#30070#30110#1" />
-            <element signature="e#30301#30576#0" />
-            <element signature="e#30386#30566#1" />
-            <element signature="e#30600#30644#0" />
-            <element signature="e#30658#30918#0" />
-            <element signature="e#0#24#1" />
-            <element signature="e#30942#30986#0" />
             <element signature="docComment;method#getConnection#0;class#HooverDataBase#0" />
-            <element signature="e#31348#31376#1" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b0aa6149-9f7d-4055-ab3b-0eb7ca021b0c/schema/main/table/Historico_Precios">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="193" column="37" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
+        <state relative-caret-position="524">
+          <caret line="169" column="28" lean-forward="true" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
           <folding>
             <element signature="method#MainController#0;class#MainController#0" />
             <element signature="e#1975#2013#0" />
@@ -2191,38 +2011,54 @@
             <element signature="e#3645#4024#1" />
             <element signature="e#3810#3857#1" />
             <element signature="e#3863#4014#1" />
-            <element signature="method#ocultarLogin#0;class#MainController#0" />
             <element signature="method#setTabs#0;class#MainController#0" />
             <element signature="docComment;method#guardarBinario#0;class#MainController#0" />
             <element signature="method#guardarBinario#0;class#MainController#0" />
-            <element signature="e#6459#7471#1" />
-            <element signature="e#6477#7301#0" />
-            <element signature="e#7334#7386#0" />
-            <element signature="e#7409#7461#0" />
             <element signature="method#cargarBinario#0;class#MainController#0" />
-            <element signature="e#7574#7969#0" />
-            <element signature="e#7721#7835#0" />
-            <element signature="e#7752#7821#1" />
-            <element signature="e#7859#7959#0" />
-            <element signature="e#8002#8046#0" />
-            <element signature="e#8069#8113#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="method#ClienteController#0;class#ClienteController#0" />
-            <element signature="e#2077#2115#0" />
-            <element signature="e#2138#2182#0" />
-            <element signature="method#onAnadirClienteButton#0;class#ClienteController#0" />
-            <element signature="e#3835#3877#1" />
-            <element signature="method#actualizarClientes#0;class#ClienteController#0" />
-            <element signature="e#5056#5057#0" expanded="true" />
-            <element signature="e#5134#5135#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="92" column="72" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
+          <folding>
+            <element signature="e#930#968#0" />
+            <element signature="e#991#1035#0" />
+            <element signature="e#3264#3265#0" expanded="true" />
+            <element signature="e#3292#3293#0" expanded="true" />
+            <element signature="e#3336#3337#0" expanded="true" />
+            <element signature="e#3372#3373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b0aa6149-9f7d-4055-ab3b-0eb7ca021b0c/schema/main/table/Articulos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#981#982#0" expanded="true" />
           </folding>
         </state>
       </provider>

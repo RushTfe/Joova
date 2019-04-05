@@ -1,28 +1,22 @@
 package controller;
 
-import NuevoCliente.NuevoClienteController;
 import NuevoCliente.NuevoClienteModel;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoCliente;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import model.ClienteModel;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -79,7 +73,9 @@ public class ClienteController implements Initializable {
     private Button modificarClienteButton;
 
     @FXML
-    private Button buscarClienteButton;
+    private TextField busquedaCliente;
+
+    private StringProperty busquedaClienteProperty;
 
 
     public ClienteController(HooverDataBase db) {
@@ -97,8 +93,9 @@ public class ClienteController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         listaClientes = new SimpleListProperty<>(this, "listaClientes", FXCollections.observableArrayList());
+        busquedaClienteProperty = new SimpleStringProperty(this, "busquedaClienteProperty");
 
-        // Preparación de la tabla
+        // PREPARACION DE LA TABLA
         dniColumn.setCellValueFactory(v -> v.getValue().dniProperty());
         nombreColumn.setCellValueFactory(v -> v.getValue().nombreProperty());
         apellidoColumn.setCellValueFactory(v -> v.getValue().apellidosProperty());
@@ -110,14 +107,63 @@ public class ClienteController implements Initializable {
         generoColumn.setCellValueFactory(v -> v.getValue().generoProperty());
         huerfanoColumn.setCellValueFactory(v -> v.getValue().huerfanoProperty());
 
-        //Bindeo de la tabla a la lista de objetos
+        //BINDEO DE LA TABLA A LA LISTA
         clientTable.itemsProperty().bind(listaClientes);
+
+        // BINDEO DE EL PROPERTY DE LA BUSQUEDA
+        busquedaClienteProperty.bind(busquedaCliente.textProperty());
 
         actualizarClientes();
 
-        // Botones
+        // BOTONES
         anadirClienteButton.setOnAction(e -> onAnadirClienteButton());
         eliminarClienteButton.setOnAction(e -> onEliminarClienteAction());
+        modificarClienteButton.setOnAction(e -> onModificarAction());
+
+        // LISTENERS
+        busquedaClienteProperty.addListener(e -> onBusquedaRealizada());
+
+    }
+
+    private void onBusquedaRealizada() {
+        listaClientes.clear();
+        db.consultaClientesWhere(listaClientes, busquedaClienteProperty.get());
+    }
+
+    private void onModificarAction() {
+        try {
+            DialogoNuevoCliente aModificar = new DialogoNuevoCliente();
+            ClienteModel clienteSeleccionado = clientTable.getSelectionModel().getSelectedItem();
+
+            // Establecemos los valores que habran dentro del dialogo, correspondientes a la fila que marquemos de la tabla.
+            aModificar.getDNIField().setDisable(true);
+            aModificar.getNuevoClienteModel().setDniCliente(clienteSeleccionado.getDni());
+            aModificar.getNuevoClienteModel().setNombreCliente(clienteSeleccionado.getNombre());
+            aModificar.getNuevoClienteModel().setApellidosCliente(clienteSeleccionado.getApellidos());
+            aModificar.getNuevoClienteModel().setTelefonoCliente(clienteSeleccionado.getTelefono());
+            aModificar.getNuevoClienteModel().setMailCliente(clienteSeleccionado.getEmail());
+            aModificar.getNuevoClienteModel().setNacimientoCliente(clienteSeleccionado.getFechaNacimiento());
+            aModificar.getNuevoClienteModel().setDireccion(clienteSeleccionado.getDireccion());
+            aModificar.getNuevoClienteModel().setObservacionesCliente(clienteSeleccionado.getObservaciones());
+            aModificar.getNuevoClienteModel().setClienteHuefano(clienteSeleccionado.isHuerfano());
+
+            // Trabajamos directamente sobre la vista porque esta el bindeo establecido desde el otro proyecto. Se podr;ia desbindear y volver a bindear, pero veo esto mas comodo.
+            if ("Mujer".equals(clienteSeleccionado.getGenero()))
+                aModificar.getController().getMujerRadioButton().setSelected(true);
+            else if ("Hombre".equals(clienteSeleccionado.getGenero()))
+                aModificar.getController().getHombreRadioButton().setSelected(true);
+            else
+                aModificar.getController().getOtrosRadioButton().setSelected(true);
+
+            Optional<NuevoClienteModel> resul = aModificar.showAndWait();
+
+            if (resul.isPresent()) {
+                db.updateClient(resul.get());
+                actualizarClientes();
+            }
+        } catch (NullPointerException e) {
+            MainController.alertaError("No se ha podido modificar", "No ha seleccionado ninguna celda de la tabla", "Por favor, seleccione arriba al cliente que desea modificar");
+        }
 
     }
 

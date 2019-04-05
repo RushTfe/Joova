@@ -15,5 +15,6 @@
     <orderEntry type="library" name="Maven: ProductoCard:ProductoCard:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: JoovaSignUp:JoovaSignUp:0.0.1" level="project" />
     <orderEntry type="library" name="Maven: JoovaNuevoCliente:JoovaNuevoCliente:0.0.1" level="project" />
+    <orderEntry type="library" name="Maven: JoovaNuevoProducto:JoovaNuevoProducto:0.0.1" level="project" />
   </component>
 </module>
