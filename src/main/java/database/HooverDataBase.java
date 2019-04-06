@@ -1,7 +1,9 @@
 package database;
 
+import Joova.ProductoCardModel;
 import NuevoCliente.NuevoClienteModel;
 import javafx.beans.property.ListProperty;
+import javafx.scene.image.Image;
 import model.ClienteModel;
 import model.JoovaUtil;
 import model.PrecioModel;
@@ -10,7 +12,6 @@ import nuevoproducto.NuevoProductoModel;
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.ZoneId;
 
 public class HooverDataBase {
     private Connection conn;
@@ -722,6 +723,28 @@ public class HooverDataBase {
     // CONSULTAS A LA BASE DE DATOS
 
     /**
+     * Consulta todos los productos que hay en la base de datos y losguarda en una lista que esta bindeada a la tabla donde se visualizan los clientes.
+     *
+     * @param listaProductos
+     */
+    public void consultaTodosProductos(ListProperty<NuevoProductoModel> listaProductos) {
+        String query = "SELECT * FROM Articulos";
+
+        ResultSet rs = null;
+        try {
+            Statement stmnt = conn.createStatement();
+            rs = stmnt.executeQuery(query);
+
+            fillListProductos(listaProductos, rs);
+
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Consulta todos los clientes que hay en la base de datos y los guarda en una lista que esta bindeada a la tabla donde se visualizan los clientes.
      *
      * @param listaClientes la lista donde se guardaran los clientes
@@ -733,11 +756,7 @@ public class HooverDataBase {
             Statement stmnt = conn.createStatement();
             rs = stmnt.executeQuery(query);
 
-            try {
-                fillList(listaClientes, rs);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            fillListClientes(listaClientes, rs);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -752,7 +771,6 @@ public class HooverDataBase {
     public void consultaClientesWhere(ListProperty<ClienteModel> listaClientes, String nombre) {
         String query = "SELECT * FROM Cliente WHERE DNI LIKE ? OR Nombre LIKE ? or Apellidos LIKE ? or Telefono like ? or Email like ? or Genero like ? or Huerfano like ?";
         ResultSet rs = null;
-
         try {
             String busqueda = "%" + nombre + "%";
             PreparedStatement stnmt = conn.prepareStatement(query);
@@ -766,9 +784,42 @@ public class HooverDataBase {
 
             rs = stnmt.executeQuery();
 
-            fillList(listaClientes, rs);
+            fillListClientes(listaClientes, rs);
 
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void fillListProductos(ListProperty<NuevoProductoModel> listaProductos, ResultSet rs) {
+        int i = 0;
+        ResultSet rsp = null;
+        String queryPrecio = "SELECT Precio FROM Historico_Precios WHERE Cod_Articulo = ? ORDER BY Cod_Articulo, Fecha DESC LIMIT 1";
+        try {
+            while (rs.next()) {
+                listaProductos.add(new NuevoProductoModel());
+
+                // Codigo del articulo que queremos buscar en el historico de precios
+                int codArticulo = rs.getInt(1);
+
+                PreparedStatement stmntPrecio = conn.prepareStatement(queryPrecio);
+                stmntPrecio.setInt(1, codArticulo);
+                rsp = stmntPrecio.executeQuery();
+
+                if (rsp.next())
+                    listaProductos.get(i).setPrecioProducto(rsp.getDouble(1));
+                else
+                    listaProductos.get(i).setPrecioProducto(0);
+
+
+                listaProductos.get(i).setCodArticulo(codArticulo);
+                listaProductos.get(i).setNombreProducto(rs.getString(2));
+                listaProductos.get(i).setDescripcionProducto(rs.getString(3));
+                listaProductos.get(i).setTipoProducto(rs.getString(4));
+                listaProductos.get(i).setDireccionImagen(rs.getString(5));
+                i++;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -779,7 +830,7 @@ public class HooverDataBase {
      * @param rs
      * @throws SQLException
      */
-    private void fillList(ListProperty<ClienteModel> listaClientes, ResultSet rs) throws SQLException {
+    private void fillListClientes(ListProperty<ClienteModel> listaClientes, ResultSet rs) throws SQLException {
         int i = 0;
         while (rs.next()) {
             listaClientes.add(new ClienteModel());

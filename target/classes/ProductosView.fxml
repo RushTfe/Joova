@@ -2,29 +2,20 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
 <BorderPane fx:id="rootProductos" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <ScrollPane fx:id="cajonProductosScroll" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
-         <content>
-            <VBox fx:id="cajonProductosVbox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" />
-         </content>
-         <padding>
-            <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
-         </padding>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </ScrollPane>
+      <ListView fx:id="cajonProductosListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
    </center>
    <bottom>
       <HBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="anadirProductoButton" mnemonicParsing="false" text="+" />
+            <Button fx:id="eliminarProductoButton" mnemonicParsing="false" text="Elim" />
+            <Button fx:id="modificarProductoButton" mnemonicParsing="false" text="Modif" />
             <Button fx:id="anadirFiltroButton" mnemonicParsing="false" text="filtros" />
          </children>
          <BorderPane.margin>

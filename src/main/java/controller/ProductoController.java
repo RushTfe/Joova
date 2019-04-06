@@ -1,23 +1,32 @@
 package controller;
 
 import Joova.ProductoCardController;
+import Joova.ProductoCardModel;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoProducto;
+import javafx.beans.property.ListProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 import model.PrecioModel;
 import model.ProductoModel;
 import nuevoproducto.NuevoProductoModel;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -30,7 +39,7 @@ public class ProductoController implements Initializable {
     private ScrollPane cajonProductosScroll;
 
     @FXML
-    private VBox cajonProductosVbox;
+    private ListView<NuevoProductoModel> cajonProductosListView;
 
     @FXML
     private Button anadirProductoButton;
@@ -38,8 +47,15 @@ public class ProductoController implements Initializable {
     @FXML
     private Button anadirFiltroButton;
 
+    @FXML
+    private Button eliminarProductoButton;
+
+    @FXML
+    private Button modificarProductoButton;
+
     private ProductoModel model;
 
+    //Conexion a la base de datos
     private HooverDataBase db;
 
     public ProductoController(HooverDataBase db) {
@@ -56,64 +72,137 @@ public class ProductoController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = new ProductoModel();
-/*
-        ProductoCardController card = new ProductoCardController();
-        card.getModel().setNombreProducto("Aspiradora");
-        card.getModel().setPrecio(1952.2);
-        card.getModel().setTipoProducto("Tipo: Aspiradora");
 
-        ProductoCardController card1 = new ProductoCardController();
-        card1.getModel().setNombreProducto("Aspiradora2");
-        card1.getModel().setPrecio(1952.2);
-        card1.getModel().setTipoProducto("Tipo: Aspiradora");
 
-        ProductoCardController card2 = new ProductoCardController();
-        card2.getModel().setNombreProducto("Aspiradora3");
-        card2.getModel().setPrecio(1952.2);
-        card2.getModel().setTipoProducto("Tipo: Modulo");
+        // Ponemos el ListView del tipo ProductoCardModel y lo preparamos para que guarde objetos de tipo ProductoCardModel
+        // y muestre ProductoCards
+        cajonProductosListView.setCellFactory(new Callback<ListView<NuevoProductoModel>, ListCell<NuevoProductoModel>>() {
+            @Override
+            public ListCell<NuevoProductoModel> call(ListView<NuevoProductoModel> param) {
+                return new ListCell<NuevoProductoModel>() {
 
-        ProductoCardController card3 = new ProductoCardController();
-        card3.getModel().setNombreProducto("Aspiradora3");
-        card3.getModel().setPrecio(1952.2);
-        card3.getModel().setTipoProducto("Tipo: Otro");
+                    ProductoCardController card = new ProductoCardController();
 
-        ProductoCardController card4 = new ProductoCardController();
-        card4.getModel().setNombreProducto("Aspiradora3");
-        card4.getModel().setPrecio(1952.2);
-        card4.getModel().setTipoProducto("Tipo: Otro");
+                    @Override
+                    protected void updateItem(NuevoProductoModel item, boolean empty) {
+                        if (item == null || empty) {
+                            setText(null);
+                            setGraphic(null);
+                        } else {
+                            card.getModel().setNombreProducto(item.getNombreProducto());
+                            card.getModel().setPrecio(item.getPrecioProducto());
+                            card.getModel().setRutaImagen(new Image(item.getDireccionImagen()));
+                            card.getModel().setDescripcion(item.getDescripcionProducto());
+                            card.getModel().setCodProducto(item.getCodArticulo());
+                            card.getModel().aModificarProperty().bindBidirectional(item.aModificarProperty());
+                            setText(null);
+                            setGraphic(card);
+                        }
+                    }
 
-        cajonProductosVbox.getChildren().addAll(card, card1, card2, card3, card4);
-*/
+                };
+            }
+        });
+
+        //Bindeo de la lista de productos con el listView
+        cajonProductosListView.itemsProperty().bind(model.listaProductosProperty());
+
+        actualizarProductos();
+
+        // BOTONES
         anadirProductoButton.setOnAction(e -> onAnadirProductoAction());
-
+        eliminarProductoButton.setOnAction(e -> onEliminarProductoAction());
     }
 
+    private void onEliminarProductoAction() {
+        int i = model.getListaProductos().size() - 1;
+        int codABorrar = 0;
+        while (i >= 0) {
+            if (model.getListaProductos().get(i).isaModificar()) {
+                codABorrar = model.getListaProductos().get(i).getCodArticulo();
+                db.deleteArticulo(codABorrar);
+            }
+
+            i--;
+        }
+
+
+//        actualizarProductos();
+    }
+
+    /**
+     * Muestra la lista de cartas en el listView.
+     */
+    private void actualizarProductos() {
+        model.getListaProductos().clear();
+        db.consultaTodosProductos(model.listaProductosProperty());
+    }
+
+    /**
+     * Añade un producto a la base de datos y al modelo, para que aparezca en la vista.
+     */
     private void onAnadirProductoAction() {
-        ProductoCardController card = new ProductoCardController();
+
+        
+        NuevoProductoModel cardModel = new NuevoProductoModel();
         DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto();
         Optional<NuevoProductoModel> resul = nuevoProducto.showAndWait();
         if (resul.isPresent()) {
 
-            // INSERTO EL PRODUCTO EN LA BASE DE DATOS
-            int codArticuloInsertado = db.insertProduct(resul.get());
+            //TODO Copiar la imagen a la carpeta de recursos, y usarla desde ahi, de modo que el usuario, si tira/mueve la imagen no la pierde.
+            File imagen = new File(resul.get().getDireccionImagen().substring(6, resul.get().getDireccionImagen().length()).replaceAll("%20", " "));
+            String nombreImagen = imagen.getName();
+            File imagenDestino = new File(System.getProperty("user.home") + "\\.Joova\\" + nombreImagen);
 
-            // UNA VEZ DENTRO, YA HAY UN CODIGO DE ARTICULO QUE ASIGNAR AL PRECIO
-            PrecioModel precioModel = new PrecioModel();
-            precioModel.setCodArticulo(codArticuloInsertado);
-            precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
+            InputStream is = null;
+            OutputStream os = null;
 
-            // HE INSERTAMOS EL PRECIO EN LA BD
-            db.insertPrecio(precioModel);
+            try {
+                is = new FileInputStream(Paths.get(imagen.toURI()).toFile());
+                os = new FileOutputStream(Paths.get(imagenDestino.toURI()).toFile());
 
-            //DAMOS VALOR A LA TARJETA QUE SE MOSTRARA
-            card.getModel().setNombreProducto(resul.get().getNombreProducto());
-            card.getModel().setTipoProducto(resul.get().getTipoProducto());
-            card.getModel().setRutaImagen(new Image(resul.get().getDireccionImagen()));
-            card.getModel().setPrecio(precioModel.getPrecioArticulo());
+                byte[] buffer = new byte[1024];
+                int length;
 
-            // Y LA ANADIMOS A LA VISTA
-            cajonProductosVbox.getChildren().add(card);
+                while ((length = is.read(buffer)) > 0) {
+                    os.write(buffer, 0, length);
+                }
+
+                String direccionFinal = imagenDestino.toURI().toString();
+                resul.get().setDireccionImagen(direccionFinal);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    is.close();
+                    os.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
+
+        // INSERTO EL PRODUCTO EN LA BASE DE DATOS
+        int codArticuloInsertado = db.insertProduct(resul.get());
+
+        // UNA VEZ DENTRO, YA HAY UN CODIGO DE ARTICULO QUE ASIGNAR AL PRECIO
+        PrecioModel precioModel = new PrecioModel();
+        precioModel.setCodArticulo(codArticuloInsertado);
+        precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
+
+        // HE INSERTAMOS EL PRECIO EN LA BD
+        db.insertPrecio(precioModel);
+        cardModel.setNombreProducto(resul.get().getNombreProducto());
+        cardModel.setTipoProducto(resul.get().getTipoProducto());
+        cardModel.setPrecioProducto(precioModel.getPrecioArticulo());
+        cardModel.setDireccionImagen(resul.get().getDireccionImagen());
+        //Al estar el precio separado del articulo para poder llevar un historico de precios, es necesario
+        // insertar primero el articulo, y luego crear el precio en su entidad
+
+        // Y LA ANADIMOS A LA VISTA
+        model.getListaProductos().add(cardModel);
     }
 
     public ProductoModel getModel() {
