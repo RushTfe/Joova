@@ -6,11 +6,20 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 
+
 public class MainModel {
+
     private StringProperty nombre;
     private StringProperty pass;
     private ListProperty listaProductos;
     private ListProperty listaClientes;
+
+    public MainModel() {
+        nombre = new SimpleStringProperty(this, "nombre");
+        pass = new SimpleStringProperty(this, "pass");
+        listaClientes = new SimpleListProperty(this, "listaClientes", FXCollections.observableArrayList());
+        listaProductos = new SimpleListProperty(this, "listaProductos", FXCollections.observableArrayList());
+    }
 
     public Object getListaProductos() {
         return listaProductos.get();
@@ -34,14 +43,6 @@ public class MainModel {
 
     public void setListaClientes(Object listaClientes) {
         this.listaClientes.set(listaClientes);
-    }
-
-    public MainModel() {
-        nombre = new SimpleStringProperty(this, "nombre");
-        pass = new SimpleStringProperty(this, "pass");
-        listaClientes = new SimpleListProperty(this, "listaClientes", FXCollections.observableArrayList());
-        listaProductos = new SimpleListProperty(this, "listaProductos", FXCollections.observableArrayList());
-
     }
 
     public String getNombre() {

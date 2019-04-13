@@ -94,7 +94,7 @@ public class ProductoController implements Initializable {
                             card.getModel().setRutaImagen(new Image(item.getDireccionImagen()));
                             card.getModel().setDescripcion(item.getDescripcionProducto());
                             card.getModel().setCodProducto(item.getCodArticulo());
-                            card.getModel().aModificarProperty().bindBidirectional(item.aModificarProperty());
+//                            item.aModificarProperty().bind(card.getModel().aModificarProperty());
                             setText(null);
                             setGraphic(card);
                         }
@@ -143,7 +143,7 @@ public class ProductoController implements Initializable {
      */
     private void onAnadirProductoAction() {
 
-        
+
         NuevoProductoModel cardModel = new NuevoProductoModel();
         DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto();
         Optional<NuevoProductoModel> resul = nuevoProducto.showAndWait();
@@ -171,6 +171,7 @@ public class ProductoController implements Initializable {
                 String direccionFinal = imagenDestino.toURI().toString();
                 resul.get().setDireccionImagen(direccionFinal);
 
+
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -181,28 +182,26 @@ public class ProductoController implements Initializable {
                     e.printStackTrace();
                 }
             }
+            // INSERTO EL PRODUCTO EN LA BASE DE DATOS
+            int codArticuloInsertado = db.insertProduct(resul.get());
+
+            // UNA VEZ DENTRO, YA HAY UN CODIGO DE ARTICULO QUE ASIGNAR AL PRECIO
+            PrecioModel precioModel = new PrecioModel();
+            precioModel.setCodArticulo(codArticuloInsertado);
+            precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
+
+            // HE INSERTAMOS EL PRECIO EN LA BD
+            db.insertPrecio(precioModel);
+            cardModel.setNombreProducto(resul.get().getNombreProducto());
+            cardModel.setTipoProducto(resul.get().getTipoProducto());
+            cardModel.setPrecioProducto(precioModel.getPrecioArticulo());
+            cardModel.setDireccionImagen(resul.get().getDireccionImagen());
+            //Al estar el precio separado del articulo para poder llevar un historico de precios, es necesario
+            // insertar primero el articulo, y luego crear el precio en su entidad
+
+            // Y LA ANADIMOS A LA VISTA
+            model.getListaProductos().add(cardModel);
         }
-
-
-        // INSERTO EL PRODUCTO EN LA BASE DE DATOS
-        int codArticuloInsertado = db.insertProduct(resul.get());
-
-        // UNA VEZ DENTRO, YA HAY UN CODIGO DE ARTICULO QUE ASIGNAR AL PRECIO
-        PrecioModel precioModel = new PrecioModel();
-        precioModel.setCodArticulo(codArticuloInsertado);
-        precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
-
-        // HE INSERTAMOS EL PRECIO EN LA BD
-        db.insertPrecio(precioModel);
-        cardModel.setNombreProducto(resul.get().getNombreProducto());
-        cardModel.setTipoProducto(resul.get().getTipoProducto());
-        cardModel.setPrecioProducto(precioModel.getPrecioArticulo());
-        cardModel.setDireccionImagen(resul.get().getDireccionImagen());
-        //Al estar el precio separado del articulo para poder llevar un historico de precios, es necesario
-        // insertar primero el articulo, y luego crear el precio en su entidad
-
-        // Y LA ANADIMOS A LA VISTA
-        model.getListaProductos().add(cardModel);
     }
 
     public ProductoModel getModel() {

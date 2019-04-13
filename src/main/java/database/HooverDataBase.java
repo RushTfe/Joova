@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import model.ClienteModel;
 import model.JoovaUtil;
 import model.PrecioModel;
+import model.VentasModel;
 import nuevoproducto.NuevoProductoModel;
 
 import java.io.File;
@@ -88,8 +89,9 @@ public class HooverDataBase {
     public int insertProduct(NuevoProductoModel model) {
         String insert = "INSERT INTO Articulos(Nombre_Articulo, Descripcion, Tipo_Producto, Ruta_Imagen) VALUES (?, ?, ?, ?)";
         int i = -1;
+        PreparedStatement stmnt = null;
         try {
-            PreparedStatement stmnt = conn.prepareStatement(insert);
+            stmnt = conn.prepareStatement(insert);
 
             stmnt.setString(1, model.getNombreProducto());
             stmnt.setString(2, model.getDescripcionProducto());
@@ -106,7 +108,7 @@ public class HooverDataBase {
             rs.next();
             i = rs.getInt(1);
 
-
+            stmnt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -142,23 +144,20 @@ public class HooverDataBase {
     /**
      * Función para añadir una compra nueva (No el detalle)
      *
-     * @param codigo
-     * @param DNI
-     * @param fechaCompra
-     * @param comentarios
-     * @param tipoPago
+     * @param model El modelo corespondiente a la vista de la venta realizada
      */
-    public void insertCompra(String codigo, String DNI, LocalDate fechaCompra, String comentarios, int tipoPago) {
+    public void insertCompra(VentasModel model) {
         //TODO Cambiar por el objeto correspondiente
 
-        String insert = "INSERT INTO Compra VALUES(?, ?, ?, ?, ?)";
+        String insert = "INSERT INTO Compra VALUES(?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
-            stmnt.setString(1, codigo);
-            stmnt.setString(2, DNI);
-            stmnt.setDate(3, Date.valueOf(fechaCompra));
-            stmnt.setString(4, comentarios);
-            stmnt.setInt(5, tipoPago);
+            stmnt.setString(1, model.getCodContrato());
+            stmnt.setString(2, model.getCliente());
+            stmnt.setDate(3, Date.valueOf(model.getFechaVenta()));
+            stmnt.setString(4, model.getObservacionesVenta());
+            stmnt.setInt(5, model.getTipoPago().getCodTipoPago());
+            stmnt.setDouble(6, model.getPrecioTotal());
 
             stmnt.executeUpdate();
 
@@ -172,17 +171,13 @@ public class HooverDataBase {
      *
      * @param codCompra
      * @param codArticulo
-     * @param cantidad
      */
-    public void insertDetalleCompra(String codCompra, int codArticulo, int cantidad) {
-        //TODO Pasar el objeto
-
-        String insert = "INSERT INTO Detalle_Compra VALUES(?, ?, ?)";
+    public void insertDetalleCompra(String codCompra, int codArticulo) {
+        String insert = "INSERT INTO Detalle_Compra VALUES(?, ?)";
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
             stmnt.setString(1, codCompra);
             stmnt.setInt(2, codArticulo);
-            stmnt.setInt(3, cantidad);
 
             stmnt.executeUpdate();
         } catch (SQLException e) {
@@ -729,7 +724,6 @@ public class HooverDataBase {
      */
     public void consultaTodosProductos(ListProperty<NuevoProductoModel> listaProductos) {
         String query = "SELECT * FROM Articulos";
-
         ResultSet rs = null;
         try {
             Statement stmnt = conn.createStatement();
@@ -757,6 +751,8 @@ public class HooverDataBase {
             rs = stmnt.executeQuery(query);
 
             fillListClientes(listaClientes, rs);
+
+            stmnt.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -875,6 +871,7 @@ public class HooverDataBase {
                         "Fecha text NOT NULL," +
                         "Observaciones text," +
                         "Tipo_Pago INTEGER," +
+                        "Total REAL," +
                         "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE," +
                         "FOREIGN KEY (Tipo_Pago) REFERENCES Tipo_Pago (Cod_Tipo_Pago) ON DELETE CASCADE" +
                         ")";
@@ -883,7 +880,6 @@ public class HooverDataBase {
                 "CREATE TABLE IF NOT EXISTS Detalle_Compra (" +
                         "Cod_Compra text," +
                         "Cod_Articulo INTEGER NOT NULL," +
-                        "Cantidad INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Compra, Cod_Articulo)," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE," +
                         "FOREIGN KEY (Cod_Compra) REFERENCES Compra (Cod_Compra) ON DELETE CASCADE" +

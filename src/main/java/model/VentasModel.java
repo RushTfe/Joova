@@ -1,21 +1,71 @@
 package model;
 
-import Joova.ProductoCardModel;
 import javafx.beans.binding.Bindings;
-import javafx.beans.binding.StringBinding;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import nuevoproducto.NuevoProductoModel;
 
 import java.time.LocalDate;
 
 public class VentasModel {
-    private ListProperty<ClienteModel> listaClientes;
-    private ListProperty<ProductoCardModel> listaProductos;
+    //Recoge su valor de un bindeo desde MainController -> ocultarLogin();
+    private StringProperty cliente;
     private StringProperty codContrato;
     private DoubleProperty precioTotal;
     private ObjectProperty<LocalDate> fechaVenta;
+    private ObjectProperty<TipoPagoModel> tipoPago;
     private StringProperty observacionesVenta;
+    private BooleanProperty mostrarProductos;
+
+    public VentasModel() {
+        cliente = new SimpleStringProperty(this, "cliente");
+        codContrato = new SimpleStringProperty(this, "codContrato");
+        precioTotal = new SimpleDoubleProperty(this, "precioTotal", 0.0);
+        fechaVenta = new SimpleObjectProperty<>(this, "fechaVenta", LocalDate.now());
+        tipoPago = new SimpleObjectProperty<>(this, "tipoPago");
+        observacionesVenta = new SimpleStringProperty(this, "observacionesVenta");
+        mostrarProductos = new SimpleBooleanProperty(this, "mostrarProductos");
+
+        // Listener que detecta el cambio de productos en la lista, para sumar el precio total.
+    }
+
+    public TipoPagoModel getTipoPago() {
+        return tipoPago.get();
+    }
+
+    public ObjectProperty<TipoPagoModel> tipoPagoProperty() {
+        return tipoPago;
+    }
+
+    public void setTipoPago(TipoPagoModel tipoPago) {
+        this.tipoPago.set(tipoPago);
+    }
+
+    public boolean isMostrarProductos() {
+        return mostrarProductos.get();
+    }
+
+    public BooleanProperty mostrarProductosProperty() {
+        return mostrarProductos;
+    }
+
+    public void setMostrarProductos(boolean mostrarProductos) {
+        this.mostrarProductos.set(mostrarProductos);
+    }
+
+    public String getCliente() {
+        return cliente.get();
+    }
+
+    public StringProperty clienteProperty() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente.set(cliente);
+    }
 
     public double getPrecioTotal() {
         return precioTotal.get();
@@ -27,27 +77,6 @@ public class VentasModel {
 
     public void setPrecioTotal(double precioTotal) {
         this.precioTotal.set(precioTotal);
-    }
-
-    public VentasModel() {
-        listaClientes = new SimpleListProperty<>(this, "listaClientes", FXCollections.observableArrayList());
-        listaProductos = new SimpleListProperty<>(this, "listaProductos", FXCollections.observableArrayList());
-        codContrato = new SimpleStringProperty(this, "codContrato");
-        precioTotal = new SimpleDoubleProperty(this, "precioTotal", 0.0);
-        fechaVenta = new SimpleObjectProperty<>(this, "fechaVenta", LocalDate.now());
-        observacionesVenta = new SimpleStringProperty(this, "observacionesVenta");
-    }
-
-    public ObservableList<ClienteModel> getListaClientes() {
-        return listaClientes.get();
-    }
-
-    public ListProperty<ClienteModel> listaClientesProperty() {
-        return listaClientes;
-    }
-
-    public void setListaClientes(ObservableList<ClienteModel> listaClientes) {
-        this.listaClientes.set(listaClientes);
     }
 
     public String getCodContrato() {
@@ -84,18 +113,6 @@ public class VentasModel {
 
     public void setObservacionesVenta(String observacionesVenta) {
         this.observacionesVenta.set(observacionesVenta);
-    }
-
-    public ObservableList<ProductoCardModel> getListaProductos() {
-        return listaProductos.get();
-    }
-
-    public ListProperty<ProductoCardModel> listaProductosProperty() {
-        return listaProductos;
-    }
-
-    public void setListaProductos(ObservableList<ProductoCardModel> listaProductos) {
-        this.listaProductos.set(listaProductos);
     }
 
     public StringProperty precioAsString() {

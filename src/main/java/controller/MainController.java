@@ -10,14 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import model.MainModel;
-import signup.SignUpController;
 import signup.SignUpModel;
 
 import java.io.*;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -91,9 +88,11 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainModel();
 
+        // Bindeo de los campos Usuario y Contraseña del Login a su respectivo modelo
         Bindings.bindBidirectional(userTextBox.textProperty(), model.nombreProperty());
         Bindings.bindBidirectional(passwordTextBox.textProperty(), model.passProperty());
 
+        // Preparamos las pestañas previamente para que no se vean al principio de la ejecución
         tabsRoot.setManaged(false);
         tabsRoot.setVisible(false);
 
@@ -124,8 +123,17 @@ public class MainController implements Initializable {
     }
 
     private void onLogInAction() {
+        // Creamos la ruta hacia el archivo donde se encontrarán los datos del usuario.
         File archivoUsuario = new File(System.getProperty("user.home") + "\\.Joova\\" + model.getNombre() + ".joo");
 
+        /**
+         * Si el archivo no existe, lanzamos un error diciendo que el usuario no existe.
+         *
+         * De lo contrario, cargamos los datos del archivo en el modelo, y procedemos a comprobar si los datos de usuario y
+         * contraseña coinciden. Si es así, procedemos a ocultar la ventana de login para mostrar el programa principal.
+         *
+         * Si no coinciden, se lanza otro error pidiendo los datos correctos.
+         */
         if (!archivoUsuario.exists())
             alertaError("Usuario inexistente", "Este usuario aun no se ha registrado", "Por favor, registrese antes de proseguir");
         else {
@@ -142,7 +150,7 @@ public class MainController implements Initializable {
         // Ocultar el login
         logInRoot.setManaged(false);
         logInRoot.setVisible(false);
-
+        // Eliminar la vista en el nodo central, y colocar el panel de pestañas.
         root.setBottom(null);
         root.setCenter(tabsRoot);
 
@@ -153,14 +161,14 @@ public class MainController implements Initializable {
         //Controladores de las pestañas
         clienteController = new ClienteController(database);
         productoController = new ProductoController(database);
-        ventasController = new VentasController();
+        ventasController = new VentasController(database);
         accionesController = new AccionesController();
-
 
         //Bindeos necesarios DESPUES de crear los controladores
         model.listaClientesProperty().bind(clienteController.listaClientesProperty());
         model.listaProductosProperty().bind(productoController.getModel().listaProductosProperty());
         ventasController.getClientesComboBox().itemsProperty().bind(model.listaClientesProperty());
+        ventasController.listaProductosDisponiblesProperty().bind(productoController.getModel().listaProductosProperty());
 
 
         //Añadir las pestañas al controlador principal

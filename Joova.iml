@@ -16,5 +16,6 @@
     <orderEntry type="library" name="Maven: JoovaSignUp:JoovaSignUp:0.0.1" level="project" />
     <orderEntry type="library" name="Maven: JoovaNuevoCliente:JoovaNuevoCliente:0.0.1" level="project" />
     <orderEntry type="library" name="Maven: JoovaNuevoProducto:JoovaNuevoProducto:0.0.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
   </component>
 </module>
