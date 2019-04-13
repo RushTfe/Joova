@@ -25,7 +25,7 @@ Eclipse is not supported, so you'll need to look for a different way to open it 
 ### Installing source code with IntelliJ
 In order to run this project on your IDE, you also need some other dependencies created by myself. I will add them later when theyre totally ready. Those are mostly Views for different parts of the app. 
 
-Once you have them installed, you need to open them, go to the console and type "mvn clean install" on each module, so your main project can get them from your .m2 folder.
+Once you have them on your computer, you need to open them with IntelliJ, go to the console and type "mvn clean install" on each module, so your main project can get them from your .m2 folder.
 
 ## Built with
 * [Maven](https://maven.apache.org/) - Dependency Management
