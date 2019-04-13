@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.stage.Stage;
 import signup.SignUpController;
 import signup.SignUpModel;
 
@@ -12,7 +13,8 @@ public class DialogoNuevoUsuario extends Dialog<SignUpModel> {
     private SignUpController signup;
 //    private ButtonType crearButtonType;
 
-    public DialogoNuevoUsuario() {
+    public DialogoNuevoUsuario(Stage stage) {
+        initOwner(stage);
         signup = new SignUpController();
 //        crearButtonType = new ButtonType("Añadir", ButtonBar.ButtonData.OK_DONE);
 

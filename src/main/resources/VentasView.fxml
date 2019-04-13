@@ -21,7 +21,7 @@
          <children>
             <ComboBox id="comboClientes" fx:id="clientesComboBox" prefWidth="150.0" promptText="Clientes" />
             <TextField id="codigoProductoTextField" fx:id="contratoTextField" promptText="Código Contrato" />
-            <DatePicker id="fechaVentaDatePicker" fx:id="fechaDatePicker" promptText="Fecha de venta" />
+            <DatePicker id="fechaVentaDatePicker" fx:id="fechaDatePicker" editable="false" promptText="Fecha de venta" />
             <TextArea id="observacionesTextArea" fx:id="observacionesTextArea" prefHeight="200.0" prefWidth="200.0" promptText="Observaciones de la Venta (No obligatorio)" />
          </children>
          <BorderPane.margin>

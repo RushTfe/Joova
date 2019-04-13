@@ -2,6 +2,7 @@ package controller;
 
 import Joova.ProductoCardController;
 import Joova.ProductoCardModel;
+import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoProducto;
 import javafx.beans.property.ListProperty;
@@ -145,7 +146,7 @@ public class ProductoController implements Initializable {
 
 
         NuevoProductoModel cardModel = new NuevoProductoModel();
-        DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto();
+        DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
         Optional<NuevoProductoModel> resul = nuevoProducto.showAndWait();
         if (resul.isPresent()) {
 

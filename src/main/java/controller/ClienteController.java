@@ -1,6 +1,7 @@
 package controller;
 
 import NuevoCliente.NuevoClienteModel;
+import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoCliente;
 import javafx.beans.property.ListProperty;
@@ -132,8 +133,9 @@ public class ClienteController implements Initializable {
 
     private void onModificarAction() {
         try {
-            DialogoNuevoCliente aModificar = new DialogoNuevoCliente();
+            DialogoNuevoCliente aModificar = new DialogoNuevoCliente(JoovaApp.getPrimaryStage());
             ClienteModel clienteSeleccionado = clientTable.getSelectionModel().getSelectedItem();
+            aModificar.setTitle("Modificando a " + clienteSeleccionado.getNombre() + " " + clienteSeleccionado.getApellidos());
 
             // Establecemos los valores que habran dentro del dialogo, correspondientes a la fila que marquemos de la tabla.
             aModificar.getDNIField().setDisable(true);
@@ -162,7 +164,7 @@ public class ClienteController implements Initializable {
                 actualizarClientes();
             }
         } catch (NullPointerException e) {
-            MainController.alertaError("No se ha podido modificar", "No ha seleccionado ninguna celda de la tabla", "Por favor, seleccione arriba al cliente que desea modificar");
+            MainController.alertaError("No se ha podido modificar", "No ha seleccionado ningun cliente en la tabla", "Por favor, seleccione al cliente que desea modificar");
         }
 
     }
@@ -180,12 +182,12 @@ public class ClienteController implements Initializable {
             }
 
         } catch (NullPointerException e) {
-            MainController.alertaError("No se ha podido borrar", "No ha seleccionado ninguna celda de la tabla", "Por favor, seleccione arriba al cliente que desea borrar");
+            MainController.alertaError("No se ha podido borrar", "No ha seleccionado ningun cliente en la tabla", "Por favor, seleccione al cliente que desea borrar");
         }
     }
 
     private void onAnadirClienteButton() {
-        DialogoNuevoCliente nuevoCliente = new DialogoNuevoCliente();
+        DialogoNuevoCliente nuevoCliente = new DialogoNuevoCliente(JoovaApp.getPrimaryStage());
 
         Optional<NuevoClienteModel> resul = nuevoCliente.showAndWait();
 

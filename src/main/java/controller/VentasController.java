@@ -1,6 +1,8 @@
 package controller;
 
+import app.JoovaApp;
 import database.HooverDataBase;
+import dialogs.DialogoNuevoTipoPago;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -19,6 +21,8 @@ import nuevoproducto.NuevoProductoModel;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class VentasController implements Initializable {
@@ -30,6 +34,9 @@ public class VentasController implements Initializable {
 
     // Productos actualmente añadidos
     private ListProperty<NuevoProductoModel> listaProductosAnadidos;
+
+    // Lista de tipos de pago
+    private ListProperty<TipoPagoModel> listaTipoPago;
 
     @FXML
     private ComboBox<TipoPagoModel> tipoPagoComboBox;
@@ -103,9 +110,13 @@ public class VentasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // TODO Escondemos el botón de descuentos hasta que se apliquen realmente en la APP
+        anadirDescuentoButton.setVisible(false);
+        anadirDescuentoButton.setManaged(false);
         model = new VentasModel();
         listaProductosDisponibles = new SimpleListProperty<>(this, "listaProductosDisponibles", FXCollections.observableArrayList());
         listaProductosAnadidos = new SimpleListProperty<>(this, "listaProductosAnadidos", FXCollections.observableArrayList());
+        listaTipoPago = new SimpleListProperty<>(this, "listaTipoPago", FXCollections.observableArrayList());
 
         // Al combobox se le asignan los datos directamente desde el controlador principal, para así evitar estar creando mas
         // duplicidades de datos innecesarias.
@@ -116,6 +127,8 @@ public class VentasController implements Initializable {
         model.observacionesVentaProperty().bindBidirectional(observacionesTextArea.textProperty());
         precioTotalLabel.textProperty().bind(model.precioAsString());
         model.mostrarProductosProperty().bindBidirectional(mostrarProductosCB.selectedProperty());
+        tipoPagoComboBox.itemsProperty().bind(listaTipoPago);
+        model.tipoPagoProperty().bind(tipoPagoComboBox.getSelectionModel().selectedItemProperty());
 
         // Bindeos para la vista de la segunda tabla
         listaProductosTable.visibleProperty().bind(model.mostrarProductosProperty());
@@ -132,39 +145,115 @@ public class VentasController implements Initializable {
         precioColumn.setCellValueFactory(v -> v.getValue().precioAsString());
 
 
-
         //Bindeamos la tabla con la lista de productos AÑADIDOS OJO no a la de todos los productos.
         // En esta segunda lista pueden haber productos repetidos las veces que sean necesarias.
         productosTable.itemsProperty().bindBidirectional(listaProductosAnadidosProperty());
         listaProductosTable.itemsProperty().bindBidirectional(listaProductosDisponiblesProperty());
 
+
+        // Listeners
         listaProductosAnadidosProperty().addListener((ListChangeListener<NuevoProductoModel>) v -> onCambioListaProductos());
+        clientesComboBox.getSelectionModel().selectedItemProperty().addListener(e -> {
+            model.setCliente(clientesComboBox.getSelectionModel().getSelectedItem().getDni());
+        });
+
+        // Comportamiento botón de validar venta
+        validarVentaButton.disableProperty().bind(Bindings
+                .when(model.tipoPagoProperty().isNull()
+                        .or(model.clienteProperty().isEmpty()
+                                .or(model.codContratoProperty().isEmpty()
+                                        .or(model.fechaVentaProperty().isNull()
+                                                .or(listaProductosAnadidos.emptyProperty())))))
+                .then(true)
+                .otherwise(false));
+
+        // Rellenar la lista de tipos de pago
+        actualizarTiposDePago();
 
         // Botones
         anadirProductoButton.setOnAction(e -> onAnadirProductoAction());
         eliminarProductoButton.setOnAction(e -> onEliminarProductoAction());
         validarVentaButton.setOnAction(e -> onValidarVentaAction());
+        anadirTipoPago.setOnAction(e -> onAnadirTipoPagoAction());
+    }
+
+    private void onAnadirTipoPagoAction() {
+        TipoPagoModel tipoPago = new TipoPagoModel();
+        DialogoNuevoTipoPago dialogo = new DialogoNuevoTipoPago(JoovaApp.getPrimaryStage());
+        Optional<TipoPagoModel> resul = dialogo.showAndWait();
+
+        if (resul.isPresent()) {
+            tipoPago = resul.get();
+            db.insertTipoPago(tipoPago.getNombreTipoPago(), tipoPago.getDescripcionTipoPago());
+            listaTipoPago.add(tipoPago);
+        }
+    }
+
+    private void actualizarTiposDePago() {
+        listaTipoPago.clear();
+        db.consultaTodosTiposPago(listaTipoPago);
     }
 
     private void onValidarVentaAction() {
-        // Se inserta la compra en la Base de Datos
-        db.insertCompra(model);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.initOwner(JoovaApp.getPrimaryStage());
+        alert.setTitle("Está a punto de validar una venta");
+        alert.setHeaderText("La venta se añadirá a la base de datos");
+        alert.setContentText("Esta acción no se puede deshacer, asegúrese de que los datos sean correctos");
+        Optional<ButtonType> resul = alert.showAndWait();
 
-        // Y se recorre la tabla de productos añadidos, para irlos metiendo uno a uno en el detalle de la compra.
-        for (int i = 0; i < listaProductosAnadidos.size(); i++) {
-            db.insertDetalleCompra(model.getCodContrato(), listaProductosAnadidos.get(i).getCodArticulo());
+        if (resul.get().getButtonData().isCancelButton()) {
+        } else {
+
+            // Se inserta la compra en la Base de Datos
+            db.insertCompra(model);
+
+            // Y se recorre la tabla de productos añadidos, para irlos metiendo uno a uno en el detalle de la compra.
+            for (int i = 0; i < listaProductosAnadidos.size(); i++) {
+                db.insertDetalleCompra(model.getCodContrato(), listaProductosAnadidos.get(i).getCodArticulo());
+            }
+
+            limpiar();
         }
+    }
+
+    private void limpiar() {
+        listaProductosAnadidos.clear();
+        model.setFechaVenta(LocalDate.now());
+        model.setObservacionesVenta("");
+        model.setCodContrato("");
 
     }
 
     private void onEliminarProductoAction() {
-        getListaProductosAnadidos().remove(productosTable.getSelectionModel().getSelectedItem());
+        if (null != productosTable.getSelectionModel().getSelectedItem()) {
+            getListaProductosAnadidos().remove(productosTable.getSelectionModel().getSelectedItem());
+        } else {
+            alertaErrorInformation("Error",
+                    "No se ha seleccionado ningun artículo para borrar",
+                    "Pulse sobre un artículo sonre su lista de añadidos a la compra, y luego pulse sobre este botón");
+        }
     }
 
     private void onAnadirProductoAction() {
+        if (null != listaProductosTable.getSelectionModel().getSelectedItem()) {
+            NuevoProductoModel producto = listaProductosTable.getSelectionModel().getSelectedItem();
+            getListaProductosAnadidos().add(producto);
+        } else {
+            alertaErrorInformation("Error",
+                    "No se ha seleccionado ningún artículo de la lista",
+                    "Para seleccionar un artículo, pulse sobre \"Mostrar lista de Productos\" y seleccione el que desee añadir a la compra");
+        }
 
-        NuevoProductoModel producto = listaProductosTable.getSelectionModel().getSelectedItem();
-        getListaProductosAnadidos().add(producto);
+    }
+
+    private void alertaErrorInformation(String titulo, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initOwner(JoovaApp.getPrimaryStage());
+        alert.setTitle(titulo);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.show();
     }
 
     public void onCambioListaProductos() {

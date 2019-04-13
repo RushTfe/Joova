@@ -5,14 +5,17 @@ import NuevoCliente.NuevoClienteModel;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class DialogoNuevoCliente extends Dialog<NuevoClienteModel> {
     private NuevoClienteController controller;
     private NuevoClienteModel nuevoClienteModel;
 
-    public DialogoNuevoCliente() {
+    public DialogoNuevoCliente(Stage stage) {
         controller = new NuevoClienteController();
         nuevoClienteModel = controller.getModel();
+        initOwner(stage);
+        setTitle("Añadir un nuevo cliente");
 
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().setContent(controller);

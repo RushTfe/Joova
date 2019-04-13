@@ -102,7 +102,7 @@ public class MainController implements Initializable {
     }
 
     private void onNewUser() {
-        DialogoNuevoUsuario nuevoUser = new DialogoNuevoUsuario();
+        DialogoNuevoUsuario nuevoUser = new DialogoNuevoUsuario(JoovaApp.getPrimaryStage());
         Optional<SignUpModel> resul = nuevoUser.showAndWait();
 
         if (resul.isPresent()) {

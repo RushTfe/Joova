@@ -4,10 +4,7 @@ import Joova.ProductoCardModel;
 import NuevoCliente.NuevoClienteModel;
 import javafx.beans.property.ListProperty;
 import javafx.scene.image.Image;
-import model.ClienteModel;
-import model.JoovaUtil;
-import model.PrecioModel;
-import model.VentasModel;
+import model.*;
 import nuevoproducto.NuevoProductoModel;
 
 import java.io.File;
@@ -844,6 +841,30 @@ public class HooverDataBase {
         }
     }
 
+    public void consultaTodosTiposPago(ListProperty<TipoPagoModel> lista) {
+        String query = "SELECT * from Tipo_Pago";
+        ResultSet rs = null;
+
+        try {
+            Statement stmnt = conn.createStatement();
+            rs = stmnt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                lista.add(new TipoPagoModel());
+                lista.get(i).setCodTipoPago(rs.getInt(1));
+                lista.get(i).setNombreTipoPago(rs.getString(2));
+                lista.get(i).setDescripcionTipoPago(rs.getString(3));
+                i++;
+            }
+
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     //CREACION DE LA BD
 
     /**
@@ -880,7 +901,6 @@ public class HooverDataBase {
                 "CREATE TABLE IF NOT EXISTS Detalle_Compra (" +
                         "Cod_Compra text," +
                         "Cod_Articulo INTEGER NOT NULL," +
-                        "PRIMARY KEY (Cod_Compra, Cod_Articulo)," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE," +
                         "FOREIGN KEY (Cod_Compra) REFERENCES Compra (Cod_Compra) ON DELETE CASCADE" +
                         ")";
