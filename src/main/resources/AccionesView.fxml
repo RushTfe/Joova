@@ -42,7 +42,7 @@
    <center>
       <SplitPane fx:id="contentSplitPane" dividerPositions="0.5" BorderPane.alignment="CENTER">
         <items>
-            <AnchorPane fx:id="contentAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+            <AnchorPane fx:id="contentAnchorPane" />
           <AnchorPane>
                <children>
                   <TextArea id="observacionesTextArea" fx:id="observacionesTextArea" promptText="Observaciones (No obligatorias)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

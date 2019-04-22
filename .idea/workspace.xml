@@ -2,32 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Joova.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Joova.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/JoovaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/JoovaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/VentasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/VentasController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VentasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VentasView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Joova-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Joova-0.0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Joova.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/JoovaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/JoovaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/VentasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/VentasController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/JoovaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/JoovaUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AccionesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AccionesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AccionesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AccionesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-mainTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-mainTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/mainTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/mainTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/JoovaUtil.class" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,7 +61,7 @@
         <item name="Pedro" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="Detalle_Compra: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="Presentacion: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -124,50 +109,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="104" column="90" selection-start-line="104" selection-start-column="90" selection-end-line="104" selection-end-column="90" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9615#9616#0" expanded="true" />
-                <element signature="e#9642#9643#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="189" column="95" lean-forward="true" selection-start-line="189" selection-start-column="95" selection-end-line="189" selection-end-column="95" />
+            <state relative-caret-position="107">
+              <caret line="200" column="110" selection-start-line="200" selection-start-column="110" selection-end-line="200" selection-end-column="110" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7738#7739#0" expanded="true" />
-                <element signature="e#7774#7775#0" expanded="true" />
-                <element signature="e#7817#7818#0" expanded="true" />
+                <element signature="e#7773#7774#0" expanded="true" />
+                <element signature="e#7809#7810#0" expanded="true" />
                 <element signature="e#7852#7853#0" expanded="true" />
+                <element signature="e#7887#7888#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="591">
+              <caret line="775" column="74" selection-start-line="775" selection-start-column="74" selection-end-line="775" selection-end-column="74" />
+              <folding>
+                <element signature="e#418#514#0" />
+                <element signature="e#552#677#0" />
+                <element signature="e#552#1748#0" />
+                <element signature="e#945#1674#0" />
+                <element signature="e#1698#1742#0" />
+                <element signature="e#1781#1968#0" />
+                <element signature="e#2935#3272#0" />
+                <element signature="e#2935#4324#0" />
+                <element signature="e#3529#4232#0" />
+                <element signature="e#4256#4300#0" />
+                <element signature="e#4330#4604#0" />
+                <element signature="e#4330#5163#0" />
+                <element signature="e#4791#5088#0" />
+                <element signature="e#5112#5156#0" />
+                <element signature="e#5169#5325#0" />
+                <element signature="e#5169#6065#0" />
+                <element signature="e#5513#5991#0" />
+                <element signature="e#6015#6059#0" />
+                <element signature="e#6071#6197#0" />
+                <element signature="e#6071#6625#0" />
+                <element signature="e#6350#6551#0" />
+                <element signature="e#6575#6619#0" />
+                <element signature="e#6631#6774#0" />
+                <element signature="e#6631#7287#0" />
+                <element signature="e#7009#7212#0" />
+                <element signature="e#7236#7280#0" />
+                <element signature="e#7293#7606#0" />
+                <element signature="e#7293#8210#0" />
+                <element signature="e#7845#8136#0" />
+                <element signature="e#8160#8204#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/PresentacionesModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#917#918#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1138#1139#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,6 +199,8 @@
       <find>file</find>
       <find>asS</find>
       <find>date</find>
+      <find>cliente</find>
+      <find>listaC</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -219,10 +232,8 @@
         <option value="$PROJECT_DIR$/src/main/java/model/NuevoUsuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/AccionesModel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/AccionesView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
         <option value="$PROJECT_DIR$/src/test/java/mainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/JoovaUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ClienteModel.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/25d617e2-87b1-476b-8045-f6a65f6c55af/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/model/PrecioModel.java" />
@@ -231,20 +242,25 @@
         <option value="$PROJECT_DIR$/src/main/java/model/MainModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoAnadirProductoCompra.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/VentasModel.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/model/TipoPagoModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPago.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/60900fab-5503-4d33-9a81-7c9cf5e19d56/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/VentasController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/app/JoovaApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/JoovaUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/PresentacionesModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPresentacion.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ac019111-4bae-4ff2-83aa-600c6cf4b1c4/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
       </list>
     </option>
   </component>
@@ -280,8 +296,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -294,7 +310,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -334,33 +349,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,7 +377,8 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProductoCard" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JoovaNuevoCliente" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -570,11 +567,13 @@
       <workItem from="1555062672342" duration="16000" />
       <workItem from="1555062930358" duration="265000" />
       <workItem from="1555182922593" duration="13030000" />
+      <workItem from="1555312691801" duration="769000" />
+      <workItem from="1555942283473" duration="13723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201348000" />
+    <option name="totallyTimeSpent" value="215840000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -587,47 +586,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.22390318" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.6086956" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39452496" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29312977" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32850242" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32850242" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.35748792" />
-      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="16" weight="0.3268921" />
-      <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.32850242" />
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.294686" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.23076923" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="Bean Validation" order="11" />
-    </layout>
-    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22390318" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
@@ -637,8 +597,8 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.6086956" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39452496" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29312977" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31723028" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39291465" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
@@ -653,15 +613,55 @@
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.3268921" />
       <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.32850242" />
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.294686" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.42351046" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.23076923" />
+      <window_info anchor="right" id="Database" order="4" weight="0.23071104" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" visible="true" weight="0.21104388" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22390318" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6086956" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.431562" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4863124" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32850242" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.35748792" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.3268921" />
+      <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.42351046" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.23071104" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
@@ -684,6 +684,18 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPresentacion.java</url>
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java</url>
+          <line>200</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -693,6 +705,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>model.isPresentacion();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>ventasController.getModel().clienteProperty().bind(ventasController.getClientesComboBox().getSelectionModel().getSelectedItem().dniProperty());</expression-string>
         <language-id>JAVA</language-id>
@@ -733,134 +750,15 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>resul.get().setDireccionImagen(imagenDestino.getAbsolutePath());</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="das://b0aa6149-9f7d-4055-ab3b-0eb7ca021b0c/schema/main/table/Historico_Precios" />
     <entry file="das://b0aa6149-9f7d-4055-ab3b-0eb7ca021b0c/schema/main/table/Tipo_Pago" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/PrecioModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra" />
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/JoovaUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/com/sun/glass/ui/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="941" selection-start-line="941" selection-end-line="941" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -871,251 +769,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/TipoPagoModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-293">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="method#setDescripcionTipoPago#0;class#TipoPagoModel#0" />
-            <element signature="e#1563#1564#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="145" column="16" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
-          <folding>
-            <element signature="e#357#453#0" />
-            <element signature="e#491#616#0" />
-            <element signature="e#491#1687#0" />
-            <element signature="e#1720#1907#0" />
-            <element signature="e#1720#2868#0" />
-            <element signature="e#2874#3211#0" />
-            <element signature="e#2874#4263#0" />
-            <element signature="e#4269#4543#0" />
-            <element signature="e#4269#5102#0" />
-            <element signature="e#5108#5264#0" />
-            <element signature="e#6010#6136#0" />
-            <element signature="e#6570#6713#0" />
-            <element signature="e#6570#7226#0" />
-            <element signature="e#7232#7545#0" />
-            <element signature="e#7232#8149#0" />
-            <element signature="e#8155#8407#0" />
-            <element signature="e#8155#9133#0" />
-            <element signature="e#9139#9338#0" />
-            <element signature="e#9139#9920#0" />
-            <element signature="e#9926#10049#0" />
-            <element signature="e#9926#10449#0" />
-            <element signature="e#10455#10683#0" />
-            <element signature="e#10455#11445#0" />
-            <element signature="e#11451#11668#0" />
-            <element signature="e#11451#12377#0" />
-            <element signature="e#12383#12524#0" />
-            <element signature="e#12383#13098#0" />
-            <element signature="e#13104#13272#0" />
-            <element signature="e#13104#13820#0" />
-            <element signature="e#13855#14049#0" />
-            <element signature="e#13855#14397#0" />
-            <element signature="e#14403#14513#0" />
-            <element signature="e#14403#14878#0" />
-            <element signature="e#14884#15094#0" />
-            <element signature="e#14884#15555#0" />
-            <element signature="e#15561#15682#0" />
-            <element signature="e#15561#16052#0" />
-            <element signature="e#16058#16304#0" />
-            <element signature="e#16058#16674#0" />
-            <element signature="e#16680#16786#0" />
-            <element signature="e#16680#17150#0" />
-            <element signature="e#17156#17283#0" />
-            <element signature="e#17156#17744#0" />
-            <element signature="e#17750#17858#0" />
-            <element signature="e#17750#18246#0" />
-            <element signature="e#18252#18360#0" />
-            <element signature="e#18252#18749#0" />
-            <element signature="e#18755#19037#0" />
-            <element signature="e#18755#19417#0" />
-            <element signature="e#19423#19567#0" />
-            <element signature="e#19423#20075#0" />
-            <element signature="e#20081#20196#0" />
-            <element signature="e#20081#20604#0" />
-            <element signature="e#20610#20747#0" />
-            <element signature="e#20610#21230#0" />
-            <element signature="e#21236#21345#0" />
-            <element signature="e#21236#21728#0" />
-            <element signature="e#21771#21970#0" />
-            <element signature="e#21771#22416#0" />
-            <element signature="e#22422#22661#0" />
-            <element signature="e#22422#23095#0" />
-            <element signature="e#23101#23241#0" />
-            <element signature="e#23101#24142#0" />
-            <element signature="e#24148#25541#0" />
-            <element signature="e#25547#25631#0" />
-            <element signature="e#25547#26537#0" />
-            <element signature="e#27283#27366#0" />
-            <element signature="e#35249#35442#0" />
-            <element signature="e#35249#36628#0" />
-            <element signature="e#36634#36755#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/VentasModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1574#1575#0" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="method#precioAsString#0;class#VentasModel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Detalle_Compra">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Tipo_Pago" />
+    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Compra" />
+    <entry file="das://60900fab-5503-4d33-9a81-7c9cf5e19d56/schema/main/table/Detalle_Compra" />
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Compra" />
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Detalle_Compra" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/LogoIcono2Joova.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="99" column="47" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
-          <folding>
-            <element signature="e#2358#2396#0" />
-            <element signature="e#2419#2463#0" />
-            <element signature="e#2860#2977#0" />
-            <element signature="e#4580#4671#0" />
-            <element signature="e#5719#5768#0" />
-            <element signature="method#onAnadirTipoPagoAction#0;class#VentasController#0" />
-            <element signature="e#5975#6012#1" />
-            <element signature="method#actualizarTiposDePago#0;class#VentasController#0" />
-            <element signature="method#onValidarVentaAction#0;class#VentasController#0" />
-            <element signature="e#7875#8318#1" />
-            <element signature="e#5639#5758#1" />
-            <element signature="method#limpiar#0;class#VentasController#0" />
-            <element signature="method#onCambioListaProductos#0;class#VentasController#0" />
-            <element signature="e#9284#9318#1" />
-            <element signature="e#10579#10580#0" expanded="true" />
-            <element signature="e#9376#9416#1" />
-            <element signature="e#10677#10678#0" expanded="true" />
-            <element signature="e#9452#9481#1" />
-            <element signature="e#10742#10743#0" expanded="true" />
-            <element signature="e#9560#9615#1" />
-            <element signature="e#10876#10877#0" expanded="true" />
-            <element signature="e#9697#9746#1" />
-            <element signature="e#11007#11008#0" expanded="true" />
-            <element signature="method#setListaProductosDisponibles#0;class#VentasController#0" />
-            <element signature="e#10009#10061#1" />
-            <element signature="e#11322#11323#0" expanded="true" />
-            <element signature="e#10140#10186#1" />
-            <element signature="e#11447#11448#0" expanded="true" />
-            <element signature="method#setListaProductosAnadidos#0;class#VentasController#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/image/Image.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1131,9 +791,209 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Acciones_Especiales">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Acciones_Especiales_Clientes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac019111-4bae-4ff2-83aa-600c6cf4b1c4/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="114" selection-start-column="114" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/JoovaNuevoCliente/JoovaNuevoCliente/0.0.1/JoovaNuevoCliente-0.0.1.jar!/NuevoCliente/NuevoClienteModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/DialogPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="791" selection-start-line="791" selection-end-line="791" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="8865" selection-start-line="8865" selection-end-line="8865" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2613" selection-start-line="2613" selection-end-line="2613" />
+          <folding>
+            <element signature="e#70522#70523#0" expanded="true" />
+            <element signature="e#70568#70569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/stage/Stage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="478" selection-start-line="478" selection-end-line="478" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/HeavyweightDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/Dialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="342" selection-start-line="342" selection-end-line="342" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Presentacion">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/JoovaApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2976">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-885">
+          <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2483">
+          <caret line="95" column="35" lean-forward="true" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
+          <folding>
+            <element signature="method#onAnadirTipoPagoAction#0;class#VentasController#0" />
+            <element signature="method#actualizarTiposDePago#0;class#VentasController#0" />
+            <element signature="method#onValidarVentaAction#0;class#VentasController#0" />
+            <element signature="method#limpiar#0;class#VentasController#0" />
+            <element signature="method#onCambioListaProductos#0;class#VentasController#0" />
+            <element signature="e#10546#10547#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10638#10639#0" expanded="true" />
+            <element signature="e#10677#10678#0" expanded="true" />
+            <element signature="e#10714#10715#0" expanded="true" />
+            <element signature="e#10742#10743#0" expanded="true" />
+            <element signature="e#10822#10823#0" expanded="true" />
+            <element signature="e#10876#10877#0" expanded="true" />
+            <element signature="e#10959#10960#0" expanded="true" />
+            <element signature="e#11007#11008#0" expanded="true" />
+            <element signature="method#setListaProductosDisponibles#0;class#VentasController#0" />
+            <element signature="e#11271#11272#0" expanded="true" />
+            <element signature="e#11322#11323#0" expanded="true" />
+            <element signature="e#11402#11403#0" expanded="true" />
+            <element signature="e#11447#11448#0" expanded="true" />
+            <element signature="method#setListaProductosAnadidos#0;class#VentasController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPresentacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-293">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-89">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPago.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="-511">
           <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1143,64 +1003,152 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="-123">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/JoovaApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClienteModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        <state relative-caret-position="-1296">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/MainModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
+        <state relative-caret-position="-446">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/PrecioModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="104" column="90" selection-start-line="104" selection-start-column="90" selection-end-line="104" selection-end-column="90" />
+        <state relative-caret-position="-293">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ProductoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/TipoPagoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9615#9616#0" expanded="true" />
-            <element signature="e#9642#9643#0" expanded="true" />
+            <element signature="method#setDescripcionTipoPago#0;class#TipoPagoModel#0" />
+            <element signature="e#1563#1564#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/VentasModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="-1024">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1388#1389#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1519#1520#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1617#1618#0" expanded="true" />
+            <element signature="method#precioAsString#0;class#VentasModel#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/JoovaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="189" column="95" lean-forward="true" selection-start-line="189" selection-start-column="95" selection-end-line="189" selection-end-column="95" />
+        <state relative-caret-position="-1803">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/AccionesModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/PresentacionesModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7738#7739#0" expanded="true" />
-            <element signature="e#7774#7775#0" expanded="true" />
-            <element signature="e#7817#7818#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1138#1139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="775" column="74" selection-start-line="775" selection-start-column="74" selection-end-line="775" selection-end-column="74" />
+          <folding>
+            <element signature="e#418#514#0" />
+            <element signature="e#552#677#0" />
+            <element signature="e#552#1748#0" />
+            <element signature="e#945#1674#0" />
+            <element signature="e#1698#1742#0" />
+            <element signature="e#1781#1968#0" />
+            <element signature="e#2935#3272#0" />
+            <element signature="e#2935#4324#0" />
+            <element signature="e#3529#4232#0" />
+            <element signature="e#4256#4300#0" />
+            <element signature="e#4330#4604#0" />
+            <element signature="e#4330#5163#0" />
+            <element signature="e#4791#5088#0" />
+            <element signature="e#5112#5156#0" />
+            <element signature="e#5169#5325#0" />
+            <element signature="e#5169#6065#0" />
+            <element signature="e#5513#5991#0" />
+            <element signature="e#6015#6059#0" />
+            <element signature="e#6071#6197#0" />
+            <element signature="e#6071#6625#0" />
+            <element signature="e#6350#6551#0" />
+            <element signature="e#6575#6619#0" />
+            <element signature="e#6631#6774#0" />
+            <element signature="e#6631#7287#0" />
+            <element signature="e#7009#7212#0" />
+            <element signature="e#7236#7280#0" />
+            <element signature="e#7293#7606#0" />
+            <element signature="e#7293#8210#0" />
+            <element signature="e#7845#8136#0" />
+            <element signature="e#8160#8204#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="200" column="110" selection-start-line="200" selection-start-column="110" selection-end-line="200" selection-end-column="110" />
+          <folding>
+            <element signature="e#7773#7774#0" expanded="true" />
+            <element signature="e#7809#7810#0" expanded="true" />
             <element signature="e#7852#7853#0" expanded="true" />
+            <element signature="e#7887#7888#0" expanded="true" />
           </folding>
         </state>
       </provider>

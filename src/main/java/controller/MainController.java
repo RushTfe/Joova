@@ -162,13 +162,14 @@ public class MainController implements Initializable {
         clienteController = new ClienteController(database);
         productoController = new ProductoController(database);
         ventasController = new VentasController(database);
-        accionesController = new AccionesController();
+        accionesController = new AccionesController(database);
 
         //Bindeos necesarios DESPUES de crear los controladores
         model.listaClientesProperty().bind(clienteController.listaClientesProperty());
         model.listaProductosProperty().bind(productoController.getModel().listaProductosProperty());
         ventasController.getClientesComboBox().itemsProperty().bind(model.listaClientesProperty());
         ventasController.listaProductosDisponiblesProperty().bind(productoController.getModel().listaProductosProperty());
+        accionesController.listaClientesProperty().bind(model.listaClientesProperty());
 
 
         //Añadir las pestañas al controlador principal

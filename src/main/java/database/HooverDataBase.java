@@ -6,7 +6,9 @@ import javafx.beans.property.ListProperty;
 import javafx.scene.image.Image;
 import model.*;
 import nuevoproducto.NuevoProductoModel;
+import util.JoovaUtil;
 
+import javax.swing.plaf.nimbus.State;
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
@@ -239,13 +241,9 @@ public class HooverDataBase {
     /**
      * Primera experiencia con el cliente, donde se le presentan los productos y se hace la demostracion de usos.
      *
-     * @param codCliente
-     * @param fecha
-     * @param direccion
-     * @param observaciones
-     * @param hayVenta
+     * @param presentacion
      */
-    public void insertPresentacion(String codCliente, LocalDate fecha, String direccion, String observaciones, boolean hayVenta) {
+    public void insertPresentacion(PresentacionesModel presentacion) {
         //TODO Usar el objeto
 
         String insert = "INSERT INTO Presentacion (Cod_Cliente, Fecha, Direccion, Observaciones, Venta) VALUES (?, ?, ?, ?, ?)";
@@ -253,11 +251,11 @@ public class HooverDataBase {
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setString(1, codCliente);
-            stmnt.setDate(2, Date.valueOf(fecha));
-            stmnt.setString(3, direccion);
-            stmnt.setString(4, observaciones);
-            stmnt.setBoolean(5, hayVenta);
+            stmnt.setString(1, presentacion.getCodCliente());
+            stmnt.setString(2, presentacion.getFechaPresentacion().toString());
+            stmnt.setString(3, presentacion.getDireccionCliente());
+            stmnt.setString(4, presentacion.getObservaciones());
+            stmnt.setBoolean(5, presentacion.isVentaRealizada());
 
             stmnt.executeUpdate();
 
@@ -751,6 +749,34 @@ public class HooverDataBase {
 
             stmnt.close();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Consulta todas las presentaciones que hay en la base de datos, y las guarda en la lista que recoge por parametro.
+     * @param listaPresentaciones la lista con las presentaciones que se cargaran en la tabla "Presentaciones"
+     */
+    public void consultaTodasPresentaciones(ListProperty<PresentacionesModel> listaPresentaciones) {
+        String query = "select DNI, Nombre, C.Direccion, Fecha, Venta, Presentacion.Observaciones from Presentacion join Cliente C on Presentacion.Cod_Cliente = C.DNI";
+        ResultSet rs = null;
+        int i = 0;
+        try {
+            Statement stmnt = conn.createStatement();
+            rs = stmnt.executeQuery(query);
+
+            while (rs.next()) {
+                listaPresentaciones.add(new PresentacionesModel());
+                listaPresentaciones.get(i).setCodCliente(rs.getString(1));
+                listaPresentaciones.get(i).setNombreCliente(rs.getString(2));
+                listaPresentaciones.get(i).setDireccionCliente(rs.getString(3));
+                listaPresentaciones.get(i).setFechaPresentacion(JoovaUtil.stringToLocalDate(rs.getString(4)));
+                listaPresentaciones.get(i).setVentaRealizada(rs.getBoolean(5));
+                listaPresentaciones.get(i).setObservaciones(rs.getString(6));
+                i++;
+            }
+            stmnt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
