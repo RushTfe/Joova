@@ -5,6 +5,7 @@ import javafx.beans.property.*;
 import java.time.LocalDate;
 
 public class PresentacionesModel {
+    private IntegerProperty codPresentacion;
     private StringProperty codCliente;
     private StringProperty nombreCliente;
     private StringProperty direccionCliente;
@@ -13,12 +14,25 @@ public class PresentacionesModel {
     private BooleanProperty ventaRealizada;
 
     public PresentacionesModel() {
+        codPresentacion = new SimpleIntegerProperty(this, "codPresentacion");
         codCliente = new SimpleStringProperty(this, "codCliente");
         nombreCliente = new SimpleStringProperty(this, "nombreCliente");
         direccionCliente = new SimpleStringProperty(this, "direccionCliente");
         observaciones = new SimpleStringProperty(this, "observaciones");
         fechaPresentacion = new SimpleObjectProperty<>(this, "fechaPresentacion");
         ventaRealizada = new SimpleBooleanProperty(this, "ventaRealizada", false);
+    }
+
+    public int getCodPresentacion() {
+        return codPresentacion.get();
+    }
+
+    public IntegerProperty codPresentacionProperty() {
+        return codPresentacion;
+    }
+
+    public void setCodPresentacion(int codPresentacion) {
+        this.codPresentacion.set(codPresentacion);
     }
 
     public String getCodCliente() {

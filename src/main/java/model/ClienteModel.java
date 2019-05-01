@@ -153,4 +153,16 @@ public class ClienteModel {
     public String toString() {
         return getNombre() + " " + getApellidos();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (!(obj instanceof ClienteModel))
+            return false;
+        ClienteModel cliente = (ClienteModel)obj;
+        if (this.getDni().equals(cliente.getDni()))
+            return true;
+        return false;
+    }
 }

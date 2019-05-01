@@ -48,6 +48,23 @@ public class HooverDataBase {
         }
     }
 
+    public void updatePresentacion(PresentacionesModel presentacion) {
+        String update = "UPDATE Presentacion SET Cod_Cliente = ?, Fecha = ?, Direccion = ?, Observaciones = ?, Venta = ? WHERE Cod_Presentacion = ?";
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(update);
+            stmnt.setString(1, presentacion.getCodCliente());
+            stmnt.setString(2, presentacion.getFechaPresentacion().toString());
+            stmnt.setString(3, presentacion.getDireccionCliente());
+            stmnt.setString(4, presentacion.getObservaciones());
+            stmnt.setBoolean(5, presentacion.isVentaRealizada());
+            stmnt.setInt(6, presentacion.getCodPresentacion());
+
+            stmnt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //INSERCIONES A LA BD
 
     /**
@@ -759,7 +776,7 @@ public class HooverDataBase {
      * @param listaPresentaciones la lista con las presentaciones que se cargaran en la tabla "Presentaciones"
      */
     public void consultaTodasPresentaciones(ListProperty<PresentacionesModel> listaPresentaciones) {
-        String query = "select DNI, Nombre, C.Direccion, Fecha, Venta, Presentacion.Observaciones from Presentacion join Cliente C on Presentacion.Cod_Cliente = C.DNI";
+        String query = "select DNI, Nombre, C.Direccion, Fecha, Venta, Presentacion.Observaciones, Cod_Presentacion from Presentacion join Cliente C on Presentacion.Cod_Cliente = C.DNI";
         ResultSet rs = null;
         int i = 0;
         try {
@@ -774,6 +791,7 @@ public class HooverDataBase {
                 listaPresentaciones.get(i).setFechaPresentacion(JoovaUtil.stringToLocalDate(rs.getString(4)));
                 listaPresentaciones.get(i).setVentaRealizada(rs.getBoolean(5));
                 listaPresentaciones.get(i).setObservaciones(rs.getString(6));
+                listaPresentaciones.get(i).setCodPresentacion(rs.getInt(7));
                 i++;
             }
             stmnt.close();

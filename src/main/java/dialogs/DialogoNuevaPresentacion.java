@@ -67,6 +67,21 @@ public class DialogoNuevaPresentacion extends Dialog<PresentacionesModel> {
             return null;
         });
 
+    }
 
+    public ComboBox<ClienteModel> getClientesComboBox() {
+        return clientesComboBox;
+    }
+
+    public DatePicker getFecha() {
+        return fecha;
+    }
+
+    public CheckBox getVenta() {
+        return venta;
+    }
+
+    public TextArea getObservaciones() {
+        return observaciones;
     }
 }

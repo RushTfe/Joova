@@ -43,7 +43,6 @@ public class AccionesController implements Initializable {
     private TableColumn<PresentacionesModel, Boolean> columnaVenta;
     private ListProperty<PresentacionesModel> listaPresentaciones;
 
-
     @FXML
     private BorderPane rootAcciones;
 
@@ -194,15 +193,46 @@ public class AccionesController implements Initializable {
         radioButtons.selectedToggleProperty().addListener(e -> onExpChanged());
         buscarButton.setOnAction(e -> onBuscarAction());
         nuevoButton.setOnAction(e -> onNuevoAction());
+        eliminarButton.setOnAction(e -> onEliminarAction());
+        modifButton.setOnAction(e -> onModificarAction());
 
         actualizarDatos();
 
         // FIXME al cambiar de radioButton y volver, no funciona el listener
-        tablaPresentaciones.getSelectionModel().selectedItemProperty().addListener(e -> actualizarTextArea());
+        // FIXME crea NullPointerException al eliminar un elemento de la lista
+//        tablaPresentaciones.getSelectionModel().selectedItemProperty().addListener(e -> actualizarTextArea());
+    }
+
+    private void onModificarAction() {
+        if (model.isPresentacion()) {
+            PresentacionesModel presentacion = tablaPresentaciones.getSelectionModel().getSelectedItem();
+            ClienteModel cliente = new ClienteModel();
+            cliente.setDni(presentacion.getCodCliente());
+            DialogoNuevaPresentacion dialogo = new DialogoNuevaPresentacion(listaClientes);
+            dialogo.setTitle("Modificar presentacion");
+            dialogo.getObservaciones().setText(presentacion.getObservaciones());
+            dialogo.getClientesComboBox().getSelectionModel().select(cliente);
+            dialogo.getFecha().setValue(presentacion.getFechaPresentacion());
+            dialogo.getVenta().setSelected(presentacion.isVentaRealizada());
+
+            Optional<PresentacionesModel> resul = dialogo.showAndWait();
+            if (resul.isPresent()) {
+                resul.get().setCodPresentacion(presentacion.getCodPresentacion());
+                db.updatePresentacion(resul.get());
+                actualizarDatos();
+            }
+        }
+    }
+
+    private void onEliminarAction() {
+        if (model.isPresentacion()) {
+            PresentacionesModel aBorrar = tablaPresentaciones.getSelectionModel().getSelectedItem();
+            db.deletePresentacion(aBorrar.getCodPresentacion());
+            listaPresentaciones.remove(aBorrar);
+        }
     }
 
     private void actualizarTextArea() {
-        System.out.println(model.isPresentacion());
         if (model.isPresentacion())
             model.setObservaciones(tablaPresentaciones.getSelectionModel().getSelectedItem().getObservaciones());
     }
@@ -213,7 +243,7 @@ public class AccionesController implements Initializable {
             Optional<PresentacionesModel> resul = dialogo.showAndWait();
             if (resul.isPresent()) {
                 db.insertPresentacion(resul.get());
-                listaPresentaciones.add(resul.get());
+                actualizarDatos();
             }
         }
     }
