@@ -7,19 +7,19 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import model.ClienteModel;
-import model.PresentacionesModel;
+import model.PMyPresentacionesModel;
 
-public class DialogoNuevaPresentacion extends Dialog<PresentacionesModel> {
-    private PresentacionesModel model;
+public class DialogoNuevaPyPM extends Dialog<PMyPresentacionesModel> {
+    private PMyPresentacionesModel model;
     private GridPane root;
     private ComboBox<ClienteModel> clientesComboBox;
     private DatePicker fecha;
     private CheckBox venta;
     private TextArea observaciones;
 
-    public DialogoNuevaPresentacion(ListProperty<ClienteModel> listaClientes) {
+    public DialogoNuevaPyPM(ListProperty<ClienteModel> listaClientes) {
         // Inicializar todos los objetos
-        model = new PresentacionesModel();
+        model = new PMyPresentacionesModel();
         root = new GridPane();
         clientesComboBox = new ComboBox<>();
         fecha = new DatePicker();
@@ -61,7 +61,7 @@ public class DialogoNuevaPresentacion extends Dialog<PresentacionesModel> {
                 model.setDireccionCliente(clientesComboBox.getSelectionModel().getSelectedItem().getDireccion());
                 model.setObservaciones(observaciones.getText());
                 model.setVentaRealizada(venta.isSelected());
-                model.setFechaPresentacion(fecha.getValue());
+                model.setFechaEvento(fecha.getValue());
                 return model;
             }
             return null;

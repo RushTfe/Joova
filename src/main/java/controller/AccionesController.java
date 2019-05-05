@@ -1,8 +1,8 @@
 package controller;
 
+import app.JoovaApp;
 import database.HooverDataBase;
-import dialogs.DialogoNuevaPresentacion;
-import javafx.beans.binding.Bindings;
+import dialogs.DialogoNuevaPyPM;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -16,7 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import model.AccionesModel;
 import model.ClienteModel;
-import model.PresentacionesModel;
+import model.PMyPresentacionesModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,12 +36,22 @@ public class AccionesController implements Initializable {
     /**************
      * Tabla de presentaciones
      **************/
-    private TableView<PresentacionesModel> tablaPresentaciones;
-    private TableColumn<PresentacionesModel, String> columnaNombre;
-    private TableColumn<PresentacionesModel, String> columnaDireccion;
-    private TableColumn<PresentacionesModel, LocalDate> columnaFecha;
-    private TableColumn<PresentacionesModel, Boolean> columnaVenta;
-    private ListProperty<PresentacionesModel> listaPresentaciones;
+    private TableView<PMyPresentacionesModel> tablaPresentaciones;
+    private TableColumn<PMyPresentacionesModel, String> columnaNombre;
+    private TableColumn<PMyPresentacionesModel, String> columnaDireccion;
+    private TableColumn<PMyPresentacionesModel, LocalDate> columnaFecha;
+    private TableColumn<PMyPresentacionesModel, Boolean> columnaVenta;
+    private ListProperty<PMyPresentacionesModel> listaPresentaciones;
+
+    /**************
+     * Tabla de Puestas en Marcha
+     **************/
+    private TableView<PMyPresentacionesModel> tablaPuestaMarcha;
+    private TableColumn<PMyPresentacionesModel, String> codClientePuestaMarchaColumn;
+    private TableColumn<PMyPresentacionesModel, String> nombreClientePuestaMarchaColumn;
+    private TableColumn<PMyPresentacionesModel, LocalDate> fechaPuestaMarchaColumn;
+    private ListProperty<PMyPresentacionesModel> listaPuestasMarcha;
+
 
     @FXML
     private BorderPane rootAcciones;
@@ -142,11 +152,45 @@ public class AccionesController implements Initializable {
         columnaNombre.setText("Nombre");
         columnaDireccion.setCellValueFactory(v -> v.getValue().direccionClienteProperty());
         columnaDireccion.setText("Direccion");
-        columnaFecha.setCellValueFactory(v -> v.getValue().fechaPresentacionProperty());
+        columnaFecha.setCellValueFactory(v -> v.getValue().fechaEventoProperty());
         columnaFecha.setText("Fecha");
         columnaVenta.setCellValueFactory(v -> v.getValue().ventaRealizadaProperty());
         columnaVenta.setText("Venta");
 
+
+        /*************************************************************
+         *
+         * Inicializaciones de puestas en marcha
+         *
+         *************************************************************/
+
+        //Tabla
+        tablaPuestaMarcha = new TableView<>();
+        codClientePuestaMarchaColumn = new TableColumn<>();
+        nombreClientePuestaMarchaColumn = new TableColumn<>();
+        fechaPuestaMarchaColumn = new TableColumn<>();
+        listaPuestasMarcha = new SimpleListProperty<>(this, "listaPuestasMarcha", FXCollections.observableArrayList());
+
+        // Ancho de columnas crecen con la tabla
+        tablaPuestaMarcha.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        //Añadir columnas a la tabla
+        tablaPuestaMarcha.getColumns().add(0, codClientePuestaMarchaColumn);
+        tablaPuestaMarcha.getColumns().add(1, nombreClientePuestaMarchaColumn);
+        tablaPuestaMarcha.getColumns().add(2, fechaPuestaMarchaColumn);
+
+        //Ajustar al AnchorPane
+        AnchorPane.setTopAnchor(tablaPuestaMarcha, 0d);
+        AnchorPane.setBottomAnchor(tablaPuestaMarcha, 0d);
+        AnchorPane.setRightAnchor(tablaPuestaMarcha, 0d);
+        AnchorPane.setLeftAnchor(tablaPuestaMarcha, 0d);
+
+        codClientePuestaMarchaColumn.setCellValueFactory(v -> v.getValue().codClienteProperty());
+        codClientePuestaMarchaColumn.setText("Codigo Cliente");
+        nombreClientePuestaMarchaColumn.setCellValueFactory(v -> v.getValue().nombreClienteProperty());
+        nombreClientePuestaMarchaColumn.setText("Nombre Cliente");
+        fechaPuestaMarchaColumn.setCellValueFactory(v -> v.getValue().fechaEventoProperty());
+        fechaPuestaMarchaColumn.setText("Fecha de presentación");
 
         /*************************************************************
          *
@@ -163,6 +207,8 @@ public class AccionesController implements Initializable {
 
         // Tabla de presentaciones
         tablaPresentaciones.itemsProperty().bind(listaPresentaciones);
+        // Tabla Puestas en marcha
+        tablaPuestaMarcha.itemsProperty().bind(listaPuestasMarcha);
 
         // Añadir la tabla por primera vez al controlador
         contentAnchorPane.getChildren().add(tablaPresentaciones);
@@ -205,30 +251,63 @@ public class AccionesController implements Initializable {
 
     private void onModificarAction() {
         if (model.isPresentacion()) {
-            PresentacionesModel presentacion = tablaPresentaciones.getSelectionModel().getSelectedItem();
+            PMyPresentacionesModel evento = tablaPresentaciones.getSelectionModel().getSelectedItem();
             ClienteModel cliente = new ClienteModel();
-            cliente.setDni(presentacion.getCodCliente());
-            DialogoNuevaPresentacion dialogo = new DialogoNuevaPresentacion(listaClientes);
+            cliente.setDni(evento.getCodCliente());
+            DialogoNuevaPyPM dialogo = new DialogoNuevaPyPM(listaClientes);
             dialogo.setTitle("Modificar presentacion");
-            dialogo.getObservaciones().setText(presentacion.getObservaciones());
+            dialogo.getObservaciones().setText(evento.getObservaciones());
             dialogo.getClientesComboBox().getSelectionModel().select(cliente);
-            dialogo.getFecha().setValue(presentacion.getFechaPresentacion());
-            dialogo.getVenta().setSelected(presentacion.isVentaRealizada());
+            dialogo.getFecha().setValue(evento.getFechaEvento());
+            dialogo.getVenta().setSelected(evento.isVentaRealizada());
 
-            Optional<PresentacionesModel> resul = dialogo.showAndWait();
+            Optional<PMyPresentacionesModel> resul = dialogo.showAndWait();
             if (resul.isPresent()) {
-                resul.get().setCodPresentacion(presentacion.getCodPresentacion());
+                resul.get().setCodigoEvento(evento.getCodigoEvento());
                 db.updatePresentacion(resul.get());
                 actualizarDatos();
             }
+        } else if (model.isPuestaEnMarcha()) {
+            //FIXME Se paraliza al pulsar sobre la tabla hasta pulsar en otro sitio.
+            ClienteModel cliente = new ClienteModel();
+            PMyPresentacionesModel evento = tablaPuestaMarcha.getSelectionModel().getSelectedItem();
+            cliente.setDni(evento.getCodCliente());
+            DialogoNuevaPyPM dialogo = new DialogoNuevaPyPM(listaClientes);
+            dialogo.setTitle("Modificar Puesta en Marcha");
+            dialogo.getObservaciones().setText(evento.getObservaciones());
+            dialogo.getClientesComboBox().getSelectionModel().select(cliente);
+            dialogo.getFecha().setValue(evento.getFechaEvento());
+            dialogo.getVenta().setSelected(evento.isVentaRealizada());
+
+            Optional<PMyPresentacionesModel> resul = dialogo.showAndWait();
+            if (resul.isPresent()) {
+                resul.get().setCodigoEvento(evento.getCodigoEvento());
+                db.updatePuestaMarcha(resul.get());
+                actualizarDatos();
+            }
+
         }
     }
 
     private void onEliminarAction() {
+        PMyPresentacionesModel aBorrar;
         if (model.isPresentacion()) {
-            PresentacionesModel aBorrar = tablaPresentaciones.getSelectionModel().getSelectedItem();
-            db.deletePresentacion(aBorrar.getCodPresentacion());
-            listaPresentaciones.remove(aBorrar);
+            aBorrar = tablaPresentaciones.getSelectionModel().getSelectedItem();
+            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + " DNI: " + aBorrar.getCodCliente() + " Nombre: " + aBorrar.getNombreCliente();
+            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
+
+            if (resul.isPresent() && resul.get() == ButtonType.OK) {
+                db.deletePresentacion(aBorrar.getCodigoEvento());
+                listaPresentaciones.remove(aBorrar);
+            }
+        } else if (model.isPuestaEnMarcha()) {
+            aBorrar = tablaPuestaMarcha.getSelectionModel().getSelectedItem();
+            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + " DNI: " + aBorrar.getCodCliente() + " Nombre: " + aBorrar.getNombreCliente();
+            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
+            if (resul.isPresent() && resul.get() == ButtonType.OK) {
+                db.deletePuestaMarcha(aBorrar.getCodigoEvento());
+                listaPuestasMarcha.remove(aBorrar);
+            }
         }
     }
 
@@ -238,13 +317,25 @@ public class AccionesController implements Initializable {
     }
 
     private void onNuevoAction() {
+        DialogoNuevaPyPM dialogo;
         if (model.isPresentacion()) {
-            DialogoNuevaPresentacion dialogo = new DialogoNuevaPresentacion(listaClientes);
-            Optional<PresentacionesModel> resul = dialogo.showAndWait();
+            dialogo = new DialogoNuevaPyPM(listaClientes);
+            Optional<PMyPresentacionesModel> resul = dialogo.showAndWait();
             if (resul.isPresent()) {
                 db.insertPresentacion(resul.get());
                 actualizarDatos();
             }
+
+        } else if (model.isPuestaEnMarcha()) {
+            dialogo = new DialogoNuevaPyPM(listaClientes);
+            dialogo.setTitle("Añadir Puesta en Marcha");
+            dialogo.getVenta().setVisible(false);
+            Optional<PMyPresentacionesModel> resul = dialogo.showAndWait();
+            if (resul.isPresent()) {
+                db.insertPuestaEnMarcha(resul.get());
+                actualizarDatos();
+            }
+
         }
     }
 
@@ -252,15 +343,19 @@ public class AccionesController implements Initializable {
     }
 
     private void actualizarDatos() {
-        listaPresentaciones.clear();
-        db.consultaTodasPresentaciones(listaPresentaciones);
+        //Actualizar presentaciones
+            listaPresentaciones.clear();
+            db.consultaTodasPresentaciones(listaPresentaciones);
+        //Actualizar puestas en marcha
+            listaPuestasMarcha.clear();
+            db.consultaTodasPuestasMarcha(listaPuestasMarcha);
     }
 
     private void onExpChanged() {
         if (model.isPresentacion()) {
             setContent(tablaPresentaciones);
-
-        }
+        } else if (model.isPuestaEnMarcha())
+            setContent(tablaPuestaMarcha);
     }
 
     public void setContent(Node node) {
@@ -274,5 +369,14 @@ public class AccionesController implements Initializable {
 
     public BorderPane getRootAcciones() {
         return rootAcciones;
+    }
+
+    private Optional<ButtonType> alerta(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.initOwner(JoovaApp.getPrimaryStage());
+        return alert.showAndWait();
     }
 }

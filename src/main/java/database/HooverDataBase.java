@@ -1,14 +1,11 @@
 package database;
 
-import Joova.ProductoCardModel;
 import NuevoCliente.NuevoClienteModel;
 import javafx.beans.property.ListProperty;
-import javafx.scene.image.Image;
 import model.*;
 import nuevoproducto.NuevoProductoModel;
 import util.JoovaUtil;
 
-import javax.swing.plaf.nimbus.State;
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
@@ -48,18 +45,36 @@ public class HooverDataBase {
         }
     }
 
-    public void updatePresentacion(PresentacionesModel presentacion) {
+    public void updatePuestaMarcha(PMyPresentacionesModel puestaMarcha) {
+        String update = "UPDATE PuestaMarcha SET Cod_Cliente = ?, Fecha = ?, Observaciones = ? WHERE Cod_Puesta_Marcha = ?";
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(update);
+
+            stmnt.setString(1, puestaMarcha.getCodCliente());
+            stmnt.setString(2, puestaMarcha.getFechaEvento().toString());
+            stmnt.setString(3, puestaMarcha.getObservaciones());
+            stmnt.setInt(4, puestaMarcha.getCodigoEvento());
+
+            stmnt.executeUpdate();
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updatePresentacion(PMyPresentacionesModel presentacion) {
         String update = "UPDATE Presentacion SET Cod_Cliente = ?, Fecha = ?, Direccion = ?, Observaciones = ?, Venta = ? WHERE Cod_Presentacion = ?";
         try {
             PreparedStatement stmnt = conn.prepareStatement(update);
             stmnt.setString(1, presentacion.getCodCliente());
-            stmnt.setString(2, presentacion.getFechaPresentacion().toString());
+            stmnt.setString(2, presentacion.getFechaEvento().toString());
             stmnt.setString(3, presentacion.getDireccionCliente());
             stmnt.setString(4, presentacion.getObservaciones());
             stmnt.setBoolean(5, presentacion.isVentaRealizada());
-            stmnt.setInt(6, presentacion.getCodPresentacion());
+            stmnt.setInt(6, presentacion.getCodigoEvento());
 
             stmnt.executeUpdate();
+            stmnt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -260,7 +275,7 @@ public class HooverDataBase {
      *
      * @param presentacion
      */
-    public void insertPresentacion(PresentacionesModel presentacion) {
+    public void insertPresentacion(PMyPresentacionesModel presentacion) {
         //TODO Usar el objeto
 
         String insert = "INSERT INTO Presentacion (Cod_Cliente, Fecha, Direccion, Observaciones, Venta) VALUES (?, ?, ?, ?, ?)";
@@ -269,7 +284,7 @@ public class HooverDataBase {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
             stmnt.setString(1, presentacion.getCodCliente());
-            stmnt.setString(2, presentacion.getFechaPresentacion().toString());
+            stmnt.setString(2, presentacion.getFechaEvento().toString());
             stmnt.setString(3, presentacion.getDireccionCliente());
             stmnt.setString(4, presentacion.getObservaciones());
             stmnt.setBoolean(5, presentacion.isVentaRealizada());
@@ -285,11 +300,9 @@ public class HooverDataBase {
     /**
      * Tabla que recoge las veces que se fue a casa del cliente a poner a funcionar los equipos adquiridos.
      *
-     * @param codCliente
-     * @param fecha
-     * @param observaciones
+     * @param model El modelo de Puestas en marcha y presentaciones
      */
-    public void insertPuestaEnMarcha(String codCliente, LocalDate fecha, String observaciones) {
+    public void insertPuestaEnMarcha(PMyPresentacionesModel model) {
         //TODO Pasar el objeto
 
         String insert = "INSERT INTO PuestaMarcha (Cod_Cliente, Fecha, Observaciones) VALUES (?, ?, ?)";
@@ -297,9 +310,9 @@ public class HooverDataBase {
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setString(1, codCliente);
-            stmnt.setDate(2, Date.valueOf(fecha));
-            stmnt.setString(3, observaciones);
+            stmnt.setString(1, model.getCodCliente());
+            stmnt.setString(2, model.getFechaEvento().toString());
+            stmnt.setString(3, model.getObservaciones());
 
             stmnt.executeUpdate();
 
@@ -775,7 +788,7 @@ public class HooverDataBase {
      * Consulta todas las presentaciones que hay en la base de datos, y las guarda en la lista que recoge por parametro.
      * @param listaPresentaciones la lista con las presentaciones que se cargaran en la tabla "Presentaciones"
      */
-    public void consultaTodasPresentaciones(ListProperty<PresentacionesModel> listaPresentaciones) {
+    public void consultaTodasPresentaciones(ListProperty<PMyPresentacionesModel> listaPresentaciones) {
         String query = "select DNI, Nombre, C.Direccion, Fecha, Venta, Presentacion.Observaciones, Cod_Presentacion from Presentacion join Cliente C on Presentacion.Cod_Cliente = C.DNI";
         ResultSet rs = null;
         int i = 0;
@@ -784,14 +797,37 @@ public class HooverDataBase {
             rs = stmnt.executeQuery(query);
 
             while (rs.next()) {
-                listaPresentaciones.add(new PresentacionesModel());
+                listaPresentaciones.add(new PMyPresentacionesModel());
                 listaPresentaciones.get(i).setCodCliente(rs.getString(1));
                 listaPresentaciones.get(i).setNombreCliente(rs.getString(2));
                 listaPresentaciones.get(i).setDireccionCliente(rs.getString(3));
-                listaPresentaciones.get(i).setFechaPresentacion(JoovaUtil.stringToLocalDate(rs.getString(4)));
+                listaPresentaciones.get(i).setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(4)));
                 listaPresentaciones.get(i).setVentaRealizada(rs.getBoolean(5));
                 listaPresentaciones.get(i).setObservaciones(rs.getString(6));
-                listaPresentaciones.get(i).setCodPresentacion(rs.getInt(7));
+                listaPresentaciones.get(i).setCodigoEvento(rs.getInt(7));
+                i++;
+            }
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaTodasPuestasMarcha(ListProperty<PMyPresentacionesModel> listaPuestasMarcha) {
+        String query = "SELECT Cod_Puesta_Marcha, Cod_Cliente, Nombre, Fecha, PuestaMarcha.Observaciones FROM PuestaMarcha JOIN Cliente C on PuestaMarcha.Cod_Cliente = C.DNI";
+        ResultSet rs = null;
+        int i = 0;
+        try {
+            Statement stmnt = conn.createStatement();
+            rs = stmnt.executeQuery(query);
+
+            while (rs.next()) {
+                listaPuestasMarcha.add(new PMyPresentacionesModel());
+                listaPuestasMarcha.get(i).setCodigoEvento(rs.getInt(1));
+                listaPuestasMarcha.get(i).setCodCliente(rs.getString(2));
+                listaPuestasMarcha.get(i).setNombreCliente(rs.getString(3));
+                listaPuestasMarcha.get(i).setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(4)));
+                listaPuestasMarcha.get(i).setObservaciones(rs.getString(5));
                 i++;
             }
             stmnt.close();

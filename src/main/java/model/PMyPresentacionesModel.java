@@ -4,35 +4,35 @@ import javafx.beans.property.*;
 
 import java.time.LocalDate;
 
-public class PresentacionesModel {
-    private IntegerProperty codPresentacion;
+public class PMyPresentacionesModel {
+    private IntegerProperty codigoEvento;
     private StringProperty codCliente;
     private StringProperty nombreCliente;
     private StringProperty direccionCliente;
     private StringProperty observaciones;
-    private ObjectProperty<LocalDate> fechaPresentacion;
+    private ObjectProperty<LocalDate> fechaEvento;
     private BooleanProperty ventaRealizada;
 
-    public PresentacionesModel() {
-        codPresentacion = new SimpleIntegerProperty(this, "codPresentacion");
+    public PMyPresentacionesModel() {
+        codigoEvento = new SimpleIntegerProperty(this, "codigoEvento");
         codCliente = new SimpleStringProperty(this, "codCliente");
         nombreCliente = new SimpleStringProperty(this, "nombreCliente");
         direccionCliente = new SimpleStringProperty(this, "direccionCliente");
         observaciones = new SimpleStringProperty(this, "observaciones");
-        fechaPresentacion = new SimpleObjectProperty<>(this, "fechaPresentacion");
+        fechaEvento = new SimpleObjectProperty<>(this, "fechaEvento");
         ventaRealizada = new SimpleBooleanProperty(this, "ventaRealizada", false);
     }
 
-    public int getCodPresentacion() {
-        return codPresentacion.get();
+    public int getCodigoEvento() {
+        return codigoEvento.get();
     }
 
-    public IntegerProperty codPresentacionProperty() {
-        return codPresentacion;
+    public IntegerProperty codigoEventoProperty() {
+        return codigoEvento;
     }
 
-    public void setCodPresentacion(int codPresentacion) {
-        this.codPresentacion.set(codPresentacion);
+    public void setCodigoEvento(int codigoEvento) {
+        this.codigoEvento.set(codigoEvento);
     }
 
     public String getCodCliente() {
@@ -83,16 +83,16 @@ public class PresentacionesModel {
         this.direccionCliente.set(direccionCliente);
     }
 
-    public LocalDate getFechaPresentacion() {
-        return fechaPresentacion.get();
+    public LocalDate getFechaEvento() {
+        return fechaEvento.get();
     }
 
-    public ObjectProperty<LocalDate> fechaPresentacionProperty() {
-        return fechaPresentacion;
+    public ObjectProperty<LocalDate> fechaEventoProperty() {
+        return fechaEvento;
     }
 
-    public void setFechaPresentacion(LocalDate fechaPresentacion) {
-        this.fechaPresentacion.set(fechaPresentacion);
+    public void setFechaEvento(LocalDate fechaEvento) {
+        this.fechaEvento.set(fechaEvento);
     }
 
     public boolean isVentaRealizada() {
