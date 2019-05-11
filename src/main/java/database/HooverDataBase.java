@@ -405,27 +405,35 @@ public class HooverDataBase {
     /**
      * Tabla con las reuniones de varios clientes.
      *
-     * @param direccion
-     * @param fecha
-     * @param observaciones
      */
-    public void insertExperiencias(String direccion, LocalDate fecha, String observaciones) {
+    public int insertExperiencias(ExperienciaModel experiencia) {
         //TODO Usar el objeto
 
         String insert = "INSERT INTO Experiencia (Direccion, Fecha, Observaciones) VALUES (?, ?, ?)";
 
+        int codigo = -1;
+
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setString(1, direccion);
-            stmnt.setDate(2, Date.valueOf(fecha));
-            stmnt.setString(3, observaciones);
+            stmnt.setString(1, experiencia.getDireccion());
+            stmnt.setString(2, experiencia.getFechaExperiencia().toString());
+            stmnt.setString(3, experiencia.getObservaciones());
 
             stmnt.executeUpdate();
+            stmnt.close();
+
+            String select = "SELECT Cod_Experiencia from Experiencia where Direccion = '" + experiencia.getDireccion() + "' AND Fecha = '" + experiencia.getFechaExperiencia().toString() + "'";
+            Statement selectCod = conn.createStatement();
+            ResultSet rs = selectCod.executeQuery(select);
+
+            rs.next();
+            codigo = rs.getInt(1);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return codigo;
     }
 
     /**
@@ -828,6 +836,28 @@ public class HooverDataBase {
                 listaPuestasMarcha.get(i).setNombreCliente(rs.getString(3));
                 listaPuestasMarcha.get(i).setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(4)));
                 listaPuestasMarcha.get(i).setObservaciones(rs.getString(5));
+                i++;
+            }
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaTodasExperiencias(ListProperty<ExperienciaModel> listaExperiencias) {
+        String query = "SELECT * FROM Experiencia";
+        ResultSet rs = null;
+        int i = 0;
+        try {
+            Statement stmnt = conn.createStatement();
+            rs = stmnt.executeQuery(query);
+
+            while (rs.next()) {
+                listaExperiencias.add(new ExperienciaModel());
+                listaExperiencias.get(i).setCodExperiencia(rs.getInt(1));
+                listaExperiencias.get(i).setDireccion(rs.getString(2));
+                listaExperiencias.get(i).setFechaExperiencia(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaExperiencias.get(i).setObservaciones(rs.getString(4));
                 i++;
             }
             stmnt.close();

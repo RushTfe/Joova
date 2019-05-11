@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java" line="357" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java" line="424" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPresentacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/PresentacionesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PMyPresentacionesModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaPresentacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/PresentacionesModel.class" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +57,7 @@
         <item name="Pedro" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="PuestaMarcha: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="Experiencia: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -109,277 +104,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="270" column="84" selection-start-line="270" selection-start-column="84" selection-end-line="270" selection-end-column="84" />
-              <folding>
-                <element signature="e#14578#14579#0" expanded="true" />
-                <element signature="e#14656#14657#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-              <folding>
-                <element signature="e#315#411#0" />
-                <element signature="e#449#574#0" />
-                <element signature="e#449#1645#0" />
-                <element signature="e#0#168#1" />
-                <element signature="e#842#1571#0" />
-                <element signature="e#1595#1639#0" />
-                <element signature="e#2511#2698#0" />
-                <element signature="e#2511#3659#0" />
-                <element signature="e#0#56#1" />
-                <element signature="e#20#56#0" />
-                <element signature="e#26#56#0" />
-                <element signature="e#2854#3584#0" />
-                <element signature="e#3608#3652#0" />
-                <element signature="e#3665#4002#0" />
-                <element signature="e#3665#5054#0" />
-                <element signature="e#0#99#1" />
-                <element signature="e#80#99#0" />
-                <element signature="e#4259#4962#0" />
-                <element signature="e#0#60#2" />
-                <element signature="e#4986#5030#0" />
-                <element signature="e#5060#5334#0" />
-                <element signature="e#5060#5893#0" />
-                <element signature="e#0#46#1" />
-                <element signature="e#30#46#0" />
-                <element signature="e#5521#5818#0" />
-                <element signature="e#5842#5886#0" />
-                <element signature="e#5899#6055#0" />
-                <element signature="e#5899#6795#0" />
-                <element signature="e#0#43#1" />
-                <element signature="e#19#43#0" />
-                <element signature="e#25#43#0" />
-                <element signature="e#6243#6721#0" />
-                <element signature="e#6745#6789#0" />
-                <element signature="e#6801#6927#0" />
-                <element signature="e#6801#7355#0" />
-                <element signature="e#0#39#1" />
-                <element signature="e#7080#7281#0" />
-                <element signature="e#7305#7349#0" />
-                <element signature="e#7361#7504#0" />
-                <element signature="e#7361#8017#0" />
-                <element signature="e#0#77#1" />
-                <element signature="e#64#77#0" />
-                <element signature="e#7739#7942#0" />
-                <element signature="e#7966#8010#0" />
-                <element signature="e#8023#8336#0" />
-                <element signature="e#8023#8940#0" />
-                <element signature="e#0#51#1" />
-                <element signature="e#32#51#0" />
-                <element signature="e#8575#8866#0" />
-                <element signature="e#8890#8934#0" />
-                <element signature="e#8946#9105#0" />
-                <element signature="e#8946#9887#0" />
-                <element signature="e#0#101#1" />
-                <element signature="e#79#101#0" />
-                <element signature="e#86#101#0" />
-                <element signature="e#9353#9812#0" />
-                <element signature="e#9836#9880#0" />
-                <element signature="e#9893#10092#0" />
-                <element signature="e#9893#10674#0" />
-                <element signature="e#0#77#1" />
-                <element signature="e#61#77#0" />
-                <element signature="e#10340#10600#0" />
-                <element signature="e#10624#10668#0" />
-                <element signature="e#10680#10803#0" />
-                <element signature="e#10680#11203#0" />
-                <element signature="e#0#55#1" />
-                <element signature="e#10960#11128#0" />
-                <element signature="e#11152#11196#0" />
-                <element signature="e#11209#11437#0" />
-                <element signature="e#11209#12199#0" />
-                <element signature="e#0#125#1" />
-                <element signature="e#103#125#0" />
-                <element signature="e#110#125#0" />
-                <element signature="e#11776#12125#0" />
-                <element signature="e#12149#12193#0" />
-                <element signature="e#12205#12422#0" />
-                <element signature="e#12205#13131#0" />
-                <element signature="e#0#63#1" />
-                <element signature="e#41#63#0" />
-                <element signature="e#48#63#0" />
-                <element signature="e#12712#13057#0" />
-                <element signature="e#13081#13125#0" />
-                <element signature="e#13137#13278#0" />
-                <element signature="e#13137#13852#0" />
-                <element signature="e#0#74#1" />
-                <element signature="e#58#74#0" />
-                <element signature="e#13519#13778#0" />
-                <element signature="e#13802#13846#0" />
-                <element signature="e#13858#14026#0" />
-                <element signature="e#13858#14574#0" />
-                <element signature="e#0#48#1" />
-                <element signature="e#33#48#0" />
-                <element signature="e#14250#14500#0" />
-                <element signature="e#14524#14568#0" />
-                <element signature="e#14609#14803#0" />
-                <element signature="e#14609#15151#0" />
-                <element signature="e#0#33#1" />
-                <element signature="e#14922#15077#0" />
-                <element signature="e#15101#15145#0" />
-                <element signature="e#15157#15267#0" />
-                <element signature="e#15157#15632#0" />
-                <element signature="e#0#39#1" />
-                <element signature="e#15397#15558#0" />
-                <element signature="e#15582#15626#0" />
-                <element signature="e#15638#15848#0" />
-                <element signature="e#15638#16309#0" />
-                <element signature="e#0#68#1" />
-                <element signature="e#16031#16234#0" />
-                <element signature="e#16258#16302#0" />
-                <element signature="e#16315#16436#0" />
-                <element signature="e#16315#16806#0" />
-                <element signature="e#0#44#1" />
-                <element signature="e#16572#16732#0" />
-                <element signature="e#16756#16800#0" />
-                <element signature="e#16812#17058#0" />
-                <element signature="e#16812#17428#0" />
-                <element signature="e#0#45#1" />
-                <element signature="e#17195#17354#0" />
-                <element signature="e#17378#17422#0" />
-                <element signature="e#17434#17540#0" />
-                <element signature="e#17434#17904#0" />
-                <element signature="e#0#45#1" />
-                <element signature="e#17673#17830#0" />
-                <element signature="e#17854#17898#0" />
-                <element signature="e#17910#18037#0" />
-                <element signature="e#17910#18498#0" />
-                <element signature="e#0#74#1" />
-                <element signature="e#18221#18424#0" />
-                <element signature="e#18448#18492#0" />
-                <element signature="e#18504#18612#0" />
-                <element signature="e#18504#19000#0" />
-                <element signature="e#0#51#1" />
-                <element signature="e#18763#18926#0" />
-                <element signature="e#18950#18994#0" />
-                <element signature="e#19006#19114#0" />
-                <element signature="e#19006#19503#0" />
-                <element signature="e#0#52#1" />
-                <element signature="e#19266#19429#0" />
-                <element signature="e#19453#19497#0" />
-                <element signature="e#19509#19791#0" />
-                <element signature="e#19509#20171#0" />
-                <element signature="e#0#49#1" />
-                <element signature="e#19936#20097#0" />
-                <element signature="e#20121#20165#0" />
-                <element signature="e#20177#20321#0" />
-                <element signature="e#20177#20829#0" />
-                <element signature="e#0#90#1" />
-                <element signature="e#20546#20755#0" />
-                <element signature="e#20779#20823#0" />
-                <element signature="e#20835#20950#0" />
-                <element signature="e#20835#21358#0" />
-                <element signature="e#0#61#1" />
-                <element signature="e#21119#21284#0" />
-                <element signature="e#21308#21352#0" />
-                <element signature="e#21364#21501#0" />
-                <element signature="e#21364#21984#0" />
-                <element signature="e#0#78#1" />
-                <element signature="e#21704#21910#0" />
-                <element signature="e#21934#21978#0" />
-                <element signature="e#21990#22099#0" />
-                <element signature="e#21990#22482#0" />
-                <element signature="e#0#49#1" />
-                <element signature="e#22246#22408#0" />
-                <element signature="e#22432#22476#0" />
-                <element signature="e#22525#22724#0" />
-                <element signature="e#22525#23170#0" />
-                <element signature="e#0#23#2" />
-                <element signature="e#22906#23096#0" />
-                <element signature="e#23120#23164#0" />
-                <element signature="e#23176#23415#0" />
-                <element signature="e#23176#23849#0" />
-                <element signature="e#0#21#2" />
-                <element signature="e#23587#23775#0" />
-                <element signature="e#23799#23843#0" />
-                <element signature="e#23855#24098#0" />
-                <element signature="e#23855#25379#0" />
-                <element signature="e#0#160#2" />
-                <element signature="e#24450#25305#0" />
-                <element signature="e#24581#25268#1" />
-                <element signature="e#25329#25373#0" />
-                <element signature="e#25366#25988#0" />
-                <element signature="e#0#113#2" />
-                <element signature="e#25700#25914#0" />
-                <element signature="e#25843#25895#1" />
-                <element signature="e#25737#25781#0" />
-                <element signature="e#25994#26134#0" />
-                <element signature="e#25994#27035#0" />
-                <element signature="e#0#146#2" />
-                <element signature="e#25837#26352#0" />
-                <element signature="e#26376#26420#0" />
-                <element signature="e#27041#28434#0" />
-                <element signature="e#0#101#2" />
-                <element signature="e#26723#27751#0" />
-                <element signature="e#26755#27741#1" />
-                <element signature="e#27775#27819#0" />
-                <element signature="e#28440#28524#0" />
-                <element signature="e#28440#29430#0" />
-                <element signature="e#28073#28815#1" />
-                <element signature="e#29436#30144#0" />
-                <element signature="e#0#23#2" />
-                <element signature="e#28991#29461#0" />
-                <element signature="e#29145#29423#1" />
-                <element signature="e#29485#29529#0" />
-                <element signature="e#30176#30259#0" />
-                <element signature="e#30176#38136#0" />
-                <element signature="n#Cliente#0" />
-                <element signature="n#Compra#0" />
-                <element signature="n#Detalle_Compra#0" />
-                <element signature="n#Articulos#0" />
-                <element signature="n#Historico_Precios#0" />
-                <element signature="n#Tipo_Pago#0" />
-                <element signature="n#Intereses_Articulos#0" />
-                <element signature="n#Presentacion#0" />
-                <element signature="n#PuestaMarcha#0" />
-                <element signature="n#Acciones_Especiales_Clientes#0" />
-                <element signature="n#Acciones_Especiales#0" />
-                <element signature="n#Tipo_Evento#0" />
-                <element signature="n#Cliente_Experiencias#0" />
-                <element signature="n#Experiencia#0" />
-                <element signature="e#36614#37453#0" />
-                <element signature="e#37477#37521#0" />
-                <element signature="e#38142#38335#0" />
-                <element signature="e#38142#39521#0" />
-                <element signature="e#37990#38030#1" />
-                <element signature="e#38221#38496#0" />
-                <element signature="e#38306#38486#1" />
-                <element signature="e#38520#38564#0" />
-                <element signature="e#38578#38838#0" />
-                <element signature="e#0#24#1" />
-                <element signature="e#38862#38906#0" />
-                <element signature="e#39527#39648#0" />
-                <element signature="e#39196#39224#1" />
-                <element signature="e#40899#40900#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-371">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -401,6 +126,7 @@
       <find>elimi</find>
       <find>modifi</find>
       <find>presentacionesM</find>
+      <find>item</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -414,9 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/HooverDataBase.java" />
-        <option value="$PROJECT_DIR$/.idea/ant.xml" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/48d0f84a-8d0e-4c49-92ce-c729e69d12ee/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/21d551b3-a3f0-459c-8421-7325743b4a16/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/ClientesView.fxml" />
@@ -454,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/JoovaUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ac019111-4bae-4ff2-83aa-600c6cf4b1c4/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/model/PresentacionesModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ClienteModel.java" />
@@ -462,6 +184,11 @@
         <option value="$PROJECT_DIR$/src/main/java/model/PuestaEnMarchaModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/PMyPresentacionesModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Participantes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Participante.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ac019111-4bae-4ff2-83aa-600c6cf4b1c4/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/ExperienciaModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
       </list>
@@ -545,14 +272,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -562,14 +281,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dialogs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Joova" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -795,11 +506,13 @@
       <workItem from="1556735666420" duration="130000" />
       <workItem from="1556735831579" duration="15000" />
       <workItem from="1557080647248" duration="7570000" />
+      <workItem from="1557126797850" duration="689000" />
+      <workItem from="1557595173611" duration="10525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232515000" />
+    <option name="totallyTimeSpent" value="243729000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -813,8 +526,8 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.20272315" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20272315" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
@@ -822,8 +535,8 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.60708535" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39291465" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38647342" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29307568" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.19162641" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
@@ -843,7 +556,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.22995462" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1762481" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
@@ -853,17 +566,17 @@
       <window_info anchor="right" id="Bean Validation" order="11" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22390318" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.20272315" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.6086956" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.431562" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4863124" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.60708535" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25120774" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38486314" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
@@ -883,7 +596,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.23071104" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.1762481" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.21104388" />
@@ -911,9 +624,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java</url>
-          <line>273</line>
+          <line>316</line>
           <properties />
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java</url>
+          <line>411</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java</url>
+          <line>847</line>
+          <properties />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -972,87 +697,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/AccionesModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="174" column="14" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="14" />
-          <folding>
-            <element signature="method#onAnadirTipoPagoAction#0;class#VentasController#0" />
-            <element signature="method#actualizarTiposDePago#0;class#VentasController#0" />
-            <element signature="method#onValidarVentaAction#0;class#VentasController#0" />
-            <element signature="method#limpiar#0;class#VentasController#0" />
-            <element signature="method#onCambioListaProductos#0;class#VentasController#0" />
-            <element signature="e#10546#10547#0" expanded="true" />
-            <element signature="e#10579#10580#0" expanded="true" />
-            <element signature="e#10638#10639#0" expanded="true" />
-            <element signature="e#10677#10678#0" expanded="true" />
-            <element signature="e#10714#10715#0" expanded="true" />
-            <element signature="e#10742#10743#0" expanded="true" />
-            <element signature="e#10822#10823#0" expanded="true" />
-            <element signature="e#10876#10877#0" expanded="true" />
-            <element signature="e#10959#10960#0" expanded="true" />
-            <element signature="e#11007#11008#0" expanded="true" />
-            <element signature="method#setListaProductosDisponibles#0;class#VentasController#0" />
-            <element signature="e#11271#11272#0" expanded="true" />
-            <element signature="e#11322#11323#0" expanded="true" />
-            <element signature="e#11402#11403#0" expanded="true" />
-            <element signature="e#11447#11448#0" expanded="true" />
-            <element signature="method#setListaProductosAnadidos#0;class#VentasController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/collections/ObservableListBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="240" selection-start-line="240" selection-end-line="240" />
-          <folding>
-            <element signature="e#9561#9562#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/beans/binding/ListExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="296" selection-start-line="296" selection-end-line="296" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="144" column="17" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClienteModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="164" column="24" selection-start-line="164" selection-start-column="24" selection-end-line="164" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Acciones_Especiales" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Compra" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Detalle_Compra" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Historico_Precios" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Intereses_Articulos" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Presentacion" />
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/sqlite_master" />
     <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Tipo_Evento" />
     <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Tipo_Pago" />
     <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Articulos" />
@@ -1098,46 +742,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPuestaMarcha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/PuestaEnMarchaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1032#1033#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1562#1563#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1744#1745#0" expanded="true" />
-            <element signature="e#1798#1799#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-            <element signature="e#1911#1912#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPuestaMarcha.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/PuestaEnMarchaModel.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/PMyPresentacionesModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1145,17 +751,266 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java">
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/PuestaMarcha" />
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ClienteModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="258">
+          <caret line="166" column="5" lean-forward="true" selection-start-line="155" selection-end-line="166" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2074">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ac019111-4bae-4ff2-83aa-600c6cf4b1c4/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="91" selection-start-column="91" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Participante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/PuestaMarcha">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="59" column="62" selection-start-line="59" selection-start-column="62" selection-end-line="59" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ExperienciaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1155#1156#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Cliente_Experiencias">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1164,253 +1019,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/HooverDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+        <state relative-caret-position="639">
+          <caret line="846" column="16" selection-start-line="846" selection-start-column="16" selection-end-line="846" selection-end-column="16" />
           <folding>
             <element signature="e#315#411#0" />
             <element signature="e#449#574#0" />
             <element signature="e#449#1645#0" />
-            <element signature="e#0#168#1" />
             <element signature="e#842#1571#0" />
             <element signature="e#1595#1639#0" />
-            <element signature="e#2511#2698#0" />
-            <element signature="e#2511#3659#0" />
-            <element signature="e#0#56#1" />
-            <element signature="e#20#56#0" />
-            <element signature="e#26#56#0" />
-            <element signature="e#2854#3584#0" />
-            <element signature="e#3608#3652#0" />
-            <element signature="e#3665#4002#0" />
-            <element signature="e#3665#5054#0" />
-            <element signature="e#0#99#1" />
-            <element signature="e#80#99#0" />
-            <element signature="e#4259#4962#0" />
-            <element signature="e#0#60#2" />
-            <element signature="e#4986#5030#0" />
-            <element signature="e#5060#5334#0" />
-            <element signature="e#5060#5893#0" />
-            <element signature="e#0#46#1" />
-            <element signature="e#30#46#0" />
-            <element signature="e#5521#5818#0" />
-            <element signature="e#5842#5886#0" />
-            <element signature="e#5899#6055#0" />
-            <element signature="e#5899#6795#0" />
-            <element signature="e#0#43#1" />
-            <element signature="e#19#43#0" />
-            <element signature="e#25#43#0" />
-            <element signature="e#6243#6721#0" />
-            <element signature="e#6745#6789#0" />
-            <element signature="e#6801#6927#0" />
-            <element signature="e#6801#7355#0" />
-            <element signature="e#0#39#1" />
-            <element signature="e#7080#7281#0" />
-            <element signature="e#7305#7349#0" />
-            <element signature="e#7361#7504#0" />
-            <element signature="e#7361#8017#0" />
-            <element signature="e#0#77#1" />
-            <element signature="e#64#77#0" />
-            <element signature="e#7739#7942#0" />
-            <element signature="e#7966#8010#0" />
-            <element signature="e#8023#8336#0" />
-            <element signature="e#8023#8940#0" />
-            <element signature="e#0#51#1" />
-            <element signature="e#32#51#0" />
-            <element signature="e#8575#8866#0" />
-            <element signature="e#8890#8934#0" />
-            <element signature="e#8946#9105#0" />
-            <element signature="e#8946#9887#0" />
-            <element signature="e#0#101#1" />
-            <element signature="e#79#101#0" />
-            <element signature="e#86#101#0" />
-            <element signature="e#9353#9812#0" />
-            <element signature="e#9836#9880#0" />
-            <element signature="e#9893#10092#0" />
-            <element signature="e#9893#10674#0" />
-            <element signature="e#0#77#1" />
-            <element signature="e#61#77#0" />
-            <element signature="e#10340#10600#0" />
-            <element signature="e#10624#10668#0" />
-            <element signature="e#10680#10803#0" />
-            <element signature="e#10680#11203#0" />
-            <element signature="e#0#55#1" />
-            <element signature="e#10960#11128#0" />
-            <element signature="e#11152#11196#0" />
-            <element signature="e#11209#11437#0" />
-            <element signature="e#11209#12199#0" />
-            <element signature="e#0#125#1" />
-            <element signature="e#103#125#0" />
-            <element signature="e#110#125#0" />
-            <element signature="e#11776#12125#0" />
-            <element signature="e#12149#12193#0" />
-            <element signature="e#12205#12422#0" />
-            <element signature="e#12205#13131#0" />
-            <element signature="e#0#63#1" />
-            <element signature="e#41#63#0" />
-            <element signature="e#48#63#0" />
-            <element signature="e#12712#13057#0" />
-            <element signature="e#13081#13125#0" />
-            <element signature="e#13137#13278#0" />
-            <element signature="e#13137#13852#0" />
-            <element signature="e#0#74#1" />
-            <element signature="e#58#74#0" />
-            <element signature="e#13519#13778#0" />
-            <element signature="e#13802#13846#0" />
-            <element signature="e#13858#14026#0" />
-            <element signature="e#13858#14574#0" />
-            <element signature="e#0#48#1" />
-            <element signature="e#33#48#0" />
-            <element signature="e#14250#14500#0" />
-            <element signature="e#14524#14568#0" />
-            <element signature="e#14609#14803#0" />
-            <element signature="e#14609#15151#0" />
-            <element signature="e#0#33#1" />
-            <element signature="e#14922#15077#0" />
-            <element signature="e#15101#15145#0" />
-            <element signature="e#15157#15267#0" />
-            <element signature="e#15157#15632#0" />
-            <element signature="e#0#39#1" />
-            <element signature="e#15397#15558#0" />
-            <element signature="e#15582#15626#0" />
-            <element signature="e#15638#15848#0" />
-            <element signature="e#15638#16309#0" />
-            <element signature="e#0#68#1" />
-            <element signature="e#16031#16234#0" />
-            <element signature="e#16258#16302#0" />
-            <element signature="e#16315#16436#0" />
-            <element signature="e#16315#16806#0" />
-            <element signature="e#0#44#1" />
-            <element signature="e#16572#16732#0" />
-            <element signature="e#16756#16800#0" />
-            <element signature="e#16812#17058#0" />
-            <element signature="e#16812#17428#0" />
-            <element signature="e#0#45#1" />
-            <element signature="e#17195#17354#0" />
-            <element signature="e#17378#17422#0" />
-            <element signature="e#17434#17540#0" />
-            <element signature="e#17434#17904#0" />
-            <element signature="e#0#45#1" />
-            <element signature="e#17673#17830#0" />
-            <element signature="e#17854#17898#0" />
-            <element signature="e#17910#18037#0" />
-            <element signature="e#17910#18498#0" />
-            <element signature="e#0#74#1" />
-            <element signature="e#18221#18424#0" />
-            <element signature="e#18448#18492#0" />
-            <element signature="e#18504#18612#0" />
-            <element signature="e#18504#19000#0" />
-            <element signature="e#0#51#1" />
-            <element signature="e#18763#18926#0" />
-            <element signature="e#18950#18994#0" />
-            <element signature="e#19006#19114#0" />
-            <element signature="e#19006#19503#0" />
-            <element signature="e#0#52#1" />
-            <element signature="e#19266#19429#0" />
-            <element signature="e#19453#19497#0" />
-            <element signature="e#19509#19791#0" />
-            <element signature="e#19509#20171#0" />
-            <element signature="e#0#49#1" />
-            <element signature="e#19936#20097#0" />
-            <element signature="e#20121#20165#0" />
-            <element signature="e#20177#20321#0" />
-            <element signature="e#20177#20829#0" />
-            <element signature="e#0#90#1" />
-            <element signature="e#20546#20755#0" />
-            <element signature="e#20779#20823#0" />
-            <element signature="e#20835#20950#0" />
-            <element signature="e#20835#21358#0" />
-            <element signature="e#0#61#1" />
-            <element signature="e#21119#21284#0" />
-            <element signature="e#21308#21352#0" />
-            <element signature="e#21364#21501#0" />
-            <element signature="e#21364#21984#0" />
-            <element signature="e#0#78#1" />
-            <element signature="e#21704#21910#0" />
-            <element signature="e#21934#21978#0" />
-            <element signature="e#21990#22099#0" />
-            <element signature="e#21990#22482#0" />
-            <element signature="e#0#49#1" />
-            <element signature="e#22246#22408#0" />
-            <element signature="e#22432#22476#0" />
-            <element signature="e#22525#22724#0" />
-            <element signature="e#22525#23170#0" />
-            <element signature="e#0#23#2" />
-            <element signature="e#22906#23096#0" />
-            <element signature="e#23120#23164#0" />
-            <element signature="e#23176#23415#0" />
-            <element signature="e#23176#23849#0" />
-            <element signature="e#0#21#2" />
-            <element signature="e#23587#23775#0" />
-            <element signature="e#23799#23843#0" />
-            <element signature="e#23855#24098#0" />
-            <element signature="e#23855#25379#0" />
-            <element signature="e#0#160#2" />
-            <element signature="e#24450#25305#0" />
-            <element signature="e#24581#25268#1" />
-            <element signature="e#25329#25373#0" />
-            <element signature="e#25366#25988#0" />
-            <element signature="e#0#113#2" />
-            <element signature="e#25700#25914#0" />
-            <element signature="e#25843#25895#1" />
-            <element signature="e#25737#25781#0" />
-            <element signature="e#25994#26134#0" />
-            <element signature="e#25994#27035#0" />
-            <element signature="e#0#146#2" />
-            <element signature="e#25837#26352#0" />
-            <element signature="e#26376#26420#0" />
-            <element signature="e#27041#28434#0" />
-            <element signature="e#0#101#2" />
-            <element signature="e#26723#27751#0" />
-            <element signature="e#26755#27741#1" />
-            <element signature="e#27775#27819#0" />
-            <element signature="e#28440#28524#0" />
-            <element signature="e#28440#29430#0" />
-            <element signature="e#28073#28815#1" />
-            <element signature="e#29436#30144#0" />
-            <element signature="e#0#23#2" />
-            <element signature="e#28991#29461#0" />
-            <element signature="e#29145#29423#1" />
-            <element signature="e#29485#29529#0" />
-            <element signature="e#30176#30259#0" />
-            <element signature="e#30176#38136#0" />
-            <element signature="n#Cliente#0" />
-            <element signature="n#Compra#0" />
-            <element signature="n#Detalle_Compra#0" />
-            <element signature="n#Articulos#0" />
-            <element signature="n#Historico_Precios#0" />
-            <element signature="n#Tipo_Pago#0" />
-            <element signature="n#Intereses_Articulos#0" />
-            <element signature="n#Presentacion#0" />
-            <element signature="n#PuestaMarcha#0" />
-            <element signature="n#Acciones_Especiales_Clientes#0" />
-            <element signature="n#Acciones_Especiales#0" />
-            <element signature="n#Tipo_Evento#0" />
-            <element signature="n#Cliente_Experiencias#0" />
-            <element signature="n#Experiencia#0" />
-            <element signature="e#36614#37453#0" />
-            <element signature="e#37477#37521#0" />
-            <element signature="e#38142#38335#0" />
-            <element signature="e#38142#39521#0" />
-            <element signature="e#37990#38030#1" />
-            <element signature="e#38221#38496#0" />
-            <element signature="e#38306#38486#1" />
-            <element signature="e#38520#38564#0" />
-            <element signature="e#38578#38838#0" />
-            <element signature="e#0#24#1" />
-            <element signature="e#38862#38906#0" />
-            <element signature="e#39527#39648#0" />
-            <element signature="e#39196#39224#1" />
-            <element signature="e#40899#40900#0" expanded="true" />
+            <element signature="e#42185#42186#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ac019111-4bae-4ff2-83aa-600c6cf4b1c4/schema/main/table/Experiencia">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="270" column="84" selection-start-line="270" selection-start-column="84" selection-end-line="270" selection-end-column="84" />
+        <state relative-caret-position="-79">
+          <caret line="338" column="119" selection-start-line="338" selection-start-column="119" selection-end-line="338" selection-end-column="119" />
           <folding>
-            <element signature="e#14578#14579#0" expanded="true" />
-            <element signature="e#14656#14657#0" expanded="true" />
+            <element signature="e#18260#18261#0" expanded="true" />
+            <element signature="e#18338#18339#0" expanded="true" />
           </folding>
         </state>
       </provider>

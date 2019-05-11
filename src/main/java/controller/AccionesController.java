@@ -2,6 +2,7 @@ package controller;
 
 import app.JoovaApp;
 import database.HooverDataBase;
+import dialogs.DialogoNuevaExperiencia;
 import dialogs.DialogoNuevaPyPM;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -16,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import model.AccionesModel;
 import model.ClienteModel;
+import model.ExperienciaModel;
 import model.PMyPresentacionesModel;
 
 import java.io.IOException;
@@ -51,6 +53,15 @@ public class AccionesController implements Initializable {
     private TableColumn<PMyPresentacionesModel, String> nombreClientePuestaMarchaColumn;
     private TableColumn<PMyPresentacionesModel, LocalDate> fechaPuestaMarchaColumn;
     private ListProperty<PMyPresentacionesModel> listaPuestasMarcha;
+
+    /***************
+     * Tabla de Experiencias
+     ***************/
+    private TableView<ExperienciaModel> tablaExperiencias;
+    private TableColumn<ExperienciaModel, String> direccionExperienciaColumn;
+    private TableColumn<ExperienciaModel, LocalDate> fechaExperienciaColumn;
+    private TableColumn<ExperienciaModel, String> observacionesExperienciaColumn;
+    private ListProperty<ExperienciaModel> listaExperiencias;
 
 
     @FXML
@@ -194,6 +205,36 @@ public class AccionesController implements Initializable {
 
         /*************************************************************
          *
+         * Inicializacion experiencias
+         *
+         *************************************************************/
+
+        tablaExperiencias = new TableView<>();
+        direccionExperienciaColumn = new TableColumn<>();
+        fechaExperienciaColumn = new TableColumn<>();
+        observacionesExperienciaColumn = new TableColumn<>();
+        listaExperiencias = new SimpleListProperty<>(this, "listaExperiencias", FXCollections.observableArrayList());
+
+        tablaExperiencias.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        tablaExperiencias.getColumns().add(direccionExperienciaColumn);
+        tablaExperiencias.getColumns().add(fechaExperienciaColumn);
+        tablaExperiencias.getColumns().add(observacionesExperienciaColumn);
+
+        direccionExperienciaColumn.setCellValueFactory(v -> v.getValue().direccionProperty());
+        direccionExperienciaColumn.setText("Direccion");
+        fechaExperienciaColumn.setCellValueFactory(v -> v.getValue().fechaExperienciaProperty());
+        fechaExperienciaColumn.setText("Fecha");
+        observacionesExperienciaColumn.setCellValueFactory(v -> v.getValue().observacionesProperty());
+        observacionesExperienciaColumn.setText("Observaciones");
+
+        AnchorPane.setTopAnchor(tablaExperiencias, 0d);
+        AnchorPane.setBottomAnchor(tablaExperiencias, 0d);
+        AnchorPane.setLeftAnchor(tablaExperiencias, 0d);
+        AnchorPane.setRightAnchor(tablaExperiencias, 0d);
+
+        /*************************************************************
+         *
          * Bindings
          *
          *************************************************************/
@@ -209,6 +250,8 @@ public class AccionesController implements Initializable {
         tablaPresentaciones.itemsProperty().bind(listaPresentaciones);
         // Tabla Puestas en marcha
         tablaPuestaMarcha.itemsProperty().bind(listaPuestasMarcha);
+        //Tabla de Experiencias
+        tablaExperiencias.itemsProperty().bind(listaExperiencias);
 
         // Añadir la tabla por primera vez al controlador
         contentAnchorPane.getChildren().add(tablaPresentaciones);
@@ -293,7 +336,7 @@ public class AccionesController implements Initializable {
         PMyPresentacionesModel aBorrar;
         if (model.isPresentacion()) {
             aBorrar = tablaPresentaciones.getSelectionModel().getSelectedItem();
-            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + " DNI: " + aBorrar.getCodCliente() + " Nombre: " + aBorrar.getNombreCliente();
+            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + ", DNI: " + aBorrar.getCodCliente() + ", Nombre: " + aBorrar.getNombreCliente();
             Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
 
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
@@ -302,11 +345,19 @@ public class AccionesController implements Initializable {
             }
         } else if (model.isPuestaEnMarcha()) {
             aBorrar = tablaPuestaMarcha.getSelectionModel().getSelectedItem();
-            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + " DNI: " + aBorrar.getCodCliente() + " Nombre: " + aBorrar.getNombreCliente();
+            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + ", DNI: " + aBorrar.getCodCliente() + ", Nombre: " + aBorrar.getNombreCliente();
             Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deletePuestaMarcha(aBorrar.getCodigoEvento());
                 listaPuestasMarcha.remove(aBorrar);
+            }
+        } else if (model.isExperiencia()) {
+            ExperienciaModel expABorrar = tablaExperiencias.getSelectionModel().getSelectedItem();
+            String datos = "Dirección: " + expABorrar.getDireccion() + ", Fecha: " + expABorrar.getFechaExperiencia().toString();
+            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará. Y con ella todas las participaciones del evento", datos);
+            if (resul.isPresent() && resul.get() == ButtonType.OK) {
+                db.deleteExperiencia(expABorrar.getCodExperiencia());
+                listaExperiencias.remove(expABorrar);
             }
         }
     }
@@ -318,6 +369,7 @@ public class AccionesController implements Initializable {
 
     private void onNuevoAction() {
         DialogoNuevaPyPM dialogo;
+        DialogoNuevaExperiencia dialogoExp;
         if (model.isPresentacion()) {
             dialogo = new DialogoNuevaPyPM(listaClientes);
             Optional<PMyPresentacionesModel> resul = dialogo.showAndWait();
@@ -336,6 +388,16 @@ public class AccionesController implements Initializable {
                 actualizarDatos();
             }
 
+        } else if (model.isExperiencia()) {
+            dialogoExp = new DialogoNuevaExperiencia(listaClientes, JoovaApp.getPrimaryStage());
+            Optional<ExperienciaModel> resul = dialogoExp.showAndWait();
+            if (resul.isPresent()) {
+                int codigo = db.insertExperiencias(resul.get());
+                for (int i = 0; i < resul.get().getParticipantes().size(); i++) {
+                    db.insertExperienciasClientes(codigo, resul.get().getParticipantes().get(i).getCliente().getDni(), resul.get().getParticipantes().get(i).isCompra());
+                    actualizarDatos();
+                }
+            }
         }
     }
 
@@ -344,18 +406,25 @@ public class AccionesController implements Initializable {
 
     private void actualizarDatos() {
         //Actualizar presentaciones
-            listaPresentaciones.clear();
-            db.consultaTodasPresentaciones(listaPresentaciones);
+        listaPresentaciones.clear();
+        db.consultaTodasPresentaciones(listaPresentaciones);
+
         //Actualizar puestas en marcha
-            listaPuestasMarcha.clear();
-            db.consultaTodasPuestasMarcha(listaPuestasMarcha);
+        listaPuestasMarcha.clear();
+        db.consultaTodasPuestasMarcha(listaPuestasMarcha);
+
+        //Actualizar Experiencias
+        listaExperiencias.clear();
+        db.consultaTodasExperiencias(listaExperiencias);
     }
 
     private void onExpChanged() {
-        if (model.isPresentacion()) {
+        if (model.isPresentacion())
             setContent(tablaPresentaciones);
-        } else if (model.isPuestaEnMarcha())
+        else if (model.isPuestaEnMarcha())
             setContent(tablaPuestaMarcha);
+        else if (model.isExperiencia())
+            setContent(tablaExperiencias);
     }
 
     public void setContent(Node node) {
