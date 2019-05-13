@@ -5,12 +5,12 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class TipoPagoModel {
+public class TipoPagoyEventoModel {
     private IntegerProperty codTipoPago;
     private StringProperty nombreTipoPago;
     private StringProperty descripcionTipoPago;
 
-    public TipoPagoModel() {
+    public TipoPagoyEventoModel() {
         codTipoPago = new SimpleIntegerProperty(this, "codTipoPago");
         nombreTipoPago = new SimpleStringProperty(this, "nombreTipoPago");
         descripcionTipoPago = new SimpleStringProperty(this, "descripcionTipoPago");

@@ -2,6 +2,7 @@ package controller;
 
 import app.JoovaApp;
 import database.HooverDataBase;
+import dialogs.DialogoNuevaAccionEspecial;
 import dialogs.DialogoNuevaExperiencia;
 import dialogs.DialogoNuevaPyPM;
 import javafx.beans.property.ListProperty;
@@ -15,10 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import model.AccionesModel;
-import model.ClienteModel;
-import model.ExperienciaModel;
-import model.PMyPresentacionesModel;
+import model.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -62,6 +60,17 @@ public class AccionesController implements Initializable {
     private TableColumn<ExperienciaModel, LocalDate> fechaExperienciaColumn;
     private TableColumn<ExperienciaModel, String> observacionesExperienciaColumn;
     private ListProperty<ExperienciaModel> listaExperiencias;
+
+    /****************
+     * Tabla Acciones Especiales
+     ****************/
+    private TableView<AccionEspecialModel> tablaAccionesEspeciales;
+    private TableColumn<AccionEspecialModel, String> nombreAccionColumn;
+    private TableColumn<AccionEspecialModel, LocalDate> fechaAccionColumn;
+    private TableColumn<AccionEspecialModel, TipoPagoyEventoModel> tipoAccionColumn;
+    private TableColumn<AccionEspecialModel, String> direccionAccionColumn;
+    private TableColumn<AccionEspecialModel, String> observacionesAccionColumn;
+    private ListProperty<AccionEspecialModel> listaAccionesEspeciales;
 
 
     @FXML
@@ -235,6 +244,43 @@ public class AccionesController implements Initializable {
 
         /*************************************************************
          *
+         * Inicializacion Acciones Especiales
+         *
+         *************************************************************/
+        tablaAccionesEspeciales = new TableView<>();
+        nombreAccionColumn = new TableColumn<>();
+        fechaAccionColumn = new TableColumn<>();
+        tipoAccionColumn = new TableColumn<>();
+        direccionAccionColumn = new TableColumn<>();
+        observacionesAccionColumn = new TableColumn<>();
+        listaAccionesEspeciales = new SimpleListProperty<>(this, "listaAccionesEspeciales", FXCollections.observableArrayList());
+
+        tablaAccionesEspeciales.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        tablaAccionesEspeciales.getColumns().add(nombreAccionColumn);
+        tablaAccionesEspeciales.getColumns().add(fechaAccionColumn);
+        tablaAccionesEspeciales.getColumns().add(tipoAccionColumn);
+        tablaAccionesEspeciales.getColumns().add(direccionAccionColumn);
+        tablaAccionesEspeciales.getColumns().add(observacionesAccionColumn);
+
+        nombreAccionColumn.setCellValueFactory(v -> v.getValue().nombreEventoProperty());
+        nombreAccionColumn.setText("Nombre del evento");
+        fechaAccionColumn.setCellValueFactory(v -> v.getValue().fechaEventoProperty());
+        fechaAccionColumn.setText("Fecha");
+        tipoAccionColumn.setCellValueFactory(v -> v.getValue().tipoEventoProperty());
+        tipoAccionColumn.setText("Tipo de acción");
+        direccionAccionColumn.setCellValueFactory(v -> v.getValue().direccionEventoProperty());
+        direccionAccionColumn.setText("Dirección");
+        observacionesAccionColumn.setCellValueFactory(v -> v.getValue().observacionesEventoProperty());
+        observacionesAccionColumn.setText("Observaciones");
+
+        AnchorPane.setTopAnchor(tablaAccionesEspeciales, 0d);
+        AnchorPane.setBottomAnchor(tablaAccionesEspeciales, 0d);
+        AnchorPane.setRightAnchor(tablaAccionesEspeciales, 0d);
+        AnchorPane.setLeftAnchor(tablaAccionesEspeciales, 0d);
+
+        /*************************************************************
+         *
          * Bindings
          *
          *************************************************************/
@@ -248,10 +294,12 @@ public class AccionesController implements Initializable {
 
         // Tabla de presentaciones
         tablaPresentaciones.itemsProperty().bind(listaPresentaciones);
-        // Tabla Puestas en marcha
+        // Tabla de Puestas en marcha
         tablaPuestaMarcha.itemsProperty().bind(listaPuestasMarcha);
-        //Tabla de Experiencias
+        // Tabla de Experiencias
         tablaExperiencias.itemsProperty().bind(listaExperiencias);
+        // Tabla de Acciones Especiales
+        tablaAccionesEspeciales.itemsProperty().bind(listaAccionesEspeciales);
 
         // Añadir la tabla por primera vez al controlador
         contentAnchorPane.getChildren().add(tablaPresentaciones);
@@ -273,6 +321,7 @@ public class AccionesController implements Initializable {
          *
          *********************************************/
         observacionesTextArea.setEditable(false);
+        observacionesTextArea.setWrapText(true);
 
         /*********************************************
          *
@@ -329,6 +378,58 @@ public class AccionesController implements Initializable {
                 actualizarDatos();
             }
 
+        } else if (model.isExperiencia()) {
+            try {
+                ExperienciaModel experiencia = tablaExperiencias.getSelectionModel().getSelectedItem();
+                DialogoNuevaExperiencia experienciaAModificar = new DialogoNuevaExperiencia(listaClientes, JoovaApp.getPrimaryStage());
+                experienciaAModificar.getModel().setParticipantes(db.consultaExperienciaSegunCodigo(experiencia.getCodExperiencia()));
+                experienciaAModificar.getModel().setObservaciones(experiencia.getObservaciones());
+                experienciaAModificar.getModel().setFechaExperiencia(experiencia.getFechaExperiencia());
+                experienciaAModificar.getModel().setDireccion(experiencia.getDireccion());
+                experienciaAModificar.getModel().setCodExperiencia(experiencia.getCodExperiencia());
+                Optional<ExperienciaModel> resul = experienciaAModificar.showAndWait();
+                // FIXME Actualizar!! crear la funcion en la base de datos
+
+            } catch (NullPointerException e) {
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.initOwner(JoovaApp.getPrimaryStage());
+                alerta.setTitle("Error");
+                alerta.setHeaderText("Por favor, seleccione una experiencia de la lista para modificarla");
+                alerta.show();
+            }
+        } else {
+            try {
+                AccionEspecialModel accionModificar = tablaAccionesEspeciales.getSelectionModel().getSelectedItem();
+                DialogoNuevaAccionEspecial dialogo = new DialogoNuevaAccionEspecial(listaClientes, JoovaApp.getPrimaryStage(), db);
+                ListProperty<Participante> listaParticipantes = new SimpleListProperty<>(this, "listaParticipantes", FXCollections.observableArrayList());
+
+                dialogo.getModel().setCodEvento(accionModificar.getCodEvento());
+                dialogo.getModel().setNombreEvento(accionModificar.getNombreEvento());
+                dialogo.getModel().setDireccionEvento(accionModificar.getDireccionEvento());
+                dialogo.getEventosCombobox().getSelectionModel().select(accionModificar.getTipoEvento());
+                dialogo.getModel().setFechaEvento(accionModificar.getFechaEvento());
+                dialogo.getModel().setObservacionesEvento(accionModificar.getObservacionesEvento());
+                dialogo.setListaParticipantes(db.consultaAccionesEspecialesClientesCodigo(accionModificar.getCodEvento()));
+
+                Optional<AccionEspecialModel> resul = dialogo.showAndWait();
+                if (resul.isPresent()) {
+                    for (int i = 0; i < dialogo.getListaParticipantes().size(); i++)
+                        listaParticipantes.add(dialogo.getListaParticipantes().get(i));
+
+                    resul.get().setCodEvento(accionModificar.getCodEvento());
+                    db.updateAccionEspecial(resul.get());
+                    db.updateAccionEspecialCliente(listaParticipantes, accionModificar.getCodEvento());
+                    actualizarDatos();
+                }
+
+            } catch (NullPointerException e) {
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.initOwner(JoovaApp.getPrimaryStage());
+                alerta.setTitle("Error");
+                alerta.setHeaderText("No se ha seleccionado ningún objeto");
+                alerta.setContentText("Por favor, elija un elemento de la tabla para modificar");
+                alerta.show();
+            }
         }
     }
 
@@ -336,7 +437,7 @@ public class AccionesController implements Initializable {
         PMyPresentacionesModel aBorrar;
         if (model.isPresentacion()) {
             aBorrar = tablaPresentaciones.getSelectionModel().getSelectedItem();
-            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + ", DNI: " + aBorrar.getCodCliente() + ", Nombre: " + aBorrar.getNombreCliente();
+            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + "\nDNI: " + aBorrar.getCodCliente() + "\nNombre: " + aBorrar.getNombreCliente();
             Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
 
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
@@ -345,7 +446,7 @@ public class AccionesController implements Initializable {
             }
         } else if (model.isPuestaEnMarcha()) {
             aBorrar = tablaPuestaMarcha.getSelectionModel().getSelectedItem();
-            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + ", DNI: " + aBorrar.getCodCliente() + ", Nombre: " + aBorrar.getNombreCliente();
+            String datos = "Código del evento: " + aBorrar.getCodigoEvento() + "\nDNI: " + aBorrar.getCodCliente() + "\nNombre: " + aBorrar.getNombreCliente();
             Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deletePuestaMarcha(aBorrar.getCodigoEvento());
@@ -353,11 +454,19 @@ public class AccionesController implements Initializable {
             }
         } else if (model.isExperiencia()) {
             ExperienciaModel expABorrar = tablaExperiencias.getSelectionModel().getSelectedItem();
-            String datos = "Dirección: " + expABorrar.getDireccion() + ", Fecha: " + expABorrar.getFechaExperiencia().toString();
-            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará. Y con ella todas las participaciones del evento", datos);
+            String datos = "Dirección: " + expABorrar.getDireccion() + "\nFecha: " + expABorrar.getFechaExperiencia().toString();
+            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará,\nY con ella todas las participaciones del evento", datos);
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deleteExperiencia(expABorrar.getCodExperiencia());
                 listaExperiencias.remove(expABorrar);
+            }
+        } else {
+            AccionEspecialModel tipoABorrar = tablaAccionesEspeciales.getSelectionModel().getSelectedItem();
+            String datos = "Nombre Accion Especial: " + tipoABorrar.getNombreEvento() + "\nFecha: " + tipoABorrar.getFechaEvento().toString() + "\nDirección: " + tipoABorrar.getDireccionEvento();
+            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará,\nY con ella todas las participaciones del evento", datos);
+            if (resul.isPresent() && resul.get() == ButtonType.OK) {
+                db.deleteAccionesEspeciales(tipoABorrar.getCodEvento());
+                listaAccionesEspeciales.remove(tipoABorrar);
             }
         }
     }
@@ -398,6 +507,17 @@ public class AccionesController implements Initializable {
                     actualizarDatos();
                 }
             }
+        } else {
+            DialogoNuevaAccionEspecial dialogoNuevaAccionEspecial = new DialogoNuevaAccionEspecial(listaClientes, JoovaApp.getPrimaryStage(), db);
+            Optional<AccionEspecialModel> resul = dialogoNuevaAccionEspecial.showAndWait();
+            if (resul.isPresent()) {
+                AccionEspecialModel model = resul.get();
+                int codigo = db.insertAccionesEspeciales(model);
+                for (int i = 0; i < dialogoNuevaAccionEspecial.getListaParticipantes().size(); i++) {
+                    db.insertAccionesEspecialesClientes(codigo, dialogoNuevaAccionEspecial.getListaParticipantes().get(i));
+                }
+                actualizarDatos();
+            }
         }
     }
 
@@ -416,6 +536,10 @@ public class AccionesController implements Initializable {
         //Actualizar Experiencias
         listaExperiencias.clear();
         db.consultaTodasExperiencias(listaExperiencias);
+
+        //Actualizar Acciones Especiales
+        listaAccionesEspeciales.clear();
+        db.consultaTodasAccionesEspeciales(listaAccionesEspeciales);
     }
 
     private void onExpChanged() {
@@ -425,6 +549,8 @@ public class AccionesController implements Initializable {
             setContent(tablaPuestaMarcha);
         else if (model.isExperiencia())
             setContent(tablaExperiencias);
+        else
+            setContent(tablaAccionesEspeciales);
     }
 
     public void setContent(Node node) {

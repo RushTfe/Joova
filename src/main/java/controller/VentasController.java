@@ -2,7 +2,7 @@ package controller;
 
 import app.JoovaApp;
 import database.HooverDataBase;
-import dialogs.DialogoNuevoTipoPago;
+import dialogs.DialogoNuevoTipoPagoyEvento;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import model.ClienteModel;
-import model.TipoPagoModel;
+import model.TipoPagoyEventoModel;
 import model.VentasModel;
 import nuevoproducto.NuevoProductoModel;
 
@@ -36,10 +36,10 @@ public class VentasController implements Initializable {
     private ListProperty<NuevoProductoModel> listaProductosAnadidos;
 
     // Lista de tipos de pago
-    private ListProperty<TipoPagoModel> listaTipoPago;
+    private ListProperty<TipoPagoyEventoModel> listaTipoPago;
 
     @FXML
-    private ComboBox<TipoPagoModel> tipoPagoComboBox;
+    private ComboBox<TipoPagoyEventoModel> tipoPagoComboBox;
 
     @FXML
     private Button anadirTipoPago;
@@ -178,9 +178,9 @@ public class VentasController implements Initializable {
     }
 
     private void onAnadirTipoPagoAction() {
-        TipoPagoModel tipoPago = new TipoPagoModel();
-        DialogoNuevoTipoPago dialogo = new DialogoNuevoTipoPago(JoovaApp.getPrimaryStage());
-        Optional<TipoPagoModel> resul = dialogo.showAndWait();
+        TipoPagoyEventoModel tipoPago = new TipoPagoyEventoModel();
+        DialogoNuevoTipoPagoyEvento dialogo = new DialogoNuevoTipoPagoyEvento(JoovaApp.getPrimaryStage());
+        Optional<TipoPagoyEventoModel> resul = dialogo.showAndWait();
 
         if (resul.isPresent()) {
             tipoPago = resul.get();

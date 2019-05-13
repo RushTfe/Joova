@@ -8,19 +8,19 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.TipoPagoModel;
+import model.TipoPagoyEventoModel;
 
-public class DialogoNuevoTipoPago extends Dialog<TipoPagoModel> {
-    private TipoPagoModel model;
+public class DialogoNuevoTipoPagoyEvento extends Dialog<TipoPagoyEventoModel> {
+    private TipoPagoyEventoModel model;
     private TextField nombreTipoPago;
     private TextArea descripcionTipoPago;
     private VBox cajaTextos;
 
-    public DialogoNuevoTipoPago(Stage stage) {
+    public DialogoNuevoTipoPagoyEvento(Stage stage) {
 // TODO     getDialogPane().getStylesheets().addAll("Direccion.css");
 
         // Modelo con la informacion a devolver
-        model = new TipoPagoModel();
+        model = new TipoPagoyEventoModel();
 
         // titulo de la ventana
         setTitle("Añadir nuevo tipo de pago");
@@ -41,8 +41,7 @@ public class DialogoNuevoTipoPago extends Dialog<TipoPagoModel> {
         // Anadir los botones a usar.
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
-        getDialogPane().lookupButton(ButtonType.OK).visibleProperty().bind(Bindings.when(model.nombreTipoPagoProperty().isEqualTo("")).then(false).otherwise(true));
-        getDialogPane().lookupButton(ButtonType.OK).managedProperty().bind(Bindings.when(model.nombreTipoPagoProperty().isEqualTo("")).then(false).otherwise(true));
+        getDialogPane().lookupButton(ButtonType.OK).disableProperty().bind(Bindings.when(model.nombreTipoPagoProperty().isEqualTo("")).then(true).otherwise(false));
 
         // Textos descriptivos
         nombreTipoPago.setPromptText("Tipo de Pago");
@@ -62,6 +61,13 @@ public class DialogoNuevoTipoPago extends Dialog<TipoPagoModel> {
             }
             return null;
         });
+    }
 
+    public TextField getNombreTipo() {
+        return nombreTipoPago;
+    }
+
+    public TextArea getDescripcionTipo() {
+        return descripcionTipoPago;
     }
 }

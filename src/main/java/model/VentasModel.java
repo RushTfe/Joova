@@ -2,10 +2,6 @@ package model;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
-import nuevoproducto.NuevoProductoModel;
 
 import java.time.LocalDate;
 
@@ -15,7 +11,7 @@ public class VentasModel {
     private StringProperty codContrato;
     private DoubleProperty precioTotal;
     private ObjectProperty<LocalDate> fechaVenta;
-    private ObjectProperty<TipoPagoModel> tipoPago;
+    private ObjectProperty<TipoPagoyEventoModel> tipoPago;
     private StringProperty observacionesVenta;
     private BooleanProperty mostrarProductos;
 
@@ -31,15 +27,15 @@ public class VentasModel {
         // Listener que detecta el cambio de productos en la lista, para sumar el precio total.
     }
 
-    public TipoPagoModel getTipoPago() {
+    public TipoPagoyEventoModel getTipoPago() {
         return tipoPago.get();
     }
 
-    public ObjectProperty<TipoPagoModel> tipoPagoProperty() {
+    public ObjectProperty<TipoPagoyEventoModel> tipoPagoProperty() {
         return tipoPago;
     }
 
-    public void setTipoPago(TipoPagoModel tipoPago) {
+    public void setTipoPago(TipoPagoyEventoModel tipoPago) {
         this.tipoPago.set(tipoPago);
     }
 

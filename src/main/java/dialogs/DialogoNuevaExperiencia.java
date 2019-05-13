@@ -113,11 +113,11 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         root.setBottom(direccion);
 
         // Bindeos
-        tablaParticipantes.itemsProperty().bind(model.participantesProperty());
-        model.fechaExperienciaProperty().bind(fechaExperiencia.valueProperty());
-        model.observacionesProperty().bind(observaciones.textProperty());
+        tablaParticipantes.itemsProperty().bindBidirectional(model.participantesProperty());
+        model.fechaExperienciaProperty().bindBidirectional(fechaExperiencia.valueProperty());
+        model.observacionesProperty().bindBidirectional(observaciones.textProperty());
         listaClientes.itemsProperty().bind(listaClientesCompleta);
-        model.direccionProperty().bind(direccion.textProperty());
+        model.direccionProperty().bindBidirectional(direccion.textProperty());
 
         anadirParticipanteButton.setOnAction(e -> onAnadirAction());
         eliminarParticipante.setOnAction(e -> onEliminarAction());
@@ -175,5 +175,13 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
             alerta.setContentText("Por favor, seleccione el participante que desea añadir del desplagable");
             alerta.show();
         }
+    }
+
+    public ExperienciaModel getModel() {
+        return model;
+    }
+
+    public void setModel(ExperienciaModel model) {
+        this.model = model;
     }
 }
