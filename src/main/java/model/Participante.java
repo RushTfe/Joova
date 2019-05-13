@@ -69,17 +69,4 @@ public class Participante {
         this.compra.set(compra);
     }
 
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null)
-            return false;
-        Participante cliente = (Participante)obj;
-        if (this.getCliente().getDni().equals(cliente.getCliente().getDni()))
-            return true;
-        ClienteModel nuevoCliente = (ClienteModel) obj;
-        if (this.getCliente().getDni().equals(nuevoCliente.getDni()))
-            return true;
-        return false;
-    }
 }

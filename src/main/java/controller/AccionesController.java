@@ -381,14 +381,25 @@ public class AccionesController implements Initializable {
         } else if (model.isExperiencia()) {
             try {
                 ExperienciaModel experiencia = tablaExperiencias.getSelectionModel().getSelectedItem();
+                ListProperty<Participante> listaParticipantes = new SimpleListProperty<>(this, "listaParticipantes", FXCollections.observableArrayList());
                 DialogoNuevaExperiencia experienciaAModificar = new DialogoNuevaExperiencia(listaClientes, JoovaApp.getPrimaryStage());
+
                 experienciaAModificar.getModel().setParticipantes(db.consultaExperienciaSegunCodigo(experiencia.getCodExperiencia()));
                 experienciaAModificar.getModel().setObservaciones(experiencia.getObservaciones());
                 experienciaAModificar.getModel().setFechaExperiencia(experiencia.getFechaExperiencia());
                 experienciaAModificar.getModel().setDireccion(experiencia.getDireccion());
                 experienciaAModificar.getModel().setCodExperiencia(experiencia.getCodExperiencia());
                 Optional<ExperienciaModel> resul = experienciaAModificar.showAndWait();
-                // FIXME Actualizar!! crear la funcion en la base de datos
+
+                if (resul.isPresent()) {
+                    for (int i = 0; i < experienciaAModificar.getModel().getParticipantes().size(); i++)
+                        listaParticipantes.add(experienciaAModificar.getModel().getParticipantes().get(i));
+
+                    resul.get().setCodExperiencia(experiencia.getCodExperiencia());
+                    db.updateExperiencia(resul.get());
+                    db.updateExperienciaCliente(listaParticipantes, experiencia.getCodExperiencia());
+                    actualizarDatos();
+                }
 
             } catch (NullPointerException e) {
                 Alert alerta = new Alert(Alert.AlertType.ERROR);

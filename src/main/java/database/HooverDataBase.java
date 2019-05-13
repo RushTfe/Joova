@@ -83,6 +83,44 @@ public class HooverDataBase {
         }
     }
 
+    public void updateExperiencia(ExperienciaModel model) {
+        String update = "UPDATE Experiencia SET Direccion = ?, Fecha = ?, Observaciones = ? WHERE Cod_Experiencia = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(update);
+            stmnt.setString(1, model.getDireccion());
+            stmnt.setString(2, model.getFechaExperiencia().toString());
+            stmnt.setString(3, model.getObservaciones());
+            stmnt.setInt(4, model.getCodExperiencia());
+
+            stmnt.executeUpdate();
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateExperienciaCliente(ListProperty<Participante> listaParticipantes, int codExperiencia) {
+        String update = "INSERT INTO Cliente_Experiencias(Cod_Experiencia, Cod_Cliente, Venta) VALUES (?, ?, ?)";
+
+        try {
+            for (int i = 0; i < listaParticipantes.size(); i++) {
+                deleteExperienciasCliente(codExperiencia, listaParticipantes.get(i).getCliente().getDni());
+
+                PreparedStatement stmnt = conn.prepareStatement(update);
+                stmnt.setInt(1, codExperiencia);
+                stmnt.setString(2, listaParticipantes.get(i).getCliente().getDni());
+                stmnt.setBoolean(3, listaParticipantes.get(i).isCompra());
+
+                stmnt.executeUpdate();
+                stmnt.close();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void updateAccionEspecial(AccionEspecialModel model) {
         String update = "UPDATE Acciones_Especiales SET Nombre_Accion_Especial = ?, Fecha = ?, Tipo_Evento = ?, Direccion = ?, Observaciones = ? WHERE Cod_Accion_Especial = ?";
 
@@ -391,7 +429,6 @@ public class HooverDataBase {
 
     /**
      * Tabla que contiene las acciones especiales a las que ha acudido el vendedor
-     *
      */
     public int insertAccionesEspeciales(AccionEspecialModel model) {
         //TODO Pasar el objeto
@@ -457,7 +494,6 @@ public class HooverDataBase {
 
     /**
      * Tabla con las reuniones de varios clientes.
-     *
      */
     public int insertExperiencias(ExperienciaModel experiencia) {
         //TODO Usar el objeto
@@ -847,6 +883,7 @@ public class HooverDataBase {
 
     /**
      * Consulta todas las presentaciones que hay en la base de datos, y las guarda en la lista que recoge por parametro.
+     *
      * @param listaPresentaciones la lista con las presentaciones que se cargaran en la tabla "Presentaciones"
      */
     public void consultaTodasPresentaciones(ListProperty<PMyPresentacionesModel> listaPresentaciones) {

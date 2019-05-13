@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.*;
 
+import javax.validation.constraints.Null;
 import java.util.Optional;
 
 public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
@@ -47,6 +48,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
     private CheckBox compra;
     private CheckBox regalo;
     private Button anadirParticipante;
+    private Button eliminarParticipante;
     private TextField direccionEvento;
     private TextArea observacionesEvento;
     private ComboBox<TipoPagoyEventoModel> eventosCombobox;
@@ -87,6 +89,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         compra = new CheckBox();
         regalo = new CheckBox();
         anadirParticipante = new Button("Añadir Participante");
+        eliminarParticipante = new Button("Eliminar Participante");
         direccionEvento = new TextField();
         observacionesEvento = new TextArea();
         eventosCombobox = new ComboBox<>();
@@ -148,6 +151,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         leftBox.getChildren().add(compra);
         leftBox.getChildren().add(regalo);
         leftBox.getChildren().add(anadirParticipante);
+        leftBox.getChildren().add(eliminarParticipante);
         leftBox.setSpacing(5);
         leftBox.setAlignment(Pos.TOP_CENTER);
         leftBox.setMaxWidth(200);
@@ -185,6 +189,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
 
         // Listeners
         anadirParticipante.setOnAction(e -> onAnadirButton());
+        eliminarParticipante.setOnAction(e -> onEliminarButton());
         nuevoEvento.setOnAction(e -> onAnadirEvento());
 
 
@@ -271,6 +276,19 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
             alerta.setTitle("Error");
             alerta.setHeaderText("No se ha seleccionado ningún cliente");
             alerta.setContentText("Por favor, seleccione uno");
+            alerta.show();
+        }
+    }
+
+    public void onEliminarButton() {
+        try {
+            listaParticipantes.remove(tablaParticipantes.getSelectionModel().getSelectedItem());
+        } catch (NullPointerException e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.initOwner(primaryStage);
+            alerta.setTitle("Error");
+            alerta.setHeaderText("No se ha podido eliminar el participante");
+            alerta.setContentText("Por favor, elija uno de la tabla antes de proceder a eliminarlo");
             alerta.show();
         }
     }

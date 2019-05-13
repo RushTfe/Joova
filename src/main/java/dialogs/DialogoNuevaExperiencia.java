@@ -3,6 +3,7 @@ package dialogs;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ListProperty;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -22,8 +23,11 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
     private HBox centerBox;
     private BorderPane root;
     private ComboBox<ClienteModel> listaClientes;
+    private Label clienteLabel;
+    private Label eventoLabel;
     private Button anadirParticipanteButton;
     private Button eliminarParticipante;
+    private Separator separator;
     private TextField direccion;
     private TextArea observaciones;
     private TableView<Participante> tablaParticipantes;
@@ -39,8 +43,11 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         centerBox = new HBox();
         root = new BorderPane();
         listaClientes = new ComboBox<>();
+        clienteLabel = new Label("Cliente");
+        eventoLabel = new Label("Evento");
         anadirParticipanteButton = new Button("Añadir Participante");
         eliminarParticipante = new Button("Eliminar Participante");
+        separator = new Separator();
         direccion = new TextField();
         observaciones = new TextArea();
         tablaParticipantes = new TableView<>();
@@ -73,11 +80,15 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         direccion.setPromptText("Dirección de la experiencia...");
 
         listaClientes.setPromptText("Lista de Clientes");
+        separator.setOrientation(Orientation.HORIZONTAL);
 
         // Preparando el VBox de la izquierda
+        leftBox.getChildren().add(clienteLabel);
         leftBox.getChildren().add(listaClientes);
         leftBox.getChildren().add(anadirParticipanteButton);
         leftBox.getChildren().add(eliminarParticipante);
+        leftBox.getChildren().add(separator);
+        leftBox.getChildren().add(eventoLabel);
         leftBox.getChildren().add(fechaExperiencia);
         leftBox.getChildren().add(observaciones);
         leftBox.setSpacing(5d);
