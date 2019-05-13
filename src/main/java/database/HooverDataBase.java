@@ -26,21 +26,21 @@ public class HooverDataBase {
     /**
      * Actualiza el cliente seleccionado de la tabla con los datos de entrada recibidos de el dialogo de edicion.
      */
-    public void updateClient(NuevoClienteModel cliente) {
-        String update = "UPDATE Cliente SET Nombre = ?, Apellidos = ?, Telefono = ?, Email = ?, Fecha_de_nacimiento = ?, Direccion = ?, Observaciones = ?, Genero = ?, Huerfano = ? WHERE DNI = ?";
+    public void updateClient(ClienteModel cliente) {
+        String update = "UPDATE Cliente SET Nombre = ?, Apellidos = ?, Telefono = ?, Email = ?, Fecha_de_nacimiento = ?, Direccion = ?, Observaciones = ?, Modelo_Aspiradora = ?, Huerfano = ? WHERE DNI = ?";
 
         try {
             PreparedStatement stnmt = conn.prepareStatement(update);
-            stnmt.setString(1, cliente.getNombreCliente());
-            stnmt.setString(2, cliente.getApellidosCliente());
-            stnmt.setString(3, cliente.getTelefonoCliente());
-            stnmt.setString(4, cliente.getMailCliente());
-            stnmt.setString(5, cliente.getNacimientoCliente().toString());
+            stnmt.setString(1, cliente.getNombre());
+            stnmt.setString(2, cliente.getApellidos());
+            stnmt.setString(3, cliente.getTelefono());
+            stnmt.setString(4, cliente.getEmail());
+            stnmt.setString(5, cliente.getFechaNacimiento().toString());
             stnmt.setString(6, cliente.getDireccion());
-            stnmt.setString(7, cliente.getObservacionesCliente());
-            stnmt.setString(8, cliente.getGenero());
-            stnmt.setBoolean(9, cliente.isClienteHuefano());
-            stnmt.setString(10, cliente.getDniCliente());
+            stnmt.setString(7, cliente.getObservaciones());
+            stnmt.setInt(8, cliente.getModeloAspiradora().getCodArticulo());
+            stnmt.setBoolean(9, cliente.isHuerfano());
+            stnmt.setString(10, cliente.getDni());
 
             stnmt.executeUpdate();
         } catch (SQLException e) {
@@ -172,21 +172,21 @@ public class HooverDataBase {
      *
      * @param cliente Objeto con los datos del cliente sacado del controlador del cuadro de dialogo
      */
-    public void insertClient(NuevoClienteModel cliente) {
+    public void insertClient(ClienteModel cliente) {
         String insert = "INSERT INTO Cliente VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
-            stmnt.setString(1, cliente.getDniCliente());
-            stmnt.setString(2, cliente.getNombreCliente());
-            stmnt.setString(3, cliente.getApellidosCliente());
-            stmnt.setString(4, cliente.getTelefonoCliente());
-            stmnt.setString(5, cliente.getMailCliente());
-            stmnt.setString(6, cliente.getNacimientoCliente().toString());
+            stmnt.setString(1, cliente.getDni());
+            stmnt.setString(2, cliente.getNombre());
+            stmnt.setString(3, cliente.getApellidos());
+            stmnt.setString(4, cliente.getTelefono());
+            stmnt.setString(5, cliente.getEmail());
+            stmnt.setString(6, cliente.getFechaNacimiento().toString());
             stmnt.setString(7, cliente.getDireccion());
-            stmnt.setString(8, cliente.getObservacionesCliente());
-            stmnt.setString(9, cliente.getGenero());
-            stmnt.setBoolean(10, cliente.isClienteHuefano());
+            stmnt.setString(8, cliente.getObservaciones());
+            stmnt.setInt(9, cliente.getModeloAspiradora().getCodArticulo());
+            stmnt.setBoolean(10, cliente.isHuerfano());
 
             stmnt.executeUpdate();
 
@@ -866,7 +866,7 @@ public class HooverDataBase {
      * @param listaClientes la lista donde se guardaran los clientes
      */
     public void consultaTodosClientes(ListProperty<ClienteModel> listaClientes) {
-        String query = "SELECT * FROM Cliente";
+        String query = "SELECT * FROM Cliente JOIN Articulos A on Cliente.Modelo_Aspiradora = A.Cod_Articulo";
         ResultSet rs = null;
         try {
             Statement stmnt = conn.createStatement();
@@ -1002,7 +1002,7 @@ public class HooverDataBase {
     public ListProperty<Participante> consultaAccionesEspecialesClientesCodigo(int codigoAccion) {
         ListProperty<Participante> listaParticipantes = new SimpleListProperty<>(this, "listaParticipantes", FXCollections.observableArrayList());
 
-        String query = "SELECT * FROM Acciones_Especiales_Clientes join Cliente C on Acciones_Especiales_Clientes.Cod_Cliente = C.DNI WHERE Cod_Accion_Especial = ?";
+        String query = "SELECT * FROM Acciones_Especiales_Clientes join Cliente C on Acciones_Especiales_Clientes.Cod_Cliente = C.DNI JOIN Articulos A on C.Modelo_Aspiradora = A.Cod_Articulo WHERE Cod_Accion_Especial = ?";
         try {
             PreparedStatement stmnt = conn.prepareStatement(query);
             stmnt.setInt(1, codigoAccion);
@@ -1010,6 +1010,12 @@ public class HooverDataBase {
             int i = 0;
 
             while (rs.next()) {
+                NuevoProductoModel nuevoProductoModel = new NuevoProductoModel();
+                nuevoProductoModel.setCodArticulo(rs.getInt(16));
+                nuevoProductoModel.setNombreProducto(rs.getString(17));
+                nuevoProductoModel.setDescripcionProducto(rs.getString(18));
+                nuevoProductoModel.setTipoProducto(rs.getString(19));
+                nuevoProductoModel.setDireccionImagen(rs.getString(20));
                 ClienteModel clienteModel = new ClienteModel();
                 clienteModel.setDni(rs.getString(6));
                 clienteModel.setNombre(rs.getString(7));
@@ -1019,7 +1025,7 @@ public class HooverDataBase {
                 clienteModel.setFechaNacimiento(JoovaUtil.stringToLocalDate(rs.getString(11)));
                 clienteModel.setDireccion(rs.getString(12));
                 clienteModel.setObservaciones(rs.getString(13));
-                clienteModel.setGenero(rs.getString(14));
+                clienteModel.setModeloAspiradora(nuevoProductoModel);
                 clienteModel.setHuerfano(rs.getBoolean(15));
 
                 listaParticipantes.add(new Participante());
@@ -1084,12 +1090,18 @@ public class HooverDataBase {
     public ClienteModel consultaClienteDNI(String dni) {
         ClienteModel clienteModel = new ClienteModel();
         try {
-            String queryCliente = "Select * from Cliente where DNI = '" + dni + "'";
+            String queryCliente = "Select * from Cliente JOIN Articulos A on Cliente.Modelo_Aspiradora = A.Cod_Articulo where DNI = '" + dni + "'";
             Statement stmntCliente = conn.createStatement();
             ResultSet rsCliente = stmntCliente.executeQuery(queryCliente);
 
             rsCliente.next();
             clienteModel.setDni(dni);
+            NuevoProductoModel nuevoProductoModel = new NuevoProductoModel();
+            nuevoProductoModel.setCodArticulo(rsCliente.getInt(11));
+            nuevoProductoModel.setNombreProducto(rsCliente.getString(12));
+            nuevoProductoModel.setDescripcionProducto(rsCliente.getString(13));
+            nuevoProductoModel.setTipoProducto(rsCliente.getString(14));
+            nuevoProductoModel.setDescripcionProducto(rsCliente.getString(15));
             clienteModel.setNombre(rsCliente.getString(2));
             clienteModel.setApellidos(rsCliente.getString(3));
             clienteModel.setTelefono(rsCliente.getString(4));
@@ -1097,7 +1109,7 @@ public class HooverDataBase {
             clienteModel.setFechaNacimiento(JoovaUtil.stringToLocalDate(rsCliente.getString(6)));
             clienteModel.setDireccion(rsCliente.getString(7));
             clienteModel.setObservaciones(rsCliente.getString(8));
-            clienteModel.setGenero(rsCliente.getString(9));
+            clienteModel.setModeloAspiradora(nuevoProductoModel);
             clienteModel.setHuerfano(rsCliente.getBoolean(10));
 
             stmntCliente.close();
@@ -1114,7 +1126,7 @@ public class HooverDataBase {
      * @param listaClientes
      */
     public void consultaClientesWhere(ListProperty<ClienteModel> listaClientes, String nombre) {
-        String query = "SELECT * FROM Cliente WHERE DNI LIKE ? OR Nombre LIKE ? or Apellidos LIKE ? or Telefono like ? or Email like ? or Genero like ? or Huerfano like ?";
+        String query = "SELECT * FROM Cliente JOIN Articulos A on Cliente.Modelo_Aspiradora = A.Cod_Articulo WHERE DNI LIKE ? OR Nombre LIKE ? or Apellidos LIKE ? or Telefono like ? or Email like ? or Nombre_Articulo like ? or Huerfano like ?";
         ResultSet rs = null;
         try {
             String busqueda = "%" + nombre + "%";
@@ -1128,9 +1140,7 @@ public class HooverDataBase {
             stnmt.setString(7, busqueda);
 
             rs = stnmt.executeQuery();
-
             fillListClientes(listaClientes, rs);
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -1178,6 +1188,12 @@ public class HooverDataBase {
     private void fillListClientes(ListProperty<ClienteModel> listaClientes, ResultSet rs) throws SQLException {
         int i = 0;
         while (rs.next()) {
+            NuevoProductoModel nuevoProductoModel = new NuevoProductoModel();
+            nuevoProductoModel.setCodArticulo(rs.getInt(11));
+            nuevoProductoModel.setNombreProducto(rs.getString(12));
+            nuevoProductoModel.setDescripcionProducto(rs.getString(13));
+            nuevoProductoModel.setTipoProducto(rs.getString(14));
+            nuevoProductoModel.setDescripcionProducto(rs.getString(15));
             listaClientes.add(new ClienteModel());
             listaClientes.get(i).setDni(rs.getString(1));
             listaClientes.get(i).setNombre(rs.getString(2));
@@ -1187,7 +1203,7 @@ public class HooverDataBase {
             listaClientes.get(i).setFechaNacimiento(JoovaUtil.stringToLocalDate(rs.getString(6)));
             listaClientes.get(i).setDireccion(rs.getString(7));
             listaClientes.get(i).setObservaciones(rs.getString(8));
-            listaClientes.get(i).setGenero(rs.getString(9));
+            listaClientes.get(i).setModeloAspiradora(nuevoProductoModel);
             listaClientes.get(i).setHuerfano(rs.getBoolean(10));
             i++;
         }
@@ -1233,8 +1249,9 @@ public class HooverDataBase {
                         "Fecha_de_nacimiento TEXT," +
                         "Direccion text NOT NULL," +
                         "Observaciones text," +
-                        "Genero text NOT NULL," +
-                        "Huerfano integer NOT NULL" +
+                        "Modelo_Aspiradora INTEGER NOT NULL," +
+                        "Huerfano integer NOT NULL," +
+                        "FOREIGN KEY (Modelo_Aspiradora) REFERENCES Articulos(Cod_Articulo) ON DELETE CASCADE " +
                         ")";
 
         String queryCompra =

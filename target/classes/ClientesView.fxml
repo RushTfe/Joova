@@ -20,7 +20,7 @@
             <TableColumn fx:id="nacimientoColumn" prefWidth="75.0" text="FechaNacimiento" />
             <TableColumn fx:id="direccionColumn" prefWidth="75.0" text="Direccion" />
             <TableColumn fx:id="observacionesColumn" prefWidth="75.0" text="Observaciones" />
-            <TableColumn fx:id="generoColumn" prefWidth="75.0" text="Genero" />
+            <TableColumn fx:id="aspiradoraColumn" prefWidth="75.0" text="Aspiradora" />
             <TableColumn fx:id="huerfanoColumn" prefWidth="75.0" text="Huerfano" />
         </columns>
          <BorderPane.margin>

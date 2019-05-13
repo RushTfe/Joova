@@ -19,11 +19,6 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-
-    // SOLO PARA TEST, SE IMPLEMENTARÁ DISTINTO CUANDO PASE LA PRIMERA FASE
-    private static final String[] USUARIOS = {"Pedro", "user", "1234"};
-    private static final String[] CONTRASENAS = {"1234", "user", "1234"};
-
     // Tamaño de los registros guardados en el archivo
     private static final int TAMANO_CELDA = 60;
 
@@ -170,6 +165,7 @@ public class MainController implements Initializable {
         ventasController.getClientesComboBox().itemsProperty().bind(model.listaClientesProperty());
         ventasController.listaProductosDisponiblesProperty().bind(productoController.getModel().listaProductosProperty());
         accionesController.listaClientesProperty().bind(model.listaClientesProperty());
+        clienteController.listaProductosProperty().bind(model.listaProductosProperty());
 
 
         //Añadir las pestañas al controlador principal

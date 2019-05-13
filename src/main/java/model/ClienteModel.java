@@ -1,6 +1,7 @@
 package model;
 
 import javafx.beans.property.*;
+import nuevoproducto.NuevoProductoModel;
 
 import java.time.LocalDate;
 
@@ -13,7 +14,7 @@ public class ClienteModel {
     private ObjectProperty<LocalDate> fechaNacimiento;
     private StringProperty direccion;
     private StringProperty observaciones;
-    private StringProperty genero;
+    private ObjectProperty<NuevoProductoModel> modeloAspiradora;
     private BooleanProperty huerfano;
 
     public ClienteModel() {
@@ -25,8 +26,20 @@ public class ClienteModel {
         fechaNacimiento = new SimpleObjectProperty<>(this, "fechaNacimiento");
         direccion = new SimpleStringProperty(this, "direccion");
         observaciones = new SimpleStringProperty(this, "observaciones");
-        genero = new SimpleStringProperty(this, "genero");
+        modeloAspiradora = new SimpleObjectProperty<>(this, "modeloAspiradora", new NuevoProductoModel());
         huerfano = new SimpleBooleanProperty(this, "huerfano");
+    }
+
+    public NuevoProductoModel getModeloAspiradora() {
+        return modeloAspiradora.get();
+    }
+
+    public ObjectProperty<NuevoProductoModel> modeloAspiradoraProperty() {
+        return modeloAspiradora;
+    }
+
+    public void setModeloAspiradora(NuevoProductoModel modeloAspiradora) {
+        this.modeloAspiradora.set(modeloAspiradora);
     }
 
     public String getDni() {
@@ -125,18 +138,6 @@ public class ClienteModel {
         this.observaciones.set(observaciones);
     }
 
-    public String getGenero() {
-        return genero.get();
-    }
-
-    public StringProperty generoProperty() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero.set(genero);
-    }
-
     public boolean isHuerfano() {
         return huerfano.get();
     }
@@ -160,7 +161,7 @@ public class ClienteModel {
             return false;
         if (!(obj instanceof ClienteModel))
             return false;
-        ClienteModel cliente = (ClienteModel)obj;
+        ClienteModel cliente = (ClienteModel) obj;
         if (this.getDni().equals(cliente.getDni()))
             return true;
         return false;
