@@ -140,7 +140,7 @@ public class ClienteController implements Initializable {
     }
 
     private void onDoubleClickedClient(TableRow<ClienteModel> row) {
-        //TODO Cambiar cuando tenga lista la vista.
+        //TODO Cambiar cuando tenga lista la vista
         ClienteModel clienteModel = row.getItem();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(clienteModel.getNombre());

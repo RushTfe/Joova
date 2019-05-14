@@ -326,27 +326,16 @@ public class HooverDataBase {
 
     }
 
-    /**
-     * Productos que interesan al cliente. Una vez el cliente compra un producto que está dentro de su lista de intereses, este pasa a poner su ultimo valor a TRUE
-     * mediante un TRIGGER
-     *
-     * @param codCliente
-     * @param codArticulo
-     * @param observaciones
-     * @param haComprado
-     */
-    public void insertInteresCliente(String codCliente, int codArticulo, String observaciones, boolean haComprado) {
+    public void insertInteresCliente(InteresesModel interesesModel) {
         //TODO Pasar objeto
 
-        String insert = "INSERT INTO Intereses_Articulos VALUES (?, ?, ?, ?)";
+        String insert = "INSERT INTO Intereses_Articulos VALUES (?, ?)";
 
         try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setString(1, codCliente);
-            stmnt.setInt(2, codArticulo);
-            stmnt.setString(3, observaciones);
-            stmnt.setBoolean(4, false);
+            stmnt.setString(1, interesesModel.getCodCliente());
+            stmnt.setInt(2, interesesModel.getCodArticulo());
 
             stmnt.executeUpdate();
 
@@ -680,17 +669,15 @@ public class HooverDataBase {
     /**
      * Elimina uno de los intereses que tenga un cliente.
      *
-     * @param codCliente
-     * @param codArticulo
      */
-    public void deleteInteres(String codCliente, int codArticulo) {
+    public void deleteInteres(InteresesModel interesesModel) {
         String delete = "DELETE FROM Intereses_Articulos WHERE Cod_Cliente = ? AND Cod_Articulo = ?";
 
         try {
             PreparedStatement stmnt = conn.prepareStatement(delete);
 
-            stmnt.setString(1, codCliente);
-            stmnt.setInt(2, codArticulo);
+            stmnt.setString(1, interesesModel.getCodCliente());
+            stmnt.setInt(2, interesesModel.getCodArticulo());
 
             stmnt.executeUpdate();
         } catch (SQLException e) {
@@ -1303,8 +1290,6 @@ public class HooverDataBase {
                 "CREATE TABLE IF NOT EXISTS Intereses_Articulos (" +
                         "Cod_Cliente text," +
                         "Cod_Articulo INTEGER," +
-                        "Observaciones text," +
-                        "Comprado INTEGER NOT NULL," +
                         "PRIMARY KEY (Cod_Cliente, Cod_Articulo)," +
                         "FOREIGN KEY (Cod_Cliente) REFERENCES Cliente (DNI) ON DELETE CASCADE," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE" +

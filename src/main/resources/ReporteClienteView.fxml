@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox fx:id="leftVbox" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="aspiradoraActualVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="Aspiradora actual" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label text="Label" />
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+            <HBox fx:id="fechaPresentacionHbox" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox fx:id="fechaVbox" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="tituloFechaLabel" text="Fecha de Presentación" />
+                        <Label fx:id="fechaLabel" text="Label" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="verFechaPresentacionButton" mnemonicParsing="false" text="VER" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <VBox fx:id="puestaMarchaVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="tituloPuestaMarchaLabel" text="Puestas en Marcha" />
+                  <ListView fx:id="puestasMarchaListView" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <Separator prefWidth="200.0" />
+            <VBox fx:id="accionEspecialVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="tituloAccionEspecialLabel" text="Acciones Especiales" />
+                  <ListView fx:id="accionesEspecialesListView" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <Separator prefWidth="200.0" />
+            <VBox fx:id="experienciaVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="tituloExperienciaLabel" text="Experiencias" />
+                  <ListView fx:id="experienciasListView" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <top>
+      <VBox fx:id="topVbox" alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="tituloResumenLabel" text="RESUMEN" />
+            <Separator prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox fx:id="centerVbox" alignment="TOP_CENTER" spacing="5.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <HBox fx:id="datosBasicosHbox" alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="15.0" VBox.vgrow="NEVER">
+               <children>
+                  <VBox fx:id="nombreApellidoVbox" alignment="CENTER" minWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="nombreClienteLabel" text="Label" />
+                        <Label fx:id="apellidoClienteLabel" text="Label" />
+                     </children>
+                  </VBox>
+                  <HBox fx:id="direccionHbox" maxHeight="100.0" HBox.hgrow="NEVER">
+                     <children>
+                        <TextArea fx:id="direccionTextArea" maxHeight="100.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <VBox fx:id="observacionesVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="tituloObservacionesLabel" text="OBSERVACIONES" />
+                  <TextArea fx:id="observacionesTextArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" wrapText="true" VBox.vgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="comprasVbox" alignment="TOP_CENTER" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Label fx:id="tituloComprasLabel" text="COMPRAS" />
+                  <TextField promptText="Búsqueda de compras" />
+                  <TableView fx:id="tablaCompras">
+                    <columns>
+                      <TableColumn fx:id="codigoColumn" prefWidth="75.0" text="Codigo" />
+                      <TableColumn fx:id="fechaColumn" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="precioColumn" prefWidth="75.0" text="Precio" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <bottom>
+      <VBox fx:id="bottomVbox" alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" text="PDF" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </bottom>
+   <right>
+      <VBox fx:id="rightVbox" alignment="TOP_CENTER" prefWidth="250.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="interesesTituloLabel" text="INTERESES" />
+            <HBox fx:id="anadirProductoInteres" alignment="CENTER" spacing="5.0" VBox.vgrow="NEVER">
+               <children>
+                  <ComboBox fx:id="productosComboBox" prefWidth="150.0" promptText="Lista de Productos" />
+                  <Button fx:id="anadirProductoInteresButton" mnemonicParsing="false" text="+" />
+                  <Button fx:id="eliminarProductoInteresButton" mnemonicParsing="false" text="-" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <ListView fx:id="interesesListView" maxWidth="200.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </right>
+</BorderPane>
