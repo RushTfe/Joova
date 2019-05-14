@@ -1,6 +1,5 @@
 package controller;
 
-import NuevoCliente.NuevoClienteModel;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoCliente;
@@ -15,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import model.ClienteModel;
+import nuevoproducto.NuevoProductoModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,6 +27,8 @@ public class ClienteController implements Initializable {
     private HooverDataBase db;
 
     private ListProperty<ClienteModel> listaClientes;
+
+    private ListProperty<NuevoProductoModel> listaProductos;
 
     @FXML
     private BorderPane rootClientes;
@@ -59,7 +61,7 @@ public class ClienteController implements Initializable {
     private TableColumn<ClienteModel, String> direccionColumn;
 
     @FXML
-    private TableColumn<ClienteModel, String> generoColumn;
+    private TableColumn<ClienteModel, NuevoProductoModel> aspiradoraColumn;
 
     @FXML
     private TableColumn<ClienteModel, Boolean> huerfanoColumn;
@@ -94,6 +96,7 @@ public class ClienteController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         listaClientes = new SimpleListProperty<>(this, "listaClientes", FXCollections.observableArrayList());
+        listaProductos = new SimpleListProperty<>(this, "listaProductos", FXCollections.observableArrayList());
         busquedaClienteProperty = new SimpleStringProperty(this, "busquedaClienteProperty");
 
         // PREPARACION DE LA TABLA
@@ -105,8 +108,9 @@ public class ClienteController implements Initializable {
         nacimientoColumn.setCellValueFactory(v -> v.getValue().fechaNacimientoProperty());
         direccionColumn.setCellValueFactory(v -> v.getValue().direccionProperty());
         observacionesColumn.setCellValueFactory(v -> v.getValue().observacionesProperty());
-        generoColumn.setCellValueFactory(v -> v.getValue().generoProperty());
+        aspiradoraColumn.setCellValueFactory(v -> v.getValue().modeloAspiradoraProperty());
         huerfanoColumn.setCellValueFactory(v -> v.getValue().huerfanoProperty());
+        clientTable.setEditable(true);
 
         //BINDEO DE LA TABLA A LA LISTA
         clientTable.itemsProperty().bind(listaClientes);
@@ -123,7 +127,26 @@ public class ClienteController implements Initializable {
 
         // LISTENERS
         busquedaClienteProperty.addListener(e -> onBusquedaRealizada());
+        clientTable.setRowFactory(tv -> {
+            TableRow<ClienteModel> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    onDoubleClickedClient(row);
+                }
+            });
+            return  row;
+        });
 
+    }
+
+    private void onDoubleClickedClient(TableRow<ClienteModel> row) {
+        //TODO Cambiar cuando tenga lista la vista.
+        ClienteModel clienteModel = row.getItem();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(clienteModel.getNombre());
+        alert.setHeaderText(clienteModel.getDni());
+        alert.setContentText(clienteModel.getModeloAspiradora().getNombreProducto());
+        alert.show();
     }
 
     private void onBusquedaRealizada() {
@@ -133,32 +156,24 @@ public class ClienteController implements Initializable {
 
     private void onModificarAction() {
         try {
-            DialogoNuevoCliente aModificar = new DialogoNuevoCliente(JoovaApp.getPrimaryStage());
+            DialogoNuevoCliente aModificar = new DialogoNuevoCliente(JoovaApp.getPrimaryStage(), listaProductos);
             ClienteModel clienteSeleccionado = clientTable.getSelectionModel().getSelectedItem();
             aModificar.setTitle("Modificando a " + clienteSeleccionado.getNombre() + " " + clienteSeleccionado.getApellidos());
 
             // Establecemos los valores que habran dentro del dialogo, correspondientes a la fila que marquemos de la tabla.
             aModificar.getDNIField().setDisable(true);
-            aModificar.getNuevoClienteModel().setDniCliente(clienteSeleccionado.getDni());
-            aModificar.getNuevoClienteModel().setNombreCliente(clienteSeleccionado.getNombre());
-            aModificar.getNuevoClienteModel().setApellidosCliente(clienteSeleccionado.getApellidos());
-            aModificar.getNuevoClienteModel().setTelefonoCliente(clienteSeleccionado.getTelefono());
-            aModificar.getNuevoClienteModel().setMailCliente(clienteSeleccionado.getEmail());
-            aModificar.getNuevoClienteModel().setNacimientoCliente(clienteSeleccionado.getFechaNacimiento());
-            aModificar.getNuevoClienteModel().setDireccion(clienteSeleccionado.getDireccion());
-            aModificar.getNuevoClienteModel().setObservacionesCliente(clienteSeleccionado.getObservaciones());
-            aModificar.getNuevoClienteModel().setClienteHuefano(clienteSeleccionado.isHuerfano());
+            aModificar.getModel().setDni(clienteSeleccionado.getDni());
+            aModificar.getModel().setNombre(clienteSeleccionado.getNombre());
+            aModificar.getModel().setApellidos(clienteSeleccionado.getApellidos());
+            aModificar.getModel().setTelefono(clienteSeleccionado.getTelefono());
+            aModificar.getModel().setEmail(clienteSeleccionado.getEmail());
+            aModificar.getModel().setFechaNacimiento(clienteSeleccionado.getFechaNacimiento());
+            aModificar.getModel().setDireccion(clienteSeleccionado.getDireccion());
+            aModificar.getModel().setObservaciones(clienteSeleccionado.getObservaciones());
+            aModificar.getProductosComboBox().getSelectionModel().select(clienteSeleccionado.getModeloAspiradora());
+            aModificar.getModel().setHuerfano(clienteSeleccionado.isHuerfano());
 
-            // Trabajamos directamente sobre la vista porque esta el bindeo establecido desde el otro proyecto. Se podr;ia desbindear y volver a bindear, pero veo esto mas comodo.
-            if ("Mujer".equals(clienteSeleccionado.getGenero()))
-                aModificar.getController().getMujerRadioButton().setSelected(true);
-            else if ("Hombre".equals(clienteSeleccionado.getGenero()))
-                aModificar.getController().getHombreRadioButton().setSelected(true);
-            else
-                aModificar.getController().getOtrosRadioButton().setSelected(true);
-
-            Optional<NuevoClienteModel> resul = aModificar.showAndWait();
-
+            Optional<ClienteModel> resul = aModificar.showAndWait();
             if (resul.isPresent()) {
                 db.updateClient(resul.get());
                 actualizarClientes();
@@ -187,10 +202,9 @@ public class ClienteController implements Initializable {
     }
 
     private void onAnadirClienteButton() {
-        DialogoNuevoCliente nuevoCliente = new DialogoNuevoCliente(JoovaApp.getPrimaryStage());
+        DialogoNuevoCliente nuevoCliente = new DialogoNuevoCliente(JoovaApp.getPrimaryStage(), listaProductos);
 
-        Optional<NuevoClienteModel> resul = nuevoCliente.showAndWait();
-
+        Optional<ClienteModel> resul = nuevoCliente.showAndWait();
         if (resul.isPresent()) {
             db.insertClient(resul.get());
             actualizarClientes();
@@ -205,6 +219,10 @@ public class ClienteController implements Initializable {
 
     public ListProperty<ClienteModel> listaClientesProperty() {
         return listaClientes;
+    }
+
+    public ListProperty<NuevoProductoModel> listaProductosProperty() {
+        return listaProductos;
     }
 
     public BorderPane getRootClientes() {
