@@ -1,6 +1,5 @@
 package controller;
 
-import NuevoCliente.NuevoClienteModel;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoCliente;
@@ -13,7 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.layout.BorderPane;
 import model.ClienteModel;
 import nuevoproducto.NuevoProductoModel;
@@ -129,7 +127,26 @@ public class ClienteController implements Initializable {
 
         // LISTENERS
         busquedaClienteProperty.addListener(e -> onBusquedaRealizada());
+        clientTable.setRowFactory(tv -> {
+            TableRow<ClienteModel> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    onDoubleClickedClient(row);
+                }
+            });
+            return  row;
+        });
 
+    }
+
+    private void onDoubleClickedClient(TableRow<ClienteModel> row) {
+        //TODO Cambiar cuando tenga lista la vista.
+        ClienteModel clienteModel = row.getItem();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(clienteModel.getNombre());
+        alert.setHeaderText(clienteModel.getDni());
+        alert.setContentText(clienteModel.getModeloAspiradora().getNombreProducto());
+        alert.show();
     }
 
     private void onBusquedaRealizada() {
@@ -153,6 +170,7 @@ public class ClienteController implements Initializable {
             aModificar.getModel().setFechaNacimiento(clienteSeleccionado.getFechaNacimiento());
             aModificar.getModel().setDireccion(clienteSeleccionado.getDireccion());
             aModificar.getModel().setObservaciones(clienteSeleccionado.getObservaciones());
+            aModificar.getProductosComboBox().getSelectionModel().select(clienteSeleccionado.getModeloAspiradora());
             aModificar.getModel().setHuerfano(clienteSeleccionado.isHuerfano());
 
             Optional<ClienteModel> resul = aModificar.showAndWait();

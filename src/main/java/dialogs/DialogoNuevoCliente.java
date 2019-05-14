@@ -193,4 +193,8 @@ public class DialogoNuevoCliente extends Dialog<ClienteModel> {
     public TextField getDNIField() {
         return dniField;
     }
+
+    public ComboBox<NuevoProductoModel> getProductosComboBox() {
+        return productosComboBox;
+    }
 }

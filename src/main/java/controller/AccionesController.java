@@ -5,6 +5,7 @@ import database.HooverDataBase;
 import dialogs.DialogoNuevaAccionEspecial;
 import dialogs.DialogoNuevaExperiencia;
 import dialogs.DialogoNuevaPyPM;
+import javafx.beans.Observable;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -58,7 +59,6 @@ public class AccionesController implements Initializable {
     private TableView<ExperienciaModel> tablaExperiencias;
     private TableColumn<ExperienciaModel, String> direccionExperienciaColumn;
     private TableColumn<ExperienciaModel, LocalDate> fechaExperienciaColumn;
-    private TableColumn<ExperienciaModel, String> observacionesExperienciaColumn;
     private ListProperty<ExperienciaModel> listaExperiencias;
 
     /****************
@@ -69,7 +69,6 @@ public class AccionesController implements Initializable {
     private TableColumn<AccionEspecialModel, LocalDate> fechaAccionColumn;
     private TableColumn<AccionEspecialModel, TipoPagoyEventoModel> tipoAccionColumn;
     private TableColumn<AccionEspecialModel, String> direccionAccionColumn;
-    private TableColumn<AccionEspecialModel, String> observacionesAccionColumn;
     private ListProperty<AccionEspecialModel> listaAccionesEspeciales;
 
 
@@ -221,21 +220,17 @@ public class AccionesController implements Initializable {
         tablaExperiencias = new TableView<>();
         direccionExperienciaColumn = new TableColumn<>();
         fechaExperienciaColumn = new TableColumn<>();
-        observacionesExperienciaColumn = new TableColumn<>();
         listaExperiencias = new SimpleListProperty<>(this, "listaExperiencias", FXCollections.observableArrayList());
 
         tablaExperiencias.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         tablaExperiencias.getColumns().add(direccionExperienciaColumn);
         tablaExperiencias.getColumns().add(fechaExperienciaColumn);
-        tablaExperiencias.getColumns().add(observacionesExperienciaColumn);
 
         direccionExperienciaColumn.setCellValueFactory(v -> v.getValue().direccionProperty());
         direccionExperienciaColumn.setText("Direccion");
         fechaExperienciaColumn.setCellValueFactory(v -> v.getValue().fechaExperienciaProperty());
         fechaExperienciaColumn.setText("Fecha");
-        observacionesExperienciaColumn.setCellValueFactory(v -> v.getValue().observacionesProperty());
-        observacionesExperienciaColumn.setText("Observaciones");
 
         AnchorPane.setTopAnchor(tablaExperiencias, 0d);
         AnchorPane.setBottomAnchor(tablaExperiencias, 0d);
@@ -252,7 +247,6 @@ public class AccionesController implements Initializable {
         fechaAccionColumn = new TableColumn<>();
         tipoAccionColumn = new TableColumn<>();
         direccionAccionColumn = new TableColumn<>();
-        observacionesAccionColumn = new TableColumn<>();
         listaAccionesEspeciales = new SimpleListProperty<>(this, "listaAccionesEspeciales", FXCollections.observableArrayList());
 
         tablaAccionesEspeciales.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -261,7 +255,6 @@ public class AccionesController implements Initializable {
         tablaAccionesEspeciales.getColumns().add(fechaAccionColumn);
         tablaAccionesEspeciales.getColumns().add(tipoAccionColumn);
         tablaAccionesEspeciales.getColumns().add(direccionAccionColumn);
-        tablaAccionesEspeciales.getColumns().add(observacionesAccionColumn);
 
         nombreAccionColumn.setCellValueFactory(v -> v.getValue().nombreEventoProperty());
         nombreAccionColumn.setText("Nombre del evento");
@@ -271,8 +264,6 @@ public class AccionesController implements Initializable {
         tipoAccionColumn.setText("Tipo de acción");
         direccionAccionColumn.setCellValueFactory(v -> v.getValue().direccionEventoProperty());
         direccionAccionColumn.setText("Dirección");
-        observacionesAccionColumn.setCellValueFactory(v -> v.getValue().observacionesEventoProperty());
-        observacionesAccionColumn.setText("Observaciones");
 
         AnchorPane.setTopAnchor(tablaAccionesEspeciales, 0d);
         AnchorPane.setBottomAnchor(tablaAccionesEspeciales, 0d);
@@ -333,12 +324,32 @@ public class AccionesController implements Initializable {
         nuevoButton.setOnAction(e -> onNuevoAction());
         eliminarButton.setOnAction(e -> onEliminarAction());
         modifButton.setOnAction(e -> onModificarAction());
+        tablaAccionesEspeciales.getSelectionModel().selectedItemProperty().addListener(e -> onAEChanged());
+        tablaExperiencias.getSelectionModel().selectedItemProperty().addListener(e -> onExpeChanged());
+        tablaPuestaMarcha.getSelectionModel().selectedItemProperty().addListener(e -> onPMChanged());
+        tablaPresentaciones.getSelectionModel().selectedItemProperty().addListener(e -> onPreChanged());
 
         actualizarDatos();
 
         // FIXME al cambiar de radioButton y volver, no funciona el listener
         // FIXME crea NullPointerException al eliminar un elemento de la lista
 //        tablaPresentaciones.getSelectionModel().selectedItemProperty().addListener(e -> actualizarTextArea());
+    }
+
+    private void onPreChanged() {
+        observacionesTextArea.setText(tablaPresentaciones.getSelectionModel().getSelectedItem().getObservaciones());
+    }
+
+    private void onPMChanged() {
+        observacionesTextArea.setText(tablaPuestaMarcha.getSelectionModel().getSelectedItem().getObservaciones());
+    }
+
+    private void onExpeChanged() {
+        observacionesTextArea.setText(tablaExperiencias.getSelectionModel().getSelectedItem().getObservaciones());
+    }
+
+    private void onAEChanged() {
+        observacionesTextArea.setText(tablaAccionesEspeciales.getSelectionModel().getSelectedItem().getObservacionesEvento());
     }
 
     private void onModificarAction() {
