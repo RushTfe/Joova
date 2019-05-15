@@ -1,16 +1,15 @@
 package model;
 
 import javafx.beans.property.*;
+import nuevoproducto.NuevoProductoModel;
 
 public class InteresesModel {
     private StringProperty codCliente;
-    private IntegerProperty codArticulo;
-    private StringProperty observaciones;
-    private BooleanProperty comprado;
+    private ObjectProperty<NuevoProductoModel> articulo;
 
     public InteresesModel() {
         codCliente = new SimpleStringProperty(this, "codCliente");
-        codArticulo = new SimpleIntegerProperty(this, "codArticulo");
+        articulo = new SimpleObjectProperty<>(this, "articulo");
     }
 
     public String getCodCliente() {
@@ -25,39 +24,20 @@ public class InteresesModel {
         this.codCliente.set(codCliente);
     }
 
-    public int getCodArticulo() {
-        return codArticulo.get();
+    public NuevoProductoModel getArticulo() {
+        return articulo.get();
     }
 
-    public IntegerProperty codArticuloProperty() {
-        return codArticulo;
+    public ObjectProperty<NuevoProductoModel> articuloProperty() {
+        return articulo;
     }
 
-    public void setCodArticulo(int codArticulo) {
-        this.codArticulo.set(codArticulo);
+    public void setArticulo(NuevoProductoModel articulo) {
+        this.articulo.set(articulo);
     }
 
-    public String getObservaciones() {
-        return observaciones.get();
-    }
-
-    public StringProperty observacionesProperty() {
-        return observaciones;
-    }
-
-    public void setObservaciones(String observaciones) {
-        this.observaciones.set(observaciones);
-    }
-
-    public boolean isComprado() {
-        return comprado.get();
-    }
-
-    public BooleanProperty compradoProperty() {
-        return comprado;
-    }
-
-    public void setComprado(boolean comprado) {
-        this.comprado.set(comprado);
+    @Override
+    public String toString() {
+        return getArticulo().getNombreProducto();
     }
 }

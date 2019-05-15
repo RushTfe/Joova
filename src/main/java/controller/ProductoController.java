@@ -143,8 +143,6 @@ public class ProductoController implements Initializable {
      * Añade un producto a la base de datos y al modelo, para que aparezca en la vista.
      */
     private void onAnadirProductoAction() {
-
-
         NuevoProductoModel cardModel = new NuevoProductoModel();
         DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
         Optional<NuevoProductoModel> resul = nuevoProducto.showAndWait();
@@ -201,7 +199,7 @@ public class ProductoController implements Initializable {
             // insertar primero el articulo, y luego crear el precio en su entidad
 
             // Y LA ANADIMOS A LA VISTA
-            model.getListaProductos().add(cardModel);
+            actualizarProductos();
         }
     }
 

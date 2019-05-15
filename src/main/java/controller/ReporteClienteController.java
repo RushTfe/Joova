@@ -1,5 +1,6 @@
 package controller;
 
+import database.HooverDataBase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,6 +24,7 @@ import java.util.ResourceBundle;
 public class ReporteClienteController extends BorderPane implements Initializable {
     private ReporteClienteModel model = new ReporteClienteModel();
     private Stage primaryStage;
+    private HooverDataBase db;
 
     @FXML
     private ImageView aspiradoraImageView;
@@ -127,13 +129,13 @@ public class ReporteClienteController extends BorderPane implements Initializabl
     private TableView<VentasModel> tablaCompras;
 
     @FXML
-    private TableColumn<VentasModel, Integer> codigoColumn;
+    private TableColumn<VentasModel, String> codigoColumn;
 
     @FXML
     private TableColumn<VentasModel, LocalDate> fechaColumn;
 
     @FXML
-    private TableColumn<VentasModel, Double> precioColumn;
+    private TableColumn<VentasModel, String> precioColumn;
 
     @FXML
     private VBox bottomVbox;
@@ -159,8 +161,9 @@ public class ReporteClienteController extends BorderPane implements Initializabl
     @FXML
     private ListView<InteresesModel> interesesListView;
 
-    public ReporteClienteController(Stage primaryStage, ClienteModel cliente) {
+    public ReporteClienteController(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        this.db = db;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ReporteClienteView.fxml"));
         loader.setController(this);
         loader.setRoot(this);
@@ -181,6 +184,9 @@ public class ReporteClienteController extends BorderPane implements Initializabl
         setPrefWidth(x);
         setPrefHeight(y);
 
+        precioColumn.setCellValueFactory(v -> v.getValue().precioAsString());
+        codigoColumn.setCellValueFactory(v -> v.getValue().codContratoProperty());
+        fechaColumn.setCellValueFactory(v -> v.getValue().fechaVentaProperty());
 
         /*****************************************
          *
@@ -194,6 +200,7 @@ public class ReporteClienteController extends BorderPane implements Initializabl
         tablaCompras.itemsProperty().bind(model.ventasModelProperty());
         productosComboBox.itemsProperty().bind(model.listaProductosProperty());
         interesesListView.itemsProperty().bind(model.interesesModelProperty());
+
 
 
         // Organizando componentes dentro del BorderPane
@@ -215,6 +222,22 @@ public class ReporteClienteController extends BorderPane implements Initializabl
         direccionTextArea.setText(cliente.getDireccion());
         aspiradoraImageView.setImage(new Image(cliente.getModeloAspiradora().getDireccionImagen()));
         observacionesTextArea.setText(cliente.getObservaciones());
+    }
+
+    public Button getEliminarProductoInteresButton() {
+        return eliminarProductoInteresButton;
+    }
+
+    public Button getAnadirProductoInteresButton() {
+        return anadirProductoInteresButton;
+    }
+
+    public ComboBox<NuevoProductoModel> getProductosComboBox() {
+        return productosComboBox;
+    }
+
+    public ListView<InteresesModel> getInteresesListView() {
+        return interesesListView;
     }
 
     public void setFecha(String fecha) {

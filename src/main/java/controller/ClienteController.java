@@ -140,7 +140,7 @@ public class ClienteController implements Initializable {
     private void onDoubleClickedClient(TableRow<ClienteModel> row) {
         //TODO Cambiar cuando tenga lista la vista
         ClienteModel cliente = clientTable.getSelectionModel().getSelectedItem();
-        DialogoReporteCliente dialogoReporteCliente = new DialogoReporteCliente(JoovaApp.getPrimaryStage(), db, cliente);
+        DialogoReporteCliente dialogoReporteCliente = new DialogoReporteCliente(JoovaApp.getPrimaryStage(), db, cliente, listaProductos);
         dialogoReporteCliente.show();
     }
 

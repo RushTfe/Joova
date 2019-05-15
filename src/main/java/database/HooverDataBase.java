@@ -270,7 +270,7 @@ public class HooverDataBase {
             PreparedStatement stmnt = conn.prepareStatement(insert);
             stmnt.setString(1, model.getCodContrato());
             stmnt.setString(2, model.getCliente());
-            stmnt.setDate(3, Date.valueOf(model.getFechaVenta()));
+            stmnt.setString(3, model.getFechaVenta().toString());
             stmnt.setString(4, model.getObservacionesVenta());
             stmnt.setInt(5, model.getTipoPago().getCodTipoPago());
             stmnt.setDouble(6, model.getPrecioTotal());
@@ -335,7 +335,7 @@ public class HooverDataBase {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
             stmnt.setString(1, interesesModel.getCodCliente());
-            stmnt.setInt(2, interesesModel.getCodArticulo());
+            stmnt.setInt(2, interesesModel.getArticulo().getCodArticulo());
 
             stmnt.executeUpdate();
 
@@ -677,7 +677,7 @@ public class HooverDataBase {
             PreparedStatement stmnt = conn.prepareStatement(delete);
 
             stmnt.setString(1, interesesModel.getCodCliente());
-            stmnt.setInt(2, interesesModel.getCodArticulo());
+            stmnt.setInt(2, interesesModel.getArticulo().getCodArticulo());
 
             stmnt.executeUpdate();
         } catch (SQLException e) {
@@ -868,6 +868,36 @@ public class HooverDataBase {
         }
     }
 
+    public void consultaVentasCliente(ListProperty<VentasModel> listaVentas, String codCliente) {
+        String query = "SELECT * FROM Compra JOIN Tipo_Pago TP on Compra.Tipo_Pago = TP.Cod_Tipo_Pago WHERE Cod_Cliente = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codCliente);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()) {
+                TipoPagoyEventoModel tipoPago = new TipoPagoyEventoModel();
+                tipoPago.setCodTipoPago(rs.getInt(7));
+                tipoPago.setNombreTipoPago(rs.getString(8));
+                tipoPago.setDescripcionTipoPago(rs.getString(9));
+                listaVentas.add(new VentasModel());
+                listaVentas.get(i).setCodContrato(rs.getString(1));
+                listaVentas.get(i).setCliente(rs.getString(2));
+                listaVentas.get(i).setFechaVenta(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaVentas.get(i).setObservacionesVenta(rs.getString(4));
+                listaVentas.get(i).setTipoPago(tipoPago);
+                listaVentas.get(i).setPrecioTotal(rs.getDouble(6));
+                i++;
+            }
+
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Consulta todas las presentaciones que hay en la base de datos, y las guarda en la lista que recoge por parametro.
      *
@@ -898,6 +928,32 @@ public class HooverDataBase {
         }
     }
 
+    public void consultaPresentacionCliente(ListProperty<PMyPresentacionesModel> listaPresentaciones, String codCliente) {
+        String query = "SELECT * FROM Presentacion WHERE Cod_Cliente = ?";
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codCliente);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()) {
+                listaPresentaciones.add(new PMyPresentacionesModel());
+                listaPresentaciones.get(i).setCodigoEvento(rs.getInt(1));
+                listaPresentaciones.get(i).setCodCliente(rs.getString(2));
+                listaPresentaciones.get(i).setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaPresentaciones.get(i).setDireccionCliente(rs.getString(4));
+                listaPresentaciones.get(i).setObservaciones(rs.getString(5));
+                listaPresentaciones.get(i).setVentaRealizada(rs.getBoolean(6));
+                i++;
+            }
+
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void consultaTodasPuestasMarcha(ListProperty<PMyPresentacionesModel> listaPuestasMarcha) {
         String query = "SELECT Cod_Puesta_Marcha, Cod_Cliente, Nombre, Fecha, PuestaMarcha.Observaciones FROM PuestaMarcha JOIN Cliente C on PuestaMarcha.Cod_Cliente = C.DNI";
         ResultSet rs = null;
@@ -921,6 +977,30 @@ public class HooverDataBase {
         }
     }
 
+    public void consultaPuestaMarchaCliente(ListProperty<PMyPresentacionesModel> listaPuestasMarcha, String codCliente) {
+        String query = "SELECT * FROM PuestaMarcha WHERE Cod_Cliente = ?";
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codCliente);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()) {
+                listaPuestasMarcha.add(new PMyPresentacionesModel());
+                listaPuestasMarcha.get(i).setCodigoEvento(rs.getInt(1));
+                listaPuestasMarcha.get(i).setCodCliente(rs.getString(2));
+                listaPuestasMarcha.get(i).setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaPuestasMarcha.get(i).setObservaciones(rs.getString(4));
+                i++;
+            }
+
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void consultaTodasExperiencias(ListProperty<ExperienciaModel> listaExperiencias) {
         String query = "SELECT * FROM Experiencia";
         ResultSet rs = null;
@@ -929,6 +1009,29 @@ public class HooverDataBase {
             Statement stmnt = conn.createStatement();
             rs = stmnt.executeQuery(query);
 
+            while (rs.next()) {
+                listaExperiencias.add(new ExperienciaModel());
+                listaExperiencias.get(i).setCodExperiencia(rs.getInt(1));
+                listaExperiencias.get(i).setDireccion(rs.getString(2));
+                listaExperiencias.get(i).setFechaExperiencia(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaExperiencias.get(i).setObservaciones(rs.getString(4));
+                i++;
+            }
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaExperienciasCodCliente(ListProperty<ExperienciaModel> listaExperiencias, String codCliente) {
+        String query = "SELECT * FROM Experiencia " +
+                "JOIN Cliente_Experiencias CE on Experiencia.Cod_Experiencia = CE.Cod_Experiencia " +
+                "WHERE Cod_Cliente = ?";
+        int i = 0;
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codCliente);
+            ResultSet rs = stmnt.executeQuery();
             while (rs.next()) {
                 listaExperiencias.add(new ExperienciaModel());
                 listaExperiencias.get(i).setCodExperiencia(rs.getInt(1));
@@ -977,6 +1080,65 @@ public class HooverDataBase {
                 listaAcciones.get(i).setTipoEvento(consultaEventoCod(rs.getInt(4)));
                 listaAcciones.get(i).setDireccionEvento(rs.getString(5));
                 listaAcciones.get(i).setObservacionesEvento(rs.getString(6));
+                i++;
+            }
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaAccionesEspecialesCodCliente(ListProperty<AccionEspecialModel> listaAcciones, String codCliente) {
+        String query = "SELECT * FROM Acciones_Especiales " +
+                "JOIN Acciones_Especiales_Clientes AEC on Acciones_Especiales.Cod_Accion_Especial = AEC.Cod_Accion_Especial " +
+                "JOIN Tipo_Evento TE on Acciones_Especiales.Tipo_Evento = TE.Cod_Tipo_evento " +
+                "WHERE Cod_Cliente = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codCliente);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()){
+                TipoPagoyEventoModel tipoEvento = new TipoPagoyEventoModel();
+                tipoEvento.setCodTipoPago(rs.getInt(12));
+                tipoEvento.setNombreTipoPago(rs.getString(13));
+                listaAcciones.add(new AccionEspecialModel());
+                listaAcciones.get(i).setCodEvento(rs.getInt(1));
+                listaAcciones.get(i).setNombreEvento(rs.getString(2));
+                listaAcciones.get(i).setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaAcciones.get(i).setTipoEvento(tipoEvento);
+                listaAcciones.get(i).setDireccionEvento(rs.getString(5));
+                listaAcciones.get(i).setObservacionesEvento(rs.getString(6));
+                i++;
+            }
+            stmnt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaInteresesCliente(ListProperty<InteresesModel> listaIntereses, String codCliente) {
+        String query = "SELECT * FROM Intereses_Articulos JOIN Articulos A on Intereses_Articulos.Cod_Articulo = A.Cod_Articulo WHERE Cod_Cliente = ?";
+        int i = 0;
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codCliente);
+            ResultSet rs = stmnt.executeQuery();
+
+            while (rs.next()) {
+                NuevoProductoModel nuevoProductoModel = new NuevoProductoModel();
+                nuevoProductoModel.setCodArticulo(rs.getInt(3));
+                nuevoProductoModel.setNombreProducto(rs.getString(4));
+                nuevoProductoModel.setDescripcionProducto(rs.getString(5));
+                nuevoProductoModel.setTipoProducto(rs.getString(6));
+                nuevoProductoModel.setDireccionImagen(rs.getString(7));
+                listaIntereses.add(new InteresesModel());
+                listaIntereses.get(i).setCodCliente(rs.getString(1));
+                listaIntereses.get(i).setArticulo(nuevoProductoModel);
                 i++;
             }
             stmnt.close();
