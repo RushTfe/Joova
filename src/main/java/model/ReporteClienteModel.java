@@ -10,6 +10,7 @@ import nuevoproducto.NuevoProductoModel;
 
 public class ReporteClienteModel {
     private ListProperty<PMyPresentacionesModel> puestaEnMarchaModel;
+    private ListProperty<PMyPresentacionesModel> presentacionesModels;
     private ListProperty<AccionEspecialModel> accionEspecialModel;
     private ListProperty<ExperienciaModel> experienciaModel;
     private ObjectProperty<ClienteModel> clienteModel;
@@ -19,12 +20,25 @@ public class ReporteClienteModel {
 
     public ReporteClienteModel() {
         puestaEnMarchaModel = new SimpleListProperty<>(this, "puestaEnMarchaModel", FXCollections.observableArrayList());
+        presentacionesModels = new SimpleListProperty<>(this, "presentacionesModels", FXCollections.observableArrayList());
         accionEspecialModel = new SimpleListProperty<>(this, "accionEspecialModel", FXCollections.observableArrayList());
         experienciaModel = new SimpleListProperty<>(this, "experienciaModel", FXCollections.observableArrayList());
         clienteModel = new SimpleObjectProperty<>(this, "clienteModel");
         ventasModel = new SimpleListProperty<>(this, "ventasModel", FXCollections.observableArrayList());
         interesesModel = new SimpleListProperty<>(this, "interesesModel", FXCollections.observableArrayList());
         listaProductos = new SimpleListProperty<>(this, "listaProductos", FXCollections.observableArrayList());
+    }
+
+    public ObservableList<PMyPresentacionesModel> getPresentacionesModels() {
+        return presentacionesModels.get();
+    }
+
+    public ListProperty<PMyPresentacionesModel> presentacionesModelsProperty() {
+        return presentacionesModels;
+    }
+
+    public void setPresentacionesModels(ObservableList<PMyPresentacionesModel> presentacionesModels) {
+        this.presentacionesModels.set(presentacionesModels);
     }
 
     public ObservableList<PMyPresentacionesModel> getPuestaEnMarchaModel() {

@@ -1180,7 +1180,7 @@ public class HooverDataBase {
             nuevoProductoModel.setNombreProducto(rs.getString(12));
             nuevoProductoModel.setDescripcionProducto(rs.getString(13));
             nuevoProductoModel.setTipoProducto(rs.getString(14));
-            nuevoProductoModel.setDescripcionProducto(rs.getString(15));
+            nuevoProductoModel.setDireccionImagen(rs.getString(15));
             listaClientes.add(new ClienteModel());
             listaClientes.get(i).setDni(rs.getString(1));
             listaClientes.get(i).setNombre(rs.getString(2));
