@@ -115,7 +115,7 @@
                <children>
                   <Separator prefWidth="200.0" />
                   <Label fx:id="tituloComprasLabel" text="COMPRAS" />
-                  <TextField promptText="Búsqueda de compras" />
+                  <TextField fx:id="busquedaComprasTextField" promptText="Búsqueda de compras" />
                   <TableView fx:id="tablaCompras">
                     <columns>
                       <TableColumn fx:id="codigoColumn" prefWidth="75.0" text="Codigo" />

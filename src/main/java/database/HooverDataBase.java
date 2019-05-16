@@ -668,7 +668,6 @@ public class HooverDataBase {
 
     /**
      * Elimina uno de los intereses que tenga un cliente.
-     *
      */
     public void deleteInteres(InteresesModel interesesModel) {
         String delete = "DELETE FROM Intereses_Articulos WHERE Cod_Cliente = ? AND Cod_Articulo = ?";
@@ -898,6 +897,43 @@ public class HooverDataBase {
         }
     }
 
+    public void consultaVentasClienteWhere(ListProperty<VentasModel> listaVentas, String texto, String dni) {
+        String query = "SELECT * FROM Compra " +
+                "JOIN Tipo_Pago TP on Compra.Tipo_Pago = TP.Cod_Tipo_Pago " +
+                "WHERE (Cod_Compra LIKE ? " +
+                "OR Fecha LIKE ?)" +
+                "AND Cod_Cliente = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            String busqueda = "%" + texto + "%";
+            stmnt.setString(1, busqueda);
+            stmnt.setString(2, busqueda);
+            stmnt.setString(3, dni);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()) {
+                TipoPagoyEventoModel tipoPago = new TipoPagoyEventoModel();
+                tipoPago.setCodTipoPago(rs.getInt(7));
+                tipoPago.setNombreTipoPago(rs.getString(8));
+                tipoPago.setDescripcionTipoPago(rs.getString(9));
+                listaVentas.add(new VentasModel());
+                listaVentas.get(i).setCodContrato(rs.getString(1));
+                listaVentas.get(i).setCliente(rs.getString(2));
+                listaVentas.get(i).setFechaVenta(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                listaVentas.get(i).setObservacionesVenta(rs.getString(4));
+                listaVentas.get(i).setTipoPago(tipoPago);
+                listaVentas.get(i).setPrecioTotal(rs.getDouble(6));
+                i++;
+            }
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Consulta todas las presentaciones que hay en la base de datos, y las guarda en la lista que recoge por parametro.
      *
@@ -1101,7 +1137,7 @@ public class HooverDataBase {
             ResultSet rs = stmnt.executeQuery();
             int i = 0;
 
-            while (rs.next()){
+            while (rs.next()) {
                 TipoPagoyEventoModel tipoEvento = new TipoPagoyEventoModel();
                 tipoEvento.setCodTipoPago(rs.getInt(12));
                 tipoEvento.setNombreTipoPago(rs.getString(13));

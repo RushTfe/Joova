@@ -27,6 +27,9 @@ public class ReporteClienteController extends BorderPane implements Initializabl
     private HooverDataBase db;
 
     @FXML
+    private TextField busquedaComprasTextField;
+
+    @FXML
     private ImageView aspiradoraImageView;
 
     @FXML
@@ -242,5 +245,9 @@ public class ReporteClienteController extends BorderPane implements Initializabl
 
     public void setFecha(String fecha) {
         fechaLabel.setText(fecha);
+    }
+
+    public TextField getBusquedaComprasTextField() {
+        return busquedaComprasTextField;
     }
 }

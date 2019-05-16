@@ -125,6 +125,7 @@ public class ClienteController implements Initializable {
 
         // LISTENERS
         busquedaClienteProperty.addListener(e -> onBusquedaRealizada());
+
         clientTable.setRowFactory(tv -> {
             TableRow<ClienteModel> row = new TableRow<>();
             row.setOnMouseClicked(event -> {

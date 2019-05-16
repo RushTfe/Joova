@@ -53,6 +53,7 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
         // Listeners
         root.getAnadirProductoInteresButton().setOnAction(e -> onAnadirInteres(clienteModel.getDni()));
         root.getEliminarProductoInteresButton().setOnAction(e -> onEliminarInteres());
+        root.getBusquedaComprasTextField().textProperty().addListener(e -> onBusquedaCompra(clienteModel.getDni()));
 
         if (listaPresentaciones.size() > 0)
             root.setFecha(listaPresentaciones.get(0).getFechaEvento().toString());
@@ -68,6 +69,11 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
                 return root.getModel();
             return null;
         });
+    }
+
+    private void onBusquedaCompra(String codCliente) {
+        listaVentas.clear();
+        db.consultaVentasClienteWhere(listaVentas, root.getBusquedaComprasTextField().getText(), codCliente);
     }
 
     private void onEliminarInteres() {
