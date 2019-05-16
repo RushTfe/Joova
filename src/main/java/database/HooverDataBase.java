@@ -13,6 +13,8 @@ import util.JoovaUtil;
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
 public class HooverDataBase {
     private Connection conn;
@@ -47,43 +49,6 @@ public class HooverDataBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public void updatePrecio(NuevoProductoModel aModificar, double precioAnterior) {
-
-        try {
-            // Si el precio fuera nuevo, se inserta en la BD
-            if (precioAnterior != aModificar.getPrecioProducto()) {
-                String updatePrecio = "UPDATE Historico_Precios SET Cod_Articulo = ?, Precio = ?, Fecha = ?";
-                PreparedStatement stmntUpdate = conn.prepareStatement(updatePrecio);
-                stmntUpdate.setInt(1, aModificar.getCodArticulo());
-                stmntUpdate.setDouble(2, aModificar.getPrecioProducto());
-                stmntUpdate.setString(3, LocalDate.now().toString());
-                stmntUpdate.executeUpdate();
-                stmntUpdate.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public double getPrecioAnterior(NuevoProductoModel aModificar) {
-        String comprobarPrecio = "SELECT Precio FROM Historico_Precios WHERE Cod_Articulo = ? ORDER BY Fecha LIMIT 1";
-        PreparedStatement stmntComprobar = null;
-        double precioAnterior = -1;
-        try {
-            stmntComprobar = conn.prepareStatement(comprobarPrecio);
-
-            stmntComprobar.setInt(1, aModificar.getCodArticulo());
-            ResultSet rsComprobar = stmntComprobar.executeQuery();
-            rsComprobar.next();
-            precioAnterior = rsComprobar.getDouble(1);
-            stmntComprobar.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return precioAnterior;
     }
 
     public void updatePuestaMarcha(PMyPresentacionesModel puestaMarcha) {
@@ -292,22 +257,18 @@ public class HooverDataBase {
      *
      * @param model Modelo con los valores del precio introducido
      */
-    public void insertPrecio(PrecioModel model) {
+    public void insertPrecio(PrecioModel model) throws SQLException {
         //TODO Cambiar los parámetros al objeto
 
-        String insert = "INSERT INTO Historico_Precios values (?, ?, ?)";
-
-        try {
-            PreparedStatement stmnt = conn.prepareStatement(insert);
+        String insert = "INSERT INTO Historico_Precios values (?, ?, ?, ?)";
+         PreparedStatement stmnt = conn.prepareStatement(insert);
 
             stmnt.setInt(1, model.getCodArticulo());
             stmnt.setDouble(2, model.getPrecioArticulo());
             stmnt.setString(3, model.getFechaCambio().toString());
+            stmnt.setString(4, String.valueOf(System.currentTimeMillis()));
 
             stmnt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -706,13 +667,15 @@ public class HooverDataBase {
      *
      * @param codPrecio
      */
-    public void deletePrecio(int codPrecio) {
-        String delete = "DELETE FROM Historico_Precios WHERE rowid = ?";
+    public void deletePrecio(PrecioModel model) {
+        String delete = "DELETE FROM Historico_Precios WHERE Cod_Articulo = ? AND Precio = ? AND Fecha = ?";
 
         try {
             PreparedStatement stmnt = conn.prepareStatement(delete);
 
-            stmnt.setInt(1, codPrecio);
+            stmnt.setInt(1, model.getCodArticulo());
+            stmnt.setDouble(2, model.getPrecioArticulo());
+            stmnt.setString(3, model.getFechaCambio().toString());
 
             stmnt.executeUpdate();
         } catch (SQLException e) {
@@ -904,7 +867,7 @@ public class HooverDataBase {
         String query = "SELECT * FROM Articulos JOIN Historico_Precios HP on Articulos.Cod_Articulo = HP.Cod_Articulo " +
                 "WHERE Nombre_Articulo LIKE ? " +
                 "OR Tipo_Producto LIKE ?" +
-                "ORDER BY Fecha DESC";
+                "ORDER BY Instants DESC";
 
         String busqueda = "%" + text + "%";
 
@@ -1425,7 +1388,7 @@ public class HooverDataBase {
     private void fillListProductos(ListProperty<NuevoProductoModel> listaProductos, ResultSet rs) {
         int i = 0;
         ResultSet rsp = null;
-        String queryPrecio = "SELECT Precio FROM Historico_Precios WHERE Cod_Articulo = ? ORDER BY Cod_Articulo, Fecha DESC LIMIT 1";
+        String queryPrecio = "SELECT Precio FROM Historico_Precios WHERE Cod_Articulo = ? ORDER BY Instants DESC LIMIT 1";
         try {
             while (rs.next()) {
                 listaProductos.add(new NuevoProductoModel());
@@ -1565,6 +1528,7 @@ public class HooverDataBase {
                         "Cod_Articulo INTEGER NOT NULL," +
                         "Precio REAL NOT NULL," +
                         "Fecha text NOT NULL," +
+                        "Instants text NOT NULL," +
                         "PRIMARY KEY (Cod_Articulo, Precio, Fecha)," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE" +
                         ")";

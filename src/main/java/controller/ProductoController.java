@@ -19,6 +19,7 @@ import model.PrecioModel;
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -115,14 +116,26 @@ public class ProductoController implements Initializable {
 
         Optional<nuevoproducto.NuevoProductoModel> resul = dialogoProductoModificado.showAndWait();
         if (resul.isPresent()) {
-            aModificar.setCodArticulo(dialogoProductoModificado.getController().getModel().getCodArticulo());
+
             aModificar.setNombreProducto(dialogoProductoModificado.getController().getModel().getNombreProducto());
             aModificar.setDescripcionProducto(dialogoProductoModificado.getController().getModel().getDescripcionProducto());
             aModificar.setTipoProducto(dialogoProductoModificado.getController().getModel().getTipoProducto());
+            aModificar.setPrecioProducto(dialogoProductoModificado.getController().getModel().getPrecioProducto());
             aModificar.setDireccionImagen(dialogoProductoModificado.getController().getModel().getDireccionImagen());
             db.updateProducto(aModificar);
-            actualizarProductos();
-            db.updatePrecio(aModificar, db.getPrecioAnterior(aModificar.getPrecioProducto()));
+
+            PrecioModel precioModel = new PrecioModel();
+            precioModel.setCodArticulo(aModificar.getCodArticulo());
+            precioModel.setPrecioArticulo(aModificar.getPrecioProducto());
+            precioModel.setFechaCambio(LocalDate.now());
+            try {
+                db.insertPrecio(precioModel);
+                actualizarProductos();
+            } catch (SQLException e) {
+                String error = "[SQLITE_CONSTRAINT]  Abort due to constraint violation (UNIQUE constraint failed: Historico_Precios.Cod_Articulo, Historico_Precios.Precio, Historico_Precios.Fecha)";
+                if (!e.getMessage().equals(error))
+                    e.printStackTrace();
+            }
         }
     }
 
@@ -137,14 +150,18 @@ public class ProductoController implements Initializable {
             productoInsertado.setDireccionImagen(resul.get().getDireccionImagen());
             db.insertProduct(productoInsertado);
 
-            actualizarProductos();
 
-            int codProducto = listaProductos.get(listaProductos.getSize()-1).getCodArticulo();
+            int codProducto = listaProductos.get(listaProductos.getSize() - 1).getCodArticulo();
             PrecioModel precioModel = new PrecioModel();
             precioModel.setCodArticulo(codProducto);
             precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
             precioModel.setFechaCambio(LocalDate.now());
-            db.insertPrecio(precioModel);
+            actualizarProductos();
+            try {
+                db.insertPrecio(precioModel);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
     }

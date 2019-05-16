@@ -14,7 +14,6 @@ public class NuevoProductoModel {
     private StringProperty descripcionProducto;
     private DoubleProperty precioProducto;
     private BooleanProperty listoParaInsertar;
-    private BooleanProperty aModificar;
     private ObjectProperty<ImageView> imagen;
 
     public NuevoProductoModel() {
@@ -25,7 +24,6 @@ public class NuevoProductoModel {
         descripcionProducto = new SimpleStringProperty(this, "descripcionProducto");
         precioProducto = new SimpleDoubleProperty(this, "precioProducto");
         listoParaInsertar = new SimpleBooleanProperty(this, "listoParaInsertar");
-        aModificar = new SimpleBooleanProperty(this, "aModificar", false);
         imagen = new SimpleObjectProperty<>(this, "imagen");
     }
     public  NuevoProductoModel(ImageView img) {
@@ -43,18 +41,6 @@ public class NuevoProductoModel {
 
     public void setImagen(ImageView imagen) {
         this.imagen.set(imagen);
-    }
-
-    public boolean isaModificar() {
-        return this.aModificar.get();
-    }
-
-    public BooleanProperty aModificarProperty() {
-        return this.aModificar;
-    }
-
-    public void setaModificar(boolean aModificar) {
-        this.aModificar.set(aModificar);
     }
 
     public boolean isListoParaInsertar() {
