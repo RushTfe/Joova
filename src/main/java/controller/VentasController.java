@@ -15,9 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import model.ClienteModel;
+import model.NuevoProductoModel;
 import model.TipoPagoyEventoModel;
 import model.VentasModel;
-import nuevoproducto.NuevoProductoModel;
 
 import java.io.IOException;
 import java.net.URL;

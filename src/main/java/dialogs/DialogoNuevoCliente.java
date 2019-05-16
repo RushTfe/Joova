@@ -16,7 +16,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import model.ClienteModel;
-import nuevoproducto.NuevoProductoModel;
+import model.NuevoProductoModel;
 
 public class DialogoNuevoCliente extends Dialog<ClienteModel> {
 

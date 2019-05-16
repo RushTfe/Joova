@@ -29,12 +29,6 @@
         </dependency>
 
         <dependency>
-            <groupId>ProductoCard</groupId>
-            <artifactId>ProductoCard</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>JoovaSignUp</groupId>
             <artifactId>JoovaSignUp</artifactId>
             <version>0.0.1</version>

@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import model.ClienteModel;
-import nuevoproducto.NuevoProductoModel;
+import model.NuevoProductoModel;
 
 import java.io.IOException;
 import java.net.URL;

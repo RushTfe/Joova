@@ -13,7 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.*;
-import nuevoproducto.NuevoProductoModel;
+import model.NuevoProductoModel;
 import util.ScreenResolutions;
 
 import java.io.IOException;
