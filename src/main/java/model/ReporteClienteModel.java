@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import nuevoproducto.NuevoProductoModel;
+import model.NuevoProductoModel;
 
 public class ReporteClienteModel {
     private ListProperty<PMyPresentacionesModel> puestaEnMarchaModel;

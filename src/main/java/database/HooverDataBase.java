@@ -1,17 +1,20 @@
 package database;
 
-import NuevoCliente.NuevoClienteModel;
 import app.JoovaApp;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.*;
-import nuevoproducto.NuevoProductoModel;
+import model.NuevoProductoModel;
 import util.JoovaUtil;
 
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
 public class HooverDataBase {
     private Connection conn;
@@ -165,6 +168,31 @@ public class HooverDataBase {
         }
     }
 
+    public void updateProducto(NuevoProductoModel aModificar) {
+        String update = "UPDATE Articulos " +
+                "SET Nombre_Articulo = ?," +
+                "Descripcion = ?, " +
+                "Tipo_Producto = ?, " +
+                "Ruta_Imagen = ? " +
+                "WHERE Cod_Articulo = ?";
+
+        try {
+            // Actualizacion del articulo
+            PreparedStatement stmnt = conn.prepareStatement(update);
+            stmnt.setString(1, aModificar.getNombreProducto());
+            stmnt.setString(2, aModificar.getDescripcionProducto());
+            stmnt.setString(3, aModificar.getTipoProducto());
+            stmnt.setString(4, aModificar.getDireccionImagen());
+            stmnt.setInt(5, aModificar.getCodArticulo());
+
+            stmnt.executeUpdate();
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //INSERCIONES A LA BD
 
     /**
@@ -213,18 +241,9 @@ public class HooverDataBase {
             stmnt.setString(2, model.getDescripcionProducto());
             stmnt.setString(3, model.getTipoProducto());
             stmnt.setString(4, model.getDireccionImagen());
-
             stmnt.executeUpdate();
-
-            String select = "SELECT Cod_Articulo from Articulos where Nombre_Articulo = ?";
-            PreparedStatement statement = conn.prepareStatement(select);
-            statement.setString(1, model.getNombreProducto());
-
-            ResultSet rs = statement.executeQuery();
-            rs.next();
-            i = rs.getInt(1);
-
             stmnt.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -238,22 +257,18 @@ public class HooverDataBase {
      *
      * @param model Modelo con los valores del precio introducido
      */
-    public void insertPrecio(PrecioModel model) {
+    public void insertPrecio(PrecioModel model) throws SQLException {
         //TODO Cambiar los parámetros al objeto
 
-        String insert = "INSERT INTO Historico_Precios values (?, ?, ?)";
-
-        try {
-            PreparedStatement stmnt = conn.prepareStatement(insert);
+        String insert = "INSERT INTO Historico_Precios values (?, ?, ?, ?)";
+         PreparedStatement stmnt = conn.prepareStatement(insert);
 
             stmnt.setInt(1, model.getCodArticulo());
             stmnt.setDouble(2, model.getPrecioArticulo());
-            stmnt.setDate(3, Date.valueOf(model.getFechaCambio()));
+            stmnt.setString(3, model.getFechaCambio().toString());
+            stmnt.setString(4, String.valueOf(System.currentTimeMillis()));
 
             stmnt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -652,13 +667,15 @@ public class HooverDataBase {
      *
      * @param codPrecio
      */
-    public void deletePrecio(int codPrecio) {
-        String delete = "DELETE FROM Historico_Precios WHERE rowid = ?";
+    public void deletePrecio(PrecioModel model) {
+        String delete = "DELETE FROM Historico_Precios WHERE Cod_Articulo = ? AND Precio = ? AND Fecha = ?";
 
         try {
             PreparedStatement stmnt = conn.prepareStatement(delete);
 
-            stmnt.setInt(1, codPrecio);
+            stmnt.setInt(1, model.getCodArticulo());
+            stmnt.setDouble(2, model.getPrecioArticulo());
+            stmnt.setString(3, model.getFechaCambio().toString());
 
             stmnt.executeUpdate();
         } catch (SQLException e) {
@@ -839,6 +856,42 @@ public class HooverDataBase {
 
             fillListProductos(listaProductos, rs);
 
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaProductosWhere(ListProperty<NuevoProductoModel> listaProductos, String text) {
+        String query = "SELECT * FROM Articulos JOIN Historico_Precios HP on Articulos.Cod_Articulo = HP.Cod_Articulo " +
+                "WHERE Nombre_Articulo LIKE ? " +
+                "OR Tipo_Producto LIKE ?" +
+                "ORDER BY Instants DESC";
+
+        String busqueda = "%" + text + "%";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, busqueda);
+            stmnt.setString(2, busqueda);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()) {
+                listaProductos.add(new NuevoProductoModel());
+                listaProductos.get(i).setCodArticulo(rs.getInt(1));
+                listaProductos.get(i).setNombreProducto(rs.getString(2));
+                listaProductos.get(i).setDescripcionProducto(rs.getString(3));
+                listaProductos.get(i).setTipoProducto(rs.getString(4));
+                listaProductos.get(i).setDireccionImagen(rs.getString(5));
+                listaProductos.get(i).setPrecioProducto(rs.getDouble(7));
+                listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
+                listaProductos.get(i).getImagen().setFitHeight(200);
+                listaProductos.get(i).getImagen().setFitWidth(200);
+
+                i++;
+            }
             stmnt.close();
 
         } catch (SQLException e) {
@@ -1335,7 +1388,7 @@ public class HooverDataBase {
     private void fillListProductos(ListProperty<NuevoProductoModel> listaProductos, ResultSet rs) {
         int i = 0;
         ResultSet rsp = null;
-        String queryPrecio = "SELECT Precio FROM Historico_Precios WHERE Cod_Articulo = ? ORDER BY Cod_Articulo, Fecha DESC LIMIT 1";
+        String queryPrecio = "SELECT Precio FROM Historico_Precios WHERE Cod_Articulo = ? ORDER BY Instants DESC LIMIT 1";
         try {
             while (rs.next()) {
                 listaProductos.add(new NuevoProductoModel());
@@ -1352,12 +1405,14 @@ public class HooverDataBase {
                 else
                     listaProductos.get(i).setPrecioProducto(0);
 
-
                 listaProductos.get(i).setCodArticulo(codArticulo);
                 listaProductos.get(i).setNombreProducto(rs.getString(2));
                 listaProductos.get(i).setDescripcionProducto(rs.getString(3));
                 listaProductos.get(i).setTipoProducto(rs.getString(4));
                 listaProductos.get(i).setDireccionImagen(rs.getString(5));
+                listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
+                listaProductos.get(i).getImagen().setFitWidth(200);
+                listaProductos.get(i).getImagen().setFitHeight(200);
                 i++;
             }
         } catch (SQLException e) {
@@ -1461,7 +1516,7 @@ public class HooverDataBase {
 
         String queryArticulos =
                 "CREATE TABLE IF NOT EXISTS Articulos (" +
-                        "Cod_Articulo INTEGER PRIMARY KEY," +
+                        "Cod_Articulo INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Nombre_Articulo text NOT NULL," +
                         "Descripcion text," +
                         "Tipo_Producto text NOT NULL," +
@@ -1473,13 +1528,14 @@ public class HooverDataBase {
                         "Cod_Articulo INTEGER NOT NULL," +
                         "Precio REAL NOT NULL," +
                         "Fecha text NOT NULL," +
+                        "Instants text NOT NULL," +
                         "PRIMARY KEY (Cod_Articulo, Precio, Fecha)," +
                         "FOREIGN KEY (Cod_Articulo) REFERENCES Articulos (Cod_Articulo) ON DELETE CASCADE" +
                         ")";
 
         String queryTipoPago =
                 "CREATE TABLE IF NOT EXISTS Tipo_Pago (" +
-                        "Cod_Tipo_Pago INTEGER PRIMARY KEY," +
+                        "Cod_Tipo_Pago INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Nombre_Tipo_Pago text NOT NULL," +
                         "Descripcion_Tipo_Pago" +
                         ")";
@@ -1495,7 +1551,7 @@ public class HooverDataBase {
 
         String queryPresentacion =
                 "CREATE TABLE IF NOT EXISTS Presentacion (" +
-                        "Cod_Presentacion INTEGER PRIMARY KEY," +
+                        "Cod_Presentacion INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Cod_Cliente text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Direccion text NOT NULL," +
@@ -1506,7 +1562,7 @@ public class HooverDataBase {
 
         String queryPuestaEnMarcha =
                 "CREATE TABLE IF NOT EXISTS PuestaMarcha (" +
-                        "Cod_Puesta_Marcha INTEGER PRIMARY KEY," +
+                        "Cod_Puesta_Marcha INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Cod_Cliente text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Observaciones text," +
@@ -1527,7 +1583,7 @@ public class HooverDataBase {
 
         String queryAccionesEspeciales =
                 "CREATE TABLE IF NOT EXISTS Acciones_Especiales (" +
-                        "Cod_Accion_Especial INTEGER PRIMARY KEY," +
+                        "Cod_Accion_Especial INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Nombre_Accion_Especial text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Tipo_Evento INTEGER NOT NULL," +
@@ -1538,7 +1594,7 @@ public class HooverDataBase {
 
         String queryTipoEvento =
                 "CREATE TABLE IF NOT EXISTS Tipo_Evento (" +
-                        "Cod_Tipo_evento INTEGER PRIMARY KEY," +
+                        "Cod_Tipo_evento INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Nombre_Tipo_Evento text NOT NULL" +
                         ")";
 
@@ -1554,7 +1610,7 @@ public class HooverDataBase {
 
         String queryExperiencia =
                 "CREATE TABLE IF NOT EXISTS Experiencia (" +
-                        "Cod_Experiencia INTEGER PRIMARY KEY," +
+                        "Cod_Experiencia INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "Direccion text NOT NULL," +
                         "Fecha text NOT NULL," +
                         "Observaciones" +
@@ -1633,4 +1689,5 @@ public class HooverDataBase {
     public Connection getConnection() {
         return conn;
     }
+
 }

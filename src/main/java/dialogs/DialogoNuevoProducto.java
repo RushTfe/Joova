@@ -27,8 +27,8 @@ public class DialogoNuevoProducto extends Dialog<NuevoProductoModel> {
             return null;
         });
     }
-
     public NuevoProductoController getController() {
         return controller;
-    }
-}
+        }
+        }
+

@@ -1,52 +1,39 @@
 package controller;
 
-import Joova.ProductoCardController;
-import Joova.ProductoCardModel;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoProducto;
 import javafx.beans.property.ListProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.util.Callback;
+import model.NuevoProductoModel;
 import model.PrecioModel;
-import model.ProductoModel;
-import nuevoproducto.NuevoProductoModel;
 
-import java.io.*;
+import javax.swing.text.html.ImageView;
+import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ProductoController implements Initializable {
 
+    private ListProperty<NuevoProductoModel> listaProductos = new SimpleListProperty<>(this, "listaProductos", FXCollections.observableArrayList());
+
+
     @FXML
     private BorderPane rootProductos;
 
     @FXML
-    private ScrollPane cajonProductosScroll;
-
-    @FXML
-    private ListView<NuevoProductoModel> cajonProductosListView;
-
-    @FXML
     private Button anadirProductoButton;
-
-    @FXML
-    private Button anadirFiltroButton;
 
     @FXML
     private Button eliminarProductoButton;
@@ -54,9 +41,26 @@ public class ProductoController implements Initializable {
     @FXML
     private Button modificarProductoButton;
 
-    private ProductoModel model;
+    @FXML
+    private TextField busquedaTextField;
 
-    //Conexion a la base de datos
+    @FXML
+    private TableView<NuevoProductoModel> tablaProductos;
+
+    @FXML
+    private TableColumn<NuevoProductoModel, ImageView> imagenColumn;
+
+    @FXML
+    private TableColumn<NuevoProductoModel, String> nombreProductoColumn;
+
+    @FXML
+    private TableColumn<NuevoProductoModel, String> tipoProductoColumn;
+
+    @FXML
+    private TableColumn<NuevoProductoModel, Number> preciosColumn;
+
+    private NuevoProductoModel model;
+
     private HooverDataBase db;
 
     public ProductoController(HooverDataBase db) {
@@ -72,139 +76,112 @@ public class ProductoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model = new ProductoModel();
+        model = new NuevoProductoModel();
+        db.consultaTodosProductos(listaProductos);
+        tablaProductos.itemsProperty().bind(listaProductos);
+        imagenColumn.setCellValueFactory(new PropertyValueFactory<NuevoProductoModel, ImageView>("imagen"));
+        nombreProductoColumn.setCellValueFactory(v -> v.getValue().nombreProductoProperty());
+        preciosColumn.setCellValueFactory(v -> v.getValue().precioProductoProperty());
+        tipoProductoColumn.setCellValueFactory(v -> v.getValue().tipoProductoProperty());
 
+        // Listeners
 
-        // Ponemos el ListView del tipo ProductoCardModel y lo preparamos para que guarde objetos de tipo ProductoCardModel
-        // y muestre ProductoCards
-        cajonProductosListView.setCellFactory(new Callback<ListView<NuevoProductoModel>, ListCell<NuevoProductoModel>>() {
-            @Override
-            public ListCell<NuevoProductoModel> call(ListView<NuevoProductoModel> param) {
-                return new ListCell<NuevoProductoModel>() {
-
-                    ProductoCardController card = new ProductoCardController();
-
-                    @Override
-                    protected void updateItem(NuevoProductoModel item, boolean empty) {
-                        if (item == null || empty) {
-                            setText(null);
-                            setGraphic(null);
-                        } else {
-                            card.getModel().setNombreProducto(item.getNombreProducto());
-                            card.getModel().setPrecio(item.getPrecioProducto());
-                            card.getModel().setRutaImagen(new Image(item.getDireccionImagen()));
-                            card.getModel().setDescripcion(item.getDescripcionProducto());
-                            card.getModel().setCodProducto(item.getCodArticulo());
-//                            item.aModificarProperty().bind(card.getModel().aModificarProperty());
-                            setText(null);
-                            setGraphic(card);
-                        }
-                    }
-
-                };
-            }
-        });
-
-        //Bindeo de la lista de productos con el listView
-        cajonProductosListView.itemsProperty().bind(model.listaProductosProperty());
-
-        actualizarProductos();
-
-        // BOTONES
-        anadirProductoButton.setOnAction(e -> onAnadirProductoAction());
-        eliminarProductoButton.setOnAction(e -> onEliminarProductoAction());
+        anadirProductoButton.setOnAction(e -> onAnadirProducto());
+        eliminarProductoButton.setOnAction(e -> onEliminarProducto());
+        modificarProductoButton.setOnAction(e -> onModificarProducto());
+        busquedaTextField.textProperty().addListener(e -> onBusquedaProducto());
     }
 
-    private void onEliminarProductoAction() {
-        int i = model.getListaProductos().size() - 1;
-        int codABorrar = 0;
-        while (i >= 0) {
-            if (model.getListaProductos().get(i).isaModificar()) {
-                codABorrar = model.getListaProductos().get(i).getCodArticulo();
-                db.deleteArticulo(codABorrar);
-            }
-
-            i--;
-        }
-
-
-//        actualizarProductos();
+    private void onBusquedaProducto() {
+        listaProductos.clear();
+        db.consultaProductosWhere(listaProductos, busquedaTextField.getText());
     }
 
-    /**
-     * Muestra la lista de cartas en el listView.
-     */
-    private void actualizarProductos() {
-        model.getListaProductos().clear();
-        db.consultaTodosProductos(model.listaProductosProperty());
-    }
+    private void onModificarProducto() {
+        DialogoNuevoProducto dialogoProductoModificado = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
+        NuevoProductoModel aModificar = tablaProductos.getSelectionModel().getSelectedItem();
+        dialogoProductoModificado.getController().getModel().setNombreProducto(aModificar.getNombreProducto());
+        dialogoProductoModificado.getController().getModel().setDescripcionProducto(aModificar.getDescripcionProducto());
 
-    /**
-     * Añade un producto a la base de datos y al modelo, para que aparezca en la vista.
-     */
-    private void onAnadirProductoAction() {
-        NuevoProductoModel cardModel = new NuevoProductoModel();
-        DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
-        Optional<NuevoProductoModel> resul = nuevoProducto.showAndWait();
+        if (aModificar.getTipoProducto().equals("Aspiradora"))
+            dialogoProductoModificado.getController().getAspiradoraRB().setSelected(true);
+        else if (aModificar.getTipoProducto().equals("Modulo"))
+            dialogoProductoModificado.getController().getModuloRB().setSelected(true);
+        else
+            dialogoProductoModificado.getController().getOtrosRB().setSelected(true);
+
+        dialogoProductoModificado.getController().getModel().setDireccionImagen(aModificar.getDireccionImagen());
+        dialogoProductoModificado.getController().getImagenProducto().setImage(new Image(aModificar.getDireccionImagen()));
+        dialogoProductoModificado.getController().getModel().setPrecioProducto(aModificar.getPrecioProducto());
+
+        Optional<nuevoproducto.NuevoProductoModel> resul = dialogoProductoModificado.showAndWait();
         if (resul.isPresent()) {
 
-            //TODO Copiar la imagen a la carpeta de recursos, y usarla desde ahi, de modo que el usuario, si tira/mueve la imagen no la pierde.
-            File imagen = new File(resul.get().getDireccionImagen().substring(6, resul.get().getDireccionImagen().length()).replaceAll("%20", " "));
-            String nombreImagen = imagen.getName();
-            File imagenDestino = new File(System.getProperty("user.home") + "\\.Joova\\" + nombreImagen);
+            aModificar.setNombreProducto(dialogoProductoModificado.getController().getModel().getNombreProducto());
+            aModificar.setDescripcionProducto(dialogoProductoModificado.getController().getModel().getDescripcionProducto());
+            aModificar.setTipoProducto(dialogoProductoModificado.getController().getModel().getTipoProducto());
+            aModificar.setPrecioProducto(dialogoProductoModificado.getController().getModel().getPrecioProducto());
+            aModificar.setDireccionImagen(dialogoProductoModificado.getController().getModel().getDireccionImagen());
+            db.updateProducto(aModificar);
 
-            InputStream is = null;
-            OutputStream os = null;
-
-            try {
-                is = new FileInputStream(Paths.get(imagen.toURI()).toFile());
-                os = new FileOutputStream(Paths.get(imagenDestino.toURI()).toFile());
-
-                byte[] buffer = new byte[1024];
-                int length;
-
-                while ((length = is.read(buffer)) > 0) {
-                    os.write(buffer, 0, length);
-                }
-
-                String direccionFinal = imagenDestino.toURI().toString();
-                resul.get().setDireccionImagen(direccionFinal);
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    is.close();
-                    os.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            // INSERTO EL PRODUCTO EN LA BASE DE DATOS
-            int codArticuloInsertado = db.insertProduct(resul.get());
-
-            // UNA VEZ DENTRO, YA HAY UN CODIGO DE ARTICULO QUE ASIGNAR AL PRECIO
             PrecioModel precioModel = new PrecioModel();
-            precioModel.setCodArticulo(codArticuloInsertado);
-            precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
-
-            // HE INSERTAMOS EL PRECIO EN LA BD
-            db.insertPrecio(precioModel);
-            cardModel.setNombreProducto(resul.get().getNombreProducto());
-            cardModel.setTipoProducto(resul.get().getTipoProducto());
-            cardModel.setPrecioProducto(precioModel.getPrecioArticulo());
-            cardModel.setDireccionImagen(resul.get().getDireccionImagen());
-            //Al estar el precio separado del articulo para poder llevar un historico de precios, es necesario
-            // insertar primero el articulo, y luego crear el precio en su entidad
-
-            // Y LA ANADIMOS A LA VISTA
-            actualizarProductos();
+            precioModel.setCodArticulo(aModificar.getCodArticulo());
+            precioModel.setPrecioArticulo(aModificar.getPrecioProducto());
+            precioModel.setFechaCambio(LocalDate.now());
+            try {
+                db.insertPrecio(precioModel);
+                actualizarProductos();
+            } catch (SQLException e) {
+                String error = "[SQLITE_CONSTRAINT]  Abort due to constraint violation (UNIQUE constraint failed: Historico_Precios.Cod_Articulo, Historico_Precios.Precio, Historico_Precios.Fecha)";
+                if (!e.getMessage().equals(error))
+                    e.printStackTrace();
+            }
         }
     }
 
-    public ProductoModel getModel() {
+    private void onAnadirProducto() {
+        DialogoNuevoProducto nuevoProducto = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
+        Optional<nuevoproducto.NuevoProductoModel> resul = nuevoProducto.showAndWait();
+        if (resul.isPresent()) {
+            NuevoProductoModel productoInsertado = new NuevoProductoModel();
+            productoInsertado.setNombreProducto(resul.get().getNombreProducto());
+            productoInsertado.setDescripcionProducto(resul.get().getDescripcionProducto());
+            productoInsertado.setTipoProducto(resul.get().getTipoProducto());
+            productoInsertado.setDireccionImagen(resul.get().getDireccionImagen());
+            db.insertProduct(productoInsertado);
+
+
+            int codProducto = listaProductos.get(listaProductos.getSize() - 1).getCodArticulo();
+            PrecioModel precioModel = new PrecioModel();
+            precioModel.setCodArticulo(codProducto);
+            precioModel.setPrecioArticulo(resul.get().getPrecioProducto());
+            precioModel.setFechaCambio(LocalDate.now());
+            actualizarProductos();
+            try {
+                db.insertPrecio(precioModel);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    private void onEliminarProducto() {
+        db.deleteArticulo(tablaProductos.getSelectionModel().getSelectedItem().getCodArticulo());
+        actualizarProductos();
+    }
+
+    private void actualizarProductos() {
+        listaProductos.clear();
+        db.consultaTodosProductos(listaProductos);
+    }
+
+    public NuevoProductoModel getModel() {
         return model;
+    }
+
+    public ListProperty<NuevoProductoModel> listaProductosProperty() {
+        return listaProductos;
     }
 
     public BorderPane getRootProductos() {

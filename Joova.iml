@@ -12,7 +12,6 @@
     <orderEntry type="jdk" jdkName="10" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.27.2" level="project" />
-    <orderEntry type="library" name="Maven: ProductoCard:ProductoCard:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: JoovaSignUp:JoovaSignUp:0.0.1" level="project" />
     <orderEntry type="library" name="Maven: JoovaNuevoCliente:JoovaNuevoCliente:0.0.1" level="project" />
     <orderEntry type="library" name="Maven: JoovaNuevoProducto:JoovaNuevoProducto:0.0.1" level="project" />

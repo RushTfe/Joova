@@ -1,7 +1,6 @@
 package model;
 
 import javafx.beans.property.*;
-import nuevoproducto.NuevoProductoModel;
 
 import java.time.LocalDate;
 

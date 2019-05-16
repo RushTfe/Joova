@@ -10,7 +10,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.stage.Stage;
 import model.*;
-import nuevoproducto.NuevoProductoModel;
 
 public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
     private ReporteClienteController root;

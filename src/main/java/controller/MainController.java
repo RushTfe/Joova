@@ -161,9 +161,9 @@ public class MainController implements Initializable {
 
         //Bindeos necesarios DESPUES de crear los controladores
         model.listaClientesProperty().bind(clienteController.listaClientesProperty());
-        model.listaProductosProperty().bind(productoController.getModel().listaProductosProperty());
+        model.listaProductosProperty().bind(productoController.listaProductosProperty());
         ventasController.getClientesComboBox().itemsProperty().bind(model.listaClientesProperty());
-        ventasController.listaProductosDisponiblesProperty().bind(productoController.getModel().listaProductosProperty());
+        ventasController.listaProductosDisponiblesProperty().bind(productoController.listaProductosProperty());
         accionesController.listaClientesProperty().bind(model.listaClientesProperty());
         clienteController.listaProductosProperty().bind(model.listaProductosProperty());
 
