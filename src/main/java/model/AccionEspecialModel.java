@@ -92,4 +92,9 @@ public class AccionEspecialModel {
     public void setFechaEvento(LocalDate fechaEvento) {
         this.fechaEvento.set(fechaEvento);
     }
+
+    @Override
+    public String toString() {
+        return getNombreEvento() + " / " + getFechaEvento().toString();
+    }
 }

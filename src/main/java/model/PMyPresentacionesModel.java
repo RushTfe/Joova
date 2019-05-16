@@ -106,4 +106,13 @@ public class PMyPresentacionesModel {
     public void setVentaRealizada(boolean ventaRealizada) {
         this.ventaRealizada.set(ventaRealizada);
     }
+
+    public StringProperty fechaAsString() {
+        return new SimpleStringProperty(this, "fechaEventoAsString", getFechaEvento().toString());
+    }
+
+    @Override
+    public String toString() {
+        return getFechaEvento().toString();
+    }
 }

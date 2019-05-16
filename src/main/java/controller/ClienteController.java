@@ -3,10 +3,8 @@ package controller;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoCliente;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import dialogs.DialogoReporteCliente;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -127,6 +125,7 @@ public class ClienteController implements Initializable {
 
         // LISTENERS
         busquedaClienteProperty.addListener(e -> onBusquedaRealizada());
+
         clientTable.setRowFactory(tv -> {
             TableRow<ClienteModel> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
@@ -140,13 +139,10 @@ public class ClienteController implements Initializable {
     }
 
     private void onDoubleClickedClient(TableRow<ClienteModel> row) {
-        //TODO Cambiar cuando tenga lista la vista.
-        ClienteModel clienteModel = row.getItem();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(clienteModel.getNombre());
-        alert.setHeaderText(clienteModel.getDni());
-        alert.setContentText(clienteModel.getModeloAspiradora().getNombreProducto());
-        alert.show();
+        //TODO Cambiar cuando tenga lista la vista
+        ClienteModel cliente = clientTable.getSelectionModel().getSelectedItem();
+        DialogoReporteCliente dialogoReporteCliente = new DialogoReporteCliente(JoovaApp.getPrimaryStage(), db, cliente, listaProductos);
+        dialogoReporteCliente.show();
     }
 
     private void onBusquedaRealizada() {

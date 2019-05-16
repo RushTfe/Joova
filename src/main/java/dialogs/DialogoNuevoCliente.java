@@ -143,10 +143,10 @@ public class DialogoNuevoCliente extends Dialog<ClienteModel> {
         model.emailProperty().bindBidirectional(emailField.textProperty());
         model.fechaNacimientoProperty().bindBidirectional(nacimientoField.valueProperty());
         model.huerfanoProperty().bindBidirectional(huerfanoBox.selectedProperty());
+        productosComboBox.itemsProperty().bind(listaProductosExt);
         model.modeloAspiradoraProperty().bind(productosComboBox.getSelectionModel().selectedItemProperty());
         model.observacionesProperty().bindBidirectional(observacionesBox.textProperty());
         model.direccionProperty().bindBidirectional(direccionField.textProperty());
-        productosComboBox.itemsProperty().bind(listaProductosExt);
 
         nacimientoField.setEditable(false);
 

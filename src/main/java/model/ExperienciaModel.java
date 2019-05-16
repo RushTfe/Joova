@@ -81,4 +81,9 @@ public class ExperienciaModel {
     public void setObservaciones(String observaciones) {
         this.observaciones.set(observaciones);
     }
+
+    @Override
+    public String toString() {
+        return getFechaExperiencia().toString();
+    }
 }
