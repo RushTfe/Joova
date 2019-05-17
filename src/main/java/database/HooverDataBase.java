@@ -341,22 +341,17 @@ public class HooverDataBase {
 
     }
 
-    public void insertInteresCliente(InteresesModel interesesModel) {
+    public void insertInteresCliente(InteresesModel interesesModel) throws SQLException {
         //TODO Pasar objeto
 
         String insert = "INSERT INTO Intereses_Articulos VALUES (?, ?)";
 
-        try {
             PreparedStatement stmnt = conn.prepareStatement(insert);
 
             stmnt.setString(1, interesesModel.getCodCliente());
             stmnt.setInt(2, interesesModel.getArticulo().getCodArticulo());
 
             stmnt.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
