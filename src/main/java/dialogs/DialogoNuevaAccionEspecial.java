@@ -16,7 +16,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.*;
 
-import javax.validation.constraints.Null;
 import java.util.Optional;
 
 public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
@@ -262,21 +261,11 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
                 observacionesParticipante.setText("");
 
             } else {
-                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                alerta.initOwner(primaryStage);
-                alerta.setTitle("Error");
-                alerta.setHeaderText("El cliente ya ha sido añadido a la Accion Especial.");
-                alerta.setContentText("¡¡Prueba a poner uno que no tengas ya!!");
-                alerta.show();
+                JoovaAlert.alertInfo("Info", "El cliente ya ha sido añadido a la Accion Especial.", "¡¡Prueba a poner uno que no tengas ya!!");
             }
 
         } else {
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.initOwner(primaryStage);
-            alerta.setTitle("Error");
-            alerta.setHeaderText("No se ha seleccionado ningún cliente");
-            alerta.setContentText("Por favor, seleccione uno");
-            alerta.show();
+            JoovaAlert.alertError("Error", "No se ha seleccionado ningún cliente", "Por favor, seleccione uno");
         }
     }
 
@@ -284,12 +273,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         try {
             listaParticipantes.remove(tablaParticipantes.getSelectionModel().getSelectedItem());
         } catch (NullPointerException e) {
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.initOwner(primaryStage);
-            alerta.setTitle("Error");
-            alerta.setHeaderText("No se ha podido eliminar el participante");
-            alerta.setContentText("Por favor, elija uno de la tabla antes de proceder a eliminarlo");
-            alerta.show();
+            JoovaAlert.alertError("Error", "No se ha podido eliminar el participante", "Por favor, elija uno de la tabla antes de proceder a eliminarlo");
         }
     }
 

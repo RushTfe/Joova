@@ -5,7 +5,6 @@ import database.HooverDataBase;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.stage.Stage;
@@ -80,11 +79,7 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
             db.deleteInteres(root.getInteresesListView().getSelectionModel().getSelectedItem());
             listaIntereses.remove(root.getInteresesListView().getSelectionModel().getSelectedItem());
         } catch (NullPointerException e) {
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error");
-            alerta.setHeaderText("No ha seleccionado ningun elemento para eliminar");
-            alerta.setContentText("Por favor, seleccione un elemento de la lista de intereses para borrarlo");
-            alerta.show();
+            JoovaAlert.alertError("Error", "No ha seleccionado ningun elemento para eliminar", "Por favor, seleccione un elemento de la lista de intereses para borrarlo");
         }
     }
 
@@ -96,11 +91,7 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
             db.insertInteresCliente(interesesModel);
             listaIntereses.add(interesesModel);
         } catch (NullPointerException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("No se ha seleccionado un producto");
-            alert.setContentText("Por favor, elija un producto del desplegable");
-            alert.show();
+            JoovaAlert.alertError("Error", "No se ha seleccionado un producto", "Por favor, elija un producto del desplegable");
         }
     }
 }

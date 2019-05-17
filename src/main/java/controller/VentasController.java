@@ -3,6 +3,7 @@ package controller;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoTipoPagoyEvento;
+import dialogs.JoovaAlert;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -195,24 +196,16 @@ public class VentasController implements Initializable {
     }
 
     private void onValidarVentaAction() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.initOwner(JoovaApp.getPrimaryStage());
-        alert.setTitle("Está a punto de validar una venta");
-        alert.setHeaderText("La venta se añadirá a la base de datos");
-        alert.setContentText("Esta acción no se puede deshacer, asegúrese de que los datos sean correctos");
-        Optional<ButtonType> resul = alert.showAndWait();
+        Optional<ButtonType> resul = JoovaAlert.alertConf("Está a punto de validar una venta", "La venta se añadirá a la base de datos", "Esta acción no se puede deshacer, asegúrese de que los datos sean correctos");
 
         if (resul.get().getButtonData().isCancelButton()) {
         } else {
-
             // Se inserta la compra en la Base de Datos
             db.insertCompra(model);
-
             // Y se recorre la tabla de productos añadidos, para irlos metiendo uno a uno en el detalle de la compra.
             for (int i = 0; i < listaProductosAnadidos.size(); i++) {
                 db.insertDetalleCompra(model.getCodContrato(), listaProductosAnadidos.get(i).getCodArticulo());
             }
-
             limpiar();
         }
     }
@@ -229,7 +222,7 @@ public class VentasController implements Initializable {
         if (null != productosTable.getSelectionModel().getSelectedItem()) {
             getListaProductosAnadidos().remove(productosTable.getSelectionModel().getSelectedItem());
         } else {
-            alertaErrorInformation("Error",
+            JoovaAlert.alertError("Error",
                     "No se ha seleccionado ningun artículo para borrar",
                     "Pulse sobre un artículo sonre su lista de añadidos a la compra, y luego pulse sobre este botón");
         }
@@ -240,20 +233,10 @@ public class VentasController implements Initializable {
             NuevoProductoModel producto = listaProductosTable.getSelectionModel().getSelectedItem();
             getListaProductosAnadidos().add(producto);
         } else {
-            alertaErrorInformation("Error",
+            JoovaAlert.alertError("Error",
                     "No se ha seleccionado ningún artículo de la lista",
                     "Para seleccionar un artículo, pulse sobre \"Mostrar lista de Productos\" y seleccione el que desee añadir a la compra");
         }
-
-    }
-
-    private void alertaErrorInformation(String titulo, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.initOwner(JoovaApp.getPrimaryStage());
-        alert.setTitle(titulo);
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-        alert.show();
     }
 
     public void onCambioListaProductos() {

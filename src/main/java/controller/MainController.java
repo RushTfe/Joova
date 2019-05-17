@@ -3,6 +3,7 @@ package controller;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoUsuario;
+import dialogs.JoovaAlert;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -130,13 +131,13 @@ public class MainController implements Initializable {
          * Si no coinciden, se lanza otro error pidiendo los datos correctos.
          */
         if (!archivoUsuario.exists())
-            alertaError("Usuario inexistente", "Este usuario aun no se ha registrado", "Por favor, registrese antes de proseguir");
+            JoovaAlert.alertError("Usuario inexistente", "Este usuario aun no se ha registrado", "Por favor, registrese antes de proseguir");
         else {
             String[] tablaDatos = cargarBinario(archivoUsuario);
             if (model.getNombre().equals(tablaDatos[0]) && model.getPass().equals(tablaDatos[1])) {
                 ocultarLogin();
             } else {
-                alertaError("Usuario inexistente", "Este usuario aun no se ha registrado", "Por favor, registrese antes de proseguir");
+                JoovaAlert.alertError("Usuario inexistente", "Este usuario aun no se ha registrado", "Por favor, registrese antes de proseguir");
             }
         }
     }
@@ -185,27 +186,6 @@ public class MainController implements Initializable {
         ventasTab.setContent(ventasController.getRootVentas());
         accionesTab.setContent(accionesController.getRootAcciones());
     }
-
-    public static void alertaError(String titulo, String header, String content) {
-        Alert alerta = new Alert(Alert.AlertType.ERROR);
-// TODO        alerta.getDialogPane().getStylesheets().addAll("Ruta");
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(header);
-        alerta.setContentText(content);
-        alerta.initOwner(JoovaApp.getPrimaryStage());
-        alerta.show();
-    }
-
-    public static Optional<ButtonType> alertaConfirmation(String titulo, String header, String content) {
-        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
-// TODO       alerta.getDialogPane().getStylesheets().addAll("Ruta");
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(header);
-        alerta.setContentText(content);
-        alerta.initOwner(JoovaApp.getPrimaryStage());
-        return alerta.showAndWait();
-    }
-
 
     /**
      * Funcion que guarda un archivo binario con los datos del usuario

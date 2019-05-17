@@ -149,12 +149,7 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         try {
             model.getParticipantes().remove(tablaParticipantes.getSelectionModel().getSelectedItem());
         } catch (NullPointerException e) {
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.initOwner(primaryStage);
-            alerta.setTitle("Error");
-            alerta.setHeaderText("No ha seleccionado ningún participante para eliminar");
-            alerta.setContentText("Por favor, seleccione el participante que desea eliminar de la tabla");
-            alerta.show();
+            JoovaAlert.alertError("Error", "No ha seleccionado ningún participante para eliminar", "Por favor, seleccione el participante que desea eliminar de la tabla");
         }
     }
 
@@ -171,20 +166,10 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
             if (!encontrado)
                 model.getParticipantes().add(new Participante(cliente, false));
             else {
-                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                alerta.initOwner(primaryStage);
-                alerta.setTitle("Error");
-                alerta.setHeaderText("El cliente ya ha sido añadido a la experiencia.");
-                alerta.setContentText("¡¡Prueba a poner uno que no tengas ya!!");
-                alerta.show();
+                JoovaAlert.alertInfo("Info", "El cliente ya ha sido añadido a la experiencia.", "¡¡Prueba a poner uno que no tengas ya!!");
             }
         } else {
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.initOwner(primaryStage);
-            alerta.setTitle("Error");
-            alerta.setHeaderText("No ha seleccionado ningún participante para añadir");
-            alerta.setContentText("Por favor, seleccione el participante que desea añadir del desplagable");
-            alerta.show();
+            JoovaAlert.alertError("Error", "No ha seleccionado ningún participante para añadir", "Por favor, seleccione el participante que desea añadir del desplagable");
         }
     }
 

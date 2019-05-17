@@ -1,11 +1,6 @@
 package dialogs;
 
-import NuevoCliente.NuevoClienteController;
-import NuevoCliente.NuevoClienteModel;
-import database.HooverDataBase;
 import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

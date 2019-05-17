@@ -5,7 +5,7 @@ import database.HooverDataBase;
 import dialogs.DialogoNuevaAccionEspecial;
 import dialogs.DialogoNuevaExperiencia;
 import dialogs.DialogoNuevaPyPM;
-import javafx.beans.Observable;
+import dialogs.JoovaAlert;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -413,11 +413,7 @@ public class AccionesController implements Initializable {
                 }
 
             } catch (NullPointerException e) {
-                Alert alerta = new Alert(Alert.AlertType.ERROR);
-                alerta.initOwner(JoovaApp.getPrimaryStage());
-                alerta.setTitle("Error");
-                alerta.setHeaderText("Por favor, seleccione una experiencia de la lista para modificarla");
-                alerta.show();
+                JoovaAlert.alertError("Error", "Por favor, seleccione una experiencia de la lista para modificarla", "");
             }
         } else {
             try {
@@ -445,12 +441,7 @@ public class AccionesController implements Initializable {
                 }
 
             } catch (NullPointerException e) {
-                Alert alerta = new Alert(Alert.AlertType.ERROR);
-                alerta.initOwner(JoovaApp.getPrimaryStage());
-                alerta.setTitle("Error");
-                alerta.setHeaderText("No se ha seleccionado ningún objeto");
-                alerta.setContentText("Por favor, elija un elemento de la tabla para modificar");
-                alerta.show();
+                JoovaAlert.alertError("Error", "No se ha seleccionado ningún objeto", "Por favor, elija un elemento de la tabla para modificar");
             }
         }
     }
@@ -460,7 +451,7 @@ public class AccionesController implements Initializable {
         if (model.isPresentacion()) {
             aBorrar = tablaPresentaciones.getSelectionModel().getSelectedItem();
             String datos = "Código del evento: " + aBorrar.getCodigoEvento() + "\nDNI: " + aBorrar.getCodCliente() + "\nNombre: " + aBorrar.getNombreCliente();
-            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
+            Optional<ButtonType> resul = JoovaAlert.alertConf("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
 
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deletePresentacion(aBorrar.getCodigoEvento());
@@ -469,7 +460,7 @@ public class AccionesController implements Initializable {
         } else if (model.isPuestaEnMarcha()) {
             aBorrar = tablaPuestaMarcha.getSelectionModel().getSelectedItem();
             String datos = "Código del evento: " + aBorrar.getCodigoEvento() + "\nDNI: " + aBorrar.getCodCliente() + "\nNombre: " + aBorrar.getNombreCliente();
-            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
+            Optional<ButtonType> resul = JoovaAlert.alertConf("Borrando datos...", "Atención, la siguiente información se borrará de manera permanente", datos);
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deletePuestaMarcha(aBorrar.getCodigoEvento());
                 listaPuestasMarcha.remove(aBorrar);
@@ -477,7 +468,7 @@ public class AccionesController implements Initializable {
         } else if (model.isExperiencia()) {
             ExperienciaModel expABorrar = tablaExperiencias.getSelectionModel().getSelectedItem();
             String datos = "Dirección: " + expABorrar.getDireccion() + "\nFecha: " + expABorrar.getFechaExperiencia().toString();
-            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará,\nY con ella todas las participaciones del evento", datos);
+            Optional<ButtonType> resul = JoovaAlert.alertConf("Borrando datos...", "Atención, la siguiente información se borrará,\nY con ella todas las participaciones del evento", datos);
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deleteExperiencia(expABorrar.getCodExperiencia());
                 listaExperiencias.remove(expABorrar);
@@ -485,7 +476,7 @@ public class AccionesController implements Initializable {
         } else {
             AccionEspecialModel tipoABorrar = tablaAccionesEspeciales.getSelectionModel().getSelectedItem();
             String datos = "Nombre Accion Especial: " + tipoABorrar.getNombreEvento() + "\nFecha: " + tipoABorrar.getFechaEvento().toString() + "\nDirección: " + tipoABorrar.getDireccionEvento();
-            Optional<ButtonType> resul = alerta("Borrando datos...", "Atención, la siguiente información se borrará,\nY con ella todas las participaciones del evento", datos);
+            Optional<ButtonType> resul = JoovaAlert.alertConf("Borrando datos...", "Atención, la siguiente información se borrará,\nY con ella todas las participaciones del evento", datos);
             if (resul.isPresent() && resul.get() == ButtonType.OK) {
                 db.deleteAccionesEspeciales(tipoABorrar.getCodEvento());
                 listaAccionesEspeciales.remove(tipoABorrar);
@@ -586,14 +577,5 @@ public class AccionesController implements Initializable {
 
     public BorderPane getRootAcciones() {
         return rootAcciones;
-    }
-
-    private Optional<ButtonType> alerta(String title, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-        alert.initOwner(JoovaApp.getPrimaryStage());
-        return alert.showAndWait();
     }
 }
