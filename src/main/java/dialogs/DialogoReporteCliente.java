@@ -10,6 +10,8 @@ import javafx.scene.control.Dialog;
 import javafx.stage.Stage;
 import model.*;
 
+import java.sql.SQLException;
+
 public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
     private ReporteClienteController root;
     private HooverDataBase db;
@@ -92,6 +94,8 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
             listaIntereses.add(interesesModel);
         } catch (NullPointerException e) {
             JoovaAlert.alertError("Error", "No se ha seleccionado un producto", "Por favor, elija un producto del desplegable");
+        } catch (SQLException e) {
+            JoovaAlert.alertError("Error", "Este cliente ya está interesado en dicho producto", "No por ponerlo más veces va a estar más interesado");
         }
     }
 }
