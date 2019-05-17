@@ -4,6 +4,7 @@ import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoCliente;
 import dialogs.DialogoReporteCliente;
+import dialogs.JoovaAlert;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -175,7 +176,7 @@ public class ClienteController implements Initializable {
                 actualizarClientes();
             }
         } catch (NullPointerException e) {
-            MainController.alertaError("No se ha podido modificar", "No ha seleccionado ningun cliente en la tabla", "Por favor, seleccione al cliente que desea modificar");
+            JoovaAlert.alertError("No se ha podido modificar", "No ha seleccionado ningun cliente en la tabla", "Por favor, seleccione al cliente que desea modificar");
         }
 
     }
@@ -185,7 +186,7 @@ public class ClienteController implements Initializable {
         try {
             ClienteModel aEliminar = clientTable.getSelectionModel().getSelectedItem();
 
-            Optional<ButtonType> result = MainController.alertaConfirmation("ATENCIÓN", "el siguiente cliente será eliminado", aEliminar.getNombre() + " " + aEliminar.getApellidos());
+            Optional<ButtonType> result = JoovaAlert.alertConf("ATENCIÓN", "el siguiente cliente será eliminado", aEliminar.getNombre() + " " + aEliminar.getApellidos());
 
             if(result.isPresent() && !result.get().getButtonData().isCancelButton()) {
                 db.deleteCliente(aEliminar.getDni());
@@ -193,7 +194,7 @@ public class ClienteController implements Initializable {
             }
 
         } catch (NullPointerException e) {
-            MainController.alertaError("No se ha podido borrar", "No ha seleccionado ningun cliente en la tabla", "Por favor, seleccione al cliente que desea borrar");
+            JoovaAlert.alertError("No se ha podido borrar", "No ha seleccionado ningun cliente en la tabla", "Por favor, seleccione al cliente que desea borrar");
         }
     }
 
