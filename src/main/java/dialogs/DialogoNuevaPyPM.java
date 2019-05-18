@@ -44,8 +44,10 @@ public class DialogoNuevaPyPM extends Dialog<PMyPresentacionesModel> {
 
         clientesComboBox.setPromptText("Clientes");
         fecha.setPromptText("Fecha");
+        fecha.setEditable(false);
         venta.setText("Hubo venta en la sesión?");
         observaciones.setPromptText("Observaciones.... (Opcionales)");
+        observaciones.setWrapText(true);
 
 
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);

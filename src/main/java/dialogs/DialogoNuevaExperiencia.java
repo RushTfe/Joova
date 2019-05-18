@@ -54,6 +54,7 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         nombreParticipanteColumn = new TableColumn<>();
         huboVentaColumn = new TableColumn<>();
         fechaExperiencia = new DatePicker();
+        fechaExperiencia.setEditable(false);
 
         // Stage dueña
         initOwner(primaryStage);

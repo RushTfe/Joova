@@ -95,6 +95,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         nuevoEvento = new Button("+");
         nombreEvento = new TextField();
         fechaEvento = new DatePicker();
+        fechaEvento.setEditable(false);
 
         // Table
         tablaParticipantes = new TableView<>();

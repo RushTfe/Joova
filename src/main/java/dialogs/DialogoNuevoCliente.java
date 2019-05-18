@@ -106,6 +106,7 @@ public class DialogoNuevoCliente extends Dialog<ClienteModel> {
         emailField.setAlignment(Pos.CENTER_LEFT);
 
         nacimientoField = new DatePicker();
+        nacimientoField.setEditable(false);
         nacimientoField.setPromptText("Fecha de Nacimiento");
         nacimientoField.setMaxWidth(210);
         nacimientoField.setMinWidth(210);

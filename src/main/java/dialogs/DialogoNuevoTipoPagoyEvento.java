@@ -46,6 +46,7 @@ public class DialogoNuevoTipoPagoyEvento extends Dialog<TipoPagoyEventoModel> {
         // Textos descriptivos
         nombreTipoPago.setPromptText("Tipo de Pago");
         descripcionTipoPago.setPromptText("Descripcion sobre el tipo de pago..... (Opcional)");
+        descripcionTipoPago.setWrapText(true);
 
         // Anadis los objetos a el cajon
         cajaTextos.getChildren().add(nombreTipoPago);

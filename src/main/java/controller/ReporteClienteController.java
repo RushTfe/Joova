@@ -223,8 +223,12 @@ public class ReporteClienteController extends BorderPane implements Initializabl
         nombreClienteLabel.setText(cliente.getNombre());
         apellidoClienteLabel.setText(cliente.getApellidos());
         direccionTextArea.setText(cliente.getDireccion());
+        direccionTextArea.setWrapText(true);
+        direccionTextArea.setEditable(false);
         aspiradoraImageView.setImage(new Image(cliente.getModeloAspiradora().getDireccionImagen()));
         observacionesTextArea.setText(cliente.getObservaciones());
+        observacionesTextArea.setWrapText(true);
+        observacionesTextArea.setEditable(false);
     }
 
     public Button getEliminarProductoInteresButton() {
