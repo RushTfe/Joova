@@ -3,6 +3,7 @@ package database;
 import app.JoovaApp;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -996,6 +997,36 @@ public class HooverDataBase {
             }
             stmnt.close();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaTodasComprasClienteContrato(ListProperty<NuevoProductoModel> listaCompras, String codContrato) {
+        String query = "select * " +
+                "from Articulos " +
+                "join Detalle_Compra DC on Articulos.Cod_Articulo = DC.Cod_Articulo " +
+                "where Cod_Compra = ?";
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, codContrato);
+            ResultSet rs = stmnt.executeQuery();
+            int i = 0;
+
+            while (rs.next()) {
+                listaCompras.add(new NuevoProductoModel());
+                listaCompras.get(i).setCodArticulo(rs.getInt(1));
+                listaCompras.get(i).setNombreProducto(rs.getString(2));
+                listaCompras.get(i).setDescripcionProducto(rs.getString(3));
+                listaCompras.get(i).setTipoProducto(rs.getString(4));
+                listaCompras.get(i).setDireccionImagen(rs.getString(5));
+                listaCompras.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
+                listaCompras.get(i).getImagen().setFitHeight(100);
+                listaCompras.get(i).getImagen().setFitWidth(100);
+                i++;
+            }
+            stmnt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

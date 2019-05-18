@@ -251,6 +251,10 @@ public class ReporteClienteController extends BorderPane implements Initializabl
         fechaLabel.setText(fecha);
     }
 
+    public TableView<VentasModel> getTablaCompras() {
+        return tablaCompras;
+    }
+
     public TextField getBusquedaComprasTextField() {
         return busquedaComprasTextField;
     }

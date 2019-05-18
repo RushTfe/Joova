@@ -7,6 +7,7 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.TableRow;
 import javafx.stage.Stage;
 import model.*;
 
@@ -55,6 +56,16 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
         root.getAnadirProductoInteresButton().setOnAction(e -> onAnadirInteres(clienteModel.getDni()));
         root.getEliminarProductoInteresButton().setOnAction(e -> onEliminarInteres());
         root.getBusquedaComprasTextField().textProperty().addListener(e -> onBusquedaCompra(clienteModel.getDni()));
+        root.getTablaCompras().setRowFactory(tv -> {
+            TableRow<VentasModel> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    onDoubleClickedBuy(row);
+                }
+            });
+            return row;
+        });
+
 
         if (listaPresentaciones.size() > 0)
             root.setFecha(listaPresentaciones.get(0).getFechaEvento().toString());
@@ -70,6 +81,13 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
                 return root.getModel();
             return null;
         });
+    }
+
+    private void onDoubleClickedBuy(TableRow<VentasModel> row) {
+        ListProperty<NuevoProductoModel> listaCompras = new SimpleListProperty<>(this, "listaCompras", FXCollections.observableArrayList());
+        db.consultaTodasComprasClienteContrato(listaCompras, row.getTableView().getSelectionModel().getSelectedItem().getCodContrato());
+        DialogoComprasCliente dialogo = new DialogoComprasCliente(listaCompras);
+        dialogo.show();
     }
 
     private void onBusquedaCompra(String codCliente) {
