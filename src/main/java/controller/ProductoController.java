@@ -3,6 +3,7 @@ package controller;
 import app.JoovaApp;
 import database.HooverDataBase;
 import dialogs.DialogoNuevoProducto;
+import dialogs.JoovaAlert;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -27,7 +28,6 @@ import java.util.ResourceBundle;
 public class ProductoController implements Initializable {
 
     private ListProperty<NuevoProductoModel> listaProductos = new SimpleListProperty<>(this, "listaProductos", FXCollections.observableArrayList());
-
 
     @FXML
     private BorderPane rootProductos;
@@ -98,44 +98,48 @@ public class ProductoController implements Initializable {
     }
 
     private void onModificarProducto() {
-        DialogoNuevoProducto dialogoProductoModificado = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
-        NuevoProductoModel aModificar = tablaProductos.getSelectionModel().getSelectedItem();
-        dialogoProductoModificado.getController().getModel().setNombreProducto(aModificar.getNombreProducto());
-        dialogoProductoModificado.getController().getModel().setDescripcionProducto(aModificar.getDescripcionProducto());
+        try {
+            DialogoNuevoProducto dialogoProductoModificado = new DialogoNuevoProducto(JoovaApp.getPrimaryStage());
+            NuevoProductoModel aModificar = tablaProductos.getSelectionModel().getSelectedItem();
+            dialogoProductoModificado.getController().getModel().setNombreProducto(aModificar.getNombreProducto());
+            dialogoProductoModificado.getController().getModel().setDescripcionProducto(aModificar.getDescripcionProducto());
 
-        if (aModificar.getTipoProducto().equals("Aspiradora"))
-            dialogoProductoModificado.getController().getAspiradoraRB().setSelected(true);
-        else if (aModificar.getTipoProducto().equals("Modulo"))
-            dialogoProductoModificado.getController().getModuloRB().setSelected(true);
-        else
-            dialogoProductoModificado.getController().getOtrosRB().setSelected(true);
+            if (aModificar.getTipoProducto().equals("Aspiradora"))
+                dialogoProductoModificado.getController().getAspiradoraRB().setSelected(true);
+            else if (aModificar.getTipoProducto().equals("Modulo"))
+                dialogoProductoModificado.getController().getModuloRB().setSelected(true);
+            else
+                dialogoProductoModificado.getController().getOtrosRB().setSelected(true);
 
-        dialogoProductoModificado.getController().getModel().setDireccionImagen(aModificar.getDireccionImagen());
-        dialogoProductoModificado.getController().getImagenProducto().setImage(new Image(aModificar.getDireccionImagen()));
-        dialogoProductoModificado.getController().getModel().setPrecioProducto(aModificar.getPrecioProducto());
+            dialogoProductoModificado.getController().getModel().setDireccionImagen(aModificar.getDireccionImagen());
+            dialogoProductoModificado.getController().getImagenProducto().setImage(new Image(aModificar.getDireccionImagen()));
+            dialogoProductoModificado.getController().getModel().setPrecioProducto(aModificar.getPrecioProducto());
 
-        Optional<nuevoproducto.NuevoProductoModel> resul = dialogoProductoModificado.showAndWait();
-        if (resul.isPresent()) {
+            Optional<nuevoproducto.NuevoProductoModel> resul = dialogoProductoModificado.showAndWait();
+            if (resul.isPresent()) {
 
-            aModificar.setNombreProducto(dialogoProductoModificado.getController().getModel().getNombreProducto());
-            aModificar.setDescripcionProducto(dialogoProductoModificado.getController().getModel().getDescripcionProducto());
-            aModificar.setTipoProducto(dialogoProductoModificado.getController().getModel().getTipoProducto());
-            aModificar.setPrecioProducto(dialogoProductoModificado.getController().getModel().getPrecioProducto());
-            aModificar.setDireccionImagen(dialogoProductoModificado.getController().getModel().getDireccionImagen());
-            db.updateProducto(aModificar);
+                aModificar.setNombreProducto(dialogoProductoModificado.getController().getModel().getNombreProducto());
+                aModificar.setDescripcionProducto(dialogoProductoModificado.getController().getModel().getDescripcionProducto());
+                aModificar.setTipoProducto(dialogoProductoModificado.getController().getModel().getTipoProducto());
+                aModificar.setPrecioProducto(dialogoProductoModificado.getController().getModel().getPrecioProducto());
+                aModificar.setDireccionImagen(dialogoProductoModificado.getController().getModel().getDireccionImagen());
+                db.updateProducto(aModificar);
 
-            PrecioModel precioModel = new PrecioModel();
-            precioModel.setCodArticulo(aModificar.getCodArticulo());
-            precioModel.setPrecioArticulo(aModificar.getPrecioProducto());
-            precioModel.setFechaCambio(LocalDate.now());
-            try {
+                PrecioModel precioModel = new PrecioModel();
+                precioModel.setCodArticulo(aModificar.getCodArticulo());
+                precioModel.setPrecioArticulo(aModificar.getPrecioProducto());
+                precioModel.setFechaCambio(LocalDate.now());
                 db.insertPrecio(precioModel);
                 actualizarProductos();
-            } catch (SQLException e) {
-                String error = "[SQLITE_CONSTRAINT]  Abort due to constraint violation (UNIQUE constraint failed: Historico_Precios.Cod_Articulo, Historico_Precios.Precio, Historico_Precios.Fecha)";
-                if (!e.getMessage().equals(error))
-                    e.printStackTrace();
             }
+        } catch (NullPointerException e) {
+            JoovaAlert.alertError("Error",
+                    "No ha seleccionado ningún artículo para modificar",
+                    "Por favor seleccione un artículo de la lista");
+        } catch (SQLException e) {
+            String error = "[SQLITE_CONSTRAINT]  Abort due to constraint violation (UNIQUE constraint failed: Historico_Precios.Cod_Articulo, Historico_Precios.Precio, Historico_Precios.Fecha)";
+            if (!e.getMessage().equals(error))
+                e.printStackTrace();
         }
     }
 
@@ -149,7 +153,7 @@ public class ProductoController implements Initializable {
             productoInsertado.setTipoProducto(resul.get().getTipoProducto());
             productoInsertado.setDireccionImagen(resul.get().getDireccionImagen());
             db.insertProduct(productoInsertado);
-
+            actualizarProductos();
 
             int codProducto = listaProductos.get(listaProductos.getSize() - 1).getCodArticulo();
             PrecioModel precioModel = new PrecioModel();
@@ -167,8 +171,21 @@ public class ProductoController implements Initializable {
     }
 
     private void onEliminarProducto() {
-        db.deleteArticulo(tablaProductos.getSelectionModel().getSelectedItem().getCodArticulo());
-        actualizarProductos();
+        try {
+            NuevoProductoModel productoModel = tablaProductos.getSelectionModel().getSelectedItem();
+            Optional<ButtonType> resul = JoovaAlert.alertConf("Borrado de productos",
+                    "Está a punto de eliminar el siguiente producto de la Base de Datos",
+                    productoModel.getNombreProducto());
+
+            if (resul.isPresent() && resul.get() == ButtonType.OK) {
+                db.deleteArticulo(productoModel.getCodArticulo());
+                actualizarProductos();
+            }
+        } catch (NullPointerException e) {
+            JoovaAlert.alertError("Error",
+                    "No se ha seleccionado ningún artículo de la lista",
+                    "Por favor, seleccione uno para poder eliminarlo");
+        }
     }
 
     private void actualizarProductos() {

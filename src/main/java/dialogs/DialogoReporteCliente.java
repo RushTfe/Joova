@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import model.*;
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
     private ReporteClienteController root;
@@ -87,11 +88,17 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
 
     private void onAnadirInteres(String dni) {
         try {
-            InteresesModel interesesModel = new InteresesModel();
-            interesesModel.setArticulo(root.getProductosComboBox().getSelectionModel().getSelectedItem());
-            interesesModel.setCodCliente(dni);
-            db.insertInteresCliente(interesesModel);
-            listaIntereses.add(interesesModel);
+            NuevoProductoModel nuevoProducto = root.getProductosComboBox().getSelectionModel().getSelectedItem();
+            Optional<ButtonType> resul = JoovaAlert.alertConf("Añadiendo interés",
+                    "Está a punto de añadir un interés en un producto en este cliente",
+                    nuevoProducto.getNombreProducto() + " Será añadido como interés");
+            if (resul.isPresent() && resul.get() == ButtonType.OK) {
+                InteresesModel interesesModel = new InteresesModel();
+                interesesModel.setArticulo(nuevoProducto);
+                interesesModel.setCodCliente(dni);
+                db.insertInteresCliente(interesesModel);
+                listaIntereses.add(interesesModel);
+            }
         } catch (NullPointerException e) {
             JoovaAlert.alertError("Error", "No se ha seleccionado un producto", "Por favor, elija un producto del desplegable");
         } catch (SQLException e) {
