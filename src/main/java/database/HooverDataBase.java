@@ -261,14 +261,14 @@ public class HooverDataBase {
         //TODO Cambiar los parámetros al objeto
 
         String insert = "INSERT INTO Historico_Precios values (?, ?, ?, ?)";
-         PreparedStatement stmnt = conn.prepareStatement(insert);
+        PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setInt(1, model.getCodArticulo());
-            stmnt.setDouble(2, model.getPrecioArticulo());
-            stmnt.setString(3, model.getFechaCambio().toString());
-            stmnt.setString(4, String.valueOf(System.currentTimeMillis()));
+        stmnt.setInt(1, model.getCodArticulo());
+        stmnt.setDouble(2, model.getPrecioArticulo());
+        stmnt.setString(3, model.getFechaCambio().toString());
+        stmnt.setString(4, String.valueOf(System.currentTimeMillis()));
 
-            stmnt.executeUpdate();
+        stmnt.executeUpdate();
 
     }
 
@@ -346,12 +346,12 @@ public class HooverDataBase {
 
         String insert = "INSERT INTO Intereses_Articulos VALUES (?, ?)";
 
-            PreparedStatement stmnt = conn.prepareStatement(insert);
+        PreparedStatement stmnt = conn.prepareStatement(insert);
 
-            stmnt.setString(1, interesesModel.getCodCliente());
-            stmnt.setInt(2, interesesModel.getArticulo().getCodArticulo());
+        stmnt.setString(1, interesesModel.getCodCliente());
+        stmnt.setInt(2, interesesModel.getArticulo().getCodArticulo());
 
-            stmnt.executeUpdate();
+        stmnt.executeUpdate();
     }
 
     /**
@@ -550,7 +550,6 @@ public class HooverDataBase {
         }
     }
 
-
     //ELIMINACION DE DATOS
 
     /**
@@ -659,8 +658,6 @@ public class HooverDataBase {
 
     /**
      * Elimina el precio proporcionado del histórico de precios
-     *
-     * @param codPrecio
      */
     public void deletePrecio(PrecioModel model) {
         String delete = "DELETE FROM Historico_Precios WHERE Cod_Articulo = ? AND Precio = ? AND Fecha = ?";
@@ -859,10 +856,12 @@ public class HooverDataBase {
     }
 
     public void consultaProductosWhere(ListProperty<NuevoProductoModel> listaProductos, String text) {
-        String query = "SELECT * FROM Articulos JOIN Historico_Precios HP on Articulos.Cod_Articulo = HP.Cod_Articulo " +
-                "WHERE Nombre_Articulo LIKE ? " +
-                "OR Tipo_Producto LIKE ?" +
-                "ORDER BY Instants DESC";
+        String query = "select * " +
+                "from Articulos " +
+                "inner join Historico_Precios HP on Articulos.Cod_Articulo = HP.Cod_Articulo " +
+                "where Nombre_Articulo LIKE ? " +
+                "or Tipo_Producto LIKE ? " +
+                "order by Articulos.Cod_Articulo, Instants desc";
 
         String busqueda = "%" + text + "%";
 
@@ -872,20 +871,41 @@ public class HooverDataBase {
             stmnt.setString(2, busqueda);
             ResultSet rs = stmnt.executeQuery();
             int i = 0;
+            long instants = 0;
+            int codArticulo = 0;
 
             while (rs.next()) {
-                listaProductos.add(new NuevoProductoModel());
-                listaProductos.get(i).setCodArticulo(rs.getInt(1));
-                listaProductos.get(i).setNombreProducto(rs.getString(2));
-                listaProductos.get(i).setDescripcionProducto(rs.getString(3));
-                listaProductos.get(i).setTipoProducto(rs.getString(4));
-                listaProductos.get(i).setDireccionImagen(rs.getString(5));
-                listaProductos.get(i).setPrecioProducto(rs.getDouble(7));
-                listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
-                listaProductos.get(i).getImagen().setFitHeight(200);
-                listaProductos.get(i).getImagen().setFitWidth(200);
-
-                i++;
+                if (codArticulo == rs.getInt(1)) {
+                    if (instants < rs.getInt(9)) {
+                        codArticulo = rs.getInt(1);
+                        instants = rs.getInt(9);
+                        listaProductos.add(new NuevoProductoModel());
+                        listaProductos.get(i).setCodArticulo(rs.getInt(1));
+                        listaProductos.get(i).setNombreProducto(rs.getString(2));
+                        listaProductos.get(i).setDescripcionProducto(rs.getString(3));
+                        listaProductos.get(i).setTipoProducto(rs.getString(4));
+                        listaProductos.get(i).setDireccionImagen(rs.getString(5));
+                        listaProductos.get(i).setPrecioProducto(rs.getDouble(7));
+                        listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
+                        listaProductos.get(i).getImagen().setFitHeight(200);
+                        listaProductos.get(i).getImagen().setFitWidth(200);
+                        i++;
+                    }
+                } else {
+                    codArticulo = rs.getInt(1);
+                    instants = rs.getInt(9);
+                    listaProductos.add(new NuevoProductoModel());
+                    listaProductos.get(i).setCodArticulo(rs.getInt(1));
+                    listaProductos.get(i).setNombreProducto(rs.getString(2));
+                    listaProductos.get(i).setDescripcionProducto(rs.getString(3));
+                    listaProductos.get(i).setTipoProducto(rs.getString(4));
+                    listaProductos.get(i).setDireccionImagen(rs.getString(5));
+                    listaProductos.get(i).setPrecioProducto(rs.getDouble(7));
+                    listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
+                    listaProductos.get(i).getImagen().setFitHeight(200);
+                    listaProductos.get(i).getImagen().setFitWidth(200);
+                    i++;
+                }
             }
             stmnt.close();
 
@@ -1467,7 +1487,6 @@ public class HooverDataBase {
         }
     }
 
-
     //CREACION DE LA BD
 
     /**
@@ -1611,7 +1630,6 @@ public class HooverDataBase {
                         "Observaciones" +
                         ")";
 
-
         try {
             //Ejecutando sentencias para crear las tablas
             Statement stmnt = conn.createStatement();
@@ -1630,7 +1648,6 @@ public class HooverDataBase {
             stmnt.execute(queryTipoEvento);
             stmnt.execute(queryExperiencia);
             stmnt.execute(queryClienteExperiencia);
-
 
             System.out.println("Tablas creadas con exito");
         } catch (SQLException e) {
