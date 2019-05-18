@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="rootClienteNuevo" alignment="CENTER" hgap="10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="nombreField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Nombre" GridPane.columnSpan="2" />
+      <TextField fx:id="apellidoField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Apellidos" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextField fx:id="dniField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="DNI" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <TextField fx:id="tlfField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Teléfono" GridPane.columnIndex="3" GridPane.columnSpan="2" />
+      <TextField fx:id="emailField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="eMail" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <DatePicker fx:id="nacimientoField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Fecha de Nacimiento" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <TextField fx:id="direccionField" promptText="Direccion" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+      <CheckBox fx:id="huefanoBox" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="¿Es el cliente huérfano?" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <TextArea fx:id="obervacionesBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Observaciones...... (Opcionales)" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" GridPane.rowSpan="2147483647">
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+      </TextArea>
+      <ComboBox fx:id="productosCombobox" prefWidth="150.0" promptText="Productos" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" />
+      <ColumnConstraints />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

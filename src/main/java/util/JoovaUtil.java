@@ -1,8 +1,13 @@
 package util;
 
+import javafx.fxml.FXMLLoader;
+
 import java.time.LocalDate;
 
 public class JoovaUtil {
+    public JoovaUtil() {
+    }
+
     public static LocalDate stringToLocalDate(String fecha) {
         String [] tablaFecha = fecha.split("-");
 
