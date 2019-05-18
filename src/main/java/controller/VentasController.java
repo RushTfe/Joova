@@ -114,11 +114,12 @@ public class VentasController implements Initializable {
         // TODO Escondemos el botón de descuentos hasta que se apliquen realmente en la APP
         anadirDescuentoButton.setVisible(false);
         anadirDescuentoButton.setManaged(false);
+        observacionesTextArea.setWrapText(true);
         model = new VentasModel();
         listaProductosDisponibles = new SimpleListProperty<>(this, "listaProductosDisponibles", FXCollections.observableArrayList());
         listaProductosAnadidos = new SimpleListProperty<>(this, "listaProductosAnadidos", FXCollections.observableArrayList());
         listaTipoPago = new SimpleListProperty<>(this, "listaTipoPago", FXCollections.observableArrayList());
-
+        fechaDatePicker.setEditable(false);
         // Al combobox se le asignan los datos directamente desde el controlador principal, para así evitar estar creando mas
         // duplicidades de datos innecesarias.
 
