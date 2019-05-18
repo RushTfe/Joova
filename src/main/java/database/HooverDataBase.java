@@ -221,7 +221,6 @@ public class HooverDataBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     /**
