@@ -62,7 +62,7 @@ public class MainController implements Initializable {
     private TextField userTextBox;
 
     @FXML
-    private TextField passwordTextBox;
+    private PasswordField passwordTextBox;
 
     @FXML
     private Button logInButton;

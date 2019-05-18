@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Funcionando la parte de producto, pendiente de revision final">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProductoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProductoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database/HooverDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoReporteCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoReporteCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,37 +110,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="471" column="71" lean-forward="true" selection-start-line="471" selection-start-column="71" selection-end-line="471" selection-end-column="71" />
+            <state relative-caret-position="351">
+              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
               <folding>
                 <element signature="e#826#923#0" />
                 <element signature="e#1036#1103#0" />
                 <element signature="e#1535#1605#0" />
                 <element signature="e#2004#2071#0" />
                 <element signature="e#2353#2426#0" />
-                <element signature="e#3610#3929#0" />
-                <element signature="e#3818#3856#0" />
-                <element signature="e#3879#3923#0" />
-                <element signature="e#3935#13934#0" />
-                <element signature="e#13668#13736#0" />
-                <element signature="e#13940#14092#0" />
-                <element signature="e#14098#14247#0" />
-                <element signature="e#14253#14404#0" />
-                <element signature="e#14410#14571#0" />
-                <element signature="e#14577#20442#0" />
-                <element signature="e#14624#20247#0" />
-                <element signature="e#14648#15734#1" />
-                <element signature="e#15395#15568#1" />
-                <element signature="e#15614#16632#1" />
-                <element signature="e#16448#16621#1" />
-                <element signature="e#16815#18467#1" />
-                <element signature="e#17740#18253#1" />
-                <element signature="e#18691#20455#1" />
-                <element signature="e#19672#20144#1" />
-                <element signature="e#20738#20772#0" />
                 <element signature="e#23159#23350#0" />
                 <element signature="e#23356#25569#0" />
                 <element signature="e#23501#23786#1" />
@@ -168,6 +141,18 @@
                 <element signature="e#27093#27094#0" expanded="true" />
                 <element signature="e#26865#26901#1" />
                 <element signature="e#27171#27172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -267,7 +252,6 @@
         <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlertError.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/VentasController.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java" />
@@ -279,6 +263,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/094ed0a6-3698-4b92-8a98-2f57fdc1afd6/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -643,7 +628,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341106000" />
+    <option name="totallyTimeSpent" value="341408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -658,7 +643,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.22314675" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22314675" />
       <window_info id="Structure" order="1" weight="0.24946696" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -667,7 +652,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.60708535" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12560387" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.12560387" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3800322" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1109,16 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Intereses_Articulos">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1236,34 +1211,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="471" column="71" lean-forward="true" selection-start-line="471" selection-start-column="71" selection-end-line="471" selection-end-column="71" />
+        <state relative-caret-position="351">
+          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
           <folding>
             <element signature="e#826#923#0" />
             <element signature="e#1036#1103#0" />
             <element signature="e#1535#1605#0" />
             <element signature="e#2004#2071#0" />
             <element signature="e#2353#2426#0" />
-            <element signature="e#3610#3929#0" />
-            <element signature="e#3818#3856#0" />
-            <element signature="e#3879#3923#0" />
-            <element signature="e#3935#13934#0" />
-            <element signature="e#13668#13736#0" />
-            <element signature="e#13940#14092#0" />
-            <element signature="e#14098#14247#0" />
-            <element signature="e#14253#14404#0" />
-            <element signature="e#14410#14571#0" />
-            <element signature="e#14577#20442#0" />
-            <element signature="e#14624#20247#0" />
-            <element signature="e#14648#15734#1" />
-            <element signature="e#15395#15568#1" />
-            <element signature="e#15614#16632#1" />
-            <element signature="e#16448#16621#1" />
-            <element signature="e#16815#18467#1" />
-            <element signature="e#17740#18253#1" />
-            <element signature="e#18691#20455#1" />
-            <element signature="e#19672#20144#1" />
-            <element signature="e#20738#20772#0" />
             <element signature="e#23159#23350#0" />
             <element signature="e#23356#25569#0" />
             <element signature="e#23501#23786#1" />
@@ -1284,6 +1239,16 @@
             <element signature="e#27093#27094#0" expanded="true" />
             <element signature="e#26865#26901#1" />
             <element signature="e#27171#27172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
