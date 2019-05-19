@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Funcionando la parte de producto, pendiente de revision final">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/VentasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/VentasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/VentasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VentasView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/VentasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/VentasController.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="151">
-              <caret line="200" column="18" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+              <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="211" selection-end-column="9" />
               <folding>
                 <element signature="method#VentasController#0;class#VentasController#0" />
                 <element signature="e#2604#2642#0" />
@@ -125,19 +122,11 @@
                 <element signature="method#initialize#0;class#VentasController#0" />
                 <element signature="e#3498#3615#0" />
                 <element signature="e#5379#5470#0" />
-                <element signature="e#5989#6100#0" />
                 <element signature="method#onAnadirTipoPagoAction#0;class#VentasController#0" />
-                <element signature="e#7358#7542#1" />
                 <element signature="method#actualizarTiposDePago#0;class#VentasController#0" />
                 <element signature="method#onEliminarProductoAction#0;class#VentasController#0" />
-                <element signature="e#8782#8895#1" />
-                <element signature="e#8901#9147#1" />
                 <element signature="method#onAnadirProductoAction#0;class#VentasController#0" />
-                <element signature="e#9278#9445#1" />
-                <element signature="e#9451#9720#1" />
                 <element signature="method#onCambioListaProductos#0;class#VentasController#0" />
-                <element signature="e#9874#10130#1" />
-                <element signature="e#9986#10120#1" />
                 <element signature="method#setListaProductosDisponibles#0;class#VentasController#0" />
                 <element signature="method#setListaProductosAnadidos#0;class#VentasController#0" />
               </folding>
@@ -148,7 +137,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="2006">
               <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -320,6 +309,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -408,7 +398,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -652,7 +641,8 @@
       <workItem from="1558034048984" duration="5044000" />
       <workItem from="1558080684967" duration="1601000" />
       <workItem from="1558118428511" duration="1830000" />
-      <workItem from="1558263939554" duration="3469000" />
+      <workItem from="1558263939554" duration="4124000" />
+      <workItem from="1558288784029" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="Funcionando la parte de producto, pendiente de revision final">
       <created>1558034254323</created>
@@ -665,7 +655,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352270000" />
+    <option name="totallyTimeSpent" value="352957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -680,7 +670,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2397882" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24357034" />
       <window_info id="Structure" order="1" weight="0.24946696" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -689,7 +679,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.60708535" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2415459" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2415459" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.41545895" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1051,8 +1041,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Cliente">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1062,12 +1052,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/NuevoClienteView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1387,16 +1377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -1416,10 +1396,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ProductosView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-44" />
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1438,7 +1418,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
-          <caret line="200" column="18" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+          <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="211" selection-end-column="9" />
           <folding>
             <element signature="method#VentasController#0;class#VentasController#0" />
             <element signature="e#2604#2642#0" />
@@ -1446,21 +1426,23 @@
             <element signature="method#initialize#0;class#VentasController#0" />
             <element signature="e#3498#3615#0" />
             <element signature="e#5379#5470#0" />
-            <element signature="e#5989#6100#0" />
             <element signature="method#onAnadirTipoPagoAction#0;class#VentasController#0" />
-            <element signature="e#7358#7542#1" />
             <element signature="method#actualizarTiposDePago#0;class#VentasController#0" />
             <element signature="method#onEliminarProductoAction#0;class#VentasController#0" />
-            <element signature="e#8782#8895#1" />
-            <element signature="e#8901#9147#1" />
             <element signature="method#onAnadirProductoAction#0;class#VentasController#0" />
-            <element signature="e#9278#9445#1" />
-            <element signature="e#9451#9720#1" />
             <element signature="method#onCambioListaProductos#0;class#VentasController#0" />
-            <element signature="e#9874#10130#1" />
-            <element signature="e#9986#10120#1" />
             <element signature="method#setListaProductosDisponibles#0;class#VentasController#0" />
             <element signature="method#setListaProductosAnadidos#0;class#VentasController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

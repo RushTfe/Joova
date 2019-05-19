@@ -198,19 +198,18 @@ public class VentasController implements Initializable {
     }
 
     private void onValidarVentaAction() {
-        limpiar();
-//        Optional<ButtonType> resul = JoovaAlert.alertConf("Está a punto de validar una venta", "La venta se añadirá a la base de datos", "Esta acción no se puede deshacer, asegúrese de que los datos sean correctos");
-//
-//        if (resul.get().getButtonData().isCancelButton()) {
-//        } else {
-//            // Se inserta la compra en la Base de Datos
-//            db.insertCompra(model);
-//            // Y se recorre la tabla de productos añadidos, para irlos metiendo uno a uno en el detalle de la compra.
-//            for (int i = 0; i < listaProductosAnadidos.size(); i++) {
-//                db.insertDetalleCompra(model.getCodContrato(), listaProductosAnadidos.get(i).getCodArticulo());
-//            }
-//            limpiar();
-//        }
+        Optional<ButtonType> resul = JoovaAlert.alertConf("Está a punto de validar una venta", "La venta se añadirá a la base de datos", "Esta acción no se puede deshacer, asegúrese de que los datos sean correctos");
+
+        if (resul.get().getButtonData().isCancelButton()) {
+        } else {
+            // Se inserta la compra en la Base de Datos
+            db.insertCompra(model);
+            // Y se recorre la tabla de productos añadidos, para irlos metiendo uno a uno en el detalle de la compra.
+            for (int i = 0; i < listaProductosAnadidos.size(); i++) {
+                db.insertDetalleCompra(model.getCodContrato(), listaProductosAnadidos.get(i).getCodArticulo());
+            }
+            limpiar();
+        }
     }
 
     private void limpiar() {
