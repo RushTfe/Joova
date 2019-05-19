@@ -420,6 +420,8 @@ public class HooverDataBase {
 
             stmnt.executeUpdate();
 
+            stmnt.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

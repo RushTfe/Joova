@@ -345,7 +345,8 @@ public class AccionesController implements Initializable {
     }
 
     private void onAEChanged() {
-        observacionesTextArea.setText(tablaAccionesEspeciales.getSelectionModel().getSelectedItem().getObservacionesEvento());
+        if (null != tablaAccionesEspeciales.getSelectionModel().getSelectedItem())
+            observacionesTextArea.setText(tablaAccionesEspeciales.getSelectionModel().getSelectedItem().getObservacionesEvento());
     }
 
     private void onModificarAction() {
@@ -477,11 +478,6 @@ public class AccionesController implements Initializable {
         } catch (NullPointerException e) {
             JoovaAlert.alertError("Error", "No se ha seleccionado ningun evento para eliminar", "Por favor, seleccione uno de la tabla para poder eliminarlo");
         }
-    }
-
-    private void actualizarTextArea() {
-        if (model.isPresentacion())
-            model.setObservaciones(tablaPresentaciones.getSelectionModel().getSelectedItem().getObservaciones());
     }
 
     private void onNuevoAction() {
