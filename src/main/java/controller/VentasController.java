@@ -188,7 +188,7 @@ public class VentasController implements Initializable {
         if (resul.isPresent()) {
             tipoPago = resul.get();
             db.insertTipoPago(tipoPago.getNombreTipoPago(), tipoPago.getDescripcionTipoPago());
-            listaTipoPago.add(tipoPago);
+            actualizarTiposDePago();
         }
     }
 
