@@ -74,6 +74,7 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
         initOwner(primaryStage);
         getDialogPane().getButtonTypes().addAll(ButtonType.OK);
 
+        setTitle("Reporte de " + clienteModel.getNombre() + " " + clienteModel.getApellidos());
         getDialogPane().setContent(root);
 
         setResultConverter(dialogButton -> {
