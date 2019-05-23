@@ -1,6 +1,7 @@
 package dialogs;
 
 import controller.NuevoClienteController;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.ListProperty;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -19,8 +20,17 @@ public class DialogoNuevoCliente extends Dialog<ClienteModel> {
 
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().setContent(root.getRootClienteNuevo());
+        getDialogPane().lookupButton(ButtonType.OK).disableProperty().bind(Bindings
+                .when(root.getDniField().textProperty().isEmpty()
+                        .or(root.getNombreField().textProperty().isEmpty()
+                                .or(root.getApellidoField().textProperty().isEmpty()
+                                        .or(root.getTlfField().textProperty().isEmpty()
+                                                .or(root.getEmailField().textProperty().isEmpty()
+                                                        .or(root.getNacimientoField().valueProperty().isNull()
+                                                                .or(root.getProductosCombobox().getSelectionModel().selectedItemProperty().isNull()
+                                                                        .or(root.getDireccionField().textProperty().isEmpty()))))))))
+                .then(true).otherwise(false));
 // TODO        getDialogPane().getStylesheets().addAll("Hoja de estilos");
-
 
         setResultConverter(dialogButton -> {
             if (dialogButton == ButtonType.OK) {

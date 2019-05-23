@@ -96,4 +96,60 @@ public class NuevoClienteController implements Initializable {
     public ComboBox<NuevoProductoModel> getProductosCombobox() {
         return productosCombobox;
     }
+
+    public TextField getNombreField() {
+        return nombreField;
+    }
+
+    public void setNombreField(TextField nombreField) {
+        this.nombreField = nombreField;
+    }
+
+    public TextField getApellidoField() {
+        return apellidoField;
+    }
+
+    public void setApellidoField(TextField apellidoField) {
+        this.apellidoField = apellidoField;
+    }
+
+    public void setDniField(TextField dniField) {
+        this.dniField = dniField;
+    }
+
+    public TextField getTlfField() {
+        return tlfField;
+    }
+
+    public void setTlfField(TextField tlfField) {
+        this.tlfField = tlfField;
+    }
+
+    public TextField getEmailField() {
+        return emailField;
+    }
+
+    public void setEmailField(TextField emailField) {
+        this.emailField = emailField;
+    }
+
+    public DatePicker getNacimientoField() {
+        return nacimientoField;
+    }
+
+    public void setNacimientoField(DatePicker nacimientoField) {
+        this.nacimientoField = nacimientoField;
+    }
+
+    public TextField getDireccionField() {
+        return direccionField;
+    }
+
+    public void setDireccionField(TextField direccionField) {
+        this.direccionField = direccionField;
+    }
+
+    public void setProductosCombobox(ComboBox<NuevoProductoModel> productosCombobox) {
+        this.productosCombobox = productosCombobox;
+    }
 }
