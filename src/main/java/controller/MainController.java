@@ -83,6 +83,11 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainModel();
+        estadisticasTab.setDisable(true);
+
+        //CSS
+        root.getStylesheets().addAll("css/signup.css");
+        tabsRoot.getStylesheets().addAll("css/clienteView.css");
 
         // Bindeo de los campos Usuario y Contraseña del Login a su respectivo modelo
         Bindings.bindBidirectional(userTextBox.textProperty(), model.nombreProperty());

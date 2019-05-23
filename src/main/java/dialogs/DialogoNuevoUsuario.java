@@ -19,7 +19,7 @@ public class DialogoNuevoUsuario extends Dialog<SignUpModel> {
         getDialogPane().setContent(signup);
 // TODO        getDialogPane().getStylesheets().addAll("Hoja de estilos");
         getDialogPane().lookupButton(ButtonType.OK).disableProperty().bind(signup.getModel().nuevoUserPermitidoProperty());
-
+        setTitle("Nuevo usuario");
         setResultConverter(dialogButton -> {
 
             if (dialogButton == ButtonType.OK) {

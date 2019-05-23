@@ -1,0 +1,158 @@
+/**************
+Botones
+ **************/
+
+/*
+Añadir
+ */
+.plusButton {
+    -fx-background-image: url(icons/plus64.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 64px;
+    -fx-pref-height: 64px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+.plusButton:hover {
+    -fx-background-image: url(icons/plus64hover.png);
+}
+
+.plusButton:pressed {
+    -fx-background-image: url(icons/plus64pressed.png);
+}
+
+/*
+Borrar
+ */
+.deleteButton {
+    -fx-background-image: url(icons/delete64.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 64px;
+    -fx-pref-height: 64px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+.deleteButton:hover {
+    -fx-background-image: url(icons/delete64hover.png);
+}
+
+.deleteButton:pressed {
+    -fx-background-image: url(icons/delete64pressed.png);
+}
+
+/*
+Editar
+ */
+.editButton {
+    -fx-background-image: url(icons/edit64.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 64px;
+    -fx-pref-height: 64px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+.editButton:hover {
+    -fx-background-image: url(icons/edit64hover.png);
+}
+
+.editButton:pressed {
+    -fx-background-image: url(icons/edit64pressed.png);
+}
+
+/****************
+TextFields
+ ****************/
+.busquedaField {
+    -fx-background-radius: 0;
+    -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}
+
+/****************
+Tab Pane
+ ****************/
+.tab-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color:transparent;
+}
+
+.tab-pane {
+    -fx-tab-min-height: 70px;
+    -fx-tab-max-height: 70px;
+    -fx-tab-min-width: 70px;
+    -fx-tab-max-width: 70px;
+    -fx-padding: 0 0 0 0
+}
+
+.tab {
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: auto;
+    -fx-background-color: #FFFFFF;
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: rgba(0, 0, 0, 0.3);
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 0.0;
+    -fx-padding: 0 10 0 10;
+}
+
+.tab:hover {
+    -fx-background-color: #F2FEFA;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: rgba(225, 225, 225, 0.1);
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: rgba(21, 240, 36, 0.1);
+}
+
+.tab:selected {
+    -fx-background-color: #F2FEFA;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: rgba(21, 240, 36, 1);
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {-fx-border-color: transparent}
+
+#clientesTab {
+    -fx-background-image: url(icons/clients.png);
+}
+
+#productosTab {
+    -fx-background-image: url(icons/products.png);
+}
+
+#ventasTab {
+    -fx-background-image: url(icons/sellings.png);
+}
+
+#accionesTab {
+    -fx-background-image: url(icons/meeting.png);
+}
+
+#estadisticasTab {
+    -fx-background-image: url(icons/stats.png);
+}
+
+.tab-pane:top *.tab-header-area
+{
+    -fx-background-insets: 0, 0 0 0;
+    -fx-padding: 0.2em 0.2em 0.0em 0.2em;
+}
+
+/****************
+Tables
+ ****************/
+.table-cell {
+    -fx-padding: 0.5em 0.5em 0.1em 0.3em;
+    -fx-border-color: -fx-box-border -fx-box-border transparent transparent;
+    -fx-font: 13px "Segoe UI";
+    -fx-border-insets: 0;
+    -fx-border-width: 0;
+}
+
+.ºtable-row-cell:odd {
+    -fx-background-color: rgba(21, 240, 36, 0.1);
+}

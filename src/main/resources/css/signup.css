@@ -1,0 +1,44 @@
+.rootBorderPane {
+    -fx-background-color: #FFFFFF;
+}
+
+.user_passField {
+    -fx-background-radius: 0;
+    -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}
+
+.loginLabel {
+    -fx-text-fill: rgba(21, 240, 36, 1);
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+.accederButton {
+    -fx-border-color: rgba(21, 240, 36, 1);
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 0;
+    -fx-pref-width: 90px;
+}
+
+.accederButton:hover {
+    -fx-background-color: rgba(21, 240, 36, 0.1);
+}
+
+.accederButton:pressed {
+    -fx-background-color: rgba(21, 240, 36, 0.5);
+}
+
+.crearButton {
+    -fx-border-color: rgba(32, 101, 239, 1);
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 0;
+    -fx-pref-width: 90px;
+}
+
+.crearButton:hover {
+    -fx-background-color: rgba(32, 101, 239, 0.1);
+}
+
+.crearButton:pressed {
+    -fx-background-color: rgba(32, 101, 239, 0.5);
+}
