@@ -1,6 +1,22 @@
 /**********************************************************************************************************************
 Buttons
  **********************************************************************************************************************/
+#anadirTipoPago {
+    -fx-background-image: url(icons/plus32.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+#anadirTipoPago:hover {
+    -fx-background-image: url(icons/plus32hover.png);
+}
+
+#anadirTipoPago:pressed {
+    -fx-background-image: url(icons/plus32pressed.png);
+}
 
 #anadirProductoButton {
     -fx-background-image: url(icons/plus32.png);
@@ -72,47 +88,77 @@ Comboboxes
 
 .combo-box-popup .list-view .list-cell
 {
+
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: rgba(0, 0, 0, 0.3);
     -fx-padding: 4 0 4 5;
     -fx-background-color: white;
 }
 
-/*.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover*/
-/*{*/
-    /*-fx-background: -fx-accent;*/
-    /*-fx-background-color: -fx-selection-bar;*/
-    /*-fx-text-fill: -fx-selection-bar-text;*/
-/*}*/
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover
+{
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: rgba(2, 209, 0, 0.64);
+    -fx-text-fill: -fx-text-inner-color;
+}
 
-/*.combo-box-popup .list-view .list-cell:filled:hover*/
-/*{*/
-    /*-fx-background-color: white;*/
-    /*-fx-text-fill: -fx-text-inner-color;*/
-/*}*/
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: rgba(2, 209, 0, 0.64);
+    -fx-background-color: rgba(50, 50, 50, 0.1);
+    -fx-text-fill: -fx-text-inner-color;
+}
 
-/*.combo-box-base*/
-/*{*/
-    /*-fx-background-color: white, white, white, white;*/
-    /*-fx-background-radius: 5, 5, 4, 3;*/
-    /*-fx-background-insets: 0 0 -1 0, 0, 1, 2;*/
-    /*-fx-padding: 0;*/
-/*}*/
 
-/*.combo-box-base:hover*/
-/*{*/
-    /*-fx-color: -fx-hover-base;*/
-/*}*/
+/***********************************************************************************************************************
+CheckBox
+ **********************************************************************************************************************/
+#mostrarProductosCB {
+    -fx-background-image: url(icons/left.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 128px;
+    -fx-pref-height: 82px;
+    -fx-text-fill: transparent;
+}
+#mostrarProductosCB:hover {
+    -fx-background-image: url(icons/leftHover.png);
+}
 
-/*.combo-box-base:showing*/
-/*{*/
-    /*-fx-color: -fx-pressed-base;*/
-/*}*/
+#mostrarProductosCB:selected {
+    -fx-background-image: url(icons/right.png);
+}
 
-/*.combo-box-base:focused {*/
-    /*-fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;*/
-    /*-fx-background-radius: 6.4, 4, 5, 3;*/
-    /*-fx-background-insets: -1.4, 0, 1, 2;*/
-/*}*/
+#mostrarProductosCB:selected:hover {
+    -fx-background-image: url(icons/rightHover.png);
+}
 
-/*.combo-box-base:disabled {*/
-    /*-fx-opacity: .4;*/
-/*}*/
+#mostrarProductosCB > .box {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+#mostrarProductosCB > .box > .mark {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/***********************************************************************************************************************
+DatePicker
+ **********************************************************************************************************************/
+
+.date-picker > .text-field {
+    -fx-background-color: white;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.date-picker:focused > .text-field,
+.date-picker > .text-field:focused {
+    -fx-background-color: white;
+    -fx-border-radius: 0;
+}
+
+.date-picker:selected {
+    -fx-border-radius: 0;
+}
