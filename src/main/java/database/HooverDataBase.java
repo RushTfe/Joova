@@ -889,8 +889,8 @@ public class HooverDataBase {
                         listaProductos.get(i).setDireccionImagen(rs.getString(5));
                         listaProductos.get(i).setPrecioProducto(rs.getDouble(7));
                         listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
-                        listaProductos.get(i).getImagen().setFitHeight(200);
-                        listaProductos.get(i).getImagen().setFitWidth(200);
+                        listaProductos.get(i).getImagen().setFitHeight(150);
+                        listaProductos.get(i).getImagen().setFitWidth(150);
                         i++;
                     }
                 } else {
@@ -904,8 +904,8 @@ public class HooverDataBase {
                     listaProductos.get(i).setDireccionImagen(rs.getString(5));
                     listaProductos.get(i).setPrecioProducto(rs.getDouble(7));
                     listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
-                    listaProductos.get(i).getImagen().setFitHeight(200);
-                    listaProductos.get(i).getImagen().setFitWidth(200);
+                    listaProductos.get(i).getImagen().setFitHeight(150);
+                    listaProductos.get(i).getImagen().setFitWidth(150);
                     i++;
                 }
             }
@@ -1458,8 +1458,8 @@ public class HooverDataBase {
                 listaProductos.get(i).setTipoProducto(rs.getString(4));
                 listaProductos.get(i).setDireccionImagen(rs.getString(5));
                 listaProductos.get(i).setImagen(new ImageView(new Image(rs.getString(5))));
-                listaProductos.get(i).getImagen().setFitWidth(200);
-                listaProductos.get(i).getImagen().setFitHeight(200);
+                listaProductos.get(i).getImagen().setFitWidth(150);
+                listaProductos.get(i).getImagen().setFitHeight(150);
                 i++;
             }
         } catch (SQLException e) {

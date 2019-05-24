@@ -70,9 +70,6 @@ public class VentasController implements Initializable {
     private Button eliminarProductoButton;
 
     @FXML
-    private Button anadirDescuentoButton;
-
-    @FXML
     private Button validarVentaButton;
 
     @FXML
@@ -111,9 +108,7 @@ public class VentasController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // TODO Escondemos el botón de descuentos hasta que se apliquen realmente en la APP
-        anadirDescuentoButton.setVisible(false);
-        anadirDescuentoButton.setManaged(false);
+        rootVentas.getStylesheets().addAll("css/ventasView.css");
         observacionesTextArea.setWrapText(true);
         model = new VentasModel();
         listaProductosDisponibles = new SimpleListProperty<>(this, "listaProductosDisponibles", FXCollections.observableArrayList());

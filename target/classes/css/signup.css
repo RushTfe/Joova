@@ -42,3 +42,9 @@
 .crearButton:pressed {
     -fx-background-color: rgba(32, 101, 239, 0.5);
 }
+
+.table-view .show-hide-columns-button {
+    -fx-background-color: white;
+    -fx-border-color: -fx-box-border;
+    -fx-border-insets: 0;
+}

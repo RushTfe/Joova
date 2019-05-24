@@ -1,6 +1,6 @@
-/**************
+/**********************************************************************************************************************
 Botones
- **************/
+ **********************************************************************************************************************/
 
 /*
 Añadir
@@ -70,11 +70,11 @@ TextFields
     -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
 }
 
-/****************
+/**********************************************************************************************************************
 Tab Pane
- ****************/
+ **********************************************************************************************************************/
 .tab-pane *.tab-header-area *.tab-header-background {
-    -fx-background-color:transparent;
+    -fx-background-color: transparent;
 }
 
 .tab-pane {
@@ -98,12 +98,12 @@ Tab Pane
 }
 
 .tab:hover {
-    -fx-background-color: #F2FEFA;
+    -fx-background-color: #00fe5b;
     -fx-background-radius: 0;
     -fx-background-insets: 0;
     -fx-background-color: rgba(225, 225, 225, 0.1);
     -fx-border-width: 0 0 5 0;
-    -fx-border-color: rgba(21, 240, 36, 0.1);
+    -fx-border-color: rgba(21, 225, 33, 0.2);
 }
 
 .tab:selected {
@@ -111,48 +111,123 @@ Tab Pane
     -fx-background-radius: 0;
     -fx-background-insets: 0;
     -fx-border-width: 0 0 5 0;
-    -fx-border-color: rgba(21, 240, 36, 1);
+    -fx-border-color: rgb(21, 225, 33);
 }
 
-.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {-fx-border-color: transparent}
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent
+}
 
 #clientesTab {
     -fx-background-image: url(icons/clients.png);
+}
+
+#clientesTab:selected {
+    -fx-background-image: url(icons/clientsSelected.png);
 }
 
 #productosTab {
     -fx-background-image: url(icons/products.png);
 }
 
+#productosTab:selected {
+    -fx-background-image: url(icons/productsSelected.png);
+}
+
 #ventasTab {
     -fx-background-image: url(icons/sellings.png);
+}
+
+#ventasTab:selected {
+    -fx-background-image: url(icons/sellingsSelected.png);
 }
 
 #accionesTab {
     -fx-background-image: url(icons/meeting.png);
 }
 
+#accionesTab:selected {
+    -fx-background-image: url(icons/meetingSelected.png);
+}
+
 #estadisticasTab {
     -fx-background-image: url(icons/stats.png);
 }
 
-.tab-pane:top *.tab-header-area
-{
+#estadisticasTab:selected {
+    -fx-background-image: url(icons/statsSelected.png);
+}
+
+.tab-pane:top *.tab-header-area {
     -fx-background-insets: 0, 0 0 0;
     -fx-padding: 0.2em 0.2em 0.0em 0.2em;
 }
 
-/****************
+/**********************************************************************************************************************
 Tables
- ****************/
+ **********************************************************************************************************************/
 .table-cell {
-    -fx-padding: 0.5em 0.5em 0.1em 0.3em;
+    -fx-padding: 1.3em 1.3em 1.3em 1.3em;
     -fx-border-color: -fx-box-border -fx-box-border transparent transparent;
     -fx-font: 13px "Segoe UI";
     -fx-border-insets: 0;
     -fx-border-width: 0;
+    -fx-alignment: CENTER;
 }
 
-.ºtable-row-cell:odd {
-    -fx-background-color: rgba(21, 240, 36, 0.1);
+.table-row-cell {
+    -fx-alignment: BOTTOM_CENTER;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: rgba(225, 225, 225, 0.1);
+}
+
+.table-row-cell:even {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-row-cell:hover {
+    -fx-background-color: rgba(225, 225, 225, 0.3);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(2, 209, 0, 0.64);
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+.table-view, .table-view:focused {
+    -fx-background-color: transparent,-fx-box-border,-fx-control-inner-background;
+    -fx-background-insets: -1.4, 0, 1;
+    -fx-background-radius: 1.4, 0, 0;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: #52677A;
+    -fx-alignment: CENTER;
+    -fx-border-width: 0;
+    -fx-border-color: white;
+}
+
+.table-view .column-header:hover {
+    -fx-background-color: whitesmoke;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: white;
+    -fx-size: 45;
+    -fx-border-color: -fx-box-border;
+    -fx-border-width: 0 1 3 0;
+    -fx-border-insets: 0;
+}
+
+.table-view .column-header:hover, .table-view .filler:hover {
+    -fx-border-color: -fx-box-border -fx-box-border rgba(2, 209, 0, 0.64) -fx-box-border;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
 }

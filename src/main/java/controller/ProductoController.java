@@ -54,9 +54,6 @@ public class ProductoController implements Initializable {
     private TableColumn<NuevoProductoModel, String> nombreProductoColumn;
 
     @FXML
-    private TableColumn<NuevoProductoModel, String> tipoProductoColumn;
-
-    @FXML
     private TableColumn<NuevoProductoModel, Number> preciosColumn;
 
     private NuevoProductoModel model;
@@ -76,13 +73,14 @@ public class ProductoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        rootProductos.getStylesheets().addAll("css/productosView.css");
+
         model = new NuevoProductoModel();
         db.consultaTodosProductos(listaProductos);
         tablaProductos.itemsProperty().bind(listaProductos);
         imagenColumn.setCellValueFactory(new PropertyValueFactory<NuevoProductoModel, ImageView>("imagen"));
         nombreProductoColumn.setCellValueFactory(v -> v.getValue().nombreProductoProperty());
         preciosColumn.setCellValueFactory(v -> v.getValue().precioProductoProperty());
-        tipoProductoColumn.setCellValueFactory(v -> v.getValue().tipoProductoProperty());
 
         // Listeners
 

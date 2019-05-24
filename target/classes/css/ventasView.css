@@ -1,0 +1,118 @@
+/**********************************************************************************************************************
+Buttons
+ **********************************************************************************************************************/
+
+#anadirProductoButton {
+    -fx-background-image: url(icons/plus32.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+#anadirProductoButton:hover {
+    -fx-background-image: url(icons/plus32hover.png);
+}
+
+#anadirProductoButton:pressed {
+    -fx-background-image: url(icons/plus32pressed.png);
+}
+
+#eliminarProductoButton {
+    -fx-background-image: url(icons/delete64.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+#eliminarProductoButton:hover {
+    -fx-background-image: url(icons/delete64hover.png);
+}
+
+#eliminarProductoButton:pressed {
+    -fx-background-image: url(icons/delete64pressed.png);
+}
+
+#validarVentaButton {
+    -fx-background-image: url(icons/accept.png);
+    -fx-background-size: cover;
+    -fx-pref-width: 64px;
+    -fx-pref-height: 64px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 100;
+}
+
+#validarVentaButton:hover {
+    -fx-background-image: url(icons/acceptHover.png);
+}
+
+#validarVentaButton:pressed {
+    -fx-background-image: url(icons/acceptPressed.png);
+}
+
+/**********************************************************************************************************************
+Comboboxes
+ **********************************************************************************************************************/
+.combo-box
+{
+    -fx-background: white;
+    -fx-background-color: white;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(225, 225, 225, 0.8);
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+}
+
+.combo-box-popup .list-view .list-cell
+{
+    -fx-padding: 4 0 4 5;
+    -fx-background-color: white;
+}
+
+/*.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover*/
+/*{*/
+    /*-fx-background: -fx-accent;*/
+    /*-fx-background-color: -fx-selection-bar;*/
+    /*-fx-text-fill: -fx-selection-bar-text;*/
+/*}*/
+
+/*.combo-box-popup .list-view .list-cell:filled:hover*/
+/*{*/
+    /*-fx-background-color: white;*/
+    /*-fx-text-fill: -fx-text-inner-color;*/
+/*}*/
+
+/*.combo-box-base*/
+/*{*/
+    /*-fx-background-color: white, white, white, white;*/
+    /*-fx-background-radius: 5, 5, 4, 3;*/
+    /*-fx-background-insets: 0 0 -1 0, 0, 1, 2;*/
+    /*-fx-padding: 0;*/
+/*}*/
+
+/*.combo-box-base:hover*/
+/*{*/
+    /*-fx-color: -fx-hover-base;*/
+/*}*/
+
+/*.combo-box-base:showing*/
+/*{*/
+    /*-fx-color: -fx-pressed-base;*/
+/*}*/
+
+/*.combo-box-base:focused {*/
+    /*-fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;*/
+    /*-fx-background-radius: 6.4, 4, 5, 3;*/
+    /*-fx-background-insets: -1.4, 0, 1, 2;*/
+/*}*/
+
+/*.combo-box-base:disabled {*/
+    /*-fx-opacity: .4;*/
+/*}*/

@@ -35,8 +35,6 @@ public class ClienteController implements Initializable {
     @FXML
     private TableView<ClienteModel> clientTable;
 
-    @FXML
-    private TableColumn<ClienteModel, String> observacionesColumn;
 
     @FXML
     private TableColumn<ClienteModel, String> dniColumn;
@@ -57,13 +55,7 @@ public class ClienteController implements Initializable {
     private TableColumn<ClienteModel, LocalDate> nacimientoColumn;
 
     @FXML
-    private TableColumn<ClienteModel, String> direccionColumn;
-
-    @FXML
     private TableColumn<ClienteModel, NuevoProductoModel> aspiradoraColumn;
-
-    @FXML
-    private TableColumn<ClienteModel, Boolean> huerfanoColumn;
 
     @FXML
     private Button anadirClienteButton;
@@ -105,10 +97,7 @@ public class ClienteController implements Initializable {
         tlfColumn.setCellValueFactory(v -> v.getValue().telefonoProperty());
         emailColumn.setCellValueFactory(v -> v.getValue().emailProperty());
         nacimientoColumn.setCellValueFactory(v -> v.getValue().fechaNacimientoProperty());
-        direccionColumn.setCellValueFactory(v -> v.getValue().direccionProperty());
-        observacionesColumn.setCellValueFactory(v -> v.getValue().observacionesProperty());
         aspiradoraColumn.setCellValueFactory(v -> v.getValue().modeloAspiradoraProperty());
-        huerfanoColumn.setCellValueFactory(v -> v.getValue().huerfanoProperty());
         clientTable.setEditable(true);
 
         //BINDEO DE LA TABLA A LA LISTA
