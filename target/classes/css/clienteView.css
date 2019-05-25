@@ -1,3 +1,6 @@
+
+
+
 /**********************************************************************************************************************
 Botones
  **********************************************************************************************************************/
@@ -65,9 +68,20 @@ Editar
 /****************
 TextFields
  ****************/
-.busquedaField {
+.text-field {
     -fx-background-radius: 0;
     -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}
+
+.text-area {
+    -fx-background-radius: 0;
+    -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}
+
+
+.text-area:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
 }
 
 /**********************************************************************************************************************
@@ -98,16 +112,16 @@ Tab Pane
 }
 
 .tab:hover {
-    -fx-background-color: #00fe5b;
+    /*-fx-background-color: #00fe5b;*/
     -fx-background-radius: 0;
     -fx-background-insets: 0;
-    -fx-background-color: rgba(225, 225, 225, 0.1);
+    /*-fx-background-color: rgba(225, 225, 225, 0.1);*/
     -fx-border-width: 0 0 5 0;
-    -fx-border-color: rgba(21, 225, 33, 0.2);
+    -fx-border-color: rgba(21, 225, 33, 1);
 }
 
 .tab:selected {
-    -fx-background-color: #F2FEFA;
+    /*-fx-background-color: #F2FEFA;*/
     -fx-background-radius: 0;
     -fx-background-insets: 0;
     -fx-border-width: 0 0 5 0;
