@@ -102,7 +102,7 @@ public class AccionesController implements Initializable {
     private Button eliminarButton;
 
     @FXML
-    private Button buscarButton;
+    private TextField busquedaField;
 
     @FXML
     private SplitPane contentSplitPane;
@@ -130,6 +130,7 @@ public class AccionesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        rootAcciones.getStylesheets().addAll("css/accionesView.css");
         //Modelo
         model = new AccionesModel();
         listaClientes = new SimpleListProperty<>(this, "listaClientes", FXCollections.observableArrayList());
@@ -316,7 +317,6 @@ public class AccionesController implements Initializable {
          *
          *********************************************/
         radioButtons.selectedToggleProperty().addListener(e -> onExpChanged());
-        buscarButton.setOnAction(e -> onBuscarAction());
         nuevoButton.setOnAction(e -> onNuevoAction());
         eliminarButton.setOnAction(e -> onEliminarAction());
         modifButton.setOnAction(e -> onModificarAction());
@@ -333,15 +333,18 @@ public class AccionesController implements Initializable {
     }
 
     private void onPreChanged() {
-        observacionesTextArea.setText(tablaPresentaciones.getSelectionModel().getSelectedItem().getObservaciones());
+        if (null != tablaPresentaciones.getSelectionModel().getSelectedItem())
+            observacionesTextArea.setText(tablaPresentaciones.getSelectionModel().getSelectedItem().getObservaciones());
     }
 
     private void onPMChanged() {
-        observacionesTextArea.setText(tablaPuestaMarcha.getSelectionModel().getSelectedItem().getObservaciones());
+        if (null != tablaPuestaMarcha.getSelectionModel().getSelectedItem())
+            observacionesTextArea.setText(tablaPuestaMarcha.getSelectionModel().getSelectedItem().getObservaciones());
     }
 
     private void onExpeChanged() {
-        observacionesTextArea.setText(tablaExperiencias.getSelectionModel().getSelectedItem().getObservaciones());
+        if (null != tablaExperiencias.getSelectionModel().getSelectedItem())
+            observacionesTextArea.setText(tablaExperiencias.getSelectionModel().getSelectedItem().getObservaciones());
     }
 
     private void onAEChanged() {
@@ -523,9 +526,6 @@ public class AccionesController implements Initializable {
                 actualizarDatos();
             }
         }
-    }
-
-    private void onBuscarAction() {
     }
 
     private void actualizarDatos() {

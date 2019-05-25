@@ -1,0 +1,236 @@
+/***********************************************************************************************************************
+DatePicker
+ **********************************************************************************************************************/
+.date-picker {
+    -fx-border-radius: 1;
+    -fx-border-color: rgba(50, 50, 50, 0.3);
+    -fx-background-color: white;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: white;
+}
+
+.date-picker:focused > .text-field,
+.date-picker > .text-field:focused {
+    -fx-background-color: white;
+}
+
+.date-picker:focused {
+    -fx-focus-color: -fx-control-inner-background;
+    -fx-faint-focus-color: -fx-control-inner-background;
+    -fx-border-radius: 1;
+    -fx-border-color: rgba(50, 50, 50, 0.3);
+}
+
+
+.date-picker-popup {
+    -fx-padding: 1;
+    -fx-background-color: rgba(255, 255, 255, 1);
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-padding: 4;
+    -fx-background-color: rgba(255, 255, 255, 1);
+}
+
+.date-picker-popup > .month-year-pane > .spinner {
+    -fx-spacing: 4;
+    -fx-alignment: CENTER;
+    -fx-fill-height: false;
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .spinner-label {
+    -fx-font-size: 1.083333em;
+    -fx-alignment: CENTER;
+    -fx-text-fill: rgba(50, 50, 50, 0.7);
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .left-button {
+    -fx-padding: 4 6;
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(2, 209, 0, 0.64);;
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .left-button:hover {
+    -fx-background-color: rgba(2, 209, 0, 0.3);
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .left-button:pressed {
+    -fx-background-color: rgba(2, 209, 0, 0.6);
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .right-button {
+    -fx-padding: 4 6;
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(2, 209, 0, 0.64);
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .right-button:hover {
+    -fx-background-color: rgba(2, 209, 0, 0.3);
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .right-button:pressed {
+    -fx-background-color: rgba(2, 209, 0, 0.6);
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .button > .left-arrow {
+    -fx-background-color: rgba(2, 209, 0, 1);;
+    -fx-background-insets: 0;
+    -fx-padding: 0.333em 0.167em 0.333em 0.167em;
+    -fx-shape: "M5.997,5.072L5.995,6.501l-2.998-4l2.998-4l0.002,1.43l-1.976,2.57L5.997,5.072z";
+    -fx-scale-shape: true;
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .button > .right-arrow {
+    -fx-background-color: rgba(2, 209, 0, 1);
+    -fx-background-insets: 0;
+    -fx-padding: 0.333em 0.167em 0.333em 0.167em;
+    -fx-shape: "M2.998-0.07L3-1.499l2.998,4L3,6.501l-0.002-1.43l1.976-2.57L2.998-0.07z";
+    -fx-scale-shape: true;
+}
+
+.date-picker-popup > * > .cell {
+    -fx-padding: 0 7;
+    -fx-background-color: white;
+    -fx-border-width: 0;
+    -fx-border-color: white;
+    -fx-alignment: BASELINE_CENTER;
+}
+
+.date-picker-popup > * > .cell:disabled > * {
+    -fx-opacity: 0.4;
+}
+
+.date-picker-popup > * > .week-number-header-cell,
+.date-picker-popup > * > .day-name-cell {
+    -fx-font-size: 0.833333em;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-border-color: white;
+    -fx-text-fill: #0070C0;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup > * > .week-number-cell {
+    -fx-font-size: 0.75em;
+    -fx-border-width: 0;
+    -fx-border-color: white;
+    -fx-padding: 0;
+}
+
+.date-picker-popup > * > .day-cell {
+    -fx-text-fill: black;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: white white white lightgray;
+    -fx-border-insets: 0;
+}
+
+.date-picker-popup > * > .hijrah-day-cell {
+    -fx-alignment: TOP_LEFT;
+    -fx-cell-size: 2.75em;
+}
+
+.date-picker-popup > * > .day-cell:focused {
+    -fx-border-width: 1;
+    -fx-border-color: rgba(2, 209, 0, 1);
+}
+
+.date-picker-popup > * > .day-cell:hover {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: white white white rgba(2, 209, 0, 1);
+    -fx-background-color: rgba(220, 220, 220, 0.8);
+}
+
+.date-picker-popup > * > .day-cell > .secondary-text {
+    -fx-font-size: 1.0em;
+    -fx-fill: #ff5050;
+}
+
+.date-picker-popup > * > .today {
+    -fx-background-insets: 1;
+    -fx-border-color: #001c8d;
+    -fx-border-insets: 1;
+}
+
+.date-picker-popup > * > .selected {
+    -fx-background-color: rgba(2, 205, 0, 0.2);
+}
+
+.date-picker-popup > * > .previous-month,
+.date-picker-popup > * > .next-month {
+    -fx-text-fill: #aaaaaa;
+}
+
+.date-picker-popup > * > .previous-month > .secondary-text,
+.date-picker-popup > * > .next-month > .secondary-text {
+    -fx-fill: #aaaaaa;
+}
+
+/**********************************************************************************************************************
+Comboboxes
+ **********************************************************************************************************************/
+.combo-box {
+    -fx-background: white;
+    -fx-background-color: white;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(225, 225, 225, 0.8);
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+}
+
+.combo-box-popup .list-view .list-cell {
+
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: rgba(0, 0, 0, 0.3);
+    -fx-padding: 4 0 4 5;
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover {
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: rgba(2, 209, 0, 0.64);
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-border-width: 0 0 0 5;
+    -fx-border-color: rgba(2, 209, 0, 0.64);
+    -fx-background-color: rgba(50, 50, 50, 0.1);
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1;
+}
+
+.check-box:selected .box {
+    -fx-background-color: green;
+}
+
+.check-box .mark {
+    -fx-background-color: white;
+}
+
+.check-box:selected .mark {
+    -fx-border-color: white;
+}
+
+/****************
+TextFields
+ ****************/
+.text-field {
+    -fx-background-radius: 0;
+    -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}
+
+.text-area {
+    -fx-background-radius: 0;
+    -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}

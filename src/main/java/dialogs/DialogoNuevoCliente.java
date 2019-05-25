@@ -13,6 +13,7 @@ public class DialogoNuevoCliente extends Dialog<ClienteModel> {
     private ClienteModel model;
 
     public DialogoNuevoCliente(Stage stage, ListProperty<NuevoProductoModel> listaProductosExt) {
+        getDialogPane().getStylesheets().addAll("css/nuevoCliente.css");
         root = new NuevoClienteController(listaProductosExt);
         model = root.getModel();
         initOwner(stage);
@@ -30,7 +31,6 @@ public class DialogoNuevoCliente extends Dialog<ClienteModel> {
                                                                 .or(root.getProductosCombobox().getSelectionModel().selectedItemProperty().isNull()
                                                                         .or(root.getDireccionField().textProperty().isEmpty()))))))))
                 .then(true).otherwise(false));
-// TODO        getDialogPane().getStylesheets().addAll("Hoja de estilos");
 
         setResultConverter(dialogButton -> {
             if (dialogButton == ButtonType.OK) {

@@ -6,10 +6,43 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Funcionando la parte de producto, pendiente de revision final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/NuevoClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/NuevoClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPagoyEvento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPagoyEvento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AccionesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AccionesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/NuevoClienteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/NuevoClienteView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ReporteClienteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ReporteClienteView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VentasView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/VentasView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/css/clienteView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/clienteView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/ventasView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/ventasView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/productosView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/productosView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Joova-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Joova-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AccionesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AccionesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Joova.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/NuevoClienteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NuevoClienteView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/AccionesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/NuevoClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/NuevoClienteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/css/clienteView.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/clienteView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/ventasView.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/ventasView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/css/productosView.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/productosView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaAccionEspecial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaAccionEspecial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaExperiencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaExperiencia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaPyPM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevaPyPM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoProducto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoProducto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoTipoPagoyEvento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/DialogoNuevoTipoPagoyEvento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dialogs/JoovaAlert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dialogs/JoovaAlert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-mainTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-mainTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/mainTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/mainTest.txt" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,19 +133,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/productosView.css">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/css/clienteView.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="50" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="50" />
+            <state relative-caret-position="255">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="36" column="129" selection-start-line="36" selection-start-column="129" selection-end-line="36" selection-end-column="129" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/ventasView.css">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="281" column="29" selection-start-line="281" selection-start-column="29" selection-end-line="281" selection-end-column="29" />
+            <state relative-caret-position="289">
+              <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/css/reporteView.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/css/nuevaExperiencia.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="43" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -179,16 +245,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/TipoPagoModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/TipoPagoyEventoModel.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ac019111-4bae-4ff2-83aa-600c6cf4b1c4/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Participante.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/ProductoModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/ReporteModel.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ReporteClienteView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/model/PMyPresentacionesModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/AccionEspecialModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/ExperienciaModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/ScreenResolutions.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7fcb90ec-1525-4a8e-88a3-9efdb3ba51ea/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/77bafff6-183b-43fd-8c6d-c5ac8941c8f6/console.sql" />
@@ -202,34 +258,44 @@
         <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlertInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlertConf.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlertError.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPagoyEvento.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/JoovaUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/NuevoClienteView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ReporteClienteController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/094ed0a6-3698-4b92-8a98-2f57fdc1afd6/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/NuevoClienteController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ClienteController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/css/signup.css" />
         <option value="$PROJECT_DIR$/src/main/java/database/HooverDataBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/css/productosView.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/icons/ventasView.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/ventasCss.css" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/VentasController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/css/clienteView.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/ventasView.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/accionesView.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/productosView.css" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/VentasController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/JoovaApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ProductoController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/icons/okButton.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/cancelButton.css" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/nuecoCliente.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/clienteView.css" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/NuevoClienteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPagoyEvento.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/nuevoCliente.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/presentacionView.css" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/joovaAlert.css" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/AccionesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/nuevaExperiencia.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/reporteView.css" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java" />
       </list>
     </option>
   </component>
@@ -268,9 +334,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1057" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -353,6 +420,14 @@
               <item name="Joova" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Joova" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Joova" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -398,8 +473,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources\css" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\app" />
+      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources\css\icons" />
@@ -408,12 +487,8 @@
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources" />
       <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources\fxml" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources\css" />
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\resources" />
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src" />
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java\app" />
-      <recent name="C:\Users\piti_\Documents\GitHub\Joova\src\main\java" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="model" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -621,7 +696,7 @@
       <workItem from="1558681660628" duration="14343000" />
       <workItem from="1558712919152" duration="786000" />
       <workItem from="1558729194547" duration="3316000" />
-      <workItem from="1558794894673" duration="4348000" />
+      <workItem from="1558794894673" duration="24002000" />
     </task>
     <task id="LOCAL-00001" summary="Funcionando la parte de producto, pendiente de revision final">
       <created>1558034254323</created>
@@ -634,7 +709,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395870000" />
+    <option name="totallyTimeSpent" value="415524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -649,7 +724,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25416037" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25416037" />
       <window_info id="Structure" order="1" weight="0.24946696" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -658,8 +733,8 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.60708535" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.070853464" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29581994" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20289855" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5056361" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
@@ -680,7 +755,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.12405446" />
+      <window_info anchor="right" id="Database" order="4" weight="0.1860817" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" weight="0.21028744" />
@@ -809,13 +884,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java</url>
-          <line>235</line>
+          <line>243</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java</url>
-          <line>424</line>
+          <line>427</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
@@ -828,6 +903,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>alert.getDialogPane().lookupButton(ButtonType.CANCEL).getStyleClass()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>evento.getCodCliente()</expression-string>
         <language-id>JAVA</language-id>
@@ -868,71 +948,13 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>ventasController.getClientesComboBox().getSelectionModel().getSelectedItem().dniProperty();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4a050c93-7d82-4fdc-89ea-6445031aa0aa/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://6cb22a4b-799d-421d-a1c2-12ecb0a2595d/schema/main/table/Historico_Precios" />
-    <entry file="das://353c021e-4d58-48d8-b0da-84baebe0b700/schema/main/table/Articulos" />
-    <entry file="das://353c021e-4d58-48d8-b0da-84baebe0b700/schema/main/table/Historico_Precios" />
-    <entry file="das://353c021e-4d58-48d8-b0da-84baebe0b700/schema/main/table/Tipo_Pago" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/JoovaAlertConf.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/JoovaAlertInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Intereses_Articulos" />
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/TextInputControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="356" column="35" selection-start-line="356" selection-start-column="35" selection-end-line="356" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Historico_Precios" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-244">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-            <element signature="e#2726#2727#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/JoovaUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,18 +1009,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Articulos" />
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Detalle_Compra" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ProductosView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1012,128 +1023,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/JoovaApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Compra" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPagoyEvento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Tipo_Evento" />
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Acciones_Especiales_Clientes" />
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Acciones_Especiales" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Tipo_Pago" />
-    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Cliente" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/NuevoClienteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/JoovaNuevoProducto/JoovaNuevoProducto/0.0.1/JoovaNuevoProducto-0.0.1.jar!/nuevoproducto/NuevoProductoController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-393">
-          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="93" selection-start-line="76" selection-start-column="93" selection-end-line="76" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="335" selection-start-line="335" selection-end-line="335" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/signup.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="133" column="69" lean-forward="true" selection-start-line="133" selection-start-column="69" selection-end-line="133" selection-end-column="69" />
-          <folding>
-            <element signature="method#onBusquedaRealizada#0;class#ClienteController#0" />
-            <element signature="method#onModificarAction#0;class#ClienteController#0" />
-            <element signature="e#5068#6667#0" />
-            <element signature="e#6558#6657#1" />
-            <element signature="e#6699#6879#0" />
-            <element signature="method#onEliminarClienteAction#0;class#ClienteController#0" />
-            <element signature="e#6946#7412#0" />
-            <element signature="e#7294#7401#1" />
-            <element signature="e#7444#7618#0" />
-            <element signature="method#onAnadirClienteButton#0;class#ClienteController#0" />
-            <element signature="e#7880#7967#1" />
-            <element signature="method#actualizarClientes#0;class#ClienteController#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1371,46 +1269,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="method#ProductoController#0;class#ProductoController#0" />
-            <element signature="method#onEliminarProducto#0;class#ProductoController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/icons/ventasView.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/productosView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="50" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/clienteView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Cliente">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/VentasController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state relative-caret-position="187">
+          <caret line="110" column="43" lean-forward="true" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="63" />
           <folding>
             <element signature="method#limpiar#0;class#VentasController#0" />
             <element signature="method#onEliminarProductoAction#0;class#VentasController#0" />
@@ -1421,10 +1291,268 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/JoovaUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+          <folding>
+            <element signature="method#onBusquedaRealizada#0;class#ClienteController#0" />
+            <element signature="method#onModificarAction#0;class#ClienteController#0" />
+            <element signature="method#onAnadirClienteButton#0;class#ClienteController#0" />
+            <element signature="method#actualizarClientes#0;class#ClienteController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/okButton.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/cancelButton.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/JoovaApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/JoovaAlert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/NuevoClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="65" column="95" selection-start-line="65" selection-start-column="95" selection-end-line="65" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoTipoPagoyEvento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/ventasView.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="281" column="29" selection-start-line="281" selection-start-column="29" selection-end-line="281" selection-end-column="29" />
+        <state relative-caret-position="102">
+          <caret line="115" column="14" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/nuevoCliente.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="94" column="1" selection-start-line="78" selection-end-line="94" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaPyPM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/joovaAlert.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="29" lean-forward="true" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaExperiencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevaAccionEspecial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="154" column="33" selection-start-line="154" selection-start-column="33" selection-end-line="154" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProductoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="144" column="24" selection-start-line="144" selection-start-column="24" selection-end-line="144" selection-end-column="24" />
+          <folding>
+            <element signature="method#ProductoController#0;class#ProductoController#0" />
+            <element signature="method#onEliminarProducto#0;class#ProductoController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Historico_Precios">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://094ed0a6-3698-4b92-8a98-2f57fdc1afd6/schema/main/table/Articulos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/JoovaNuevoProducto/JoovaNuevoProducto/0.0.1/JoovaNuevoProducto-0.0.1.jar!/nuevoproducto/NuevoProductoController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/presentacionView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3665">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoProducto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoNuevoUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccionesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="348" selection-start-line="348" selection-end-line="348" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/accionesView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/nuevaExperiencia.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/reporteView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/productosView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/clienteView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoReporteCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="36" column="129" selection-start-line="36" selection-start-column="129" selection-end-line="36" selection-end-column="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/DialogoComprasCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

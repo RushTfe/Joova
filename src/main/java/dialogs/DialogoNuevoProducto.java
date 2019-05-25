@@ -17,8 +17,8 @@ public class DialogoNuevoProducto extends Dialog<NuevoProductoModel> {
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().setContent(controller);
         getDialogPane().lookupButton(ButtonType.OK).disableProperty().bind(controller.getModel().listoParaInsertarProperty());
-// TODO       getDialogPane().getStylesheets().addAll("Hoja de estilos");
-
+        controller.getStylesheets().addAll("css/presentacionView.css", "css/accionesView.css");
+        getDialogPane().getStylesheets().addAll("css/joovaAlert.css");
         setResultConverter(dialogButton -> {
             if (dialogButton == ButtonType.OK) {
                 return controller.getModel();

@@ -21,9 +21,9 @@
          <children>
             <VBox fx:id="aspiradoraActualVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="NEVER">
                <children>
-                  <Label text="Aspiradora actual" />
-                  <ImageView fx:id="aspiradoraImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="nombreAspiradoraLabel" text="Label" />
+                  <Label styleClass="subtitulos" text="Aspiradora actual" />
+                  <ImageView fx:id="aspiradoraImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="imagen" />
+                  <Label fx:id="nombreAspiradoraLabel" styleClass="nombreAspiradora" text="Label" />
                </children>
                <padding>
                   <Insets top="5.0" />
@@ -73,7 +73,7 @@
    <top>
       <VBox fx:id="topVbox" alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="tituloResumenLabel" text="RESUMEN" />
+            <Label fx:id="tituloResumenLabel" styleClass="titulo" text="RESUMEN" />
             <Separator prefWidth="200.0" />
          </children>
          <padding>
@@ -88,8 +88,8 @@
                <children>
                   <VBox fx:id="nombreApellidoVbox" alignment="CENTER" minWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label fx:id="nombreClienteLabel" text="Label" />
-                        <Label fx:id="apellidoClienteLabel" text="Label" />
+                        <Label fx:id="nombreClienteLabel" styleClass="nombreLabel" text="Label" />
+                        <Label fx:id="apellidoClienteLabel" styleClass="apellidosLabel" text="Label" />
                      </children>
                   </VBox>
                   <HBox fx:id="direccionHbox" maxHeight="100.0" HBox.hgrow="NEVER">
@@ -104,7 +104,7 @@
             </HBox>
             <VBox fx:id="observacionesVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="tituloObservacionesLabel" text="OBSERVACIONES" />
+                  <Label fx:id="tituloObservacionesLabel" styleClass="subtitulos" text="OBSERVACIONES" />
                   <TextArea fx:id="observacionesTextArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" wrapText="true" VBox.vgrow="ALWAYS" />
                </children>
                <padding>
@@ -114,7 +114,7 @@
             <VBox fx:id="comprasVbox" alignment="TOP_CENTER" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
                   <Separator prefWidth="200.0" />
-                  <Label fx:id="tituloComprasLabel" text="COMPRAS" />
+                  <Label fx:id="tituloComprasLabel" styleClass="subtitulos" text="COMPRAS" />
                   <TextField fx:id="busquedaComprasTextField" promptText="Búsqueda de compras" />
                   <TableView fx:id="tablaCompras">
                     <columns>
@@ -142,10 +142,6 @@
    </padding>
    <bottom>
       <VBox fx:id="bottomVbox" alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
-         <children>
-            <Separator prefWidth="200.0" />
-            <Button mnemonicParsing="false" text="PDF" />
-         </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -154,18 +150,20 @@
    <right>
       <VBox fx:id="rightVbox" alignment="TOP_CENTER" prefWidth="250.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="interesesTituloLabel" text="INTERESES" />
+            <Label fx:id="interesesTituloLabel" styleClass="subtitulos" text="INTERESES" />
             <HBox fx:id="anadirProductoInteres" alignment="CENTER" spacing="5.0" VBox.vgrow="NEVER">
                <children>
                   <ComboBox fx:id="productosComboBox" prefWidth="150.0" promptText="Lista de Productos" />
-                  <Button fx:id="anadirProductoInteresButton" mnemonicParsing="false" text="+" />
-                  <Button fx:id="eliminarProductoInteresButton" mnemonicParsing="false" text="-" />
+                  <Button fx:id="anadirProductoInteresButton" mnemonicParsing="false" styleClass="plusButton" />
+                  <Button fx:id="eliminarProductoInteresButton" mnemonicParsing="false" styleClass="deleteButton" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </HBox>
             <ListView fx:id="interesesListView" maxWidth="200.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" styleClass="pdfButton" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

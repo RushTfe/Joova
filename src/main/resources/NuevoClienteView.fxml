@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="rootClienteNuevo" alignment="CENTER" hgap="10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="rootClienteNuevo" alignment="CENTER" hgap="10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="nuevoClientePane" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="nombreField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Nombre" GridPane.columnSpan="2" />
       <TextField fx:id="apellidoField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Apellidos" GridPane.columnSpan="2" GridPane.rowIndex="1" />

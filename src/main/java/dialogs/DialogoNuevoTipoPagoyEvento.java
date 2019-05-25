@@ -17,8 +17,7 @@ public class DialogoNuevoTipoPagoyEvento extends Dialog<TipoPagoyEventoModel> {
     private VBox cajaTextos;
 
     public DialogoNuevoTipoPagoyEvento(Stage stage) {
-// TODO     getDialogPane().getStylesheets().addAll("Direccion.css");
-
+        getDialogPane().getStylesheets().addAll("css/clienteView.css", "css/joovaAlert.css");
         // Modelo con la informacion a devolver
         model = new TipoPagoyEventoModel();
 

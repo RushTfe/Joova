@@ -21,6 +21,7 @@ public class DialogoComprasCliente extends Dialog {
 
     public DialogoComprasCliente(ListProperty<NuevoProductoModel> listaProductos) {
         tablaProductos = new TableView<>();
+        getDialogPane().getStylesheets().addAll("css/joovaAlert.css", "css/productosView.css");
         imagenColumn = new TableColumn<>();
         nombreArticuloColumn = new TableColumn<>("Nombre");
         descripcionArticuloColumn = new TableColumn<>("Descripción");

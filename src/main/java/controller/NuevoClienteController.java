@@ -64,7 +64,6 @@ public class NuevoClienteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {model = new ClienteModel();
-
         nombreField.textProperty().bindBidirectional(model.nombreProperty());
         apellidoField.textProperty().bindBidirectional(model.apellidosProperty());
         dniField.textProperty().bindBidirectional(model.dniProperty());

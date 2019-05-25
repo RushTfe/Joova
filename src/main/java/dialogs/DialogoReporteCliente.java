@@ -10,6 +10,8 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.TableRow;
 import javafx.stage.Stage;
 import model.*;
+import util.JoovaUtil;
+import util.ScreenResolutions;
 
 import java.sql.SQLException;
 import java.util.Optional;
@@ -26,10 +28,15 @@ public class DialogoReporteCliente extends Dialog<ReporteClienteModel> {
     private ListProperty<VentasModel> listaVentas;
 
     public DialogoReporteCliente(Stage primaryStage, HooverDataBase db, ClienteModel clienteModel, ListProperty<NuevoProductoModel> listaProductos) {
+        getDialogPane().getStylesheets().addAll("css/joovaAlert.css");
         root = new ReporteClienteController(primaryStage);
+        root.getStylesheets().addAll("css/reporteView.css");
         this.db = db;
         root.setCliente(clienteModel);
         this.primaryStage = primaryStage;
+        root.setPrefHeight(ScreenResolutions.getScreenResolutions().get(ScreenResolutions.getScreenResolutions().size()-1).getY());
+        root.setPrefWidth(ScreenResolutions.getScreenResolutions().get(ScreenResolutions.getScreenResolutions().size()-1).getX());
+
 
         // Creamos y poblamos las listas recogiendo los valores de la base de datos para mostrarlos en el reporte
         listaPuestasEnMarcha = new SimpleListProperty(this, "listaPuestasEnMarcha", FXCollections.observableArrayList());

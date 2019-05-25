@@ -33,6 +33,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
     //Boxes
     private BorderPane root;
     private VBox leftBox;
+    private HBox leftButtons;
     private VBox rightBox;
     private HBox eventBox;
     private HBox topBox;
@@ -63,6 +64,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
     private TableColumn<Participante, String> observacionesParticipanteColumn;
 
     public DialogoNuevaAccionEspecial(ListProperty<ClienteModel> listaClientes, Stage primaryStage, HooverDataBase db) {
+        getDialogPane().getStylesheets().add("css/nuevaExperiencia.css");
         this.primaryStage = primaryStage;
         model = new AccionEspecialModel();
         this.db = db;
@@ -87,12 +89,16 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         observacionesParticipante = new TextArea();
         compra = new CheckBox();
         regalo = new CheckBox();
-        anadirParticipante = new Button("Añadir Participante");
-        eliminarParticipante = new Button("Eliminar Participante");
+        anadirParticipante = new Button();
+        anadirParticipante.getStyleClass().add("anadirParticipanteButton");
+        eliminarParticipante = new Button();
+        eliminarParticipante.getStyleClass().add("eliminarParticipante");
+        leftButtons = new HBox(anadirParticipante, eliminarParticipante);
         direccionEvento = new TextField();
         observacionesEvento = new TextArea();
         eventosCombobox = new ComboBox<>();
-        nuevoEvento = new Button("+");
+        nuevoEvento = new Button();
+        nuevoEvento.getStyleClass().add("anadirParticipanteButton");
         nombreEvento = new TextField();
         fechaEvento = new DatePicker();
         fechaEvento.setEditable(false);
@@ -145,13 +151,14 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
 
         // Arreglar dentro de los cajones
         //Left Box
+        leftButtons.setAlignment(Pos.CENTER);
+        leftButtons.setSpacing(10);
         leftBox.getChildren().add(datosParticipante);
         leftBox.getChildren().add(clientesCombobox);
         leftBox.getChildren().add(observacionesParticipante);
         leftBox.getChildren().add(compra);
         leftBox.getChildren().add(regalo);
-        leftBox.getChildren().add(anadirParticipante);
-        leftBox.getChildren().add(eliminarParticipante);
+        leftBox.getChildren().add(leftButtons);
         leftBox.setSpacing(5);
         leftBox.setAlignment(Pos.TOP_CENTER);
         leftBox.setMaxWidth(200);
@@ -169,6 +176,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         eventBox.getChildren().add(eventosCombobox);
         eventBox.getChildren().add(nuevoEvento);
         eventBox.setSpacing(5);
+        eventBox.setAlignment(Pos.CENTER);
         rightBox.setSpacing(5);
         rightBox.getChildren().add(datosEvento);
         rightBox.getChildren().add(eventBox);
@@ -176,7 +184,7 @@ public class DialogoNuevaAccionEspecial extends Dialog<AccionEspecialModel> {
         rightBox.getChildren().add(fechaEvento);
         rightBox.getChildren().add(observacionesEvento);
         rightBox.setAlignment(Pos.TOP_CENTER);
-        rightBox.setMaxWidth(200);
+        rightBox.setMaxWidth(220);
         rightBox.setMaxHeight(400);
         root.setRight(rightBox);
 

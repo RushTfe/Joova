@@ -1,6 +1,7 @@
 package dialogs;
 
 import app.JoovaApp;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.ListProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -18,6 +19,7 @@ public class DialogoNuevaPyPM extends Dialog<PMyPresentacionesModel> {
     private TextArea observaciones;
 
     public DialogoNuevaPyPM(ListProperty<ClienteModel> listaClientes) {
+        getDialogPane().getStylesheets().addAll("css/presentacionView.css", "css/joovaAlert.css");
         // Inicializar todos los objetos
         model = new PMyPresentacionesModel();
         root = new GridPane();
@@ -50,9 +52,15 @@ public class DialogoNuevaPyPM extends Dialog<PMyPresentacionesModel> {
         observaciones.setWrapText(true);
 
 
+
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().setContent(root);
 
+        getDialogPane().lookupButton(ButtonType.OK).disableProperty().bind(Bindings
+                .when(fecha.valueProperty().isNull()
+                        .or(clientesComboBox.getSelectionModel().selectedItemProperty().isNull()))
+                .then(true)
+                .otherwise(false));
         initOwner(JoovaApp.getPrimaryStage());
         setTitle("Añadir una nueva presentacion");
 

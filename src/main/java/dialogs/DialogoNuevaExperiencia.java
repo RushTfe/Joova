@@ -20,6 +20,7 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
     private ExperienciaModel model;
     private Stage primaryStage;
     private VBox leftBox;
+    private HBox leftButtons;
     private HBox centerBox;
     private BorderPane root;
     private ComboBox<ClienteModel> listaClientes;
@@ -36,6 +37,7 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
     private DatePicker fechaExperiencia;
 
     public DialogoNuevaExperiencia(ListProperty<ClienteModel> listaClientesCompleta, Stage primaryStage) {
+        getDialogPane().getStylesheets().addAll("css/nuevaExperiencia.css");
         //Inicializando los componentes
         model = new ExperienciaModel();
         this.primaryStage = primaryStage;
@@ -45,8 +47,11 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         listaClientes = new ComboBox<>();
         clienteLabel = new Label("Cliente");
         eventoLabel = new Label("Evento");
-        anadirParticipanteButton = new Button("Añadir Participante");
-        eliminarParticipante = new Button("Eliminar Participante");
+        anadirParticipanteButton = new Button();
+        anadirParticipanteButton.getStyleClass().add("anadirParticipanteButton");
+        eliminarParticipante = new Button();
+        eliminarParticipante.getStyleClass().add("eliminarParticipante");
+        leftButtons = new HBox(anadirParticipanteButton, eliminarParticipante);
         separator = new Separator();
         direccion = new TextField();
         observaciones = new TextArea();
@@ -83,11 +88,14 @@ public class DialogoNuevaExperiencia extends Dialog<ExperienciaModel> {
         listaClientes.setPromptText("Lista de Clientes");
         separator.setOrientation(Orientation.HORIZONTAL);
 
+        leftButtons.setSpacing(10);
+        leftButtons.setAlignment(Pos.CENTER);
+
+
         // Preparando el VBox de la izquierda
         leftBox.getChildren().add(clienteLabel);
         leftBox.getChildren().add(listaClientes);
-        leftBox.getChildren().add(anadirParticipanteButton);
-        leftBox.getChildren().add(eliminarParticipante);
+        leftBox.getChildren().add(leftButtons);
         leftBox.getChildren().add(separator);
         leftBox.getChildren().add(eventoLabel);
         leftBox.getChildren().add(fechaExperiencia);

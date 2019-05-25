@@ -1,0 +1,11 @@
+.radio-button {
+    -fx-focus-color: lightgray;
+    -fx-faint-focus-color: transparent;
+}
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1;
+    -fx-border-radius: 100;
+}
