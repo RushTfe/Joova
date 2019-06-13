@@ -324,12 +324,29 @@ public class AccionesController implements Initializable {
         tablaExperiencias.getSelectionModel().selectedItemProperty().addListener(e -> onExpeChanged());
         tablaPuestaMarcha.getSelectionModel().selectedItemProperty().addListener(e -> onPMChanged());
         tablaPresentaciones.getSelectionModel().selectedItemProperty().addListener(e -> onPreChanged());
+        busquedaField.textProperty().addListener(e -> onBusquedaAccion());
 
         actualizarDatos();
 
         // FIXME al cambiar de radioButton y volver, no funciona el listener
         // FIXME crea NullPointerException al eliminar un elemento de la lista
 //        tablaPresentaciones.getSelectionModel().selectedItemProperty().addListener(e -> actualizarTextArea());
+    }
+
+    private void onBusquedaAccion() {
+        if (presentacionRB.isSelected()) {
+            listaPresentaciones.clear();
+            db.consultaPresentacionClienteWhere(listaPresentaciones, busquedaField.getText());
+        } else if (puestaEnMarchaRB.isSelected()) {
+            listaPuestasMarcha.clear();
+            db.consultaPresentacionClienteWhere(listaPuestasMarcha, busquedaField.getText());
+        } else if (experienciasRB.isSelected()) {
+            listaExperiencias.clear();
+            db.consultaExperienciasWhere(listaExperiencias, busquedaField.getText());
+        } else {
+            listaAccionesEspeciales.clear();
+            db.consultaAccionesEspecialesWhere(listaAccionesEspeciales, busquedaField.getText());
+        }
     }
 
     private void onPreChanged() {

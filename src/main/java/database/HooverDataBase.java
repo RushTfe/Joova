@@ -1411,7 +1411,15 @@ public class HooverDataBase {
      * @param listaClientes
      */
     public void consultaClientesWhere(ListProperty<ClienteModel> listaClientes, String nombre) {
-        String query = "SELECT * FROM Cliente JOIN Articulos A on Cliente.Modelo_Aspiradora = A.Cod_Articulo WHERE DNI LIKE ? OR Nombre LIKE ? or Apellidos LIKE ? or Telefono like ? or Email like ? or Nombre_Articulo like ? or Huerfano like ?";
+        String query = "SELECT * FROM Cliente " +
+                "JOIN Articulos A on Cliente.Modelo_Aspiradora = A.Cod_Articulo " +
+                "WHERE DNI LIKE ? " +
+                "OR Nombre LIKE ? " +
+                "or Apellidos LIKE ? " +
+                "or Telefono like ? " +
+                "or Email like ? " +
+                "or Nombre_Articulo like ? " +
+                "or Huerfano like ?";
         ResultSet rs = null;
         try {
             String busqueda = "%" + nombre + "%";
@@ -1426,6 +1434,124 @@ public class HooverDataBase {
 
             rs = stnmt.executeQuery();
             fillListClientes(listaClientes, rs);
+
+            rs.close();
+            stnmt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaPresentacionClienteWhere(ListProperty<PMyPresentacionesModel> listaPresentaciones, String busquedaIntroducida) {
+        String query = "SELECT * FROM Presentacion " +
+                "JOIN Cliente C on Presentacion.Cod_Cliente = C.DNI " +
+                "WHERE Nombre LIKE ? " +
+                "OR Presentacion.Direccion LIKE ? " +
+                "OR Fecha LIKE ? " +
+                "OR Venta LIKE ?" +
+                "OR Cod_Cliente LIKE ?";
+
+        ResultSet rs = null;
+
+        try {
+            String busqueda = "%" + busquedaIntroducida + "%";
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, busqueda);
+            stmnt.setString(2, busqueda);
+            stmnt.setString(3, busqueda);
+            stmnt.setString(4, busqueda);
+            stmnt.setString(5, busqueda);
+
+            rs = stmnt.executeQuery();
+
+            while (rs.next()) {
+                PMyPresentacionesModel model = new PMyPresentacionesModel();
+                model.setCodigoEvento(rs.getInt(1));
+                model.setCodCliente(rs.getString(2));
+                model.setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                model.setDireccionCliente(rs.getString(4));
+                model.setObservaciones(rs.getString(5));
+                model.setVentaRealizada(rs.getBoolean(6));
+                model.setNombreCliente(rs.getString(8));
+                listaPresentaciones.add(model);
+            }
+
+            stmnt.close();
+            rs.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaExperienciasWhere(ListProperty<ExperienciaModel> listaExperiencias, String busquedaIntroducida) {
+        String query = "SELECT * FROM Experiencia " +
+                "WHERE Direccion LIKE ? " +
+                "OR Fecha LIKE ?";
+
+        ResultSet rs = null;
+
+        try {
+            String busqueda = "%" + busquedaIntroducida + "%";
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, busqueda);
+            stmnt.setString(2, busqueda);
+
+            rs = stmnt.executeQuery();
+
+            while (rs.next()) {
+                ExperienciaModel model = new ExperienciaModel();
+                model.setCodExperiencia(rs.getInt(1));
+                model.setDireccion(rs.getString(2));
+                model.setFechaExperiencia(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                model.setObservaciones(rs.getString(4));
+                listaExperiencias.add(model);
+            }
+
+            rs.close();
+            stmnt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void consultaAccionesEspecialesWhere(ListProperty<AccionEspecialModel> listaAccionesEspeciales, String busquedaIntroducida) {
+        String query = "SELECT * FROM Acciones_Especiales JOIN Tipo_Evento TE on Acciones_Especiales.Tipo_Evento = TE.Cod_Tipo_evento " +
+                "WHERE Nombre_Accion_Especial LIKE ? " +
+                "OR Fecha LIKE ? " +
+                "OR Nombre_Tipo_Evento LIKE ? " +
+                "OR Direccion LIKE ?";
+
+        ResultSet rs = null;
+
+        try {
+            String busqueda = "%" + busquedaIntroducida + "%";
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, busqueda);
+            stmnt.setString(2, busqueda);
+            stmnt.setString(3, busqueda);
+            stmnt.setString(4, busqueda);
+
+            rs = stmnt.executeQuery();
+
+            while (rs.next()) {
+                TipoPagoyEventoModel tipoEventoModel = new TipoPagoyEventoModel();
+                tipoEventoModel.setCodTipoPago(rs.getInt(4));
+                tipoEventoModel.setNombreTipoPago(rs.getString(8));
+                AccionEspecialModel model = new AccionEspecialModel();
+                model.setCodEvento(rs.getInt(1));
+                model.setNombreEvento(rs.getString(2));
+                model.setFechaEvento(JoovaUtil.stringToLocalDate(rs.getString(3)));
+                model.setTipoEvento(tipoEventoModel);
+                model.setDireccionEvento(rs.getString(5));
+                model.setObservacionesEvento(rs.getString(6));
+                listaAccionesEspeciales.add(model);
+            }
+
+            rs.close();
+            stmnt.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -1733,5 +1859,4 @@ public class HooverDataBase {
     public Connection getConnection() {
         return conn;
     }
-
 }
